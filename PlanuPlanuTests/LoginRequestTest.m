@@ -54,7 +54,7 @@
 }
 - (void)loginFailedWith:(NSString*) Reason
 {
-    STAssertFalse(NO, Reason, nil);
+    STAssertFalse(YES, Reason, nil);
     requestComplete = YES;
 }
 

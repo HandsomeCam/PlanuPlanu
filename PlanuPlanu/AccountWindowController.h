@@ -7,16 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <PlanuKit/PlanuKit.h>
+#import "LoginRequest.h"
 
-@interface AccountWindowController : NSWindowController <NuLoginRequestDelegate>
+@interface AccountWindowController : NSWindowController <LoginRequestDelegate>
 {
     NSTextField* username;
     NSTextField* password;
     NSTextField* signupLabel;
-    
-    NSButton* autoLogin;
-    NSButton* saveLogin;
     
 }
 
@@ -24,11 +21,6 @@
 @property (assign) IBOutlet NSTextField* password;
 @property (assign) IBOutlet NSTextField* signupLabel;
 
-@property (assign) IBOutlet NSButton* autoLogin;
-@property (assign) IBOutlet NSButton* saveLogin;
-
 - (IBAction)loginClicked:(id)sender;
-- (IBAction)saveLoginChanged:(id)sender;
-- (IBAction)autoLoginChanged:(id)sender;
 
 @end

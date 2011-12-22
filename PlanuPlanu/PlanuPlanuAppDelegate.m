@@ -7,7 +7,6 @@
 //
 
 #import "PlanuPlanuAppDelegate.h"
-#import "CaptainDashboardController.h"
 
 @implementation PlanuPlanuAppDelegate
 
@@ -16,15 +15,6 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    [defaults registerDefaults:[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Preferences" ofType:@"plist"]]];
-    
-    CaptainDashboardController* cdc = [[CaptainDashboardController alloc] initWithWindowNibName:@"CaptainDashboard"];
-    [cdc showWindow:self];
-    
-    self.window = cdc.window;
-
 }
 
 @end
