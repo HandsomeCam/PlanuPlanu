@@ -3,7 +3,7 @@
 //  PlanuPlanu
 //
 //  Created by Cameron Hotchkies on 12/22/11.
-//  Copyright 2011 Roboboogie Studios. All rights reserved.
+//  Copyright 2011 ElectroDistrict. All rights reserved.
 //
 
 #ifndef PlanuPlanu_Preferences_h

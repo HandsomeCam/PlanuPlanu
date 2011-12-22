@@ -8,11 +8,11 @@
 
 #import "CaptainDashboardController.h"
 #import "Preferences.h"
-#import "StarMapController.h"
+#import "GameListRequest.h"
 
 @implementation CaptainDashboardController
 
-@synthesize loginMessage, gameList, games, progress;
+@synthesize loginMessage;
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -34,99 +34,11 @@
     
     if ([defaults boolForKey:kPrefAutoLogin] == YES)
     {
-        NSString* apiKey =  [defaults stringForKey:kPrefApiKey];
-        loginMessage.stringValue = apiKey;
+        loginMessage.stringValue = [defaults stringForKey:kPrefApiKey];
     }
     
-    NuGameListRequest* glr = [[NuGameListRequest alloc] init];
-    
-    NSString* username = [defaults stringForKey:kPrefUsername];
-    
-    if (username != nil)
-    {
-        [glr requestGamesFor:username withDelegate:self];
-    }
-}
- 
-- (void)requestsSucceededWith:(NSArray*) Games
-{
-    self.games = Games;
-    [gameList reloadData];
-}
-
-- (void)requestFailedWith:(NSString*) Reason
-{
-    // TODO: notify user
-}
-
-- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
-{
-    if (games == nil)
-    {
-        return 0;
-    }
-    
-    return [games count];
-}
-
-- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
-{
-    NuGame* ng = [games objectAtIndex:rowIndex];
-    
-    if ([aTableColumn.identifier isEqualToString:@"gameid"])
-    {
-        return [NSString stringWithFormat:@"%d", ng.gameId];
-    }
-    else
-    {
-        return ng.name;
-    }
-}
-
-
-- (void)loadGame:(id)sender
-{
-    NSInteger sRow = gameList.selectedRow;
-    
-    if (sRow < 0)
-    {
-        return;
-    }
-    
-    NuGame* game = [games objectAtIndex:sRow];
-    
-    NuTurnRequest* tr = [[NuTurnRequest alloc] init];
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *apiKey = [defaults stringForKey:kPrefApiKey];
-    
-    [progress startAnimation:self];
-    [progress setHidden:NO];
-    
-    [tr requestTurnFor:game.gameId With:apiKey andDelegate:self];
-}
-
-
-- (void)turnRequestSucceededWith:(NuTurn*) turn
-{
-    StarMapController* smc = [[StarMapController alloc] initWithWindowNibName:@"StarMap"];
-    smc.turn = turn;
-    
-    [progress stopAnimation:self];
-    [progress setHidden:YES];
-  
-    [smc showWindow:self];
-}
-
-- (void)turnRequestFailedWith:(NSString*) Reason
-{
-    [progress stopAnimation:self];
-    [progress setHidden:YES];
-    
-    NSAlert* alert = [[NSAlert alloc] init];
-    alert.messageText = Reason;
-    [alert runModal];
-    [alert release];
+    GameListRequest* glr = [[GameListRequest alloc] init];
+    [glr requestGamesFor:@"handsomecam" withDelegate:self];
 }
 
 @end

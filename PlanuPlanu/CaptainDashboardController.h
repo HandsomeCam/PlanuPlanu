@@ -7,22 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <PlanuKit/PlanuKit.h>
 
-@interface CaptainDashboardController : NSWindowController <NuGameListRequestDelegate, NSTableViewDelegate, NSTableViewDataSource, NuTurnRequestDelegate>
+@interface CaptainDashboardController : NSWindowController
 {
     @private
     NSTextField* loginMessage;
-    NSTableView* gameList;
-    NSArray *games;
-    NSProgressIndicator* progress;
 }
 
 @property (assign) IBOutlet NSTextField* loginMessage;
-@property (assign) IBOutlet NSTableView* gameList;
-@property (nonatomic, retain) NSArray* games;
-@property (assign) IBOutlet NSProgressIndicator* progress;
-
-- (IBAction)loadGame:(id)sender;
 
 @end
