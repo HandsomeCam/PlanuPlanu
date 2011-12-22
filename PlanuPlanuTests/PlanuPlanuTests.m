@@ -3,7 +3,7 @@
 //  PlanuPlanuTests
 //
 //  Created by Cameron Hotchkies on 12/21/11.
-//  Copyright 2011 ElectroDistrict. All rights reserved.
+//  Copyright 2011 Roboboogie Studios. All rights reserved.
 //
 
 #import "PlanuPlanuTests.h"
@@ -23,10 +23,5 @@
     
     [super tearDown];
 }
-
-- (void)testExample
-{
-    STFail(@"Unit tests are not implemented yet in PlanuPlanuTests");
-}
-
+ 
 @end

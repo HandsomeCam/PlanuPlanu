@@ -18,6 +18,12 @@
 		7EC24CBD14A2CC9F0081022A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EC24CBB14A2CC9F0081022A /* InfoPlist.strings */; };
 		7EC24CBF14A2CC9F0081022A /* PlanuPlanuTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 7EC24CBE14A2CC9F0081022A /* PlanuPlanuTests.h */; };
 		7EC24CC114A2CC9F0081022A /* PlanuPlanuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC24CC014A2CC9F0081022A /* PlanuPlanuTests.m */; };
+		7EC24CCB14A2CE380081022A /* AccountWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EC24CCA14A2CE380081022A /* AccountWindow.xib */; };
+		7EC24CD114A2D2070081022A /* AccountWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC24CD014A2D2070081022A /* AccountWindowController.m */; };
+		7EC24CD414A2D2EF0081022A /* NSAttributedString+Hyperlink.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC24CD314A2D2EF0081022A /* NSAttributedString+Hyperlink.m */; };
+		7EC24CD714A2D5E60081022A /* PlanuMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC24CD614A2D5E60081022A /* PlanuMenuController.m */; };
+		7EC24CDA14A2DCB70081022A /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC24CD914A2DCB70081022A /* LoginRequest.m */; };
+		7EC24CDE14A2EB950081022A /* LoginRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC24CDC14A2E97E0081022A /* LoginRequestTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,20 +42,31 @@
 		7EC24C9814A2CC9E0081022A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		7EC24C9914A2CC9E0081022A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7EC24C9A14A2CC9E0081022A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		7EC24C9D14A2CC9E0081022A /* PlanuPlanu-Info.plist */ = {isa = PBXFileReference; path = "PlanuPlanu-Info.plist"; sourceTree = "<group>"; };
+		7EC24C9D14A2CC9E0081022A /* PlanuPlanu-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PlanuPlanu-Info.plist"; sourceTree = "<group>"; };
 		7EC24C9F14A2CC9E0081022A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7EC24CA114A2CC9E0081022A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7EC24CA314A2CC9E0081022A /* PlanuPlanu-Prefix.pch */ = {isa = PBXFileReference; path = "PlanuPlanu-Prefix.pch"; sourceTree = "<group>"; };
+		7EC24CA314A2CC9E0081022A /* PlanuPlanu-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlanuPlanu-Prefix.pch"; sourceTree = "<group>"; };
 		7EC24CA514A2CC9E0081022A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		7EC24CA714A2CC9E0081022A /* PlanuPlanuAppDelegate.h */ = {isa = PBXFileReference; path = PlanuPlanuAppDelegate.h; sourceTree = "<group>"; };
+		7EC24CA714A2CC9E0081022A /* PlanuPlanuAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlanuPlanuAppDelegate.h; sourceTree = "<group>"; };
 		7EC24CA814A2CC9E0081022A /* PlanuPlanuAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlanuPlanuAppDelegate.m; sourceTree = "<group>"; };
 		7EC24CAB14A2CC9F0081022A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		7EC24CB214A2CC9F0081022A /* PlanuPlanuTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanuPlanuTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EC24CB314A2CC9F0081022A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		7EC24CBA14A2CC9F0081022A /* PlanuPlanuTests-Info.plist */ = {isa = PBXFileReference; path = "PlanuPlanuTests-Info.plist"; sourceTree = "<group>"; };
+		7EC24CBA14A2CC9F0081022A /* PlanuPlanuTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PlanuPlanuTests-Info.plist"; sourceTree = "<group>"; };
 		7EC24CBC14A2CC9F0081022A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7EC24CBE14A2CC9F0081022A /* PlanuPlanuTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlanuPlanuTests.h; sourceTree = "<group>"; };
 		7EC24CC014A2CC9F0081022A /* PlanuPlanuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlanuPlanuTests.m; sourceTree = "<group>"; };
+		7EC24CCA14A2CE380081022A /* AccountWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountWindow.xib; sourceTree = "<group>"; };
+		7EC24CCF14A2D2070081022A /* AccountWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountWindowController.h; sourceTree = "<group>"; };
+		7EC24CD014A2D2070081022A /* AccountWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountWindowController.m; sourceTree = "<group>"; };
+		7EC24CD214A2D2EF0081022A /* NSAttributedString+Hyperlink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Hyperlink.h"; sourceTree = "<group>"; };
+		7EC24CD314A2D2EF0081022A /* NSAttributedString+Hyperlink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Hyperlink.m"; sourceTree = "<group>"; };
+		7EC24CD514A2D5E50081022A /* PlanuMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanuMenuController.h; sourceTree = "<group>"; };
+		7EC24CD614A2D5E60081022A /* PlanuMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanuMenuController.m; sourceTree = "<group>"; };
+		7EC24CD814A2DCB70081022A /* LoginRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequest.h; sourceTree = "<group>"; };
+		7EC24CD914A2DCB70081022A /* LoginRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequest.m; sourceTree = "<group>"; };
+		7EC24CDB14A2E97E0081022A /* LoginRequestTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequestTest.h; sourceTree = "<group>"; };
+		7EC24CDC14A2E97E0081022A /* LoginRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequestTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +136,15 @@
 				7EC24CA814A2CC9E0081022A /* PlanuPlanuAppDelegate.m */,
 				7EC24CAA14A2CC9F0081022A /* MainMenu.xib */,
 				7EC24C9C14A2CC9E0081022A /* Supporting Files */,
+				7EC24CCA14A2CE380081022A /* AccountWindow.xib */,
+				7EC24CCF14A2D2070081022A /* AccountWindowController.h */,
+				7EC24CD014A2D2070081022A /* AccountWindowController.m */,
+				7EC24CD214A2D2EF0081022A /* NSAttributedString+Hyperlink.h */,
+				7EC24CD314A2D2EF0081022A /* NSAttributedString+Hyperlink.m */,
+				7EC24CD514A2D5E50081022A /* PlanuMenuController.h */,
+				7EC24CD614A2D5E60081022A /* PlanuMenuController.m */,
+				7EC24CD814A2DCB70081022A /* LoginRequest.h */,
+				7EC24CD914A2DCB70081022A /* LoginRequest.m */,
 			);
 			path = PlanuPlanu;
 			sourceTree = "<group>";
@@ -141,6 +167,8 @@
 				7EC24CBE14A2CC9F0081022A /* PlanuPlanuTests.h */,
 				7EC24CC014A2CC9F0081022A /* PlanuPlanuTests.m */,
 				7EC24CB914A2CC9F0081022A /* Supporting Files */,
+				7EC24CDB14A2E97E0081022A /* LoginRequestTest.h */,
+				7EC24CDC14A2E97E0081022A /* LoginRequestTest.m */,
 			);
 			path = PlanuPlanuTests;
 			sourceTree = "<group>";
@@ -227,6 +255,7 @@
 				7EC24CA014A2CC9E0081022A /* InfoPlist.strings in Resources */,
 				7EC24CA614A2CC9E0081022A /* Credits.rtf in Resources */,
 				7EC24CAC14A2CC9F0081022A /* MainMenu.xib in Resources */,
+				7EC24CCB14A2CE380081022A /* AccountWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +293,10 @@
 			files = (
 				7EC24CA214A2CC9E0081022A /* main.m in Sources */,
 				7EC24CA914A2CC9E0081022A /* PlanuPlanuAppDelegate.m in Sources */,
+				7EC24CD114A2D2070081022A /* AccountWindowController.m in Sources */,
+				7EC24CD414A2D2EF0081022A /* NSAttributedString+Hyperlink.m in Sources */,
+				7EC24CD714A2D5E60081022A /* PlanuMenuController.m in Sources */,
+				7EC24CDA14A2DCB70081022A /* LoginRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EC24CDE14A2EB950081022A /* LoginRequestTest.m in Sources */,
 				7EC24CC114A2CC9F0081022A /* PlanuPlanuTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
