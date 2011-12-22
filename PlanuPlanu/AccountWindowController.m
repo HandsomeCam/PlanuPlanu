@@ -9,16 +9,19 @@
 #import "AccountWindowController.h"
 #import "NSAttributedString+Hyperlink.h"
 #import "LoginRequest.h"
+#import "Preferences.h"
 
 @interface AccountWindowController (private)
  
     -(void)setHyperlinkWithTextField:(NSTextField*)inTextField;
- 
+    -(void)initControls;
+
 @end
 
 @implementation AccountWindowController
  
 @synthesize username, password, signupLabel;
+@synthesize autoLogin, saveLogin;
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -37,6 +40,20 @@
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
 
     [self setHyperlinkWithTextField:signupLabel];
+    
+    [self initControls];
+}
+
+
+-(void)initControls
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    autoLogin.state = [defaults boolForKey:kPrefAutoLogin];
+    saveLogin.state = [defaults boolForKey:kPrefSaveLogin];
+    
+    username.stringValue = [defaults stringForKey:kPrefUsername];
+    password.stringValue = [defaults stringForKey:kPrefPassword];
 }
 
 -(void)setHyperlinkWithTextField:(NSTextField*)inTextField
@@ -73,10 +90,47 @@
     [lr performLoginWithUsername:username.stringValue withPassword:password.stringValue withDelegate:self];
 }
 
+
+- (void)saveLoginChanged:(id)sender
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSInteger state = ((NSButton*)sender).state;
+    
+    [defaults setBool:state forKey:kPrefSaveLogin];
+    [defaults synchronize];
+}
+
+- (void)autoLoginChanged:(id)sender
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSInteger state = ((NSButton*)sender).state;
+    
+    [defaults setBool:state forKey:kPrefAutoLogin];
+    [defaults synchronize];
+}
+
 // For LoginRequestDelegate
 - (void)loginSucceededWith:(NSString*) ApiKey
 {
-
+    if (saveLogin.state == YES)
+    {
+        // Since we know the login was successful it's ok to save
+        NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+        
+        [defaults setValue:username.stringValue forKey:kPrefUsername];
+        [defaults setValue:password.stringValue forKey:kPrefPassword];
+        [defaults setValue:ApiKey forKey:kPrefApiKey];
+        [defaults synchronize];
+    }
+    
+    NSAlert* alert = [[NSAlert alloc] init];
+    alert.messageText = @"Login Successful";
+    [alert runModal];
+    [alert release];
+    
+    [self close];
 }
 
 // For LoginRequestDelegate

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E1518BF14A3F15B00BAB34E /* CaptainDashboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E1518BE14A3F15B00BAB34E /* CaptainDashboard.xib */; };
+		7E1518C314A3F2D000BAB34E /* GameListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1518C214A3F2D000BAB34E /* GameListRequest.m */; };
+		7E1518C714A3F6E600BAB34E /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1518C614A3F6E600BAB34E /* JSONKit.m */; };
+		7E97ED2F14A3D5E200FD46DD /* AccountModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E97ED2D14A3D5E200FD46DD /* AccountModel.xcdatamodeld */; };
+		7E97ED3214A3D84100FD46DD /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E97ED3114A3D84100FD46DD /* Preferences.plist */; };
+		7E97ED3914A3DEE600FD46DD /* AGKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E97ED3814A3DEE600FD46DD /* AGKeychain.m */; };
+		7E97ED3C14A3ED4900FD46DD /* CaptainDashboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E97ED3B14A3ED4900FD46DD /* CaptainDashboardController.m */; };
 		7EC24C9614A2CC9E0081022A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC24C9514A2CC9E0081022A /* Cocoa.framework */; };
 		7EC24CA014A2CC9E0081022A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EC24C9E14A2CC9E0081022A /* InfoPlist.strings */; };
 		7EC24CA214A2CC9E0081022A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC24CA114A2CC9E0081022A /* main.m */; };
@@ -37,6 +44,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E1518BE14A3F15B00BAB34E /* CaptainDashboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CaptainDashboard.xib; sourceTree = "<group>"; };
+		7E1518C114A3F2D000BAB34E /* GameListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameListRequest.h; sourceTree = "<group>"; };
+		7E1518C214A3F2D000BAB34E /* GameListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameListRequest.m; sourceTree = "<group>"; };
+		7E1518C514A3F6E600BAB34E /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = JSONKit/JSONKit.h; sourceTree = SOURCE_ROOT; };
+		7E1518C614A3F6E600BAB34E /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = JSONKit/JSONKit.m; sourceTree = SOURCE_ROOT; };
+		7E97ED2E14A3D5E200FD46DD /* AccountModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AccountModel.xcdatamodel; sourceTree = "<group>"; };
+		7E97ED3114A3D84100FD46DD /* Preferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Preferences.plist; sourceTree = "<group>"; };
+		7E97ED3714A3DEE600FD46DD /* AGKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGKeychain.h; sourceTree = "<group>"; };
+		7E97ED3814A3DEE600FD46DD /* AGKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGKeychain.m; sourceTree = "<group>"; };
+		7E97ED3A14A3ED4900FD46DD /* CaptainDashboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptainDashboardController.h; sourceTree = "<group>"; };
+		7E97ED3B14A3ED4900FD46DD /* CaptainDashboardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptainDashboardController.m; sourceTree = "<group>"; };
+		7E97ED3D14A3EDD700FD46DD /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
 		7EC24C9114A2CC9E0081022A /* PlanuPlanu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanuPlanu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EC24C9514A2CC9E0081022A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		7EC24C9814A2CC9E0081022A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -90,6 +109,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E1518C414A3F2F700BAB34E /* Service Requests */ = {
+			isa = PBXGroup;
+			children = (
+				7E1518C114A3F2D000BAB34E /* GameListRequest.h */,
+				7E1518C214A3F2D000BAB34E /* GameListRequest.m */,
+				7EC24CD814A2DCB70081022A /* LoginRequest.h */,
+				7EC24CD914A2DCB70081022A /* LoginRequest.m */,
+			);
+			name = "Service Requests";
+			sourceTree = "<group>";
+		};
+		7E1518C814A3F6EC00BAB34E /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				7E1518C514A3F6E600BAB34E /* JSONKit.h */,
+				7E1518C614A3F6E600BAB34E /* JSONKit.m */,
+			);
+			name = JSONKit;
+			sourceTree = "<group>";
+		};
 		7EC24C8614A2CC9E0081022A = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +171,8 @@
 		7EC24C9B14A2CC9E0081022A /* PlanuPlanu */ = {
 			isa = PBXGroup;
 			children = (
+				7E1518C814A3F6EC00BAB34E /* JSONKit */,
+				7E1518C414A3F2F700BAB34E /* Service Requests */,
 				7EC24CA714A2CC9E0081022A /* PlanuPlanuAppDelegate.h */,
 				7EC24CA814A2CC9E0081022A /* PlanuPlanuAppDelegate.m */,
 				7EC24CAA14A2CC9F0081022A /* MainMenu.xib */,
@@ -143,8 +184,14 @@
 				7EC24CD314A2D2EF0081022A /* NSAttributedString+Hyperlink.m */,
 				7EC24CD514A2D5E50081022A /* PlanuMenuController.h */,
 				7EC24CD614A2D5E60081022A /* PlanuMenuController.m */,
-				7EC24CD814A2DCB70081022A /* LoginRequest.h */,
-				7EC24CD914A2DCB70081022A /* LoginRequest.m */,
+				7E97ED2D14A3D5E200FD46DD /* AccountModel.xcdatamodeld */,
+				7E97ED3114A3D84100FD46DD /* Preferences.plist */,
+				7E97ED3714A3DEE600FD46DD /* AGKeychain.h */,
+				7E97ED3814A3DEE600FD46DD /* AGKeychain.m */,
+				7E97ED3A14A3ED4900FD46DD /* CaptainDashboardController.h */,
+				7E97ED3B14A3ED4900FD46DD /* CaptainDashboardController.m */,
+				7E97ED3D14A3EDD700FD46DD /* Preferences.h */,
+				7E1518BE14A3F15B00BAB34E /* CaptainDashboard.xib */,
 			);
 			path = PlanuPlanu;
 			sourceTree = "<group>";
@@ -256,6 +303,8 @@
 				7EC24CA614A2CC9E0081022A /* Credits.rtf in Resources */,
 				7EC24CAC14A2CC9F0081022A /* MainMenu.xib in Resources */,
 				7EC24CCB14A2CE380081022A /* AccountWindow.xib in Resources */,
+				7E97ED3214A3D84100FD46DD /* Preferences.plist in Resources */,
+				7E1518BF14A3F15B00BAB34E /* CaptainDashboard.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +346,11 @@
 				7EC24CD414A2D2EF0081022A /* NSAttributedString+Hyperlink.m in Sources */,
 				7EC24CD714A2D5E60081022A /* PlanuMenuController.m in Sources */,
 				7EC24CDA14A2DCB70081022A /* LoginRequest.m in Sources */,
+				7E97ED2F14A3D5E200FD46DD /* AccountModel.xcdatamodeld in Sources */,
+				7E97ED3914A3DEE600FD46DD /* AGKeychain.m in Sources */,
+				7E97ED3C14A3ED4900FD46DD /* CaptainDashboardController.m in Sources */,
+				7E1518C314A3F2D000BAB34E /* GameListRequest.m in Sources */,
+				7E1518C714A3F6E600BAB34E /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +523,7 @@
 				7EC24CC614A2CC9F0081022A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7EC24CC714A2CC9F0081022A /* Build configuration list for PBXNativeTarget "PlanuPlanuTests" */ = {
 			isa = XCConfigurationList;
@@ -477,8 +532,22 @@
 				7EC24CC914A2CC9F0081022A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7E97ED2D14A3D5E200FD46DD /* AccountModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7E97ED2E14A3D5E200FD46DD /* AccountModel.xcdatamodel */,
+			);
+			currentVersion = 7E97ED2E14A3D5E200FD46DD /* AccountModel.xcdatamodel */;
+			path = AccountModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7EC24C8814A2CC9E0081022A /* Project object */;
 }
