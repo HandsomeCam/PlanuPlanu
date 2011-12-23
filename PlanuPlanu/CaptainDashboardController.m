@@ -38,7 +38,13 @@
     }
     
     GameListRequest* glr = [[GameListRequest alloc] init];
-    [glr requestGamesFor:@"handsomecam" withDelegate:self];
+    
+    NSString* username = [defaults stringForKey:kPrefUsername];
+    
+    if (username != nil)
+    {
+        [glr requestGamesFor:username withDelegate:self];
+    }
 }
 
 @end
