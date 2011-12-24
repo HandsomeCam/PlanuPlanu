@@ -1,18 +1,17 @@
 //
-//  GameListRequest.m
+//  TurnRequest.m
 //  PlanuPlanu
 //
-//  Created by Cameron Hotchkies on 12/22/11.
+//  Created by Cameron Hotchkies on 12/23/11.
 //  Copyright 2011 Roboboogie Studios. All rights reserved.
 //
 
-#import "GameListRequest.h"
+#define kPlanetsNuLoadTurnUrl @"http://api.planets.nu/game/loadturn"
+
+#import "TurnRequest.h"
 #import "JSONKit.h"
-#import "NuGame.h"
 
-#define kPlanetsNuGameListUrl @"http://api.planets.nu/games/list"
-
-@implementation GameListRequest
+@implementation TurnRequest
 
 - (id)init
 {
@@ -24,12 +23,11 @@
     return self;
 }
 
-
-- (void)requestGamesFor:(NSString*)username withDelegate:(id<GameListRequestDelegate>)delegateIncoming
+- (void)requestTurnFor:(NSInteger)gameId With:(NSString *)apiKey andDelegate:(id<TurnRequestDelegate>)delegateIncoming
 {
     delegate = delegateIncoming;
     
-    NSString* fullUrl = [NSString stringWithFormat:@"%@?username=%@", kPlanetsNuGameListUrl, username];
+    NSString* fullUrl = [NSString stringWithFormat:@"%@?gameid=%d&apikey=%@", kPlanetsNuLoadTurnUrl, gameId, apiKey];
     
     // Create the request.
     NSMutableURLRequest *theRequest=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:fullUrl]
@@ -37,7 +35,7 @@
                                                         timeoutInterval:60.0];
     
     [theRequest setHTTPMethod:@"GET"];
-      
+    
     // create the connection with the request
     // and start loading the data
     NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
@@ -70,7 +68,7 @@
 }
 
 - (void)connection:(NSURLConnection *)connection
-didFailWithError:(NSError *)error
+  didFailWithError:(NSError *)error
 {
     // release the connection, and the data object
     [connection release];
@@ -82,7 +80,7 @@ didFailWithError:(NSError *)error
           [error localizedDescription],
           [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
     
-    [delegate requestFailedWith:[error localizedDescription]];
+    [delegate turnRequestFailedWith:[error localizedDescription]];
     
 }
 
@@ -103,41 +101,33 @@ didFailWithError:(NSError *)error
     
     if ([responseString hasPrefix:@"Error:"] == true)
     {
-        [delegate requestFailedWith:[responseString substringFromIndex:6]];
+        [delegate turnRequestFailedWith:[responseString substringFromIndex:6]];
         [responseString release];
         return;
     }
-     
-    NSArray* returnValue = [self parseGamesFromResponse:responseString];
     
-    // TODO: fail if nil
+    NuTurn* retVal = [self parseTurnFromResponse:responseString];
     
-    [delegate requestsSucceededWith:returnValue];
+    [delegate turnRequestSucceededWith:retVal];
 }
 
-- (NSArray*) parseGamesFromResponse:(NSString*)response
+- (NuTurn*) parseTurnFromResponse:(NSString*)response
 { 
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     
-    NSMutableArray* retVal = [[NSMutableArray alloc] init];
+    NuTurn* retVal = [[NuTurn alloc] init];
     
     id decodedJson = [response objectFromJSONString];
     
-    if ([decodedJson isKindOfClass:[NSArray class]] == false)
+    if ([decodedJson isKindOfClass:[NSDictionary class]] == false)
     {
         return nil;
     }
     
-    for (NSDictionary* gameDict in decodedJson)
-    {
-        NuGame *game = [[NuGame alloc] init];
-        [game loadFromDict:gameDict];
-        
-        [retVal addObject:[game autorelease]];
-    }
+    [retVal loadFromDict:decodedJson];
     
     [pool drain];
-     
+    
     return [retVal autorelease];
 } 
 

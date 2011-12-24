@@ -26,3 +26,11 @@
 - (void)requestGamesFor:(NSString*)username withDelegate:(id<GameListRequestDelegate>)delegate;
 
 @end
+
+
+@interface GameListRequest(private) 
+
+- (NSArray*) parseGamesFromResponse:(NSString*)response;
+
+@end
+

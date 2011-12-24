@@ -10,10 +10,19 @@
 		7E1518BF14A3F15B00BAB34E /* CaptainDashboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E1518BE14A3F15B00BAB34E /* CaptainDashboard.xib */; };
 		7E1518C314A3F2D000BAB34E /* GameListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1518C214A3F2D000BAB34E /* GameListRequest.m */; };
 		7E1518C714A3F6E600BAB34E /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1518C614A3F6E600BAB34E /* JSONKit.m */; };
+		7E4BFB1C14A5337C00E29659 /* GameListRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4BFB1B14A5337C00E29659 /* GameListRequestTest.m */; };
+		7E4BFB2014A5375F00E29659 /* NuGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4BFB1F14A5375F00E29659 /* NuGame.m */; };
+		7E4BFB2314A5444E00E29659 /* TurnRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4BFB2214A5444E00E29659 /* TurnRequest.m */; };
+		7E4BFB2614A5448E00E29659 /* NuTurn.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4BFB2514A5448E00E29659 /* NuTurn.m */; };
+		7E8644C114A57F5B0002986F /* StarMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8644C014A57F5B0002986F /* StarMapController.m */; };
 		7E97ED2F14A3D5E200FD46DD /* AccountModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E97ED2D14A3D5E200FD46DD /* AccountModel.xcdatamodeld */; };
 		7E97ED3214A3D84100FD46DD /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E97ED3114A3D84100FD46DD /* Preferences.plist */; };
 		7E97ED3914A3DEE600FD46DD /* AGKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E97ED3814A3DEE600FD46DD /* AGKeychain.m */; };
 		7E97ED3C14A3ED4900FD46DD /* CaptainDashboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E97ED3B14A3ED4900FD46DD /* CaptainDashboardController.m */; };
+		7EA504AD14A5490B000B1615 /* TurnRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA504AC14A5490B000B1615 /* TurnRequestTest.m */; };
+		7EA504B114A5508E000B1615 /* NuPlanet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA504B014A5508E000B1615 /* NuPlanet.m */; };
+		7EA504B414A557AF000B1615 /* NuGameSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA504B314A557AF000B1615 /* NuGameSettings.m */; };
+		7EA504B714A573A3000B1615 /* StarMap.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EA504B614A573A3000B1615 /* StarMap.xib */; };
 		7EC24C9614A2CC9E0081022A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC24C9514A2CC9E0081022A /* Cocoa.framework */; };
 		7EC24CA014A2CC9E0081022A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EC24C9E14A2CC9E0081022A /* InfoPlist.strings */; };
 		7EC24CA214A2CC9E0081022A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC24CA114A2CC9E0081022A /* main.m */; };
@@ -49,6 +58,16 @@
 		7E1518C214A3F2D000BAB34E /* GameListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameListRequest.m; sourceTree = "<group>"; };
 		7E1518C514A3F6E600BAB34E /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = JSONKit/JSONKit.h; sourceTree = SOURCE_ROOT; };
 		7E1518C614A3F6E600BAB34E /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = JSONKit/JSONKit.m; sourceTree = SOURCE_ROOT; };
+		7E4BFB1A14A5337C00E29659 /* GameListRequestTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameListRequestTest.h; sourceTree = "<group>"; };
+		7E4BFB1B14A5337C00E29659 /* GameListRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameListRequestTest.m; sourceTree = "<group>"; };
+		7E4BFB1E14A5375F00E29659 /* NuGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuGame.h; sourceTree = "<group>"; };
+		7E4BFB1F14A5375F00E29659 /* NuGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuGame.m; sourceTree = "<group>"; };
+		7E4BFB2114A5444E00E29659 /* TurnRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurnRequest.h; sourceTree = "<group>"; };
+		7E4BFB2214A5444E00E29659 /* TurnRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TurnRequest.m; sourceTree = "<group>"; };
+		7E4BFB2414A5448E00E29659 /* NuTurn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuTurn.h; sourceTree = "<group>"; };
+		7E4BFB2514A5448E00E29659 /* NuTurn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuTurn.m; sourceTree = "<group>"; };
+		7E8644BF14A57F5B0002986F /* StarMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarMapController.h; sourceTree = "<group>"; };
+		7E8644C014A57F5B0002986F /* StarMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarMapController.m; sourceTree = "<group>"; };
 		7E97ED2E14A3D5E200FD46DD /* AccountModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AccountModel.xcdatamodel; sourceTree = "<group>"; };
 		7E97ED3114A3D84100FD46DD /* Preferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Preferences.plist; sourceTree = "<group>"; };
 		7E97ED3714A3DEE600FD46DD /* AGKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGKeychain.h; sourceTree = "<group>"; };
@@ -56,6 +75,13 @@
 		7E97ED3A14A3ED4900FD46DD /* CaptainDashboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptainDashboardController.h; sourceTree = "<group>"; };
 		7E97ED3B14A3ED4900FD46DD /* CaptainDashboardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptainDashboardController.m; sourceTree = "<group>"; };
 		7E97ED3D14A3EDD700FD46DD /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
+		7EA504AB14A5490B000B1615 /* TurnRequestTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurnRequestTest.h; sourceTree = "<group>"; };
+		7EA504AC14A5490B000B1615 /* TurnRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TurnRequestTest.m; sourceTree = "<group>"; };
+		7EA504AF14A5508E000B1615 /* NuPlanet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuPlanet.h; sourceTree = "<group>"; };
+		7EA504B014A5508E000B1615 /* NuPlanet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuPlanet.m; sourceTree = "<group>"; };
+		7EA504B214A557AF000B1615 /* NuGameSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuGameSettings.h; sourceTree = "<group>"; };
+		7EA504B314A557AF000B1615 /* NuGameSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuGameSettings.m; sourceTree = "<group>"; };
+		7EA504B614A573A3000B1615 /* StarMap.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StarMap.xib; sourceTree = "<group>"; };
 		7EC24C9114A2CC9E0081022A /* PlanuPlanu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanuPlanu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EC24C9514A2CC9E0081022A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		7EC24C9814A2CC9E0081022A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -116,6 +142,8 @@
 				7E1518C214A3F2D000BAB34E /* GameListRequest.m */,
 				7EC24CD814A2DCB70081022A /* LoginRequest.h */,
 				7EC24CD914A2DCB70081022A /* LoginRequest.m */,
+				7E4BFB2114A5444E00E29659 /* TurnRequest.h */,
+				7E4BFB2214A5444E00E29659 /* TurnRequest.m */,
 			);
 			name = "Service Requests";
 			sourceTree = "<group>";
@@ -127,6 +155,17 @@
 				7E1518C614A3F6E600BAB34E /* JSONKit.m */,
 			);
 			name = JSONKit;
+			sourceTree = "<group>";
+		};
+		7EA504B514A564A7000B1615 /* User Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				7EC24CAA14A2CC9F0081022A /* MainMenu.xib */,
+				7EC24CCA14A2CE380081022A /* AccountWindow.xib */,
+				7E1518BE14A3F15B00BAB34E /* CaptainDashboard.xib */,
+				7EA504B614A573A3000B1615 /* StarMap.xib */,
+			);
+			name = "User Interfaces";
 			sourceTree = "<group>";
 		};
 		7EC24C8614A2CC9E0081022A = {
@@ -171,13 +210,12 @@
 		7EC24C9B14A2CC9E0081022A /* PlanuPlanu */ = {
 			isa = PBXGroup;
 			children = (
+				7EA504B514A564A7000B1615 /* User Interfaces */,
 				7E1518C814A3F6EC00BAB34E /* JSONKit */,
 				7E1518C414A3F2F700BAB34E /* Service Requests */,
 				7EC24CA714A2CC9E0081022A /* PlanuPlanuAppDelegate.h */,
 				7EC24CA814A2CC9E0081022A /* PlanuPlanuAppDelegate.m */,
-				7EC24CAA14A2CC9F0081022A /* MainMenu.xib */,
 				7EC24C9C14A2CC9E0081022A /* Supporting Files */,
-				7EC24CCA14A2CE380081022A /* AccountWindow.xib */,
 				7EC24CCF14A2D2070081022A /* AccountWindowController.h */,
 				7EC24CD014A2D2070081022A /* AccountWindowController.m */,
 				7EC24CD214A2D2EF0081022A /* NSAttributedString+Hyperlink.h */,
@@ -191,7 +229,16 @@
 				7E97ED3A14A3ED4900FD46DD /* CaptainDashboardController.h */,
 				7E97ED3B14A3ED4900FD46DD /* CaptainDashboardController.m */,
 				7E97ED3D14A3EDD700FD46DD /* Preferences.h */,
-				7E1518BE14A3F15B00BAB34E /* CaptainDashboard.xib */,
+				7E4BFB1E14A5375F00E29659 /* NuGame.h */,
+				7E4BFB1F14A5375F00E29659 /* NuGame.m */,
+				7E4BFB2414A5448E00E29659 /* NuTurn.h */,
+				7E4BFB2514A5448E00E29659 /* NuTurn.m */,
+				7EA504AF14A5508E000B1615 /* NuPlanet.h */,
+				7EA504B014A5508E000B1615 /* NuPlanet.m */,
+				7EA504B214A557AF000B1615 /* NuGameSettings.h */,
+				7EA504B314A557AF000B1615 /* NuGameSettings.m */,
+				7E8644BF14A57F5B0002986F /* StarMapController.h */,
+				7E8644C014A57F5B0002986F /* StarMapController.m */,
 			);
 			path = PlanuPlanu;
 			sourceTree = "<group>";
@@ -216,6 +263,10 @@
 				7EC24CB914A2CC9F0081022A /* Supporting Files */,
 				7EC24CDB14A2E97E0081022A /* LoginRequestTest.h */,
 				7EC24CDC14A2E97E0081022A /* LoginRequestTest.m */,
+				7E4BFB1A14A5337C00E29659 /* GameListRequestTest.h */,
+				7E4BFB1B14A5337C00E29659 /* GameListRequestTest.m */,
+				7EA504AB14A5490B000B1615 /* TurnRequestTest.h */,
+				7EA504AC14A5490B000B1615 /* TurnRequestTest.m */,
 			);
 			path = PlanuPlanuTests;
 			sourceTree = "<group>";
@@ -274,7 +325,7 @@
 		7EC24C8814A2CC9E0081022A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				ORGANIZATIONNAME = ElectroDistrict;
+				ORGANIZATIONNAME = "Roboboogie Studios";
 			};
 			buildConfigurationList = 7EC24C8B14A2CC9E0081022A /* Build configuration list for PBXProject "PlanuPlanu" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -305,6 +356,7 @@
 				7EC24CCB14A2CE380081022A /* AccountWindow.xib in Resources */,
 				7E97ED3214A3D84100FD46DD /* Preferences.plist in Resources */,
 				7E1518BF14A3F15B00BAB34E /* CaptainDashboard.xib in Resources */,
+				7EA504B714A573A3000B1615 /* StarMap.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +403,12 @@
 				7E97ED3C14A3ED4900FD46DD /* CaptainDashboardController.m in Sources */,
 				7E1518C314A3F2D000BAB34E /* GameListRequest.m in Sources */,
 				7E1518C714A3F6E600BAB34E /* JSONKit.m in Sources */,
+				7E4BFB2014A5375F00E29659 /* NuGame.m in Sources */,
+				7E4BFB2314A5444E00E29659 /* TurnRequest.m in Sources */,
+				7E4BFB2614A5448E00E29659 /* NuTurn.m in Sources */,
+				7EA504B114A5508E000B1615 /* NuPlanet.m in Sources */,
+				7EA504B414A557AF000B1615 /* NuGameSettings.m in Sources */,
+				7E8644C114A57F5B0002986F /* StarMapController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +418,8 @@
 			files = (
 				7EC24CDE14A2EB950081022A /* LoginRequestTest.m in Sources */,
 				7EC24CC114A2CC9F0081022A /* PlanuPlanuTests.m in Sources */,
+				7E4BFB1C14A5337C00E29659 /* GameListRequestTest.m in Sources */,
+				7EA504AD14A5490B000B1615 /* TurnRequestTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
