@@ -119,14 +119,12 @@
 - (void)turnRequestSucceededWith:(NuTurn*) turn
 {
     StarMapController* smc = [[StarMapController alloc] initWithWindowNibName:@"StarMap"];
+    smc.turn = turn;
     
     [progress stopAnimation:self];
     [progress setHidden:YES];
-
+  
     [smc showWindow:self];
-    
-    [smc.window makeKeyAndOrderFront:self];
-    [smc release];
 }
 
 - (void)turnRequestFailedWith:(NSString*) Reason

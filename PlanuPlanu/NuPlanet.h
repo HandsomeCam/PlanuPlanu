@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NuStarbase.h"
 
 @interface NuPlanet : NSObject
 {
@@ -81,6 +82,7 @@
     NSInteger factoriesBuilt;
     NSInteger minesBuilt;
     
+    NuStarbase* starbase;
 }
 
 @property (nonatomic, assign) BOOL isBuildingStarbase;
@@ -91,6 +93,12 @@
 @property (nonatomic, assign) NSInteger x;
 @property (nonatomic, assign) NSInteger y;
 @property (nonatomic, retain) NSString* name;
+@property (nonatomic, assign) NSInteger ownerId;
+@property (nonatomic, assign) NSInteger planetId;
+
+@property (nonatomic, assign) NSInteger clans;
+
+@property (nonatomic, retain) NuStarbase* starbase;
 
 - (BOOL)loadFromDict:(NSDictionary*)input;
 

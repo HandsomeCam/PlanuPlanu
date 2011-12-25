@@ -10,7 +10,7 @@
 
 @implementation PlanetPopoverController
 
-@synthesize planetName, planet, child, clanQuantity, temperature;
+@synthesize planetName, planet, child, clanQuantity;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,7 +30,6 @@
     
     planetName.stringValue = planet.name;
     clanQuantity.stringValue = [NSString stringWithFormat:@"Clans: %ld", planet.clans];
-    temperature.stringValue = [NSString stringWithFormat:@"Temp: %ld°", planet.temperature];
 }
 
 - (void)dealloc

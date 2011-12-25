@@ -12,7 +12,9 @@
 
 @synthesize isBuildingStarbase;
 @synthesize defenseBuilt, factoriesBuilt, minesBuilt;
-@synthesize x,y, name;
+@synthesize x,y, name, ownerId, planetId;
+@synthesize starbase, clans;
+
 
 - (id)init
 {
@@ -34,7 +36,16 @@
     buf = [input objectForKey:@"y"];
     self.y = [buf intValue];
     
+    buf = [input objectForKey:@"ownerid"];
+    self.ownerId = [buf intValue];
+    
     self.name = [input objectForKey:@"name"];
+    
+    buf = [input objectForKey:@"id"];
+    self.planetId = [buf intValue];
+    
+    buf = [input objectForKey:@"clans"];
+    self.clans = [buf intValue];
     
     return YES;
 }
