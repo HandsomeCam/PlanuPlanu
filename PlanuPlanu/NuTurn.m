@@ -8,10 +8,11 @@
 
 #import "NuTurn.h"
 #import "NuPlanet.h"
+#import "NuStarbase.h"
 
 @implementation NuTurn
 
-@synthesize planetList, gameSettings;
+@synthesize planetList, gameSettings, player;
 
 - (id)init
 {
@@ -46,6 +47,26 @@
     }
     
     self.planetList = pl;
+    
+    self.player = [[[NuPlayer alloc] init] autorelease];
+    [self.player loadFromDict:[input objectForKey:@"player"]];
+    
+    NSArray* starbases = [input objectForKey:@"starbases"];
+    
+    for (NSDictionary* sbDict in starbases)
+    {
+        NuStarbase* sb = [[[NuStarbase alloc] init] autorelease];
+        
+        [sb loadFromDict:sbDict];
+        
+        for (NuPlanet* sbp in self.planetList)
+        {
+            if (sb.planetId == sbp.planetId)
+            {
+                sbp.starbase = sb;
+            }
+        }
+    }
     
     return NO;
 }

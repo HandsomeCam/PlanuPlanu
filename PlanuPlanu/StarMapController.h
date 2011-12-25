@@ -7,7 +7,17 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "NuTurn.h"
 
 @interface StarMapController : NSWindowController
+{
+    NuTurn* turn;
+    NSScrollView* mapScroll;
+}
+
+@property (nonatomic, retain) NuTurn* turn;
+@property (assign) IBOutlet NSScrollView* mapScroll;
+
+- (void)initStarMapView;
 
 @end

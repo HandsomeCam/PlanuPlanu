@@ -32,7 +32,7 @@
 		<object class="NSMutableArray" key="IBDocument.RootObjects" id="1000">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<object class="NSCustomObject" id="1001">
-				<string key="NSClassName">NSObject</string>
+				<string key="NSClassName">StarMapController</string>
 			</object>
 			<object class="NSCustomObject" id="1003">
 				<string key="NSClassName">FirstResponder</string>
@@ -43,7 +43,7 @@
 			<object class="NSWindowTemplate" id="1005">
 				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{196, 240}, {540, 540}}</string>
+				<string key="NSWindowRect">{{196, 240}, {1040, 790}}</string>
 				<int key="NSWTFlags">544735232</int>
 				<string key="NSWindowTitle">Starmap</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -56,7 +56,7 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSScrollView" id="1055483820">
 							<reference key="NSNextResponder" ref="1006"/>
-							<int key="NSvFlags">268</int>
+							<int key="NSvFlags">274</int>
 							<object class="NSMutableArray" key="NSSubviews">
 								<bool key="EncodedWithXMLCoder">YES</bool>
 								<object class="NSClipView" id="392175268">
@@ -67,14 +67,14 @@
 										<object class="NSView" id="588802621">
 											<reference key="NSNextResponder" ref="392175268"/>
 											<int key="NSvFlags">274</int>
-											<string key="NSFrameSize">{483, 483}</string>
+											<string key="NSFrameSize">{983, 733}</string>
 											<reference key="NSSuperview" ref="392175268"/>
 											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="634396572"/>
 											<string key="NSReuseIdentifierKey">_NS:414</string>
 										</object>
 									</object>
-									<string key="NSFrame">{{1, 1}, {498, 498}}</string>
+									<string key="NSFrame">{{1, 1}, {998, 748}}</string>
 									<reference key="NSSuperview" ref="1055483820"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="588802621"/>
@@ -94,7 +94,7 @@
 								<object class="NSScroller" id="678964522">
 									<reference key="NSNextResponder" ref="1055483820"/>
 									<int key="NSvFlags">256</int>
-									<string key="NSFrame">{{484, 1}, {15, 492}}</string>
+									<string key="NSFrame">{{984, 1}, {15, 742}}</string>
 									<reference key="NSSuperview" ref="1055483820"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView"/>
@@ -107,7 +107,7 @@
 								<object class="NSScroller" id="634396572">
 									<reference key="NSNextResponder" ref="1055483820"/>
 									<int key="NSvFlags">256</int>
-									<string key="NSFrame">{{1, 484}, {492, 15}}</string>
+									<string key="NSFrame">{{1, 734}, {992, 15}}</string>
 									<reference key="NSSuperview" ref="1055483820"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="678964522"/>
@@ -118,7 +118,7 @@
 									<double key="NSPercent">0.50602412223815918</double>
 								</object>
 							</object>
-							<string key="NSFrame">{{20, 20}, {500, 500}}</string>
+							<string key="NSFrame">{{20, 20}, {1000, 750}}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="392175268"/>
@@ -129,7 +129,7 @@
 							<reference key="NSContentView" ref="392175268"/>
 						</object>
 					</object>
-					<string key="NSFrameSize">{540, 540}</string>
+					<string key="NSFrameSize">{1040, 790}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="1055483820"/>
@@ -142,6 +142,14 @@
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<object class="NSMutableArray" key="connectionRecords">
 				<bool key="EncodedWithXMLCoder">YES</bool>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">mapScroll</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="1055483820"/>
+					</object>
+					<int key="connectionID">8</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -178,6 +186,7 @@
 							<reference ref="1006"/>
 						</object>
 						<reference key="parent" ref="0"/>
+						<string key="objectName">Window - Starmap</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">2</int>
@@ -259,9 +268,32 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">7</int>
+			<int key="maxID">8</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<object class="IBPartialClassDescription">
+					<string key="className">StarMapController</string>
+					<string key="superclassName">NSWindowController</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">mapScroll</string>
+						<string key="NS.object.0">NSScrollView</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">mapScroll</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">mapScroll</string>
+							<string key="candidateClassName">NSScrollView</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/StarMapController.h</string>
+					</object>
+				</object>
+			</object>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDevelopmentDependencies">

@@ -88,11 +88,11 @@
 {
     // do something with the data
     // receivedData is declared as a method instance elsewhere
-    NSLog(@"Succeeded! Received %lu bytes of data",[receivedData length]);
+    //NSLog(@"Succeeded! Received %lu bytes of data",[receivedData length]);
     
     NSString *responseString = [[NSString alloc] initWithData:receivedData encoding:NSASCIIStringEncoding];
     
-    NSLog(@"Response: %@", responseString);
+    //NSLog(@"Response: %@", responseString);
     
     // release the connection, and the data object
     [connection release];

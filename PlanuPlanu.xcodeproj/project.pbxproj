@@ -15,6 +15,11 @@
 		7E4BFB2314A5444E00E29659 /* TurnRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4BFB2214A5444E00E29659 /* TurnRequest.m */; };
 		7E4BFB2614A5448E00E29659 /* NuTurn.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4BFB2514A5448E00E29659 /* NuTurn.m */; };
 		7E8644C114A57F5B0002986F /* StarMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8644C014A57F5B0002986F /* StarMapController.m */; };
+		7E8644C414A5A8C50002986F /* StarMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8644C314A5A8C50002986F /* StarMapView.m */; };
+		7E8644CA14A6C0F70002986F /* NuPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8644C914A6C0F70002986F /* NuPlayer.m */; };
+		7E8644CE14A6D5F70002986F /* PlanetPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8644CC14A6D5F70002986F /* PlanetPopoverController.m */; };
+		7E8644D114A6D6A20002986F /* PlanetPopover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E8644D014A6D6A20002986F /* PlanetPopover.xib */; };
+		7E8644D414A6E15B0002986F /* NuStarbase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8644D314A6E15B0002986F /* NuStarbase.m */; };
 		7E97ED2F14A3D5E200FD46DD /* AccountModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E97ED2D14A3D5E200FD46DD /* AccountModel.xcdatamodeld */; };
 		7E97ED3214A3D84100FD46DD /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E97ED3114A3D84100FD46DD /* Preferences.plist */; };
 		7E97ED3914A3DEE600FD46DD /* AGKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E97ED3814A3DEE600FD46DD /* AGKeychain.m */; };
@@ -68,6 +73,15 @@
 		7E4BFB2514A5448E00E29659 /* NuTurn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuTurn.m; sourceTree = "<group>"; };
 		7E8644BF14A57F5B0002986F /* StarMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarMapController.h; sourceTree = "<group>"; };
 		7E8644C014A57F5B0002986F /* StarMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarMapController.m; sourceTree = "<group>"; };
+		7E8644C214A5A8C50002986F /* StarMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarMapView.h; sourceTree = "<group>"; };
+		7E8644C314A5A8C50002986F /* StarMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarMapView.m; sourceTree = "<group>"; };
+		7E8644C814A6C0F70002986F /* NuPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuPlayer.h; sourceTree = "<group>"; };
+		7E8644C914A6C0F70002986F /* NuPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuPlayer.m; sourceTree = "<group>"; };
+		7E8644CB14A6D5F60002986F /* PlanetPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanetPopoverController.h; sourceTree = "<group>"; };
+		7E8644CC14A6D5F70002986F /* PlanetPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanetPopoverController.m; sourceTree = "<group>"; };
+		7E8644D014A6D6A20002986F /* PlanetPopover.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlanetPopover.xib; sourceTree = "<group>"; };
+		7E8644D214A6E15A0002986F /* NuStarbase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuStarbase.h; sourceTree = "<group>"; };
+		7E8644D314A6E15B0002986F /* NuStarbase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuStarbase.m; sourceTree = "<group>"; };
 		7E97ED2E14A3D5E200FD46DD /* AccountModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AccountModel.xcdatamodel; sourceTree = "<group>"; };
 		7E97ED3114A3D84100FD46DD /* Preferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Preferences.plist; sourceTree = "<group>"; };
 		7E97ED3714A3DEE600FD46DD /* AGKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGKeychain.h; sourceTree = "<group>"; };
@@ -164,6 +178,7 @@
 				7EC24CCA14A2CE380081022A /* AccountWindow.xib */,
 				7E1518BE14A3F15B00BAB34E /* CaptainDashboard.xib */,
 				7EA504B614A573A3000B1615 /* StarMap.xib */,
+				7E8644D014A6D6A20002986F /* PlanetPopover.xib */,
 			);
 			name = "User Interfaces";
 			sourceTree = "<group>";
@@ -239,6 +254,14 @@
 				7EA504B314A557AF000B1615 /* NuGameSettings.m */,
 				7E8644BF14A57F5B0002986F /* StarMapController.h */,
 				7E8644C014A57F5B0002986F /* StarMapController.m */,
+				7E8644C214A5A8C50002986F /* StarMapView.h */,
+				7E8644C314A5A8C50002986F /* StarMapView.m */,
+				7E8644C814A6C0F70002986F /* NuPlayer.h */,
+				7E8644C914A6C0F70002986F /* NuPlayer.m */,
+				7E8644CB14A6D5F60002986F /* PlanetPopoverController.h */,
+				7E8644CC14A6D5F70002986F /* PlanetPopoverController.m */,
+				7E8644D214A6E15A0002986F /* NuStarbase.h */,
+				7E8644D314A6E15B0002986F /* NuStarbase.m */,
 			);
 			path = PlanuPlanu;
 			sourceTree = "<group>";
@@ -357,6 +380,7 @@
 				7E97ED3214A3D84100FD46DD /* Preferences.plist in Resources */,
 				7E1518BF14A3F15B00BAB34E /* CaptainDashboard.xib in Resources */,
 				7EA504B714A573A3000B1615 /* StarMap.xib in Resources */,
+				7E8644D114A6D6A20002986F /* PlanetPopover.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +433,10 @@
 				7EA504B114A5508E000B1615 /* NuPlanet.m in Sources */,
 				7EA504B414A557AF000B1615 /* NuGameSettings.m in Sources */,
 				7E8644C114A57F5B0002986F /* StarMapController.m in Sources */,
+				7E8644C414A5A8C50002986F /* StarMapView.m in Sources */,
+				7E8644CA14A6C0F70002986F /* NuPlayer.m in Sources */,
+				7E8644CE14A6D5F70002986F /* PlanetPopoverController.m in Sources */,
+				7E8644D414A6E15B0002986F /* NuStarbase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
