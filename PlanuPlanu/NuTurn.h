@@ -15,12 +15,14 @@
     NSArray* planetList;
     NuGameSettings* gameSettings;
     NuPlayer* player;
+    NSArray* ionStorms;
     
 }
 
 @property (nonatomic, retain) NSArray* planetList;
 @property (nonatomic, retain) NuGameSettings* gameSettings;
 @property (nonatomic, retain) NuPlayer* player;
+@property (nonatomic, retain) NSArray* ionStorms;
 
 -(BOOL)loadFromDict:(NSDictionary*)input;
 

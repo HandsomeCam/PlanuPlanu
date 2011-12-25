@@ -20,6 +20,7 @@
 		7E8644CE14A6D5F70002986F /* PlanetPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8644CC14A6D5F70002986F /* PlanetPopoverController.m */; };
 		7E8644D114A6D6A20002986F /* PlanetPopover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E8644D014A6D6A20002986F /* PlanetPopover.xib */; };
 		7E8644D414A6E15B0002986F /* NuStarbase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8644D314A6E15B0002986F /* NuStarbase.m */; };
+		7E8644DB14A6ED9F0002986F /* NuIonStorm.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8644DA14A6ED9F0002986F /* NuIonStorm.m */; };
 		7E97ED2F14A3D5E200FD46DD /* AccountModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E97ED2D14A3D5E200FD46DD /* AccountModel.xcdatamodeld */; };
 		7E97ED3214A3D84100FD46DD /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E97ED3114A3D84100FD46DD /* Preferences.plist */; };
 		7E97ED3914A3DEE600FD46DD /* AGKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E97ED3814A3DEE600FD46DD /* AGKeychain.m */; };
@@ -82,6 +83,8 @@
 		7E8644D014A6D6A20002986F /* PlanetPopover.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlanetPopover.xib; sourceTree = "<group>"; };
 		7E8644D214A6E15A0002986F /* NuStarbase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuStarbase.h; sourceTree = "<group>"; };
 		7E8644D314A6E15B0002986F /* NuStarbase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuStarbase.m; sourceTree = "<group>"; };
+		7E8644D914A6ED9F0002986F /* NuIonStorm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuIonStorm.h; sourceTree = "<group>"; };
+		7E8644DA14A6ED9F0002986F /* NuIonStorm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuIonStorm.m; sourceTree = "<group>"; };
 		7E97ED2E14A3D5E200FD46DD /* AccountModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AccountModel.xcdatamodel; sourceTree = "<group>"; };
 		7E97ED3114A3D84100FD46DD /* Preferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Preferences.plist; sourceTree = "<group>"; };
 		7E97ED3714A3DEE600FD46DD /* AGKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGKeychain.h; sourceTree = "<group>"; };
@@ -262,6 +265,8 @@
 				7E8644CC14A6D5F70002986F /* PlanetPopoverController.m */,
 				7E8644D214A6E15A0002986F /* NuStarbase.h */,
 				7E8644D314A6E15B0002986F /* NuStarbase.m */,
+				7E8644D914A6ED9F0002986F /* NuIonStorm.h */,
+				7E8644DA14A6ED9F0002986F /* NuIonStorm.m */,
 			);
 			path = PlanuPlanu;
 			sourceTree = "<group>";
@@ -437,6 +442,7 @@
 				7E8644CA14A6C0F70002986F /* NuPlayer.m in Sources */,
 				7E8644CE14A6D5F70002986F /* PlanetPopoverController.m in Sources */,
 				7E8644D414A6E15B0002986F /* NuStarbase.m in Sources */,
+				7E8644DB14A6ED9F0002986F /* NuIonStorm.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

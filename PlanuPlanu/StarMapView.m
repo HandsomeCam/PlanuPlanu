@@ -12,7 +12,7 @@
 
 @implementation StarMapView
 
-@synthesize planets, player;
+@synthesize planets, player, ionStorms;
 
 - (id)initWithFrame:(NSRect)frame
 {
@@ -42,8 +42,26 @@
 //    CGContextFillRect (myContext, CGRectMake (0, 0, 100, 200)); // 6
     
     [self drawPlanets:myContext];
+    [self drawIonStorms:myContext];
 }
 
+- (void)drawIonStorms:(CGContextRef)context
+{
+    // Draw Circle 
+    CGContextSetLineWidth(context, 1.0);
+    CGColorRef yellow =  CGColorCreateGenericRGB(.5, .5, 0, .5);
+    
+    CGContextSetFillColorWithColor(context, yellow);
+    
+    for (NuIonStorm* storm in ionStorms)
+    {
+        CGRect rectangle = CGRectMake(storm.x,storm.y,storm.radius*2, storm.radius*2);
+        
+        CGContextFillEllipseInRect(context, rectangle);
+        
+        CGContextStrokePath(context);
+    }
+}
 
 - (void)drawPlanets:(CGContextRef)context
 {
