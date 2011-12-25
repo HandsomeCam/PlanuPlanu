@@ -9,10 +9,11 @@
 #import "NuTurn.h"
 #import "NuPlanet.h"
 #import "NuStarbase.h"
+#import "NuIonStorm.h"
 
 @implementation NuTurn
 
-@synthesize planetList, gameSettings, player;
+@synthesize planetList, gameSettings, player, ionStorms;
 
 - (id)init
 {
@@ -51,6 +52,7 @@
     self.player = [[[NuPlayer alloc] init] autorelease];
     [self.player loadFromDict:[input objectForKey:@"player"]];
     
+    // Load starbases
     NSArray* starbases = [input objectForKey:@"starbases"];
     
     for (NSDictionary* sbDict in starbases)
@@ -67,6 +69,19 @@
             }
         }
     }
+    
+    // Load Ion Storms
+    NSMutableArray* ions = [NSMutableArray array];
+    
+    for (NSDictionary* stormDict in [input objectForKey:@"ionstorms"])
+    {
+        NuIonStorm* storm = [[[NuIonStorm alloc] init] autorelease];
+        
+        [storm loadFromDict:stormDict];
+        [ions addObject:storm];
+    }
+    
+    self.ionStorms = ions;
     
     return NO;
 }

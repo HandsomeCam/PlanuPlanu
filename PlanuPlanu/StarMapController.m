@@ -43,6 +43,7 @@
     
     smv.planets = turn.planetList;
     smv.player = turn.player;
+    smv.ionStorms = turn.ionStorms;
     
     [mapScroll setHasHorizontalScroller:YES];
     [mapScroll setHasVerticalScroller:YES];
