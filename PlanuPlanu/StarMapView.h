@@ -28,6 +28,8 @@
 
 - (void)drawPlanets:(CGContextRef)context;
 - (void)drawIonStorms:(CGContextRef)context;
+- (void)drawPlanetaryConnections:(CGContextRef)context;
+
 - (void)showPlanetPopover:(NuPlanet*)planet;
 - (void)scrollToHomeWorld;
 
