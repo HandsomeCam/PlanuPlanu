@@ -49,16 +49,35 @@
 {
     // Draw Circle 
     CGContextSetLineWidth(context, 1.0);
-    CGColorRef yellow =  CGColorCreateGenericRGB(.5, .5, 0, .5);
+    CGColorRef thickYellow = CGColorCreateGenericRGB(.7, .9, 0, .7);
     
-    CGContextSetFillColorWithColor(context, yellow);
     
     for (NuIonStorm* storm in ionStorms)
     {
-        CGRect rectangle = CGRectMake(storm.x,storm.y,storm.radius*2, storm.radius*2);
         
+        CGColorRef yellow =  CGColorCreateGenericRGB(.5 + (.01 * storm.voltage), .9, 0, .5);
+        CGContextSetFillColorWithColor(context, yellow);
+        
+        CGRect rectangle = CGRectMake(storm.x - storm.radius,
+                                      storm.y - storm.radius,
+                                      storm.radius*2, storm.radius*2);
         CGContextFillEllipseInRect(context, rectangle);
+    
+        CGContextStrokePath(context);
         
+        // draw heading line
+        CGContextSetStrokeColorWithColor(context, thickYellow);
+        CGContextSetLineWidth(context, 1.0);
+        CGContextMoveToPoint(context, storm.x, storm.y);
+        
+        NSInteger headingLength = storm.warp * storm.warp;
+        
+        CGPoint endPoint; 
+        
+        endPoint.x = headingLength * sin(storm.heading) + storm.x;
+        endPoint.y = headingLength * cos(storm.heading) + storm.y;
+        
+        CGContextAddLineToPoint(context, endPoint.x, endPoint.y);
         CGContextStrokePath(context);
     }
 }
@@ -91,9 +110,16 @@
             CGContextSetFillColorWithColor(context, grey);
         }
             
-        CGRect rectangle = CGRectMake(planet.x,planet.y,10, 10);
+        CGRect rectangle = CGRectMake(planet.x -5 ,planet.y -5,10, 10);
         
-        CGContextFillEllipseInRect(context, rectangle);
+        if (planet.starbase == nil)
+        {
+            CGContextFillEllipseInRect(context, rectangle);
+        }
+        else
+        {
+            CGContextFillRect(context, rectangle);
+        }
         
         CGContextStrokePath(context);
 //        }
@@ -118,8 +144,8 @@
    
     // For some reason this is always offset by 25, possibly it's the window origin, not the 
     // scroll box
-    CGPoint realLocation = CGPointMake(theEvent.locationInWindow.x + startOrigin.x - 25,
-                theEvent.locationInWindow.y + startOrigin.y - 25);
+    CGPoint realLocation = CGPointMake(theEvent.locationInWindow.x + startOrigin.x - 20,
+                theEvent.locationInWindow.y + startOrigin.y - 20);
     
     // pl.x = 1177
     // pl.y = 1021
@@ -188,7 +214,7 @@
 {
     NSPopover* planetPopover = [[NSPopover alloc] init];
   
-    CGRect planetRect = CGRectMake(planet.x, planet.y, 10, 10);
+    CGRect planetRect = CGRectMake(planet.x - 5, planet.y - 5, 10, 10);
     
     PlanetPopoverController* ppc = [[PlanetPopoverController alloc] initWithNibName:@"PlanetPopover" bundle:nil];
     planetPopover.contentViewController = [ppc autorelease];
