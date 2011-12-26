@@ -41,8 +41,39 @@
 //    CGContextSetRGBFillColor (myContext, 0, 0, 1, .5);// 5
 //    CGContextFillRect (myContext, CGRectMake (0, 0, 100, 200)); // 6
     
+    [self drawPlanetaryConnections:myContext];
     [self drawPlanets:myContext];
     [self drawIonStorms:myContext];
+}
+
+- (void)drawPlanetaryConnections:(CGContextRef)context
+{
+    // NSMutableArray* connections = [NSMutableArray array];
+    for (int i=0; i < [planets count]; i++)
+    {
+        NuPlanet* a = [planets objectAtIndex:i];
+        
+        for (int j=i+1; j < [planets count]; j++)
+        {
+            NuPlanet* b = [planets objectAtIndex:j];
+            
+            NSInteger x = a.x - b.x;
+            NSInteger y = a.y - b.y;
+            
+            double len = sqrt(x*x + y*y);
+            
+            if (len <= 81)
+            {
+                // add connection
+                CGContextSetLineWidth(context, 2.0);
+                CGColorRef grey = CGColorCreateGenericRGB(.9, .9, .9, .7);
+                CGContextSetStrokeColorWithColor(context, grey);
+                CGContextMoveToPoint(context, a.x, a.y);
+                CGContextAddLineToPoint(context, b.x, b.y);
+                CGContextStrokePath(context);
+            }
+        }
+    }
 }
 
 - (void)drawIonStorms:(CGContextRef)context
