@@ -5,783 +5,1804 @@
 	<key>Ships</key>
 	<array>
 		<dict>
-			<key>hullId</key>			<integer>1</integer>
-			<key>techlevel</key>			<integer>1</integer>
-			<key>name</key>			<string>Outrider Class Scout</string>
-			<key>mass</key>			<integer>75</integer>
-			<key>fuel</key>			<integer>260</integer>
-			<key>cargo</key>			<integer>40</integer>
-			<key>crew</key>			<integer>180</integer>
-			<key>engines</key>			<integer>1</integer>
-			
-			<key>beams</key>			<integer>1</integer>
-			<key>torps</key>			<integer>0</integer>
-			<key>bays</key>			<integer>0</integer>
-			
-			<key>cost</key>			<integer>50</integer>
-			<key>duranium</key>			<integer>20</integer>
-			<key>tritanium</key>			<integer>50</integer>
-			<key>molybdenum</key>			<integer>5</integer>
-			
-			<key>hasCloak</key>			<false/>
-			<key>special</key>			<integer>0</integer>
+			<key>hullId</key>
+			<integer>1</integer>
+			<key>techlevel</key>
+			<integer>1</integer>
+			<key>name</key>
+			<string>Outrider Class Scout</string>
+			<key>mass</key>
+			<integer>75</integer>
+			<key>fuel</key>
+			<integer>260</integer>
+			<key>cargo</key>
+			<integer>40</integer>
+			<key>crew</key>
+			<integer>180</integer>
+			<key>engines</key>
+			<integer>1</integer>
+			<key>beams</key>
+			<integer>1</integer>
+			<key>torps</key>
+			<integer>0</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>50</integer>
+			<key>duranium</key>
+			<integer>20</integer>
+			<key>tritanium</key>
+			<integer>50</integer>
+			<key>molybdenum</key>
+			<integer>5</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
-			<key>hullId</key>			<integer>2</integer>
-			<key>techlevel</key>			<integer>2</integer>
-			<key>name</key>			<string>Nocturne Class Destroyer</string>
-			<key>mass</key>			<integer>90</integer>
-			<key>fuel</key>			<integer>180</integer>
-			<key>cargo</key>			<integer>50</integer>
-			<key>crew</key>			<integer>190</integer>
-			<key>engines</key>			<integer>1</integer>
-		
-			<key>beams</key>			<integer>4</integer>
-			<key>torps</key>			<integer>2</integer>
-			<key>bays</key>			<integer>0</integer>
-			
-			<key>cost</key>			<integer>70</integer>
-			<key>duranium</key>			<integer>25</integer>
-			<key>tritanium</key>			<integer>50</integer>
-			<key>molybdenum</key>			<integer>7</integer>
-	
-			<key>special</key>			<integer>0</integer>
-			<key>hasCloak</key>			<false/>
-		</dict>
-
-		<dict>
-			<key>hullId</key>			<integer>3</integer>
-			<key>techlevel</key>			<integer>3</integer>
-			<key>name</key>			<string>Bohemian Class Survey Ship</string>
-			<key>mass</key>		<integer>32</integer>
-			<key>fuel</key>			<integer>180</integer>
-			<key>cargo</key>			<integer>30</integer>
-			<key>crew</key>			<integer>70</integer>
-			<key>engines</key>			<integer>2</integer>
-			
-			<key>beams</key>			<integer>2</integer>
-			<key>torps</key>			<integer>2</integer>
-			<key>bays</key>			<integer>0</integer>
-			
-			<key>cost</key>			<integer>40</integer>
-			<key>duranium</key>			<integer>10</integer>
-			<key>tritanium</key>			<integer>20</integer>
-			<key>molybdenum</key>			<integer>3</integer>
-			
-			<key>hasCloak</key>			<false/>
-			<key>special</key>			<integer>1</integer>
+			<key>hullId</key>
+			<integer>2</integer>
+			<key>techlevel</key>
+			<integer>2</integer>
+			<key>name</key>
+			<string>Nocturne Class Destroyer</string>
+			<key>mass</key>
+			<integer>90</integer>
+			<key>fuel</key>
+			<integer>180</integer>
+			<key>cargo</key>
+			<integer>50</integer>
+			<key>crew</key>
+			<integer>190</integer>
+			<key>engines</key>
+			<integer>1</integer>
+			<key>beams</key>
+			<integer>4</integer>
+			<key>torps</key>
+			<integer>2</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>70</integer>
+			<key>duranium</key>
+			<integer>25</integer>
+			<key>tritanium</key>
+			<integer>50</integer>
+			<key>molybdenum</key>
+			<integer>7</integer>
+			<key>special</key>
+			<integer>0</integer>
+			<key>hasCloak</key>
+			<false/>
 		</dict>
 		<dict>
-			<key>hullId</key>			<integer>4</integer>
-			<key>techlevel</key>			<integer>5</integer>
-			<key>name</key>			<string>Vendetta Class Frigate</string>
-			<key>mass</key>			<integer>100</integer>
-			<key>fuel</key>			<integer>140</integer>
-			<key>cargo</key>		<integer>30</integer>
-			<key>crew</key>			<integer>79</integer>
-			<key>engines</key>			<integer>2</integer>
-			
-			<key>cost</key>			<integer>170</integer>
-			<key>duranium</key>			<integer>12</integer>
-			<key>tritanium</key>			<integer>23</integer>
-			<key>molybdenum</key>			<integer>57</integer>
-			
-			<key>beams</key>			<integer>4</integer>
-			<key>torps</key>		<integer>4</integer>
-			<key>bays</key>			<integer>0</integer>
-			<key>hasCloak</key>			<false/>
-			<key>special</key>			<integer>0</integer>
+			<key>hullId</key>
+			<integer>3</integer>
+			<key>techlevel</key>
+			<integer>3</integer>
+			<key>name</key>
+			<string>Bohemian Class Survey Ship</string>
+			<key>mass</key>
+			<integer>32</integer>
+			<key>fuel</key>
+			<integer>180</integer>
+			<key>cargo</key>
+			<integer>30</integer>
+			<key>crew</key>
+			<integer>70</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>2</integer>
+			<key>torps</key>
+			<integer>2</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>40</integer>
+			<key>duranium</key>
+			<integer>10</integer>
+			<key>tritanium</key>
+			<integer>20</integer>
+			<key>molybdenum</key>
+			<integer>3</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
-			<key>hullId</key>			<integer>5</integer>
-			<key>techlevel</key>			<integer>6</integer>
-			<key>name</key>			<string>Nebula Class Cruiser</string>
-			<key>mass</key>			<integer>170</integer>
-			<key>fuel</key>			<integer>470</integer>
-			<key>cargo</key>			<integer>350</integer>
-			<key>crew</key>			<integer>430</integer>
-			<key>engines</key>			<integer>2</integer>
-			
-			<key>beams</key>			<integer>4</integer>
-			<key>torps</key>			<integer>4</integer>
-			<key>bays</key>			<integer>0</integer>
-			
-			<key>cost</key>			<integer>390</integer>
-			<key>duranium</key>			<integer>42</integer>
-			<key>tritanium</key>			<integer>61</integer>
-			<key>molybdenum</key>			<integer>73</integer>
-			
-			<key>hasCloak</key>			<false/>
-			<key>special</key>			<integer>0</integer>
+			<key>hullId</key>
+			<integer>4</integer>
+			<key>techlevel</key>
+			<integer>5</integer>
+			<key>name</key>
+			<string>Vendetta Class Frigate</string>
+			<key>mass</key>
+			<integer>100</integer>
+			<key>fuel</key>
+			<integer>140</integer>
+			<key>cargo</key>
+			<integer>30</integer>
+			<key>crew</key>
+			<integer>79</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>cost</key>
+			<integer>170</integer>
+			<key>duranium</key>
+			<integer>12</integer>
+			<key>tritanium</key>
+			<integer>23</integer>
+			<key>molybdenum</key>
+			<integer>57</integer>
+			<key>beams</key>
+			<integer>4</integer>
+			<key>torps</key>
+			<integer>4</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
-			<key>hullId</key><integer>6</integer>
-			<key>techlevel</key><integer>6</integer>
-			<key>name</key><string>Banshee Class Destroyer</string>
-			<key>mass</key><integer>120</integer>
-			<key>fuel</key><integer>140</integer>
-			<key>cargo</key><integer>80</integer>
-			<key>crew</key><integer>336</integer>
-			<key>engines</key><integer>2</integer>
-			
-			<key>beams</key><integer>4</integer>
-			<key>torps</key><integer>2</integer>
-			<key>bays</key><integer>0</integer>
-			
-			<key>cost</key><integer>110</integer>
-			<key>duranium</key><integer>22</integer>
-			<key>tritanium</key><integer>47</integer>
-			<key>molybdenum</key><integer>53</integer>
-			
-			<key>hasCloak</key><false/>
-			<key>special</key><integer>2</integer>
-		</dict>
-		
-		<dict>
-			<key>hullId</key><integer>7</integer>
-			<key>techlevel</key><integer>8</integer>
-			<key>name</key><string>Loki Class Destroyer</string>
-			<key>mass</key><integer>101</integer>
-			<key>fuel</key><integer>140</integer>
-			<key>cargo</key><integer>80</integer>
-			<key>crew</key><integer>265</integer>
-			<key>engines</key><integer>2</integer>
-			
-			<key>beams</key><integer>2</integer>
-			<key>torps</key><integer>4</integer>
-			<key>bays</key><integer>0</integer>
-			
-			<key>cost</key><integer>170</integer>
-			<key>duranium</key><integer>10</integer>
-			<key>tritanium</key><integer>20</integer>
-			<key>molybdenum</key><integer>43</integer>
-			
-			<key>hasCloak</key><false/>
-			<key>special</key><integer>4</integer>
-		</dict>
-		
-		<dict>
-			<key>hullId</key><integer>8</integer>
-			<key>techlevel</key><integer>4</integer>
-			<key>name</key><string>Eros Class Research Vessel</string>
-			<key>mass</key><integer>35</integer>
-			<key>fuel</key><integer>110</integer>
-			<key>cargo</key><integer>30</integer>
-			<key>crew</key><integer>78</integer>
-			<key>engines</key><integer>2</integer>
-			
-			<key>beams</key><integer>2</integer>
-			<key>torps</key><integer>0</integer>
-			<key>bays</key><integer>0</integer>
-			
-			<key>cost</key><integer>30</integer>
-			<key>duranium</key><integer>4</integer>
-			<key>tritanium</key><integer>3</integer>
-			<key>molybdenum</key><integer>13</integer>
-			
-			<key>hasCloak</key><false/>
-			<key>special</key><integer>1</integer>
-		</dict>
-		
-		<dict>
-			<key>hullId</key><integer>9</integer>
-			<key>techlevel</key><integer>7</integer>
-			<key>name</key><string>Brynhild Class Escort</string>
-			<key>mass</key><integer>90</integer>
-			<key>fuel</key><integer>140</integer>
-			<key>cargo</key><integer>30</integer>
-			<key>crew</key><integer>162</integer>
-			<key>engines</key><integer>1</integer>
-			
-			<key>beams</key><integer>4</integer>
-			<key>torps</key><integer>0</integer>
-			<key>bays</key><integer>0</integer>
-			
-			<key>cost</key><integer>100</integer>
-			<key>duranium</key><integer>5</integer>
-			<key>tritanium</key><integer>45</integer>
-			<key>molybdenum</key><integer>35</integer>
-			
-			<key>hasCloak</key><false/>
-			<key>special</key><integer>8</integer>
-		</dict>
-		
-		<dict>
-			<key>hullId</key><integer>10</integer>
-			<key>techlevel</key><integer>8</integer>
-			<key>name</key><string>Arkham Class Frigate</string>
-			<key>mass</key><integer>150</integer>
-			<key>fuel</key><integer>120</integer>
-			<key>cargo</key><integer>90</integer>
-			<key>crew</key><integer>328</integer>
-			<key>engines</key><integer>2</integer>
-			
-			<key>beams</key><integer>6</integer>
-			<key>torps</key><integer>3</integer>
-			<key>bays</key><integer>0</integer>
-			
-			<key>cost</key><integer>70</integer>
-			<key>duranium</key><integer>12</integer>
-			<key>tritanium</key><integer>43</integer>
-			<key>molybdenum</key><integer>67</integer>
-			
-			<key>hasCloak</key><false/>
-			<key>special</key><integer>0</integer>
+			<key>hullId</key>
+			<integer>5</integer>
+			<key>techlevel</key>
+			<integer>6</integer>
+			<key>name</key>
+			<string>Nebula Class Cruiser</string>
+			<key>mass</key>
+			<integer>170</integer>
+			<key>fuel</key>
+			<integer>470</integer>
+			<key>cargo</key>
+			<integer>350</integer>
+			<key>crew</key>
+			<integer>430</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>4</integer>
+			<key>torps</key>
+			<integer>4</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>390</integer>
+			<key>duranium</key>
+			<integer>42</integer>
+			<key>tritanium</key>
+			<integer>61</integer>
+			<key>molybdenum</key>
+			<integer>73</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
-			<key>hullId</key><integer>11</integer>
-			<key>techlevel</key><integer>9</integer>
-			<key>name</key><string>Thor Class Frigate</string>
-			<key>mass</key><integer>173</integer>
-			<key>fuel</key><integer>160</integer>
-			<key>cargo</key><integer>95</integer>
-			<key>crew</key><integer>370</integer>
-			<key>engines</key><integer>2</integer>
-			
-			<key>beams</key><integer>1</integer>
-			<key>torps</key><integer>8</integer>
-			<key>bays</key><integer>0</integer>
-			
-			<key>cost</key><integer>130</integer>
-			<key>duranium</key><integer>35</integer>
-			<key>tritanium</key><integer>55</integer>
-			<key>molybdenum</key><integer>89</integer>
-			
-			<key>hasCloak</key><false/>
-			<key>special</key><integer>0</integer>
-		</dict>
-		
-		<dict>
-			<key>hullId</key><integer>12</integer>
-			<key>techlevel</key><integer>9</integer>
-			<key>name</key><string>Diplomacy Class Cruiser</string>
-			<key>mass</key><integer>180</integer>
-			<key>fuel</key><integer>350</integer>
-			<key>cargo</key><integer>95</integer>
-			<key>crew</key><integer>328</integer>
-			<key>engines</key><integer>2</integer>
-			
-			<key>beams</key><integer>6</integer>
-			<key>torps</key><integer>6</integer>
-			<key>bays</key><integer>0</integer>
-			
-			<key>cost</key><integer>410</integer>
-			<key>duranium</key><integer>35</integer>
-			<key>tritanium</key><integer>53</integer>
-			<key>molybdenum</key><integer>79</integer>
-			
-			<key>hasCloak</key><false/>
-			<key>special</key><integer>0</integer>
-		</dict>
-		
-		<dict>
-			<key>hullId</key><integer>13</integer>
-			<key>techlevel</key><integer>8</integer>
-			<key>name</key><string>Missouri Class Battleship</string>
-			<key>mass</key><integer>395</integer>
-			<key>fuel</key><integer>260</integer>
-			<key>cargo</key><integer>170</integer>
-			<key>crew</key><integer>810</integer>
-			<key>engines</key><integer>2</integer>
-			
-			<key>beams</key><integer>8</integer>
-			<key>torps</key><integer>6</integer>
-			<key>bays</key><integer>0</integer>
-			
-			<key>cost</key><integer>510</integer>
-			<key>duranium</key><integer>140</integer>
-			<key>tritanium</key><integer>143</integer>
-			<key>molybdenum</key><integer>150</integer>
-			
-			<key>hasCloak</key><false/>
-			<key>special</key><integer>0</integer>
-		</dict>
-		
-		<dict>
-			<key>hullId</key><integer>14</integer>
-			<key>techlevel</key><integer>3</integer>
-			<key>name</key><string>Neutronic Fuel Carrier</string>
-			<key>mass</key><integer>10</integer>
-			<key>fuel</key><integer>900</integer>
-			<key>cargo</key><integer>2</integer>
-			<key>crew</key><integer>2</integer>
-			<key>engines</key><integer>2</integer>
-			
-			<key>beams</key><integer>0</integer>
-			<key>torps</key><integer>0</integer>
-			<key>bays</key><integer>0</integer>
-			
-			<key>cost</key><integer>20</integer>
-			<key>duranium</key><integer>10</integer>
-			<key>tritanium</key><integer>2</integer>
-			<key>molybdenum</key><integer>20</integer>
-			
-			<key>hasCloak</key><false/>
-			<key>special</key><integer>0</integer>
-		</dict>
-		
-		<dict>
-			<key>hullId</key><integer>15</integer>
-			<key>techlevel</key><integer>1</integer>
-			<key>name</key><string>Small Deep Space Freighter</string>
-			<key>mass</key><integer>30</integer>
-			<key>fuel</key><integer>200</integer>
-			<key>cargo</key><integer>70</integer>
-			<key>crew</key><integer>2</integer>
-			<key>engines</key><integer>1</integer>
-			
-			<key>beams</key><integer>0</integer>
-			<key>torps</key><integer>0</integer>
-			<key>bays</key><integer>0</integer>
-			
-			<key>cost</key><integer>10</integer>
-			<key>duranium</key><integer>2</integer>
-			<key>tritanium</key><integer>2</integer>
-			<key>molybdenum</key><integer>3</integer>
-			
-			<key>hasCloak</key><false/>
-			<key>special</key><integer>0</integer>
-		</dict>
-		
-		<dict>
-			<key>hullId</key><integer>16</integer>
-			<key>techlevel</key><integer>3</integer>
-			<key>name</key><string>Medium Deep Space Freighter</string>
-			<key>mass</key><integer>60</integer>
-			<key>fuel</key><integer>250</integer>
-			<key>cargo</key><integer>200</integer>
-			<key>crew</key><integer>6</integer>
-			<key>engines</key><integer>1</integer>
-			
-			<key>beams</key><integer>0</integer>
-			<key>torps</key><integer>0</integer>
-			<key>bays</key><integer>0</integer>
-			
-			<key>cost</key><integer>65</integer>
-			<key>duranium</key><integer>4</integer>
-			<key>tritanium</key><integer>4</integer>
-			<key>molybdenum</key><integer>6</integer>
-			
-			<key>hasCloak</key><false/>
-			<key>special</key><integer>0</integer>
+			<key>hullId</key>
+			<integer>6</integer>
+			<key>techlevel</key>
+			<integer>6</integer>
+			<key>name</key>
+			<string>Banshee Class Destroyer</string>
+			<key>mass</key>
+			<integer>120</integer>
+			<key>fuel</key>
+			<integer>140</integer>
+			<key>cargo</key>
+			<integer>80</integer>
+			<key>crew</key>
+			<integer>336</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>4</integer>
+			<key>torps</key>
+			<integer>2</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>110</integer>
+			<key>duranium</key>
+			<integer>22</integer>
+			<key>tritanium</key>
+			<integer>47</integer>
+			<key>molybdenum</key>
+			<integer>53</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
-			<key>hullId</key><integer>17</integer>
-			<key>techlevel</key><integer>6</integer>
-			<key>name</key><string>Large Deep Space Freighter</string>
-			<key>mass</key><integer>130</integer>
-			<key>fuel</key><integer>600</integer>
-			<key>cargo</key><integer>1200</integer>
-			<key>crew</key><integer>102</integer>
-			<key>engines</key><integer>2</integer>
-			
-			<key>beams</key><integer>0</integer>
-			<key>torps</key><integer>0</integer>
-			<key>bays</key><integer>0</integer>
-			
-			<key>cost</key><integer>160</integer>
-			<key>duranium</key><integer>85</integer>
-			<key>tritanium</key><integer>7</integer>
-			<key>molybdenum</key><integer>8</integer>
-			
-			<key>hasCloak</key><false/>
-			<key>special</key><integer>0</integer>
+			<key>hullId</key>
+			<integer>7</integer>
+			<key>techlevel</key>
+			<integer>8</integer>
+			<key>name</key>
+			<string>Loki Class Destroyer</string>
+			<key>mass</key>
+			<integer>101</integer>
+			<key>fuel</key>
+			<integer>140</integer>
+			<key>cargo</key>
+			<integer>80</integer>
+			<key>crew</key>
+			<integer>265</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>2</integer>
+			<key>torps</key>
+			<integer>4</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>170</integer>
+			<key>duranium</key>
+			<integer>10</integer>
+			<key>tritanium</key>
+			<integer>20</integer>
+			<key>molybdenum</key>
+			<integer>43</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>4</integer>
 		</dict>
 		<dict>
-			<key>hullId</key><integer>18</integer>
-			<key>techlevel</key><integer>10</integer>
-			<key>name</key><string>Super Transport Freighter</string>
-			<key>mass</key><integer>160</integer>
-			<key>fuel</key><integer>1200</integer>
-			<key>cargo</key><integer>2600</integer>
-			<key>crew</key><integer>202</integer>
-			<key>engines</key><integer>4</integer>
-			
-			<key>beams</key><integer>0</integer>
-			<key>torps</key><integer>0</integer>
-			<key>bays</key><integer>0</integer>
-			
-			<key>cost</key><integer>220</integer>
-			<key>duranium</key><integer>125</integer>
-			<key>tritanium</key><integer>13</integer>
-			<key>molybdenum</key><integer>18</integer>
-			
-			<key>hasCloak</key><false/>
-			<key>special</key><integer>0</integer>
+			<key>hullId</key>
+			<integer>8</integer>
+			<key>techlevel</key>
+			<integer>4</integer>
+			<key>name</key>
+			<string>Eros Class Research Vessel</string>
+			<key>mass</key>
+			<integer>35</integer>
+			<key>fuel</key>
+			<integer>110</integer>
+			<key>cargo</key>
+			<integer>30</integer>
+			<key>crew</key>
+			<integer>78</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>2</integer>
+			<key>torps</key>
+			<integer>0</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>30</integer>
+			<key>duranium</key>
+			<integer>4</integer>
+			<key>tritanium</key>
+			<integer>3</integer>
+			<key>molybdenum</key>
+			<integer>13</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
-			<key>hullId</key><integer>19</integer>
-			<key>techlevel</key><integer>9</integer>
-			<key>name</key><string>Kittyhawk Class Carrier</string>
-			<key>mass</key><integer>173</integer>
-			<key>fuel</key><integer>280</integer>
-			<key>cargo</key><integer>65</integer>
-			<key>crew</key><integer>370</integer>
-			<key>engines</key><integer>4</integer>
-			
-			<key>beams</key><integer>4</integer>
-			<key>torps</key><integer>0</integer>
-			<key>bays</key><integer>6</integer>
-			
-			<key>cost</key><integer>195</integer>
-			<key>duranium</key><integer>25</integer>
-			<key>tritanium</key><integer>45</integer>
-			<key>molybdenum</key><integer>49</integer>
-			
-			<key>hasCloak</key><false/>
-			<key>special</key><integer>0</integer>
+			<key>hullId</key>
+			<integer>9</integer>
+			<key>techlevel</key>
+			<integer>7</integer>
+			<key>name</key>
+			<string>Brynhild Class Escort</string>
+			<key>mass</key>
+			<integer>90</integer>
+			<key>fuel</key>
+			<integer>140</integer>
+			<key>cargo</key>
+			<integer>30</integer>
+			<key>crew</key>
+			<integer>162</integer>
+			<key>engines</key>
+			<integer>1</integer>
+			<key>beams</key>
+			<integer>4</integer>
+			<key>torps</key>
+			<integer>0</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>100</integer>
+			<key>duranium</key>
+			<integer>5</integer>
+			<key>tritanium</key>
+			<integer>45</integer>
+			<key>molybdenum</key>
+			<integer>35</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>8</integer>
 		</dict>
 		<dict>
-			<key>hullId</key><integer>20</integer>
-			<key>techlevel</key><integer>10</integer>
-			<key>name</key><string>Nova Class Super-dreadnought</string>
-			<key>mass</key><integer>650</integer>
-			<key>fuel</key><integer>560</integer>
-			<key>cargo</key><integer>320</integer>
-			<key>crew</key><integer>1810</integer>
-			<key>engines</key><integer>4</integer>
-			
-			<key>beams</key><integer>10</integer>
-			<key>torps</key><integer>10</integer>
-			<key>bays</key><integer>0</integer>
-			
-			<key>cost</key><integer>810</integer>
-			<key>duranium</key><integer>240</integer>
-			<key>tritanium</key><integer>343</integer>
-			<key>molybdenum</key><integer>350</integer>
-			
-			<key>hasCloak</key><false/>
-			<key>special</key><integer>0</integer>
+			<key>hullId</key>
+			<integer>10</integer>
+			<key>techlevel</key>
+			<integer>8</integer>
+			<key>name</key>
+			<string>Arkham Class Frigate</string>
+			<key>mass</key>
+			<integer>150</integer>
+			<key>fuel</key>
+			<integer>120</integer>
+			<key>cargo</key>
+			<integer>90</integer>
+			<key>crew</key>
+			<integer>328</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>6</integer>
+			<key>torps</key>
+			<integer>3</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>70</integer>
+			<key>duranium</key>
+			<integer>12</integer>
+			<key>tritanium</key>
+			<integer>43</integer>
+			<key>molybdenum</key>
+			<integer>67</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
-			<key>hullId</key><integer>21</integer>
-			<key>techlevel</key><integer>3</integer>
-			<key>name</key><string>Reptile Class Destroyer</string>
-			<key>mass</key><integer>60</integer>
-			<key>fuel</key><integer>120</integer>
-			<key>cargo</key><integer>50</integer>
-			<key>crew</key><integer>45</integer>
-			<key>engines</key><integer>2</integer>
-			
-			<key>beams</key><integer>4</integer>
-			<key>torps</key><integer>0</integer>
-			<key>bays</key><integer>0</integer>
-			
-			<key>cost</key><integer>50</integer>
-			<key>duranium</key><integer>22</integer>
-			<key>tritanium</key><integer>33</integer>
-			<key>molybdenum</key><integer>15</integer>
-			
-			<key>hasCloak</key><true/>
-			<key>special</key><integer>0</integer>
+			<key>hullId</key>
+			<integer>11</integer>
+			<key>techlevel</key>
+			<integer>9</integer>
+			<key>name</key>
+			<string>Thor Class Frigate</string>
+			<key>mass</key>
+			<integer>173</integer>
+			<key>fuel</key>
+			<integer>160</integer>
+			<key>cargo</key>
+			<integer>95</integer>
+			<key>crew</key>
+			<integer>370</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>1</integer>
+			<key>torps</key>
+			<integer>8</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>130</integer>
+			<key>duranium</key>
+			<integer>35</integer>
+			<key>tritanium</key>
+			<integer>55</integer>
+			<key>molybdenum</key>
+			<integer>89</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
-			<key>hullId</key><integer>22</integer>
-			<key>techlevel</key><integer>4</integer>
-			<key>name</key><string>Lizard Class Cruiser</string>
-			<key>mass</key><integer>160</integer>
-			<key>fuel</key><integer>330</integer>
-			<key>cargo</key><integer>290</integer>
-			<key>crew</key><integer>430</integer>
-			<key>engines</key><integer>2</integer>
-			
-			<key>beams</key><integer>4</integer>
-			<key>torps</key><integer>3</integer>
-			<key>bays</key><integer>0</integer>
-			
-			<key>cost</key><integer>190</integer>
-			<key>duranium</key><integer>42</integer>
-			<key>tritanium</key><integer>81</integer>
-			<key>molybdenum</key><integer>30</integer>
-			
-			<key>hasCloak</key><true/>
-			<key>special</key><integer>0</integer>
+			<key>hullId</key>
+			<integer>12</integer>
+			<key>techlevel</key>
+			<integer>9</integer>
+			<key>name</key>
+			<string>Diplomacy Class Cruiser</string>
+			<key>mass</key>
+			<integer>180</integer>
+			<key>fuel</key>
+			<integer>350</integer>
+			<key>cargo</key>
+			<integer>95</integer>
+			<key>crew</key>
+			<integer>328</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>6</integer>
+			<key>torps</key>
+			<integer>6</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>410</integer>
+			<key>duranium</key>
+			<integer>35</integer>
+			<key>tritanium</key>
+			<integer>53</integer>
+			<key>molybdenum</key>
+			<integer>79</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
-			<key>hullId</key><integer>23</integer>
-			<key>techlevel</key><integer>10</integer>
-			<key>name</key><string>T-Rex Class Battleship</string>
-			<key>mass</key><integer>421</integer>
-			<key>fuel</key><integer>490</integer>
-			<key>cargo</key><integer>190</integer>
-			<key>crew</key><integer>810</integer>
-			<key>engines</key><integer>2</integer>
-
-			<key>beams</key><integer>10</integer>
-			<key>torps</key><integer>5</integer>
-			<key>bays</key><integer>0</integer>
-
-			<key>cost</key><integer>350</integer>
-			<key>duranium</key><integer>140</integer>
-			<key>tritanium</key><integer>153</integer>
-			<key>molybdenum</key><integer>100</integer>
-
-			<key>hasCloak</key><false/>
-			<key>special</key><integer>0</integer>
+			<key>hullId</key>
+			<integer>13</integer>
+			<key>techlevel</key>
+			<integer>8</integer>
+			<key>name</key>
+			<string>Missouri Class Battleship</string>
+			<key>mass</key>
+			<integer>395</integer>
+			<key>fuel</key>
+			<integer>260</integer>
+			<key>cargo</key>
+			<integer>170</integer>
+			<key>crew</key>
+			<integer>810</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>8</integer>
+			<key>torps</key>
+			<integer>6</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>510</integer>
+			<key>duranium</key>
+			<integer>140</integer>
+			<key>tritanium</key>
+			<integer>143</integer>
+			<key>molybdenum</key>
+			<integer>150</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
-			<key>hullId</key><integer>24</integer>
-			<key>techlevel</key><integer>1</integer>
-			<key>name</key><string>Serpent Class Escort</string>
-			<key>mass</key><integer>55</integer>
-			<key>fuel</key><integer>160</integer>
-			<key>cargo</key><integer>20</integer>
-			<key>crew</key><integer>35</integer>
-			<key>engines</key><integer>1</integer>
-
-			<key>beams</key><integer>2</integer>
-			<key>torps</key><integer>0</integer>
-			<key>bays</key><integer>0</integer>
-
-			<key>cost</key><integer>40</integer>
-			<key>duranium</key><integer>15</integer>
-			<key>tritanium</key><integer>33</integer>
-			<key>molybdenum</key><integer>5</integer>
-
-			<key>hasCloak</key><false/>
-			<key>special</key><integer>0</integer>
+			<key>hullId</key>
+			<integer>14</integer>
+			<key>techlevel</key>
+			<integer>3</integer>
+			<key>name</key>
+			<string>Neutronic Fuel Carrier</string>
+			<key>mass</key>
+			<integer>10</integer>
+			<key>fuel</key>
+			<integer>900</integer>
+			<key>cargo</key>
+			<integer>2</integer>
+			<key>crew</key>
+			<integer>2</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>0</integer>
+			<key>torps</key>
+			<integer>0</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>20</integer>
+			<key>duranium</key>
+			<integer>10</integer>
+			<key>tritanium</key>
+			<integer>2</integer>
+			<key>molybdenum</key>
+			<integer>20</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
-			<key>hullId</key><integer>25</integer>
-			<key>techlevel</key><integer>7</integer>
-			<key>name</key><string>Saurian Class Light Cruiser</string>
-			<key>mass</key><integer>120</integer>
-			<key>fuel</key><integer>260</integer>
-			<key>cargo</key><integer>150</integer>
-			<key>crew</key><integer>336</integer>
-			<key>engines</key><integer>2</integer>
-
-			<key>beams</key><integer>4</integer>
-			<key>torps</key><integer>2</integer>
-			<key>bays</key><integer>0</integer>
-
-			<key>cost</key><integer>85</integer>
-			<key>duranium</key><integer>32</integer>
-			<key>tritanium</key><integer>67</integer>
-			<key>molybdenum</key><integer>23</integer>
-
-			<key>hasCloak</key><true/>
-			<key>special</key><integer>0</integer>
+			<key>hullId</key>
+			<integer>15</integer>
+			<key>techlevel</key>
+			<integer>1</integer>
+			<key>name</key>
+			<string>Small Deep Space Freighter</string>
+			<key>mass</key>
+			<integer>30</integer>
+			<key>fuel</key>
+			<integer>200</integer>
+			<key>cargo</key>
+			<integer>70</integer>
+			<key>crew</key>
+			<integer>2</integer>
+			<key>engines</key>
+			<integer>1</integer>
+			<key>beams</key>
+			<integer>0</integer>
+			<key>torps</key>
+			<integer>0</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>10</integer>
+			<key>duranium</key>
+			<integer>2</integer>
+			<key>tritanium</key>
+			<integer>2</integer>
+			<key>molybdenum</key>
+			<integer>3</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
-			<key>hullId</key><integer>26</integer>
-			<key>techlevel</key><integer>3</integer>
-			<key>name</key><string>White Falcon Class Cruiser</string>
-			<key>mass</key><integer>120</integer>
-			<key>fuel</key><integer>430</integer>
-			<key>cargo</key><integer>140</integer>
-			<key>crew</key><integer>150</integer>
-			<key>engines</key><integer>2</integer>
-
-			<key>beams</key><integer>4</integer>
-			<key>torps</key><integer>1</integer>
-			<key>bays</key><integer>0</integer>
-
-			<key>cost</key><integer>110</integer>
-			<key>duranium</key><integer>32</integer>
-			<key>tritanium</key><integer>61</integer>
-			<key>molybdenum</key><integer>33</integer>
-
-			<key>hasCloak</key><true/>
-			<key>special</key><integer>0</integer>
+			<key>hullId</key>
+			<integer>16</integer>
+			<key>techlevel</key>
+			<integer>3</integer>
+			<key>name</key>
+			<string>Medium Deep Space Freighter</string>
+			<key>mass</key>
+			<integer>60</integer>
+			<key>fuel</key>
+			<integer>250</integer>
+			<key>cargo</key>
+			<integer>200</integer>
+			<key>crew</key>
+			<integer>6</integer>
+			<key>engines</key>
+			<integer>1</integer>
+			<key>beams</key>
+			<integer>0</integer>
+			<key>torps</key>
+			<integer>0</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>65</integer>
+			<key>duranium</key>
+			<integer>4</integer>
+			<key>tritanium</key>
+			<integer>4</integer>
+			<key>molybdenum</key>
+			<integer>6</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
-			<key>hullId</key><integer>27</integer>
-			<key>techlevel</key><integer>1</integer>
-			<key>name</key><string>Swift Heart Class Scout</string>
-			<key>mass</key><integer>45</integer>
-			<key>fuel</key><integer>170</integer>
-			<key>cargo</key><integer>20</integer>
-			<key>crew</key><integer>126</integer>
-			<key>engines</key><integer>1</integer>
-
-			<key>beams</key><integer>2</integer>
-			<key>torps</key><integer>0</integer>
-			<key>bays</key><integer>0</integer>
-
-			<key>cost</key><integer>60</integer>
-			<key>duranium</key><integer>6</integer>
-			<key>tritanium</key><integer>20</integer>
-			<key>molybdenum</key><integer>5</integer>
-
-			<key>hasCloak</key><true/>
-			<key>special</key><integer>16</integer>
+			<key>hullId</key>
+			<integer>17</integer>
+			<key>techlevel</key>
+			<integer>6</integer>
+			<key>name</key>
+			<string>Large Deep Space Freighter</string>
+			<key>mass</key>
+			<integer>130</integer>
+			<key>fuel</key>
+			<integer>600</integer>
+			<key>cargo</key>
+			<integer>1200</integer>
+			<key>crew</key>
+			<integer>102</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>0</integer>
+			<key>torps</key>
+			<integer>0</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>160</integer>
+			<key>duranium</key>
+			<integer>85</integer>
+			<key>tritanium</key>
+			<integer>7</integer>
+			<key>molybdenum</key>
+			<integer>8</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
-			<key>hullId</key><integer>28</integer>
-			<key>techlevel</key><integer>5</integer>
-			<key>name</key><string>Fearless Wing Cruiser</string>
-			<key>mass</key><integer>150</integer>
-			<key>fuel</key><integer>360</integer>
-			<key>cargo</key><integer>240</integer>
-			<key>crew</key><integer>300</integer>
-			<key>engines</key><integer>2</integer>
-
-			<key>beams</key><integer>6</integer>
-			<key>torps</key><integer>1</integer>
-			<key>bays</key><integer>0</integer>
-
-			<key>cost</key><integer>180</integer>
-			<key>duranium</key><integer>52</integer>
-			<key>tritanium</key><integer>81</integer>
-			<key>molybdenum</key><integer>63</integer>
-
-			<key>hasCloak</key><true/>
-			<key>special</key><integer>0</integer>
+			<key>hullId</key>
+			<integer>18</integer>
+			<key>techlevel</key>
+			<integer>10</integer>
+			<key>name</key>
+			<string>Super Transport Freighter</string>
+			<key>mass</key>
+			<integer>160</integer>
+			<key>fuel</key>
+			<integer>1200</integer>
+			<key>cargo</key>
+			<integer>2600</integer>
+			<key>crew</key>
+			<integer>202</integer>
+			<key>engines</key>
+			<integer>4</integer>
+			<key>beams</key>
+			<integer>0</integer>
+			<key>torps</key>
+			<integer>0</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>220</integer>
+			<key>duranium</key>
+			<integer>125</integer>
+			<key>tritanium</key>
+			<integer>13</integer>
+			<key>molybdenum</key>
+			<integer>18</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
-			<key>hullId</key><integer>29</integer>
-			<key>techlevel</key><integer>10</integer>
-			<key>name</key><string>Dark Wing Class Battleship</string>
-			<key>mass</key><integer>491</integer>
-			<key>fuel</key><integer>290</integer>
-			<key>cargo</key><integer>150</integer>
-			<key>crew</key><integer>910</integer>
-			<key>engines</key><integer>2</integer>
-
-			<key>beams</key><integer>10</integer>
-			<key>torps</key><integer>8</integer>
-			<key>bays</key><integer>0</integer>
-
-			<key>cost</key><integer>450</integer>
-			<key>duranium</key><integer>170</integer>
-			<key>tritanium</key><integer>183</integer>
-			<key>molybdenum</key><integer>110</integer>
-
-			<key>hasCloak</key><true/>
-			<key>special</key><integer>32</integer>
+			<key>hullId</key>
+			<integer>19</integer>
+			<key>techlevel</key>
+			<integer>9</integer>
+			<key>name</key>
+			<string>Kittyhawk Class Carrier</string>
+			<key>mass</key>
+			<integer>173</integer>
+			<key>fuel</key>
+			<integer>280</integer>
+			<key>cargo</key>
+			<integer>65</integer>
+			<key>crew</key>
+			<integer>370</integer>
+			<key>engines</key>
+			<integer>4</integer>
+			<key>beams</key>
+			<integer>4</integer>
+			<key>torps</key>
+			<integer>0</integer>
+			<key>bays</key>
+			<integer>6</integer>
+			<key>cost</key>
+			<integer>195</integer>
+			<key>duranium</key>
+			<integer>25</integer>
+			<key>tritanium</key>
+			<integer>45</integer>
+			<key>molybdenum</key>
+			<integer>49</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
-			<key>hullId</key><integer>30</integer>
-			<key>techlevel</key><integer>6</integer>
-			<key>name</key><string>Valiant Wind Class Carrier</string>
-			<key>mass</key><integer>180</integer>
-			<key>fuel</key><integer>190</integer>
-			<key>cargo</key><integer>80</integer>
-			<key>crew</key><integer>322</integer>
-			<key>engines</key><integer>2</integer>
-
-			<key>beams</key><integer>7</integer>
-			<key>torps</key><integer>0</integer>
-			<key>bays</key><integer>3</integer>
-
-			<key>cost</key><integer>380</integer>
-			<key>duranium</key><integer>52</integer>
-			<key>tritanium</key><integer>61</integer>
-			<key>molybdenum</key><integer>123</integer>
-
-			<key>hasCloak</key><false/>
-			<key>special</key><integer>0</integer>
+			<key>hullId</key>
+			<integer>20</integer>
+			<key>techlevel</key>
+			<integer>10</integer>
+			<key>name</key>
+			<string>Nova Class Super-dreadnought</string>
+			<key>mass</key>
+			<integer>650</integer>
+			<key>fuel</key>
+			<integer>560</integer>
+			<key>cargo</key>
+			<integer>320</integer>
+			<key>crew</key>
+			<integer>1810</integer>
+			<key>engines</key>
+			<integer>4</integer>
+			<key>beams</key>
+			<integer>10</integer>
+			<key>torps</key>
+			<integer>10</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>810</integer>
+			<key>duranium</key>
+			<integer>240</integer>
+			<key>tritanium</key>
+			<integer>343</integer>
+			<key>molybdenum</key>
+			<integer>350</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
-			<key>hullId</key><integer>31</integer>
-			<key>techlevel</key><integer>7</integer>
-			<key>name</key><string>Resolute Class Battlecruiser</string>
-			<key>mass</key><integer>180</integer>
-			<key>fuel</key><integer>480</integer>
-			<key>cargo</key><integer>280</integer>
-			<key>crew</key><integer>348</integer>
-			<key>engines</key><integer>2</integer>
-
-			<key>beams</key><integer>8</integer>
-			<key>torps</key><integer>3</integer>
-			<key>bays</key><integer>0</integer>
-
-			<key>cost</key><integer>380</integer>
-			<key>duranium</key><integer>52</integer>
-			<key>tritanium</key><integer>71</integer>
-			<key>molybdenum</key><integer>93</integer>
-
-			<key>hasCloak</key><true/>
-			<key>special</key><integer>32</integer>
+			<key>hullId</key>
+			<integer>21</integer>
+			<key>techlevel</key>
+			<integer>3</integer>
+			<key>name</key>
+			<string>Reptile Class Destroyer</string>
+			<key>mass</key>
+			<integer>60</integer>
+			<key>fuel</key>
+			<integer>120</integer>
+			<key>cargo</key>
+			<integer>50</integer>
+			<key>crew</key>
+			<integer>45</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>4</integer>
+			<key>torps</key>
+			<integer>0</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>50</integer>
+			<key>duranium</key>
+			<integer>22</integer>
+			<key>tritanium</key>
+			<integer>33</integer>
+			<key>molybdenum</key>
+			<integer>15</integer>
+			<key>hasCloak</key>
+			<true/>
+			<key>special</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
-			<key>hullId</key><integer>32</integer>
-			<key>techlevel</key><integer>3</integer>
-			<key>name</key><string>Bright Heart Class Destroyer</string>
-			<key>mass</key><integer>80</integer>
-			<key>fuel</key><integer>90</integer>
-			<key>cargo</key><integer>40</integer>
-			<key>crew</key><integer>122</integer>
-			<key>engines</key><integer>2</integer>
-
-			<key>beams</key><integer>2</integer>
-			<key>torps</key><integer>4</integer>
-			<key>bays</key><integer>0</integer>
-
-			<key>cost</key><integer>140</integer>
-			<key>duranium</key><integer>22</integer>
-			<key>tritanium</key><integer>43</integer>
-			<key>molybdenum</key><integer>15</integer>
-
-			<key>hasCloak</key><true/>
-			<key>special</key><integer>0</integer>
+			<key>hullId</key>
+			<integer>22</integer>
+			<key>techlevel</key>
+			<integer>4</integer>
+			<key>name</key>
+			<string>Lizard Class Cruiser</string>
+			<key>mass</key>
+			<integer>160</integer>
+			<key>fuel</key>
+			<integer>330</integer>
+			<key>cargo</key>
+			<integer>290</integer>
+			<key>crew</key>
+			<integer>430</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>4</integer>
+			<key>torps</key>
+			<integer>3</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>190</integer>
+			<key>duranium</key>
+			<integer>42</integer>
+			<key>tritanium</key>
+			<integer>81</integer>
+			<key>molybdenum</key>
+			<integer>30</integer>
+			<key>hasCloak</key>
+			<true/>
+			<key>special</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
-			<key>hullId</key><integer>33</integer>
-			<key>techlevel</key><integer>6</integer>
-			<key>name</key><string>Deth Specula Class Frigate</string>
-			<key>mass</key><integer>113</integer>
-			<key>fuel</key><integer>140</integer>
-			<key>cargo</key><integer>35</integer>
-			<key>crew</key><integer>240</integer>
-			<key>engines</key><integer>2</integer>
-
-			<key>beams</key><integer>6</integer>
-			<key>torps</key><integer>4</integer>
-			<key>bays</key><integer>0</integer>
-
-			<key>cost</key><integer>280</integer>
-			<key>duranium</key><integer>25</integer>
-			<key>tritanium</key><integer>45</integer>
-			<key>molybdenum</key><integer>89</integer>
-
-			<key>hasCloak</key><true/>
-			<key>special</key><integer>2</integer>
+			<key>hullId</key>
+			<integer>23</integer>
+			<key>techlevel</key>
+			<integer>10</integer>
+			<key>name</key>
+			<string>T-Rex Class Battleship</string>
+			<key>mass</key>
+			<integer>421</integer>
+			<key>fuel</key>
+			<integer>490</integer>
+			<key>cargo</key>
+			<integer>190</integer>
+			<key>crew</key>
+			<integer>810</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>10</integer>
+			<key>torps</key>
+			<integer>5</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>350</integer>
+			<key>duranium</key>
+			<integer>140</integer>
+			<key>tritanium</key>
+			<integer>153</integer>
+			<key>molybdenum</key>
+			<integer>100</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
-			<key>hullId</key><integer>34</integer>
-			<key>techlevel</key><integer>2</integer>
-			<key>name</key><string>D7a Painmaker Class Cruiser</string>
-			<key>mass</key><integer>170</integer>
-			<key>fuel</key><integer>230</integer>
-			<key>cargo</key><integer>120</integer>
-			<key>crew</key><integer>352</integer>
-			<key>engines</key><integer>2</integer>
-
-			<key>beams</key><integer>4</integer>
-			<key>torps</key><integer>0</integer>
-			<key>bays</key><integer>0</integer>
-
-			<key>cost</key><integer>90</integer>
-			<key>duranium</key><integer>42</integer>
-			<key>tritanium</key><integer>81</integer>
-			<key>molybdenum</key><integer>43</integer>
-
-			<key>hasCloak</key><false/>
-			<key>special</key><integer>2</integer>
+			<key>hullId</key>
+			<integer>24</integer>
+			<key>techlevel</key>
+			<integer>1</integer>
+			<key>name</key>
+			<string>Serpent Class Escort</string>
+			<key>mass</key>
+			<integer>55</integer>
+			<key>fuel</key>
+			<integer>160</integer>
+			<key>cargo</key>
+			<integer>20</integer>
+			<key>crew</key>
+			<integer>35</integer>
+			<key>engines</key>
+			<integer>1</integer>
+			<key>beams</key>
+			<integer>2</integer>
+			<key>torps</key>
+			<integer>0</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>40</integer>
+			<key>duranium</key>
+			<integer>15</integer>
+			<key>tritanium</key>
+			<integer>33</integer>
+			<key>molybdenum</key>
+			<integer>5</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
-			<key>hullId</key><integer>35</integer>
-			<key>techlevel</key><integer>10</integer>
-			<key>name</key><string>Victorious Class Battleship</string>
-			<key>mass</key><integer>451</integer>
-			<key>fuel</key><integer>290</integer>
-			<key>cargo</key><integer>130</integer>
-			<key>crew</key><integer>810</integer>
-			<key>engines</key><integer>2</integer>
-
-			<key>beams</key><integer>10</integer>
-			<key>torps</key><integer>6</integer>
-			<key>bays</key><integer>0</integer>
-
-			<key>cost</key><integer>410</integer>
-			<key>duranium</key><integer>170</integer>
-			<key>tritanium</key><integer>193</integer>
-			<key>molybdenum</key><integer>90</integer>
-
-			<key>hasCloak</key><false/>
-			<key>special</key><integer>2</integer>
+			<key>hullId</key>
+			<integer>25</integer>
+			<key>techlevel</key>
+			<integer>7</integer>
+			<key>name</key>
+			<string>Saurian Class Light Cruiser</string>
+			<key>mass</key>
+			<integer>120</integer>
+			<key>fuel</key>
+			<integer>260</integer>
+			<key>cargo</key>
+			<integer>150</integer>
+			<key>crew</key>
+			<integer>336</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>4</integer>
+			<key>torps</key>
+			<integer>2</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>85</integer>
+			<key>duranium</key>
+			<integer>32</integer>
+			<key>tritanium</key>
+			<integer>67</integer>
+			<key>molybdenum</key>
+			<integer>23</integer>
+			<key>hasCloak</key>
+			<true/>
+			<key>special</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>26</integer>
+			<key>techlevel</key>
+			<integer>3</integer>
+			<key>name</key>
+			<string>White Falcon Class Cruiser</string>
+			<key>mass</key>
+			<integer>120</integer>
+			<key>fuel</key>
+			<integer>430</integer>
+			<key>cargo</key>
+			<integer>140</integer>
+			<key>crew</key>
+			<integer>150</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>4</integer>
+			<key>torps</key>
+			<integer>1</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>110</integer>
+			<key>duranium</key>
+			<integer>32</integer>
+			<key>tritanium</key>
+			<integer>61</integer>
+			<key>molybdenum</key>
+			<integer>33</integer>
+			<key>hasCloak</key>
+			<true/>
+			<key>special</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>27</integer>
+			<key>techlevel</key>
+			<integer>1</integer>
+			<key>name</key>
+			<string>Swift Heart Class Scout</string>
+			<key>mass</key>
+			<integer>45</integer>
+			<key>fuel</key>
+			<integer>170</integer>
+			<key>cargo</key>
+			<integer>20</integer>
+			<key>crew</key>
+			<integer>126</integer>
+			<key>engines</key>
+			<integer>1</integer>
+			<key>beams</key>
+			<integer>2</integer>
+			<key>torps</key>
+			<integer>0</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>60</integer>
+			<key>duranium</key>
+			<integer>6</integer>
+			<key>tritanium</key>
+			<integer>20</integer>
+			<key>molybdenum</key>
+			<integer>5</integer>
+			<key>hasCloak</key>
+			<true/>
+			<key>special</key>
+			<integer>16</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>28</integer>
+			<key>techlevel</key>
+			<integer>5</integer>
+			<key>name</key>
+			<string>Fearless Wing Cruiser</string>
+			<key>mass</key>
+			<integer>150</integer>
+			<key>fuel</key>
+			<integer>360</integer>
+			<key>cargo</key>
+			<integer>240</integer>
+			<key>crew</key>
+			<integer>300</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>6</integer>
+			<key>torps</key>
+			<integer>1</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>180</integer>
+			<key>duranium</key>
+			<integer>52</integer>
+			<key>tritanium</key>
+			<integer>81</integer>
+			<key>molybdenum</key>
+			<integer>63</integer>
+			<key>hasCloak</key>
+			<true/>
+			<key>special</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>29</integer>
+			<key>techlevel</key>
+			<integer>10</integer>
+			<key>name</key>
+			<string>Dark Wing Class Battleship</string>
+			<key>mass</key>
+			<integer>491</integer>
+			<key>fuel</key>
+			<integer>290</integer>
+			<key>cargo</key>
+			<integer>150</integer>
+			<key>crew</key>
+			<integer>910</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>10</integer>
+			<key>torps</key>
+			<integer>8</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>450</integer>
+			<key>duranium</key>
+			<integer>170</integer>
+			<key>tritanium</key>
+			<integer>183</integer>
+			<key>molybdenum</key>
+			<integer>110</integer>
+			<key>hasCloak</key>
+			<true/>
+			<key>special</key>
+			<integer>32</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>30</integer>
+			<key>techlevel</key>
+			<integer>6</integer>
+			<key>name</key>
+			<string>Valiant Wind Class Carrier</string>
+			<key>mass</key>
+			<integer>180</integer>
+			<key>fuel</key>
+			<integer>190</integer>
+			<key>cargo</key>
+			<integer>80</integer>
+			<key>crew</key>
+			<integer>322</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>7</integer>
+			<key>torps</key>
+			<integer>0</integer>
+			<key>bays</key>
+			<integer>3</integer>
+			<key>cost</key>
+			<integer>380</integer>
+			<key>duranium</key>
+			<integer>52</integer>
+			<key>tritanium</key>
+			<integer>61</integer>
+			<key>molybdenum</key>
+			<integer>123</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>31</integer>
+			<key>techlevel</key>
+			<integer>7</integer>
+			<key>name</key>
+			<string>Resolute Class Battlecruiser</string>
+			<key>mass</key>
+			<integer>180</integer>
+			<key>fuel</key>
+			<integer>480</integer>
+			<key>cargo</key>
+			<integer>280</integer>
+			<key>crew</key>
+			<integer>348</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>8</integer>
+			<key>torps</key>
+			<integer>3</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>380</integer>
+			<key>duranium</key>
+			<integer>52</integer>
+			<key>tritanium</key>
+			<integer>71</integer>
+			<key>molybdenum</key>
+			<integer>93</integer>
+			<key>hasCloak</key>
+			<true/>
+			<key>special</key>
+			<integer>32</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>32</integer>
+			<key>techlevel</key>
+			<integer>3</integer>
+			<key>name</key>
+			<string>Bright Heart Class Destroyer</string>
+			<key>mass</key>
+			<integer>80</integer>
+			<key>fuel</key>
+			<integer>90</integer>
+			<key>cargo</key>
+			<integer>40</integer>
+			<key>crew</key>
+			<integer>122</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>2</integer>
+			<key>torps</key>
+			<integer>4</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>140</integer>
+			<key>duranium</key>
+			<integer>22</integer>
+			<key>tritanium</key>
+			<integer>43</integer>
+			<key>molybdenum</key>
+			<integer>15</integer>
+			<key>hasCloak</key>
+			<true/>
+			<key>special</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>33</integer>
+			<key>techlevel</key>
+			<integer>6</integer>
+			<key>name</key>
+			<string>Deth Specula Class Frigate</string>
+			<key>mass</key>
+			<integer>113</integer>
+			<key>fuel</key>
+			<integer>140</integer>
+			<key>cargo</key>
+			<integer>35</integer>
+			<key>crew</key>
+			<integer>240</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>6</integer>
+			<key>torps</key>
+			<integer>4</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>280</integer>
+			<key>duranium</key>
+			<integer>25</integer>
+			<key>tritanium</key>
+			<integer>45</integer>
+			<key>molybdenum</key>
+			<integer>89</integer>
+			<key>hasCloak</key>
+			<true/>
+			<key>special</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>34</integer>
+			<key>techlevel</key>
+			<integer>2</integer>
+			<key>name</key>
+			<string>D7a Painmaker Class Cruiser</string>
+			<key>mass</key>
+			<integer>170</integer>
+			<key>fuel</key>
+			<integer>230</integer>
+			<key>cargo</key>
+			<integer>120</integer>
+			<key>crew</key>
+			<integer>352</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>4</integer>
+			<key>torps</key>
+			<integer>0</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>90</integer>
+			<key>duranium</key>
+			<integer>42</integer>
+			<key>tritanium</key>
+			<integer>81</integer>
+			<key>molybdenum</key>
+			<integer>43</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>35</integer>
+			<key>techlevel</key>
+			<integer>10</integer>
+			<key>name</key>
+			<string>Victorious Class Battleship</string>
+			<key>mass</key>
+			<integer>451</integer>
+			<key>fuel</key>
+			<integer>290</integer>
+			<key>cargo</key>
+			<integer>130</integer>
+			<key>crew</key>
+			<integer>810</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>10</integer>
+			<key>torps</key>
+			<integer>6</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>410</integer>
+			<key>duranium</key>
+			<integer>170</integer>
+			<key>tritanium</key>
+			<integer>193</integer>
+			<key>molybdenum</key>
+			<integer>90</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>36</integer>
+			<key>techlevel</key>
+			<integer>4</integer>
+			<key>name</key>
+			<string>D7 Coldpain Class Cruiser</string>
+			<key>mass</key>
+			<integer>175</integer>
+			<key>fuel</key>
+			<integer>430</integer>
+			<key>cargo</key>
+			<integer>100</integer>
+			<key>crew</key>
+			<integer>373</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>4</integer>
+			<key>torps</key>
+			<integer>2</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>120</integer>
+			<key>duranium</key>
+			<integer>42</integer>
+			<key>tritanium</key>
+			<integer>71</integer>
+			<key>molybdenum</key>
+			<integer>63</integer>
+			<key>hasCloak</key>
+			<true/>
+			<key>special</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>37</integer>
+			<key>techlevel</key>
+			<integer>5</integer>
+			<key>name</key>
+			<string>Ill Wind Class Battlecruiser</string>
+			<key>mass</key>
+			<integer>275</integer>
+			<key>fuel</key>
+			<integer>480</integer>
+			<key>cargo</key>
+			<integer>260</integer>
+			<key>crew</key>
+			<integer>525</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>10</integer>
+			<key>torps</key>
+			<integer>2</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>320</integer>
+			<key>duranium</key>
+			<integer>82</integer>
+			<key>tritanium</key>
+			<integer>91</integer>
+			<key>molybdenum</key>
+			<integer>93</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>38</integer>
+			<key>techlevel</key>
+			<integer>5</integer>
+			<key>name</key>
+			<string>D3 Thorn Class Destroyer</string>
+			<key>mass</key>
+			<integer>90</integer>
+			<key>fuel</key>
+			<integer>120</integer>
+			<key>cargo</key>
+			<integer>40</integer>
+			<key>crew</key>
+			<integer>222</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>2</integer>
+			<key>torps</key>
+			<integer>4</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>110</integer>
+			<key>duranium</key>
+			<integer>32</integer>
+			<key>tritanium</key>
+			<integer>43</integer>
+			<key>molybdenum</key>
+			<integer>25</integer>
+			<key>hasCloak</key>
+			<true/>
+			<key>special</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>39</integer>
+			<key>techlevel</key>
+			<integer>6</integer>
+			<key>name</key>
+			<string>D19b Nefarious Class Destroyer</string>
+			<key>mass</key>
+			<integer>96</integer>
+			<key>fuel</key>
+			<integer>160</integer>
+			<key>cargo</key>
+			<integer>40</integer>
+			<key>crew</key>
+			<integer>265</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>7</integer>
+			<key>torps</key>
+			<integer>0</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>180</integer>
+			<key>duranium</key>
+			<integer>32</integer>
+			<key>tritanium</key>
+			<integer>53</integer>
+			<key>molybdenum</key>
+			<integer>65</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>66</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>40</integer>
+			<key>techlevel</key>
+			<integer>2</integer>
+			<key>name</key>
+			<string>Little Pest Class Escort</string>
+			<key>mass</key>
+			<integer>75</integer>
+			<key>fuel</key>
+			<integer>180</integer>
+			<key>cargo</key>
+			<integer>20</integer>
+			<key>crew</key>
+			<integer>175</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>6</integer>
+			<key>torps</key>
+			<integer>0</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>60</integer>
+			<key>duranium</key>
+			<integer>12</integer>
+			<key>tritanium</key>
+			<integer>27</integer>
+			<key>molybdenum</key>
+			<integer>45</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>41</integer>
+			<key>techlevel</key>
+			<integer>8</integer>
+			<key>name</key>
+			<string>Saber Class Frigate</string>
+			<key>mass</key>
+			<integer>153</integer>
+			<key>fuel</key>
+			<integer>150</integer>
+			<key>cargo</key>
+			<integer>25</integer>
+			<key>crew</key>
+			<integer>420</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>10</integer>
+			<key>torps</key>
+			<integer>0</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>280</integer>
+			<key>duranium</key>
+			<integer>25</integer>
+			<key>tritanium</key>
+			<integer>35</integer>
+			<key>molybdenum</key>
+			<integer>95</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>66</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>42</integer>
+			<key>techlevel</key>
+			<integer>5</integer>
+			<key>name</key>
+			<string>Lady Royale Class Cruiser</string>
+			<key>mass</key>
+			<integer>130</integer>
+			<key>fuel</key>
+			<integer>670</integer>
+			<key>cargo</key>
+			<integer>160</integer>
+			<key>crew</key>
+			<integer>270</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>4</integer>
+			<key>torps</key>
+			<integer>1</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>250</integer>
+			<key>duranium</key>
+			<integer>52</integer>
+			<key>tritanium</key>
+			<integer>61</integer>
+			<key>molybdenum</key>
+			<integer>83</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>128</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>43</integer>
+			<key>techlevel</key>
+			<integer>3</integer>
+			<key>name</key>
+			<string>Dwarfstar Class Transport</string>
+			<key>mass</key>
+			<integer>100</integer>
+			<key>fuel</key>
+			<integer>180</integer>
+			<key>cargo</key>
+			<integer>220</integer>
+			<key>crew</key>
+			<integer>122</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>6</integer>
+			<key>torps</key>
+			<integer>0</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>280</integer>
+			<key>duranium</key>
+			<integer>62</integer>
+			<key>tritanium</key>
+			<integer>43</integer>
+			<key>molybdenum</key>
+			<integer>15</integer>
+			<key>hasCloak</key>
+			<true/>
+			<key>special</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>44</integer>
+			<key>techlevel</key>
+			<integer>1</integer>
+			<key>name</key>
+			<string>Br4 Class Gunship</string>
+			<key>mass</key>
+			<integer>55</integer>
+			<key>fuel</key>
+			<integer>80</integer>
+			<key>cargo</key>
+			<integer>20</integer>
+			<key>crew</key>
+			<integer>55</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>5</integer>
+			<key>torps</key>
+			<integer>0</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>60</integer>
+			<key>duranium</key>
+			<integer>12</integer>
+			<key>tritanium</key>
+			<integer>17</integer>
+			<key>molybdenum</key>
+			<integer>35</integer>
+			<key>hasCloak</key>
+			<true/>
+			<key>special</key>
+			<integer>256</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>45</integer>
+			<key>techlevel</key>
+			<integer>3</integer>
+			<key>name</key>
+			<string>Br5 Kaye Class Torpedo Boat</string>
+			<key>mass</key>
+			<integer>58</integer>
+			<key>fuel</key>
+			<integer>80</integer>
+			<key>cargo</key>
+			<integer>20</integer>
+			<key>crew</key>
+			<integer>40</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>4</integer>
+			<key>torps</key>
+			<integer>1</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>70</integer>
+			<key>duranium</key>
+			<integer>22</integer>
+			<key>tritanium</key>
+			<integer>17</integer>
+			<key>molybdenum</key>
+			<integer>15</integer>
+			<key>hasCloak</key>
+			<true/>
+			<key>special</key>
+			<integer>256</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>46</integer>
+			<key>techlevel</key>
+			<integer>5</integer>
+			<key>name</key>
+			<string>Meteor Class Blockade Runner</string>
+			<key>mass</key>
+			<integer>90</integer>
+			<key>fuel</key>
+			<integer>285</integer>
+			<key>cargo</key>
+			<integer>120</integer>
+			<key>crew</key>
+			<integer>102</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>4</integer>
+			<key>torps</key>
+			<integer>4</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>250</integer>
+			<key>duranium</key>
+			<integer>22</integer>
+			<key>tritanium</key>
+			<integer>17</integer>
+			<key>molybdenum</key>
+			<integer>55</integer>
+			<key>hasCloak</key>
+			<true/>
+			<key>special</key>
+			<integer>256</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>47</integer>
+			<key>techlevel</key>
+			<integer>8</integer>
+			<key>name</key>
+			<string>Red Wind Class Carrier</string>
+			<key>mass</key>
+			<integer>70</integer>
+			<key>fuel</key>
+			<integer>85</integer>
+			<key>cargo</key>
+			<integer>60</integer>
+			<key>crew</key>
+			<integer>40</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>2</integer>
+			<key>torps</key>
+			<integer>0</integer>
+			<key>bays</key>
+			<integer>2</integer>
+			<key>cost</key>
+			<integer>150</integer>
+			<key>duranium</key>
+			<integer>22</integer>
+			<key>tritanium</key>
+			<integer>37</integer>
+			<key>molybdenum</key>
+			<integer>15</integer>
+			<key>hasCloak</key>
+			<true/>
+			<key>special</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>48</integer>
+			<key>techlevel</key>
+			<integer>5</integer>
+			<key>name</key>
+			<string>Skyfire Class Cruiser</string>
+			<key>mass</key>
+			<integer>150</integer>
+			<key>fuel</key>
+			<integer>370</integer>
+			<key>cargo</key>
+			<integer>250</integer>
+			<key>crew</key>
+			<integer>270</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>4</integer>
+			<key>torps</key>
+			<integer>2</integer>
+			<key>bays</key>
+			<integer>0</integer>
+			<key>cost</key>
+			<integer>250</integer>
+			<key>duranium</key>
+			<integer>52</integer>
+			<key>tritanium</key>
+			<integer>61</integer>
+			<key>molybdenum</key>
+			<integer>83</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>49</integer>
+			<key>techlevel</key>
+			<integer>9</integer>
+			<key>name</key>
+			<string>Madonnzila Class Carrier</string>
+			<key>mass</key>
+			<integer>331</integer>
+			<key>fuel</key>
+			<integer>290</integer>
+			<key>cargo</key>
+			<integer>150</integer>
+			<key>crew</key>
+			<integer>910</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>4</integer>
+			<key>torps</key>
+			<integer>0</integer>
+			<key>bays</key>
+			<integer>5</integer>
+			<key>cost</key>
+			<integer>420</integer>
+			<key>duranium</key>
+			<integer>110</integer>
+			<key>tritanium</key>
+			<integer>123</integer>
+			<key>molybdenum</key>
+			<integer>90</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>hullId</key>
+			<integer>50</integer>
+			<key>techlevel</key>
+			<integer>10</integer>
+			<key>name</key>
+			<string>Bloodfang Class Carrier</string>
+			<key>mass</key>
+			<integer>220</integer>
+			<key>fuel</key>
+			<integer>190</integer>
+			<key>cargo</key>
+			<integer>80</integer>
+			<key>crew</key>
+			<integer>222</integer>
+			<key>engines</key>
+			<integer>2</integer>
+			<key>beams</key>
+			<integer>7</integer>
+			<key>torps</key>
+			<integer>0</integer>
+			<key>bays</key>
+			<integer>4</integer>
+			<key>cost</key>
+			<integer>480</integer>
+			<key>duranium</key>
+			<integer>42</integer>
+			<key>tritanium</key>
+			<integer>61</integer>
+			<key>molybdenum</key>
+			<integer>133</integer>
+			<key>hasCloak</key>
+			<false/>
+			<key>special</key>
+			<integer>0</integer>
 		</dict>
 	</array>
 </dict>

@@ -32,6 +32,8 @@
 		7EA504B114A5508E000B1615 /* NuPlanet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA504B014A5508E000B1615 /* NuPlanet.m */; };
 		7EA504B414A557AF000B1615 /* NuGameSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA504B314A557AF000B1615 /* NuGameSettings.m */; };
 		7EA504B714A573A3000B1615 /* StarMap.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EA504B614A573A3000B1615 /* StarMap.xib */; };
+		7EB9CC0514AAE16900A6ECB3 /* NuHull.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB9CC0414AAE16900A6ECB3 /* NuHull.m */; };
+		7EB9CC0C14AAEDC500A6ECB3 /* ShipDatabaseTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB9CC0B14AAEDC500A6ECB3 /* ShipDatabaseTest.m */; };
 		7EC24C9614A2CC9E0081022A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC24C9514A2CC9E0081022A /* Cocoa.framework */; };
 		7EC24CA014A2CC9E0081022A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7EC24C9E14A2CC9E0081022A /* InfoPlist.strings */; };
 		7EC24CA214A2CC9E0081022A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC24CA114A2CC9E0081022A /* main.m */; };
@@ -107,6 +109,10 @@
 		7EA504B214A557AF000B1615 /* NuGameSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuGameSettings.h; sourceTree = "<group>"; };
 		7EA504B314A557AF000B1615 /* NuGameSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuGameSettings.m; sourceTree = "<group>"; };
 		7EA504B614A573A3000B1615 /* StarMap.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StarMap.xib; sourceTree = "<group>"; };
+		7EB9CC0314AAE16900A6ECB3 /* NuHull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuHull.h; sourceTree = "<group>"; };
+		7EB9CC0414AAE16900A6ECB3 /* NuHull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuHull.m; sourceTree = "<group>"; };
+		7EB9CC0A14AAEDC500A6ECB3 /* ShipDatabaseTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShipDatabaseTest.h; sourceTree = "<group>"; };
+		7EB9CC0B14AAEDC500A6ECB3 /* ShipDatabaseTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShipDatabaseTest.m; sourceTree = "<group>"; };
 		7EC24C9114A2CC9E0081022A /* PlanuPlanu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanuPlanu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EC24C9514A2CC9E0081022A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		7EC24C9814A2CC9E0081022A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -280,6 +286,8 @@
 				7E8644E014A9151C0002986F /* HullDatabase.plist */,
 				7E2D8B6F14A93CA000424670 /* ShipDatabase.h */,
 				7E2D8B7014A93CA000424670 /* ShipDatabase.m */,
+				7EB9CC0314AAE16900A6ECB3 /* NuHull.h */,
+				7EB9CC0414AAE16900A6ECB3 /* NuHull.m */,
 			);
 			path = PlanuPlanu;
 			sourceTree = "<group>";
@@ -308,6 +316,8 @@
 				7E4BFB1B14A5337C00E29659 /* GameListRequestTest.m */,
 				7EA504AB14A5490B000B1615 /* TurnRequestTest.h */,
 				7EA504AC14A5490B000B1615 /* TurnRequestTest.m */,
+				7EB9CC0A14AAEDC500A6ECB3 /* ShipDatabaseTest.h */,
+				7EB9CC0B14AAEDC500A6ECB3 /* ShipDatabaseTest.m */,
 			);
 			path = PlanuPlanuTests;
 			sourceTree = "<group>";
@@ -459,6 +469,7 @@
 				7E8644DB14A6ED9F0002986F /* NuIonStorm.m in Sources */,
 				7E8644DF14A8F6970002986F /* NuShip.m in Sources */,
 				7E2D8B7114A93CA000424670 /* ShipDatabase.m in Sources */,
+				7EB9CC0514AAE16900A6ECB3 /* NuHull.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +481,7 @@
 				7EC24CC114A2CC9F0081022A /* PlanuPlanuTests.m in Sources */,
 				7E4BFB1C14A5337C00E29659 /* GameListRequestTest.m in Sources */,
 				7EA504AD14A5490B000B1615 /* TurnRequestTest.m in Sources */,
+				7EB9CC0C14AAEDC500A6ECB3 /* ShipDatabaseTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
