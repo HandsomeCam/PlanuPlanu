@@ -13,7 +13,18 @@
 #define kShipSpecialTachyonDevice		4
 #define kShipSpecialBioscanner			8
 #define kShipSpecialNebulaScanner		16
+#define kShipSpecialAdvancedCloak		32
+#define kShipSpecialGloryDevice			64
+#define kShipSpecialGambling			128
+#define kShipSpecialGravitonic			256
 
 @interface ShipDatabase : NSObject
+{
+    NSArray* hulls;
+}
+
+@property (nonatomic, retain) NSArray* hulls;
+
++ (ShipDatabase*)sharedDatabase;
 
 @end
