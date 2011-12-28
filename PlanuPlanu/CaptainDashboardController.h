@@ -7,10 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "GameListRequest.h"
-#import "TurnRequest.h"
+#import <PlanuKit/PlanuKit.h>
 
-@interface CaptainDashboardController : NSWindowController <GameListRequestDelegate, NSTableViewDelegate, NSTableViewDataSource, TurnRequestDelegate>
+@interface CaptainDashboardController : NSWindowController <NuGameListRequestDelegate, NSTableViewDelegate, NSTableViewDataSource, NuTurnRequestDelegate>
 {
     @private
     NSTextField* loginMessage;

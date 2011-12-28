@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "NuTurn.h"
+#import <PlanuKit/PlanuKit.h>
 
 @interface StarMapController : NSWindowController
 {

@@ -8,10 +8,6 @@
 
 #import "CaptainDashboardController.h"
 #import "Preferences.h"
-#import "GameListRequest.h"
-#import "NuGame.h"
-#import "TurnRequest.h"
-#import "NuPlanet.h"
 #import "StarMapController.h"
 
 @implementation CaptainDashboardController
@@ -42,7 +38,7 @@
         loginMessage.stringValue = apiKey;
     }
     
-    GameListRequest* glr = [[GameListRequest alloc] init];
+    NuGameListRequest* glr = [[NuGameListRequest alloc] init];
     
     NSString* username = [defaults stringForKey:kPrefUsername];
     
@@ -104,7 +100,7 @@
     
     NuGame* game = [games objectAtIndex:sRow];
     
-    TurnRequest* tr = [[TurnRequest alloc] init];
+    NuTurnRequest* tr = [[NuTurnRequest alloc] init];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *apiKey = [defaults stringForKey:kPrefApiKey];
