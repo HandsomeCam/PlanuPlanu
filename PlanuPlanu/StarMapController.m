@@ -44,6 +44,7 @@
     smv.planets = turn.planetList;
     smv.player = turn.player;
     smv.ionStorms = turn.ionStorms;
+    smv.ships = turn.ships;
     
     [mapScroll setHasHorizontalScroller:YES];
     [mapScroll setHasVerticalScroller:YES];

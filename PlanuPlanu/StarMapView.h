@@ -20,15 +20,18 @@
     NuPlayer* player;
     PlanetPopoverController *popover;
     NSArray *ionStorms;
+    NSArray *ships;
 }
 
 @property (nonatomic, retain) NSArray* planets;
 @property (nonatomic, retain) NuPlayer* player;
 @property (nonatomic, retain) NSArray* ionStorms;
+@property (nonatomic, retain) NSArray* ships;
 
 - (void)drawPlanets:(CGContextRef)context;
 - (void)drawIonStorms:(CGContextRef)context;
 - (void)drawPlanetaryConnections:(CGContextRef)context;
+- (void)drawShips:(CGContextRef)context;
 
 - (void)showPlanetPopover:(NuPlanet*)planet;
 - (void)scrollToHomeWorld;

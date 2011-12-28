@@ -16,6 +16,7 @@
     NuGameSettings* gameSettings;
     NuPlayer* player;
     NSArray* ionStorms;
+    NSArray* ships;
     
 }
 
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) NuGameSettings* gameSettings;
 @property (nonatomic, retain) NuPlayer* player;
 @property (nonatomic, retain) NSArray* ionStorms;
+@property (nonatomic, retain) NSArray* ships;
 
 -(BOOL)loadFromDict:(NSDictionary*)input;
 

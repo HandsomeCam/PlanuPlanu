@@ -10,6 +10,7 @@
 		7E1518BF14A3F15B00BAB34E /* CaptainDashboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E1518BE14A3F15B00BAB34E /* CaptainDashboard.xib */; };
 		7E1518C314A3F2D000BAB34E /* GameListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1518C214A3F2D000BAB34E /* GameListRequest.m */; };
 		7E1518C714A3F6E600BAB34E /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1518C614A3F6E600BAB34E /* JSONKit.m */; };
+		7E2D8B7114A93CA000424670 /* ShipDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2D8B7014A93CA000424670 /* ShipDatabase.m */; };
 		7E4BFB1C14A5337C00E29659 /* GameListRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4BFB1B14A5337C00E29659 /* GameListRequestTest.m */; };
 		7E4BFB2014A5375F00E29659 /* NuGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4BFB1F14A5375F00E29659 /* NuGame.m */; };
 		7E4BFB2314A5444E00E29659 /* TurnRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4BFB2214A5444E00E29659 /* TurnRequest.m */; };
@@ -21,6 +22,8 @@
 		7E8644D114A6D6A20002986F /* PlanetPopover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E8644D014A6D6A20002986F /* PlanetPopover.xib */; };
 		7E8644D414A6E15B0002986F /* NuStarbase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8644D314A6E15B0002986F /* NuStarbase.m */; };
 		7E8644DB14A6ED9F0002986F /* NuIonStorm.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8644DA14A6ED9F0002986F /* NuIonStorm.m */; };
+		7E8644DF14A8F6970002986F /* NuShip.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8644DE14A8F6970002986F /* NuShip.m */; };
+		7E8644E114A915200002986F /* HullDatabase.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E8644E014A9151C0002986F /* HullDatabase.plist */; };
 		7E97ED2F14A3D5E200FD46DD /* AccountModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E97ED2D14A3D5E200FD46DD /* AccountModel.xcdatamodeld */; };
 		7E97ED3214A3D84100FD46DD /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E97ED3114A3D84100FD46DD /* Preferences.plist */; };
 		7E97ED3914A3DEE600FD46DD /* AGKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E97ED3814A3DEE600FD46DD /* AGKeychain.m */; };
@@ -64,6 +67,8 @@
 		7E1518C214A3F2D000BAB34E /* GameListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameListRequest.m; sourceTree = "<group>"; };
 		7E1518C514A3F6E600BAB34E /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = JSONKit/JSONKit.h; sourceTree = SOURCE_ROOT; };
 		7E1518C614A3F6E600BAB34E /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = JSONKit/JSONKit.m; sourceTree = SOURCE_ROOT; };
+		7E2D8B6F14A93CA000424670 /* ShipDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShipDatabase.h; sourceTree = "<group>"; };
+		7E2D8B7014A93CA000424670 /* ShipDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShipDatabase.m; sourceTree = "<group>"; };
 		7E4BFB1A14A5337C00E29659 /* GameListRequestTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameListRequestTest.h; sourceTree = "<group>"; };
 		7E4BFB1B14A5337C00E29659 /* GameListRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameListRequestTest.m; sourceTree = "<group>"; };
 		7E4BFB1E14A5375F00E29659 /* NuGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuGame.h; sourceTree = "<group>"; };
@@ -85,6 +90,9 @@
 		7E8644D314A6E15B0002986F /* NuStarbase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuStarbase.m; sourceTree = "<group>"; };
 		7E8644D914A6ED9F0002986F /* NuIonStorm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuIonStorm.h; sourceTree = "<group>"; };
 		7E8644DA14A6ED9F0002986F /* NuIonStorm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuIonStorm.m; sourceTree = "<group>"; };
+		7E8644DD14A8F6970002986F /* NuShip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuShip.h; sourceTree = "<group>"; };
+		7E8644DE14A8F6970002986F /* NuShip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuShip.m; sourceTree = "<group>"; };
+		7E8644E014A9151C0002986F /* HullDatabase.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HullDatabase.plist; sourceTree = "<group>"; };
 		7E97ED2E14A3D5E200FD46DD /* AccountModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AccountModel.xcdatamodel; sourceTree = "<group>"; };
 		7E97ED3114A3D84100FD46DD /* Preferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Preferences.plist; sourceTree = "<group>"; };
 		7E97ED3714A3DEE600FD46DD /* AGKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGKeychain.h; sourceTree = "<group>"; };
@@ -267,6 +275,11 @@
 				7E8644D314A6E15B0002986F /* NuStarbase.m */,
 				7E8644D914A6ED9F0002986F /* NuIonStorm.h */,
 				7E8644DA14A6ED9F0002986F /* NuIonStorm.m */,
+				7E8644DD14A8F6970002986F /* NuShip.h */,
+				7E8644DE14A8F6970002986F /* NuShip.m */,
+				7E8644E014A9151C0002986F /* HullDatabase.plist */,
+				7E2D8B6F14A93CA000424670 /* ShipDatabase.h */,
+				7E2D8B7014A93CA000424670 /* ShipDatabase.m */,
 			);
 			path = PlanuPlanu;
 			sourceTree = "<group>";
@@ -386,6 +399,7 @@
 				7E1518BF14A3F15B00BAB34E /* CaptainDashboard.xib in Resources */,
 				7EA504B714A573A3000B1615 /* StarMap.xib in Resources */,
 				7E8644D114A6D6A20002986F /* PlanetPopover.xib in Resources */,
+				7E8644E114A915200002986F /* HullDatabase.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +457,8 @@
 				7E8644CE14A6D5F70002986F /* PlanetPopoverController.m in Sources */,
 				7E8644D414A6E15B0002986F /* NuStarbase.m in Sources */,
 				7E8644DB14A6ED9F0002986F /* NuIonStorm.m in Sources */,
+				7E8644DF14A8F6970002986F /* NuShip.m in Sources */,
+				7E2D8B7114A93CA000424670 /* ShipDatabase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
