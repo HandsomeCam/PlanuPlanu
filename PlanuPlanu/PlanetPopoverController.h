@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "NuPlanet.h"
+#import <PlanuKit/PlanuKit.h>
 
 @interface PlanetPopoverController : NSViewController <NSPopoverDelegate>
 {

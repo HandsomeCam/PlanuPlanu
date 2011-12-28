@@ -7,10 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "NuPlayer.h"
-#import "NuPlanet.h"
-#import "PlanetPopoverController.h"
-#import "NuIonStorm.h"
+#import <PlanuKit/PlanuKit.h>
+#import "PlanetPopoverController.h" 
 
 @interface StarMapView : NSView
 {

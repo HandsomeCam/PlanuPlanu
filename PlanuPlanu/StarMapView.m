@@ -6,10 +6,8 @@
 //  Copyright 2011 Roboboogie Studios. All rights reserved.
 //
 
-#import "StarMapView.h"
-#import "NuPlanet.h"
-#import "PlanetPopoverController.h"
-#import "NuShip.h"
+#import "StarMapView.h" 
+#import "PlanetPopoverController.h" 
 
 @implementation StarMapView
 

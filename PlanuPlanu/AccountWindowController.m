@@ -8,7 +8,7 @@
 
 #import "AccountWindowController.h"
 #import "NSAttributedString+Hyperlink.h"
-#import "LoginRequest.h"
+#import <PlanuKit/PlanuKit.h>
 #import "Preferences.h"
 
 @interface AccountWindowController (private)
@@ -86,7 +86,7 @@
 
 - (void)loginClicked:(id)sender
 {
-    LoginRequest* lr = [[LoginRequest alloc] init];
+    NuLoginRequest* lr = [[NuLoginRequest alloc] init];
     [lr performLoginWithUsername:username.stringValue withPassword:password.stringValue withDelegate:self];
 }
 

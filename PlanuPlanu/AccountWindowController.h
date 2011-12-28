@@ -7,9 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "LoginRequest.h"
+#import <PlanuKit/PlanuKit.h>
 
-@interface AccountWindowController : NSWindowController <LoginRequestDelegate>
+@interface AccountWindowController : NSWindowController <NuLoginRequestDelegate>
 {
     NSTextField* username;
     NSTextField* password;
