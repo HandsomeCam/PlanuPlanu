@@ -9,10 +9,11 @@
 #import "StarMapView.h"
 #import "NuPlanet.h"
 #import "PlanetPopoverController.h"
+#import "NuShip.h"
 
 @implementation StarMapView
 
-@synthesize planets, player, ionStorms;
+@synthesize planets, player, ionStorms, ships;
 
 - (id)initWithFrame:(NSRect)frame
 {
@@ -44,6 +45,28 @@
     [self drawPlanetaryConnections:myContext];
     [self drawPlanets:myContext];
     [self drawIonStorms:myContext];
+    
+    [self drawShips:myContext];
+    
+}
+
+- (void)drawShips:(CGContextRef)context
+{
+    
+    NSInteger shipRadius = 4;
+    for (NuShip* ship in self.ships)
+    {
+        CGColorRef shipColor =  CGColorCreateGenericRGB(.6, .9, .6, 1);
+        CGContextSetFillColorWithColor(context, shipColor);
+        
+        CGRect rectangle = CGRectMake(ship.x - shipRadius/2,
+                                      ship.y - shipRadius/2,
+                                      shipRadius, shipRadius);
+        CGContextStrokeEllipseInRect(context, rectangle);
+        
+        
+        CGContextStrokePath(context);
+    }
 }
 
 - (void)drawPlanetaryConnections:(CGContextRef)context
