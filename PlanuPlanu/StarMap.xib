@@ -81,13 +81,8 @@
 									<string key="NSReuseIdentifierKey">_NS:412</string>
 									<reference key="NSDocView" ref="588802621"/>
 									<object class="NSColor" key="NSBGColor">
-										<int key="NSColorSpace">6</int>
-										<string key="NSCatalogName">System</string>
-										<string key="NSColorName">controlColor</string>
-										<object class="NSColor" key="NSColor">
-											<int key="NSColorSpace">3</int>
-											<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
-										</object>
+										<int key="NSColorSpace">1</int>
+										<bytes key="NSRGB">MCAwIDAAA</bytes>
 									</object>
 									<int key="NScvFlags">4</int>
 								</object>
@@ -97,7 +92,6 @@
 									<string key="NSFrame">{{984, 1}, {15, 742}}</string>
 									<reference key="NSSuperview" ref="1055483820"/>
 									<reference key="NSWindow"/>
-									<reference key="NSNextKeyView"/>
 									<string key="NSReuseIdentifierKey">_NS:419</string>
 									<reference key="NSTarget" ref="1055483820"/>
 									<string key="NSAction">_doScroller:</string>

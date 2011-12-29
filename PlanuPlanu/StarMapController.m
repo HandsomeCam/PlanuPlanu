@@ -37,9 +37,8 @@
 }
 
 - (void)initStarMapView
-{
-    NSRect smvFrame = CGRectMake(0, 0, 4000, 4000);
-    StarMapView* smv = [[StarMapView alloc] initWithFrame:smvFrame];
+{ 
+    StarMapView* smv = [[StarMapView alloc] initWithTurn:turn];
     
     smv.planets = turn.planetList;
     smv.player = turn.player;

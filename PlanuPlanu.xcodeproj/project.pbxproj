@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7E1518BF14A3F15B00BAB34E /* CaptainDashboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E1518BE14A3F15B00BAB34E /* CaptainDashboard.xib */; };
-		7E1518C714A3F6E600BAB34E /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1518C614A3F6E600BAB34E /* JSONKit.m */; };
 		7E2908CF14ABC66A00B11972 /* StarMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2908CE14ABC66A00B11972 /* StarMapController.m */; };
+		7E2908D414ACFF9E00B11972 /* NuIonStormView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2908D314ACFF9D00B11972 /* NuIonStormView.m */; };
 		7E4BFB1C14A5337C00E29659 /* GameListRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4BFB1B14A5337C00E29659 /* GameListRequestTest.m */; };
 		7E8644C414A5A8C50002986F /* StarMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8644C314A5A8C50002986F /* StarMapView.m */; };
 		7E8644CE14A6D5F70002986F /* PlanetPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8644CC14A6D5F70002986F /* PlanetPopoverController.m */; };
@@ -66,9 +66,9 @@
 
 /* Begin PBXFileReference section */
 		7E1518BE14A3F15B00BAB34E /* CaptainDashboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CaptainDashboard.xib; sourceTree = "<group>"; };
-		7E1518C514A3F6E600BAB34E /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = JSONKit/JSONKit.h; sourceTree = SOURCE_ROOT; };
-		7E1518C614A3F6E600BAB34E /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = JSONKit/JSONKit.m; sourceTree = SOURCE_ROOT; };
 		7E2908CE14ABC66A00B11972 /* StarMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarMapController.m; sourceTree = "<group>"; };
+		7E2908D214ACFF9D00B11972 /* NuIonStormView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuIonStormView.h; sourceTree = "<group>"; };
+		7E2908D314ACFF9D00B11972 /* NuIonStormView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuIonStormView.m; sourceTree = "<group>"; };
 		7E4BFB1A14A5337C00E29659 /* GameListRequestTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameListRequestTest.h; sourceTree = "<group>"; };
 		7E4BFB1B14A5337C00E29659 /* GameListRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameListRequestTest.m; sourceTree = "<group>"; };
 		7E8644BF14A57F5B0002986F /* StarMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarMapController.h; sourceTree = "<group>"; };
@@ -142,15 +142,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7E1518C814A3F6EC00BAB34E /* JSONKit */ = {
-			isa = PBXGroup;
-			children = (
-				7E1518C514A3F6E600BAB34E /* JSONKit.h */,
-				7E1518C614A3F6E600BAB34E /* JSONKit.m */,
-			);
-			name = JSONKit;
-			sourceTree = "<group>";
-		};
 		7EA504B514A564A7000B1615 /* User Interfaces */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,7 +207,6 @@
 			isa = PBXGroup;
 			children = (
 				7EA504B514A564A7000B1615 /* User Interfaces */,
-				7E1518C814A3F6EC00BAB34E /* JSONKit */,
 				7EC24CA714A2CC9E0081022A /* PlanuPlanuAppDelegate.h */,
 				7EC24CA814A2CC9E0081022A /* PlanuPlanuAppDelegate.m */,
 				7EC24C9C14A2CC9E0081022A /* Supporting Files */,
@@ -239,6 +229,8 @@
 				7E8644C314A5A8C50002986F /* StarMapView.m */,
 				7E8644CB14A6D5F60002986F /* PlanetPopoverController.h */,
 				7E8644CC14A6D5F70002986F /* PlanetPopoverController.m */,
+				7E2908D214ACFF9D00B11972 /* NuIonStormView.h */,
+				7E2908D314ACFF9D00B11972 /* NuIonStormView.m */,
 			);
 			path = PlanuPlanu;
 			sourceTree = "<group>";
@@ -426,10 +418,10 @@
 				7E97ED2F14A3D5E200FD46DD /* AccountModel.xcdatamodeld in Sources */,
 				7E97ED3914A3DEE600FD46DD /* AGKeychain.m in Sources */,
 				7E97ED3C14A3ED4900FD46DD /* CaptainDashboardController.m in Sources */,
-				7E1518C714A3F6E600BAB34E /* JSONKit.m in Sources */,
 				7E8644C414A5A8C50002986F /* StarMapView.m in Sources */,
 				7E8644CE14A6D5F70002986F /* PlanetPopoverController.m in Sources */,
 				7E2908CF14ABC66A00B11972 /* StarMapController.m in Sources */,
+				7E2908D414ACFF9E00B11972 /* NuIonStormView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
