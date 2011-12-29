@@ -16,7 +16,6 @@
 - (id)initWithIonStorm:(NuIonStorm*)ionStorm;
 {
     self.storm = ionStorm;
-    self.identifier = self.storm.ionStormId;
     
     NSRect rect = CGRectMake(storm.x - storm.radius,
                              storm.y - storm.radius,
@@ -34,8 +33,8 @@
         
         NSInteger endHeading = r + storm.heading + 10 + (34 * i);
 
-        NSInteger endX = storm.radius * sin(endHeading*pi/180) + storm.radius;
-        NSInteger endY = storm.radius * cos(endHeading*pi/180) + storm.radius;
+        NSInteger endX = storm.radius * sin(endHeading) + storm.radius;
+        NSInteger endY = storm.radius * cos(endHeading) + storm.radius;
         
         NSArray *path = 
         [self drawLightningFrom:CGPointMake(storm.radius, storm.radius)
@@ -47,73 +46,77 @@
     
     lightning = [lt retain];
     
-    [self init];
-    
-    self.frame = rect;
+    return [self initWithFrame:rect];
+}
+
+- (id)initWithFrame:(NSRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code here.
+    }
     
     return self;
 }
 
-- (void)drawInContext:(CGContextRef)ctx
+- (void)drawRect:(NSRect)dirtyRect
 {
-    NSGraphicsContext *nsGraphicsContext;
-    nsGraphicsContext = [NSGraphicsContext graphicsContextWithGraphicsPort:ctx
-                                                                   flipped:NO];
-    [NSGraphicsContext saveGraphicsState];
-    [NSGraphicsContext setCurrentContext:nsGraphicsContext];
+    // Drawing code here.
+    CGContextRef context = [[NSGraphicsContext // 1
+                               currentContext] graphicsPort];
     
-     
+//    //    // Add bg
+//    CGContextSetRGBFillColor (context, 0, 0, 1, 1);// 3
+//    CGContextFillRect (context, dirtyRect);// 4
 
     CGRect stormRect = CGRectMake(0,0,self.frame.size.width, self.frame.size.height);
     
-    CGContextSetLineWidth(ctx, 1.0);
+    CGContextSetLineWidth(context, 1.0);
     CGColorRef thickYellow = CGColorCreateGenericRGB(.7, .9, 0, .7);
     
     CGColorRef yellow = CGColorCreateGenericRGB(.5 + (.01 * storm.voltage), .9, 0, .5);
-    CGContextSetFillColorWithColor(ctx, yellow);
+    CGContextSetFillColorWithColor(context, yellow);
      
-    CGContextFillEllipseInRect(ctx, stormRect);
+    CGContextFillEllipseInRect(context, stormRect);
     
-    CGContextStrokePath(ctx);
+    CGContextStrokePath(context);
     
     // draw heading line
-    CGContextSetStrokeColorWithColor(ctx, thickYellow);
-    CGContextSetLineWidth(ctx, 2.0);
+    CGContextSetStrokeColorWithColor(context, thickYellow);
+    CGContextSetLineWidth(context, 1.0);
     
     NSInteger centerX = storm.radius;
     NSInteger centerY = storm.radius;
-    CGContextMoveToPoint(ctx, centerX, centerY);
+    CGContextMoveToPoint(context, centerX, centerY);
     
-    double headingLength = pow(storm.warp, 2); 
+    NSInteger headingLength = storm.warp * storm.warp;
+    
     CGPoint endPoint; 
-    double headingX = sin(storm.heading * pi/180) * headingLength;
-    double headingY = cos(storm.heading * pi/180) * headingLength;
-    endPoint.x = headingX + centerX;
-    endPoint.y = headingY + centerY;
     
-    CGContextAddLineToPoint(ctx, endPoint.x, endPoint.y);
-    CGContextStrokePath(ctx);
+    endPoint.x = headingLength * sin(storm.heading) + centerX;
+    endPoint.y = headingLength * cos(storm.heading) + centerY;
+    
+    CGContextAddLineToPoint(context, endPoint.x, endPoint.y);
+    CGContextStrokePath(context);
         
     for (NSArray *path in lightning)
     {
         CGColorRef lightningColor = CGColorCreateGenericRGB(.95, .95, 0, .2);        
-        CGContextSetLineWidth(ctx, 1.8);
-        CGContextSetStrokeColorWithColor(ctx, lightningColor);
+        CGContextSetLineWidth(context, 1.8);
+        CGContextSetStrokeColorWithColor(context, lightningColor);
         
-        CGContextMoveToPoint(ctx, storm.radius, storm.radius);
+        CGContextMoveToPoint(context, storm.radius, storm.radius);
         
         for (NSString* step in path)
         {
             NSArray* pts = [step componentsSeparatedByString:@","];
             CGFloat pathX = [[pts objectAtIndex:0] doubleValue];
             CGFloat pathY = [[pts objectAtIndex:1] doubleValue];
-            CGContextAddLineToPoint(ctx, pathX, pathY);
+            CGContextAddLineToPoint(context, pathX, pathY);
         }
         
-        CGContextStrokePath(ctx);
+        CGContextStrokePath(context);
     }
-    
-    [NSGraphicsContext restoreGraphicsState];
 }
 
 

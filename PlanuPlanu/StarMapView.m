@@ -8,19 +8,44 @@
 
 #import "StarMapView.h" 
 #import "PlanetPopoverController.h" 
+#import "NuIonStormView.h"
 
 @implementation StarMapView
 
 @synthesize planets, player, ionStorms, ships;
+
+- (id)initWithTurn:(NuTurn*)trn
+{
+    self.ionStorms = trn.ionStorms;
+    
+    NSRect smvFrame = CGRectMake(0, 0, 4000, 4000);
+    
+    return [self initWithFrame:smvFrame];
+}
 
 - (id)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code here.
+        if (self.ionStorms != nil)
+        {
+            [self addIonStorms];
+        }
     }
     
     return self;
+}
+
+- (void)addIonStorms
+{
+    
+    for (NuIonStorm* storm in ionStorms)
+    {
+        NuIonStormView* isv = [[[NuIonStormView alloc] initWithIonStorm:storm] autorelease];
+       
+        [self addSubview:isv];
+    }
 }
 
 - (void)drawRect:(NSRect)dirtyRect
@@ -29,9 +54,9 @@
     CGContextRef myContext = [[NSGraphicsContext // 1
                                currentContext] graphicsPort];
     
-    // Add bg
-    CGContextSetRGBFillColor (myContext, 0, 0, 0, 1);// 3
-    CGContextFillRect (myContext, CGRectMake (0, 0, 4000, 4000 ));// 4
+//    // Add bg
+//    CGContextSetRGBFillColor (myContext, 0, 0, 0, 1);// 3
+//    CGContextFillRect (myContext, CGRectMake (0, 0, 4000, 4000 ));// 4
     
     
 //    // ********** Your drawing code here ********** // 2
@@ -42,7 +67,7 @@
     
     [self drawPlanetaryConnections:myContext];
     [self drawPlanets:myContext];
-    [self drawIonStorms:myContext];
+//    [self drawIonStorms:myContext];
     
     [self drawShips:myContext];
     

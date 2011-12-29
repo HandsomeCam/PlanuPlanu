@@ -9,9 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import <PlanuKit/PlanuKit.h>
 
-#import "NuMappableEntityLayer.h"
-
-@interface NuIonStormView : NuMappableEntityLayer
+@interface NuIonStormView : NSView
 {
     NuIonStorm* storm;
     NSArray* lightning;

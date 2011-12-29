@@ -26,6 +26,8 @@
 @property (nonatomic, retain) NSArray* ionStorms;
 @property (nonatomic, retain) NSArray* ships;
 
+- (id)initWithTurn:(NuTurn*)trn;
+
 - (void)drawPlanets:(CGContextRef)context;
 - (void)drawIonStorms:(CGContextRef)context;
 - (void)drawPlanetaryConnections:(CGContextRef)context;
@@ -33,5 +35,7 @@
 
 - (void)showPlanetPopover:(NuPlanet*)planet;
 - (void)scrollToHomeWorld;
+
+- (void)addIonStorms;
 
 @end
