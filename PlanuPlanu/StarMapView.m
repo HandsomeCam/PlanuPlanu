@@ -9,6 +9,7 @@
 #import "StarMapView.h" 
 #import "PlanetPopoverController.h" 
 #import "NuIonStormView.h"
+#import "NuPlanetView.h"
 
 @implementation StarMapView
 
@@ -17,6 +18,8 @@
 - (id)initWithTurn:(NuTurn*)trn
 {
     self.ionStorms = trn.ionStorms;
+    self.planets = trn.planetList;
+    self.player = trn.player;
     
     NSRect smvFrame = CGRectMake(0, 0, 4000, 4000);
     
@@ -32,9 +35,25 @@
         {
             [self addIonStorms];
         }
+        
+        if (self.planets != nil)
+        {
+            [self addPlanets];
+        }
     }
     
     return self;
+}
+
+- (void)addPlanets
+{
+    for (NuPlanet* planet in self.planets)
+    {
+        NuPlanetView* pv = [[[NuPlanetView alloc] initWithPlanet:planet] autorelease];
+        pv.player = self.player;
+        
+        [self addSubview:pv];
+    }
 }
 
 - (void)addIonStorms
@@ -66,7 +85,7 @@
 //    CGContextFillRect (myContext, CGRectMake (0, 0, 100, 200)); // 6
     
     [self drawPlanetaryConnections:myContext];
-    [self drawPlanets:myContext];
+    //[self drawPlanets:myContext];
 //    [self drawIonStorms:myContext];
     
     [self drawShips:myContext];
