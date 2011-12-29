@@ -37,5 +37,6 @@
 - (void)scrollToHomeWorld;
 
 - (void)addIonStorms;
+- (void)addPlanets;
 
 @end
