@@ -7,9 +7,7 @@
 //
 
 #import "GameListRequestTest.h"
-#import "GameListRequest.h"
-#import "NuGame.h"
- 
+#import <PlanuKit/PlanuKit.h>
 
 @implementation GameListRequestTest
 
