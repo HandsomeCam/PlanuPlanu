@@ -40,7 +40,7 @@
 { 
     StarMapView* smv = [[StarMapView alloc] initWithTurn:turn];
     
-    smv.planets = turn.planetList;
+    smv.planets = turn.planets;
     smv.player = turn.player;
     smv.ionStorms = turn.ionStorms;
     smv.ships = turn.ships;

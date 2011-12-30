@@ -28,15 +28,14 @@
 
 - (id)initWithTurn:(NuTurn*)trn;
 
-- (void)drawPlanets:(CGContextRef)context;
-- (void)drawIonStorms:(CGContextRef)context;
 - (void)drawPlanetaryConnections:(CGContextRef)context;
-- (void)drawShips:(CGContextRef)context;
+//- (void)drawShips:(CGContextRef)context;
 
 - (void)showPlanetPopover:(NuPlanet*)planet;
 - (void)scrollToHomeWorld;
 
 - (void)addIonStorms;
 - (void)addPlanets;
+- (void)addShips;
 
 @end

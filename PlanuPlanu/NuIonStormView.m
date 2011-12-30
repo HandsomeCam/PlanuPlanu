@@ -33,8 +33,8 @@
         
         NSInteger endHeading = r + storm.heading + 10 + (34 * i);
 
-        NSInteger endX = storm.radius * sin(endHeading) + storm.radius;
-        NSInteger endY = storm.radius * cos(endHeading) + storm.radius;
+        NSInteger endX = storm.radius * sin(endHeading*pi/180) + storm.radius;
+        NSInteger endY = storm.radius * cos(endHeading*pi/180) + storm.radius;
         
         NSArray *path = 
         [self drawLightningFrom:CGPointMake(storm.radius, storm.radius)
@@ -83,18 +83,18 @@
     
     // draw heading line
     CGContextSetStrokeColorWithColor(context, thickYellow);
-    CGContextSetLineWidth(context, 1.0);
+    CGContextSetLineWidth(context, 2.0);
     
     NSInteger centerX = storm.radius;
     NSInteger centerY = storm.radius;
     CGContextMoveToPoint(context, centerX, centerY);
     
-    NSInteger headingLength = storm.warp * storm.warp;
-    
+    double headingLength = pow(storm.warp, 2); 
     CGPoint endPoint; 
-    
-    endPoint.x = headingLength * sin(storm.heading) + centerX;
-    endPoint.y = headingLength * cos(storm.heading) + centerY;
+    double headingX = sin(storm.heading * pi/180) * headingLength;
+    double headingY = cos(storm.heading * pi/180) * headingLength;
+    endPoint.x = headingX + centerX;
+    endPoint.y = headingY + centerY;
     
     CGContextAddLineToPoint(context, endPoint.x, endPoint.y);
     CGContextStrokePath(context);
