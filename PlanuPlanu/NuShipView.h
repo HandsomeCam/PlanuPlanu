@@ -9,27 +9,16 @@
 #import <Cocoa/Cocoa.h>
 #import <PlanuKit/PlanuKit.h>
 
-#import "NuColorScheme.h"
-#import "NuMappableEntityLayer.h"
-
-@class NuShipView;
- 
-
-@interface NuShipView : NuMappableEntityLayer
+@interface NuShipView : NSView
 {
-    NSMutableArray* ships;
+    NuShip* ship;
     NuPlayer* player;
     NSInteger shipRadius;
-    NuColorScheme* colors; 
-     
 }
 
-@property (nonatomic, retain) NSMutableArray* ships;
+@property (nonatomic, retain) NuShip* ship;
 @property (nonatomic, retain) NuPlayer* player;
-@property (nonatomic, retain) NuColorScheme* colors; 
 
 - (id)initWithShip:(NuShip*)ship;
-- (NSRect)calculateLayerBounds;
-- (void)addShip:(NuShip*)ship;
 
 @end

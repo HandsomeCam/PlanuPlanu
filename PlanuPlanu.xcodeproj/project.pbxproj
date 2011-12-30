@@ -12,6 +12,7 @@
 		7E2908D414ACFF9E00B11972 /* NuIonStormView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2908D314ACFF9D00B11972 /* NuIonStormView.m */; };
 		7E2908D714AD299E00B11972 /* NuPlanetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2908D614AD299E00B11972 /* NuPlanetView.m */; };
 		7E2908D914AD549F00B11972 /* PlanuKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EB9CC5014ABB4DA00A6ECB3 /* PlanuKit.framework */; };
+		7E2908DC14AD605000B11972 /* NuShipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2908DB14AD604F00B11972 /* NuShipView.m */; };
 		7E4BFB1C14A5337C00E29659 /* GameListRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4BFB1B14A5337C00E29659 /* GameListRequestTest.m */; };
 		7E8644C414A5A8C50002986F /* StarMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8644C314A5A8C50002986F /* StarMapView.m */; };
 		7E8644CE14A6D5F70002986F /* PlanetPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8644CC14A6D5F70002986F /* PlanetPopoverController.m */; };
@@ -86,6 +87,8 @@
 		7E2908D314ACFF9D00B11972 /* NuIonStormView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuIonStormView.m; sourceTree = "<group>"; };
 		7E2908D514AD299D00B11972 /* NuPlanetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuPlanetView.h; sourceTree = "<group>"; };
 		7E2908D614AD299E00B11972 /* NuPlanetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuPlanetView.m; sourceTree = "<group>"; };
+		7E2908DA14AD604F00B11972 /* NuShipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuShipView.h; sourceTree = "<group>"; };
+		7E2908DB14AD604F00B11972 /* NuShipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuShipView.m; sourceTree = "<group>"; };
 		7E4BFB1A14A5337C00E29659 /* GameListRequestTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameListRequestTest.h; sourceTree = "<group>"; };
 		7E4BFB1B14A5337C00E29659 /* GameListRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameListRequestTest.m; sourceTree = "<group>"; };
 		7E8644BF14A57F5B0002986F /* StarMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarMapController.h; sourceTree = "<group>"; };
@@ -250,6 +253,8 @@
 				7E2908D314ACFF9D00B11972 /* NuIonStormView.m */,
 				7E2908D514AD299D00B11972 /* NuPlanetView.h */,
 				7E2908D614AD299E00B11972 /* NuPlanetView.m */,
+				7E2908DA14AD604F00B11972 /* NuShipView.h */,
+				7E2908DB14AD604F00B11972 /* NuShipView.m */,
 			);
 			path = PlanuPlanu;
 			sourceTree = "<group>";
@@ -443,6 +448,7 @@
 				7E2908CF14ABC66A00B11972 /* StarMapController.m in Sources */,
 				7E2908D414ACFF9E00B11972 /* NuIonStormView.m in Sources */,
 				7E2908D714AD299E00B11972 /* NuPlanetView.m in Sources */,
+				7E2908DC14AD605000B11972 /* NuShipView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

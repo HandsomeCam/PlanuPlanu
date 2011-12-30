@@ -10,6 +10,7 @@
 #import "PlanetPopoverController.h" 
 #import "NuIonStormView.h"
 #import "NuPlanetView.h"
+#import "NuShipView.h"
 
 @implementation StarMapView
 
@@ -18,8 +19,9 @@
 - (id)initWithTurn:(NuTurn*)trn
 {
     self.ionStorms = trn.ionStorms;
-    self.planets = trn.planetList;
+    self.planets = trn.planets;
     self.player = trn.player;
+    self.ships = trn.ships;
     
     NSRect smvFrame = CGRectMake(0, 0, 4000, 4000);
     
@@ -40,9 +42,25 @@
         {
             [self addPlanets];
         }
+        
+        if (self.ships != nil)
+        {
+            [self addShips];
+        }
     }
     
     return self;
+}
+
+- (void)addShips
+{
+    for (NuShip* ship in self.ships)
+    {
+        NuShipView* sv = [[[NuShipView alloc] initWithShip:ship] autorelease];
+        sv.player = self.player;
+        
+        [self addSubview:sv];
+    }
 }
 
 - (void)addPlanets
@@ -73,43 +91,30 @@
     CGContextRef myContext = [[NSGraphicsContext // 1
                                currentContext] graphicsPort];
     
-//    // Add bg
-//    CGContextSetRGBFillColor (myContext, 0, 0, 0, 1);// 3
-//    CGContextFillRect (myContext, CGRectMake (0, 0, 4000, 4000 ));// 4
-    
-    
-//    // ********** Your drawing code here ********** // 2
-//    CGContextSetRGBFillColor (myContext, 1, 0, 0, 1);// 3
-//    CGContextFillRect (myContext, CGRectMake (0, 0, 200, 100 ));// 4
-//    CGContextSetRGBFillColor (myContext, 0, 0, 1, .5);// 5
-//    CGContextFillRect (myContext, CGRectMake (0, 0, 100, 200)); // 6
-    
     [self drawPlanetaryConnections:myContext];
-    //[self drawPlanets:myContext];
-//    [self drawIonStorms:myContext];
     
-    [self drawShips:myContext];
+    //[self drawShips:myContext];
     
 }
 
-- (void)drawShips:(CGContextRef)context
-{
-    
-    NSInteger shipRadius = 4;
-    for (NuShip* ship in self.ships)
-    {
-        CGColorRef shipColor =  CGColorCreateGenericRGB(.6, .9, .6, 1);
-        CGContextSetFillColorWithColor(context, shipColor);
-        
-        CGRect rectangle = CGRectMake(ship.x - shipRadius/2,
-                                      ship.y - shipRadius/2,
-                                      shipRadius, shipRadius);
-        CGContextStrokeEllipseInRect(context, rectangle);
-        
-        
-        CGContextStrokePath(context);
-    }
-}
+//- (void)drawShips:(CGContextRef)context
+//{
+//    
+//    NSInteger shipRadius = 4;
+//    for (NuShip* ship in self.ships)
+//    {
+//        CGColorRef shipColor =  CGColorCreateGenericRGB(.6, .9, .6, 1);
+//        CGContextSetFillColorWithColor(context, shipColor);
+//        
+//        CGRect rectangle = CGRectMake(ship.x - shipRadius/2,
+//                                      ship.y - shipRadius/2,
+//                                      shipRadius, shipRadius);
+//        CGContextStrokeEllipseInRect(context, rectangle);
+//        
+//        
+//        CGContextStrokePath(context);
+//    }
+//}
 
 - (void)drawPlanetaryConnections:(CGContextRef)context
 {
@@ -141,88 +146,6 @@
     }
 }
 
-- (void)drawIonStorms:(CGContextRef)context
-{
-    // Draw Circle 
-    CGContextSetLineWidth(context, 1.0);
-    CGColorRef thickYellow = CGColorCreateGenericRGB(.7, .9, 0, .7);
-    
-    
-    for (NuIonStorm* storm in ionStorms)
-    {
-        
-        CGColorRef yellow =  CGColorCreateGenericRGB(.5 + (.01 * storm.voltage), .9, 0, .5);
-        CGContextSetFillColorWithColor(context, yellow);
-        
-        CGRect rectangle = CGRectMake(storm.x - storm.radius,
-                                      storm.y - storm.radius,
-                                      storm.radius*2, storm.radius*2);
-        CGContextFillEllipseInRect(context, rectangle);
-    
-        CGContextStrokePath(context);
-        
-        // draw heading line
-        CGContextSetStrokeColorWithColor(context, thickYellow);
-        CGContextSetLineWidth(context, 1.0);
-        CGContextMoveToPoint(context, storm.x, storm.y);
-        
-        NSInteger headingLength = storm.warp * storm.warp;
-        
-        CGPoint endPoint; 
-        
-        endPoint.x = headingLength * sin(storm.heading) + storm.x;
-        endPoint.y = headingLength * cos(storm.heading) + storm.y;
-        
-        CGContextAddLineToPoint(context, endPoint.x, endPoint.y);
-        CGContextStrokePath(context);
-    }
-}
-
-- (void)drawPlanets:(CGContextRef)context
-{
-//    CGRect visibleRect = [self visibleRect];
-     
-    // Draw Circle 
-    CGContextSetLineWidth(context, 2.0);
-    
-    CGColorRef grey =  CGColorCreateGenericRGB(.9, .9, .9, 1);
-    CGColorRef green = CGColorCreateGenericRGB(.1, 1, .2, 1);
-    
-    
-    for (NuPlanet* planet in planets)
-    {
-//        if (planet.x >= visibleRect.origin.x
-//            && planet.y >= visibleRect.origin.y
-//            && planet.x <= (visibleRect.origin.x + visibleRect.size.width)
-//            && planet.y <= (visibleRect.origin.y + visibleRect.size.height))
-//        {
-            
-        if (planet.ownerId == player.playerId)
-        {
-            CGContextSetFillColorWithColor(context, green);
-        }
-        else
-        {
-            CGContextSetFillColorWithColor(context, grey);
-        }
-            
-        CGRect rectangle = CGRectMake(planet.x -5 ,planet.y -5,10, 10);
-        
-        if (planet.starbase == nil)
-        {
-            CGContextFillEllipseInRect(context, rectangle);
-        }
-        else
-        {
-            CGContextFillRect(context, rectangle);
-        }
-        
-        CGContextStrokePath(context);
-//        }
-    }
-   
-}
-
 - (void)mouseDown:(NSEvent *)theEvent
 {
     if (popover != nil)
@@ -233,27 +156,11 @@
     }
     
     startOrigin = [self visibleRect].origin;
-//    CGPoint absOrigin = self.bounds.origin;
-//    NSClipView* cv = self.superview;
-//    
-//    CGPoint dvr = [cv documentVisibleRect].origin;
-   
     // For some reason this is always offset by 25, possibly it's the window origin, not the 
     // scroll box
     CGPoint realLocation = CGPointMake(theEvent.locationInWindow.x + startOrigin.x - 20,
                 theEvent.locationInWindow.y + startOrigin.y - 20);
-    
-    // pl.x = 1177
-    // pl.y = 1021
-    // rl.x == 1205
-    // rl.y == 1044
-    // el.x == 509
-    // el.y == 401
-    // so.x == 694
-    // so.y == 645
-    
-    // rl - pl = (28, 23)
-    
+
     for (NuPlanet* planet in planets)
     {
         if ( (abs(realLocation.x - planet.x) < 10)
