@@ -46,9 +46,33 @@
 
 - (void)tableView:(NSTableView *)tableView didClickTableColumn:(NSTableColumn *)tableColumn
 {
+    if (lastSortColumn == nil || lastSortColumn != tableColumn)
+    {
+        reverseSort = NO;
+        lastSortColumn = tableColumn;
+    }
+    else
+    {
+        reverseSort = YES;
+    }
+    
     columnSortSelector = NSSelectorFromString([NSString stringWithFormat: @"%@Comparison:",
                                                tableColumn.identifier]);
     [self.hulls sortUsingSelector:columnSortSelector];
+    
+    
+    if (reverseSort == YES)
+    {
+        NSUInteger i = 0;
+        NSUInteger j = [self.hulls count] - 1;
+        while (i < j) {
+            [self.hulls exchangeObjectAtIndex:i
+                      withObjectAtIndex:j];
+            
+            i++;
+            j--;
+        }
+    }
     
     [tableView deselectAll:self];
     [tableView reloadData];
@@ -59,6 +83,8 @@
 
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
 {
+    
+    
     NuHull* hull = [self.hulls objectAtIndex:rowIndex];
     
     if ([aTableColumn.identifier isEqualToString:@"hullId"])
@@ -80,6 +106,18 @@
     else if ([aTableColumn.identifier isEqualToString:@"mass"])
     {
         return [NSString stringWithFormat:@"%d", hull.mass];
+    }
+    else if ([aTableColumn.identifier isEqualToString:@"beams"])
+    {
+        return [NSString stringWithFormat:@"%d", hull.beams];
+    }
+    else if ([aTableColumn.identifier isEqualToString:@"torps"])
+    {
+        return [NSString stringWithFormat:@"%d", hull.torpedoes];
+    }
+    else if ([aTableColumn.identifier isEqualToString:@"bays"])
+    {
+        return [NSString stringWithFormat:@"%d", hull.fighterBays];
     }
     
     return @"";

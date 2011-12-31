@@ -14,8 +14,11 @@
 - (NSComparisonResult)hullIdComparison:(NuHull *)otherHull;
 - (NSComparisonResult)techLevelComparison:(NuHull *)otherHull;
 - (NSComparisonResult)fuelComparison:(NuHull *)otherHull;
-
 - (NSComparisonResult)massComparison:(NuHull *)otherHull;
+
+- (NSComparisonResult)beamsComparison:(NuHull *)otherHull;
+- (NSComparisonResult)torpsComparison:(NuHull *)otherHull;
+- (NSComparisonResult)baysComparison:(NuHull *)otherHull;
 
 - (NSComparisonResult)genericComparison:(NSInteger)lhs and:(NSInteger)rhs for:(NuHull*)otherHull;
 
