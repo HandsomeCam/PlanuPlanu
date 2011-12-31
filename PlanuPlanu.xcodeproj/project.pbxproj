@@ -44,6 +44,7 @@
 		7EF364ED14AE3163009BBE86 /* ShipDatabaseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EF364EC14AE3163009BBE86 /* ShipDatabaseWindow.xib */; };
 		7EF364F014AE4F16009BBE86 /* ShipDatabaseWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF364EF14AE4F16009BBE86 /* ShipDatabaseWindowController.m */; };
 		7EF364F314AE9CBF009BBE86 /* NuHull+Sorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF364F214AE9CBF009BBE86 /* NuHull+Sorting.m */; };
+		7EF364FB14AFAE04009BBE86 /* NuPlanetaryConnectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF364FA14AFAE04009BBE86 /* NuPlanetaryConnectionView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +147,8 @@
 		7EF364EF14AE4F16009BBE86 /* ShipDatabaseWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShipDatabaseWindowController.m; sourceTree = "<group>"; };
 		7EF364F114AE9CBF009BBE86 /* NuHull+Sorting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NuHull+Sorting.h"; sourceTree = "<group>"; };
 		7EF364F214AE9CBF009BBE86 /* NuHull+Sorting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NuHull+Sorting.m"; sourceTree = "<group>"; };
+		7EF364F914AFAE04009BBE86 /* NuPlanetaryConnectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuPlanetaryConnectionView.h; sourceTree = "<group>"; };
+		7EF364FA14AFAE04009BBE86 /* NuPlanetaryConnectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuPlanetaryConnectionView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +271,8 @@
 				7EF364EF14AE4F16009BBE86 /* ShipDatabaseWindowController.m */,
 				7EF364F114AE9CBF009BBE86 /* NuHull+Sorting.h */,
 				7EF364F214AE9CBF009BBE86 /* NuHull+Sorting.m */,
+				7EF364F914AFAE04009BBE86 /* NuPlanetaryConnectionView.h */,
+				7EF364FA14AFAE04009BBE86 /* NuPlanetaryConnectionView.m */,
 			);
 			path = PlanuPlanu;
 			sourceTree = "<group>";
@@ -465,6 +470,7 @@
 				7E2908DC14AD605000B11972 /* NuShipView.m in Sources */,
 				7EF364F014AE4F16009BBE86 /* ShipDatabaseWindowController.m in Sources */,
 				7EF364F314AE9CBF009BBE86 /* NuHull+Sorting.m in Sources */,
+				7EF364FB14AFAE04009BBE86 /* NuPlanetaryConnectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
