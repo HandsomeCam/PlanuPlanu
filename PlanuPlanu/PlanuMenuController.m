@@ -8,6 +8,7 @@
 
 #import "PlanuMenuController.h"
 #import "AccountWindowController.h"
+#import "ShipDatabaseWindowController.h"
 
 @implementation PlanuMenuController
 
@@ -24,9 +25,14 @@
 - (void)AccountLoginSelected:(id)sender
 {
     AccountWindowController* awc = [[AccountWindowController alloc] initWithWindowNibName:@"AccountWindow"];
-    [awc showWindow:self];
-                        
+    [awc showWindow:self]; 
 }
 
+
+- (IBAction)ShipDatabaseSelected:(id)sender
+{
+    ShipDatabaseWindowController* sdbw = [[ShipDatabaseWindowController alloc] initWithWindowNibName:@"ShipDatabaseWindow"];
+    [sdbw showWindow:self]; 
+}
 
 @end

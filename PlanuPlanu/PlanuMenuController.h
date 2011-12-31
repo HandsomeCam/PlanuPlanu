@@ -11,5 +11,6 @@
 @interface PlanuMenuController : NSMenu
 
 - (IBAction)AccountLoginSelected:(id)sender;
+- (IBAction)ShipDatabaseSelected:(id)sender;
 
 @end
