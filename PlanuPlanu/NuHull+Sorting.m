@@ -50,6 +50,25 @@ NSComparisonResult (^valcompare)(NSInteger,NSInteger) = ^(NSInteger lhs, NSInteg
     return [self genericComparison:self.mass and:otherHull.mass for:otherHull];
 }
 
+- (NSComparisonResult)beamsComparison:(NuHull *)otherHull
+{
+    return [self genericComparison:self.beams and:otherHull.beams for:otherHull];
+}
+
+- (NSComparisonResult)torpsComparison:(NuHull *)otherHull
+{
+    return [self genericComparison:self.torpedoes 
+                               and:otherHull.torpedoes
+                               for:otherHull];
+}
+
+- (NSComparisonResult)baysComparison:(NuHull *)otherHull
+{
+    return [self genericComparison:self.fighterBays
+                               and:otherHull.fighterBays 
+                               for:otherHull];
+    
+}
 
 - (NSComparisonResult)genericComparison:(NSInteger)lhs and:(NSInteger)rhs for:(NuHull*)otherHull
 {    
