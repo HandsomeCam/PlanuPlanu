@@ -20,4 +20,10 @@
 
 - (void)initStarMapView;
 
+- (IBAction)colorToolBarClicked:(id)sender;
+- (IBAction)planetToolBarClicked:(id)sender;
+- (IBAction)shipToolBarClicked:(id)sender;
+- (IBAction)stormToolBarClicked:(id)sender;
+- (IBAction)connectionToolBarClicked:(id)sender;
+- (IBAction)visibilityToolBarClicked:(id)sender;
 @end
