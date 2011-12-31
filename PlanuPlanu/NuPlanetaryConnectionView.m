@@ -30,20 +30,22 @@
     rect.size.height += 4;
     rect.origin.y -= 2;
    
-    [self init];
-    self.frame = rect;
+    
+    return [self initWithFrame:rect];
+}
+
+- (id)initWithFrame:(NSRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code here.
+    }
     
     return self;
 }
 
-- (void)drawInContext:(CGContextRef)ctx
+- (void)drawRect:(NSRect)dirtyRect
 {
-    NSGraphicsContext *nsGraphicsContext;
-    nsGraphicsContext = [NSGraphicsContext graphicsContextWithGraphicsPort:ctx
-                                                                   flipped:NO];
-    [NSGraphicsContext saveGraphicsState];
-    [NSGraphicsContext setCurrentContext:nsGraphicsContext];
-    
     // Drawing code here. 
     NSBezierPath* flightPath = [NSBezierPath bezierPath];
     [flightPath setLineWidth:2.0];
@@ -73,8 +75,6 @@
     [flightPath lineToPoint:CGPointMake(vectorX+2, vectorY+2)];
     
     [flightPath stroke];
-    
-    [NSGraphicsContext restoreGraphicsState];
 }
 
 @end

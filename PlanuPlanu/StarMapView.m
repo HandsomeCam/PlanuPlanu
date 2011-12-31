@@ -11,10 +11,45 @@
 #import "NuIonStormView.h"
 #import "NuPlanetView.h"
 #import "NuShipView.h"
+#import "NuPlanetaryConnectionView.h"
 
 @implementation StarMapView
 
 @synthesize planets, player, ionStorms, ships;
+@synthesize planetViews, shipViews, stormViews, connectionViews;
+
+
+- (void)setPlanetsHidden:(BOOL)visibility
+{
+    for (NuPlanetView* pv in self.planetViews)
+    {
+        [pv setHidden:visibility];
+    }
+}
+
+- (void)setShipsHidden:(BOOL)visibility
+{
+    for (NuShipView* ship in self.shipViews)
+    {
+        [ship setHidden:visibility];
+    }
+}
+
+- (void)setStormsHidden:(BOOL)visibility
+{
+    for (NuIonStormView* storm in self.stormViews)
+    {
+        [storm setHidden:visibility];
+    }
+}
+
+- (void)setConnectionsHidden:(BOOL)visibility
+{
+    for (NuPlanetaryConnectionView* cnx in self.connectionViews)
+    {
+        [cnx setHidden:visibility];
+    }
+}
 
 - (id)initWithTurn:(NuTurn*)trn
 {
@@ -40,6 +75,9 @@
         
         if (self.planets != nil)
         {
+            // connections go first for the Z-order
+            [self addPlanetaryConnections];
+            
             [self addPlanets];
         }
         
@@ -54,71 +92,40 @@
 
 - (void)addShips
 {
+    NSMutableArray* svs = [NSMutableArray array];
+    
     for (NuShip* ship in self.ships)
     {
         NuShipView* sv = [[[NuShipView alloc] initWithShip:ship] autorelease];
         sv.player = self.player;
         
         [self addSubview:sv];
+        [svs addObject:sv];
     }
+    
+    self.shipViews = svs;
 }
 
 - (void)addPlanets
 {
+    NSMutableArray* pvs = [NSMutableArray array];
+    
     for (NuPlanet* planet in self.planets)
     {
         NuPlanetView* pv = [[[NuPlanetView alloc] initWithPlanet:planet] autorelease];
         pv.player = self.player;
         
         [self addSubview:pv];
+        [pvs addObject:pv];
     }
+    
+    self.planetViews = pvs;
 }
 
-- (void)addIonStorms
+- (void)addPlanetaryConnections
 {
+    NSMutableArray* connections = [NSMutableArray array];
     
-    for (NuIonStorm* storm in ionStorms)
-    {
-        NuIonStormView* isv = [[[NuIonStormView alloc] initWithIonStorm:storm] autorelease];
-       
-        [self addSubview:isv];
-    }
-}
-
-- (void)drawRect:(NSRect)dirtyRect
-{
-    // Drawing code here.
-    CGContextRef myContext = [[NSGraphicsContext // 1
-                               currentContext] graphicsPort];
-    
-    [self drawPlanetaryConnections:myContext];
-    
-    //[self drawShips:myContext];
-    
-}
-
-//- (void)drawShips:(CGContextRef)context
-//{
-//    
-//    NSInteger shipRadius = 4;
-//    for (NuShip* ship in self.ships)
-//    {
-//        CGColorRef shipColor =  CGColorCreateGenericRGB(.6, .9, .6, 1);
-//        CGContextSetFillColorWithColor(context, shipColor);
-//        
-//        CGRect rectangle = CGRectMake(ship.x - shipRadius/2,
-//                                      ship.y - shipRadius/2,
-//                                      shipRadius, shipRadius);
-//        CGContextStrokeEllipseInRect(context, rectangle);
-//        
-//        
-//        CGContextStrokePath(context);
-//    }
-//}
-
-- (void)drawPlanetaryConnections:(CGContextRef)context
-{
-    // NSMutableArray* connections = [NSMutableArray array];
     for (int i=0; i < [planets count]; i++)
     {
         NuPlanet* a = [planets objectAtIndex:i];
@@ -134,18 +141,39 @@
             
             if (len <= 81)
             {
-                // add connection
-                CGContextSetLineWidth(context, 2.0);
-                CGColorRef grey = CGColorCreateGenericRGB(.9, .9, .9, .7);
-                CGContextSetStrokeColorWithColor(context, grey);
-                CGContextMoveToPoint(context, a.x, a.y);
-                CGContextAddLineToPoint(context, b.x, b.y);
-                CGContextStrokePath(context);
+                NuPlanetaryConnectionView* pcv = 
+                    [[NuPlanetaryConnectionView alloc] initWithPlanet:a 
+                                                            andPlanet:b];
+                [self addSubview:pcv];
+                [connections addObject:pcv];
             }
         }
     }
+    
+    self.connectionViews = connections;
 }
 
+- (void)addIonStorms
+{
+    NSMutableArray* isvs = [NSMutableArray array];
+    
+    for (NuIonStorm* storm in ionStorms)
+    {
+        NuIonStormView* isv = [[[NuIonStormView alloc] initWithIonStorm:storm] autorelease];
+       
+        [self addSubview:isv];
+        [isvs addObject:isv];
+    }
+    
+    self.stormViews = isvs;
+}
+
+- (void)drawRect:(NSRect)dirtyRect
+{
+    // Drawing code here.
+    
+}
+ 
 - (void)mouseDown:(NSEvent *)theEvent
 {
     if (popover != nil)

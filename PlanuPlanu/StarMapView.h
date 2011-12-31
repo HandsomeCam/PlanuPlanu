@@ -19,6 +19,11 @@
     PlanetPopoverController *popover;
     NSArray *ionStorms;
     NSArray *ships;
+    
+    NSArray* planetViews;
+    NSArray* shipViews;
+    NSArray* stormViews;
+    NSArray* connectionViews;
 }
 
 @property (nonatomic, retain) NSArray* planets;
@@ -26,10 +31,12 @@
 @property (nonatomic, retain) NSArray* ionStorms;
 @property (nonatomic, retain) NSArray* ships;
 
-- (id)initWithTurn:(NuTurn*)trn;
+@property (nonatomic, retain) NSArray* planetViews;
+@property (nonatomic, retain) NSArray* shipViews;
+@property (nonatomic, retain) NSArray* stormViews;
+@property (nonatomic, retain) NSArray* connectionViews;
 
-- (void)drawPlanetaryConnections:(CGContextRef)context;
-//- (void)drawShips:(CGContextRef)context;
+- (id)initWithTurn:(NuTurn*)turn;
 
 - (void)showPlanetPopover:(NuPlanet*)planet;
 - (void)scrollToHomeWorld;
@@ -37,5 +44,11 @@
 - (void)addIonStorms;
 - (void)addPlanets;
 - (void)addShips;
+- (void)addPlanetaryConnections;
+
+- (void)setPlanetsHidden:(BOOL)visibility;
+- (void)setShipsHidden:(BOOL)visibility;
+- (void)setStormsHidden:(BOOL)visibility;
+- (void)setConnectionsHidden:(BOOL)visibility;
 
 @end

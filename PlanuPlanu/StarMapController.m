@@ -13,6 +13,8 @@
 
 @synthesize turn;
 @synthesize mapScroll;
+@synthesize planetToolBarButton, shipToolBarButton;
+@synthesize stormToolBarButton, connectionToolBarButton;
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -33,23 +35,33 @@
     if (turn != nil)
     {
         [self initStarMapView];
+        [self initToolBar];
     }
+}
+
+- (void)initToolBar
+{
+    [planetToolBarButton setState:NSOnState];
+    [shipToolBarButton setState:NSOnState];
+    [stormToolBarButton setState:NSOnState];
+    [connectionToolBarButton setState:NSOnState];
+
 }
 
 - (void)initStarMapView
 { 
-    StarMapView* smv = [[StarMapView alloc] initWithTurn:turn];
+    starMap = [[StarMapView alloc] initWithTurn:turn];
     
-    smv.planets = turn.planets;
-    smv.player = turn.player;
-    smv.ionStorms = turn.ionStorms;
-    smv.ships = turn.ships;
+    starMap.planets = turn.planets;
+    starMap.player = turn.player;
+    starMap.ionStorms = turn.ionStorms;
+    starMap.ships = turn.ships;
     
     [mapScroll setHasHorizontalScroller:YES];
     [mapScroll setHasVerticalScroller:YES];
     
-    [mapScroll setDocumentView:smv];
-    [smv scrollToHomeWorld];
+    [mapScroll setDocumentView:starMap];
+    [starMap scrollToHomeWorld];
 }
 
 - (IBAction)colorToolBarClicked:(id)sender
@@ -59,22 +71,22 @@
 
 - (IBAction)planetToolBarClicked:(id)sender
 {
-    
+    [starMap setPlanetsHidden:(((NSButton*)sender).state == NSOffState)];
 }
 
 - (IBAction)shipToolBarClicked:(id)sender
 {
-    
+    [starMap setShipsHidden:(((NSButton*)sender).state == NSOffState)];
 }
 
 - (IBAction)stormToolBarClicked:(id)sender
 {
-    
+    [starMap setStormsHidden:(((NSButton*)sender).state == NSOffState)];
 }
 
 - (IBAction)connectionToolBarClicked:(id)sender
 {
-    
+    [starMap setConnectionsHidden:(((NSButton*)sender).state == NSOffState)];
 }
 
 

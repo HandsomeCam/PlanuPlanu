@@ -8,9 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 #import <PlanuKit/PlanuKit.h>
-#import "NuMappableEntityLayer.h"
 
-@interface NuPlanetaryConnectionView : NuMappableEntityLayer
+@interface NuPlanetaryConnectionView : NSView
 {
     NuPlanet* first;
     NuPlanet* second;
