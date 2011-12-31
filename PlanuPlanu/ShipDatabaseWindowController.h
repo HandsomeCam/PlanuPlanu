@@ -11,8 +11,6 @@
 @interface ShipDatabaseWindowController : NSWindowController <NSTableViewDataSource, NSTableViewDelegate>
 {
     SEL columnSortSelector;
-    NSTableColumn* lastSortColumn;
-    BOOL reverseSort;
     NSMutableArray* hulls;
 }
 
