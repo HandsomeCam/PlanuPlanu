@@ -23,7 +23,7 @@
         shipRadius *= 2;
     }
     
-    int nextTurnTravel = pow(ship.warp,2);
+    NSInteger nextTurnTravel = [self.ship flightLength];
     
     NSInteger viewRadius = shipRadius;
     
@@ -69,18 +69,28 @@
     [circlePath setLineWidth:2.0];
     
     [circlePath stroke];
+    
+    
     if (ship.heading != -1 && ship.warp > 0)
     {
         NSBezierPath* flightPath = [NSBezierPath bezierPath];
         [flightPath setLineWidth:2.0];
         
         [flightPath moveToPoint:CGPointMake(centerBorder, centerBorder)];
-        NSInteger flightLength = pow(2, ship.warp);
+        NSInteger flightLength = [ship flightLength];
+              
         CGPoint endPoint = CGPointMake(flightLength * sin(ship.heading*pi/180), 
                                        flightLength * cos(ship.heading*pi/180));
         
         endPoint.x += centerBorder;
         endPoint.y += centerBorder;
+        
+        CGFloat pattern = 4.0;
+        // TODO: check the HYP capability
+        if (flightLength == 350 && [self.ship.friendlyCode isEqualToString:@"HYP"])
+        {
+            [flightPath setLineDash:&pattern count:1 phase:0];
+        }
         
         [flightPath lineToPoint:endPoint];
         [flightPath stroke];
