@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import <PlanuKit/PlanuKit.h>
 
-@interface ScanRangeVisibilityView : CALayer
+@interface ScanRangeVisibilityView : NSView
 {
     NuTurn* turn;
 //    NSArray* scanningEntities;

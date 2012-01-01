@@ -17,9 +17,8 @@
     self.turn = t;
     
     [self generateScanningEntities];
-    [self init];
-    self.frame = frame;
-    return self;
+    
+    return [self initWithFrame:frame];
 }
 
 - (void)generateScanningEntities
@@ -87,13 +86,19 @@
     self.scanningEntities = sorted;
 }
 
-- (void)drawInContext:(CGContextRef)ctx
+- (id)initWithFrame:(NSRect)frame
 {
-    NSGraphicsContext *nsGraphicsContext;
-    nsGraphicsContext = [NSGraphicsContext graphicsContextWithGraphicsPort:ctx
-                                                                   flipped:NO];
-    [NSGraphicsContext saveGraphicsState];
-    [NSGraphicsContext setCurrentContext:nsGraphicsContext];
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code here.
+    }
+    
+    return self;
+}
+
+- (void)drawRect:(NSRect)dirtyRect
+{
+    // Drawing code here.
 
      
     for (NuMappableEntity* entity in self.scanningEntities)
@@ -122,8 +127,6 @@
         
         [scanPath fill];
     }
-    
-    [NSGraphicsContext restoreGraphicsState];
 }
 
 @end

@@ -45,6 +45,7 @@
 		7EF364F014AE4F16009BBE86 /* ShipDatabaseWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF364EF14AE4F16009BBE86 /* ShipDatabaseWindowController.m */; };
 		7EF364F314AE9CBF009BBE86 /* NuHull+Sorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF364F214AE9CBF009BBE86 /* NuHull+Sorting.m */; };
 		7EF364FB14AFAE04009BBE86 /* NuPlanetaryConnectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF364FA14AFAE04009BBE86 /* NuPlanetaryConnectionView.m */; };
+		7EF364FE14AFC782009BBE86 /* ScanRangeVisibilityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF364FD14AFC782009BBE86 /* ScanRangeVisibilityView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +150,8 @@
 		7EF364F214AE9CBF009BBE86 /* NuHull+Sorting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NuHull+Sorting.m"; sourceTree = "<group>"; };
 		7EF364F914AFAE04009BBE86 /* NuPlanetaryConnectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuPlanetaryConnectionView.h; sourceTree = "<group>"; };
 		7EF364FA14AFAE04009BBE86 /* NuPlanetaryConnectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuPlanetaryConnectionView.m; sourceTree = "<group>"; };
+		7EF364FC14AFC781009BBE86 /* ScanRangeVisibilityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanRangeVisibilityView.h; sourceTree = "<group>"; };
+		7EF364FD14AFC782009BBE86 /* ScanRangeVisibilityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanRangeVisibilityView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +276,8 @@
 				7EF364F214AE9CBF009BBE86 /* NuHull+Sorting.m */,
 				7EF364F914AFAE04009BBE86 /* NuPlanetaryConnectionView.h */,
 				7EF364FA14AFAE04009BBE86 /* NuPlanetaryConnectionView.m */,
+				7EF364FC14AFC781009BBE86 /* ScanRangeVisibilityView.h */,
+				7EF364FD14AFC782009BBE86 /* ScanRangeVisibilityView.m */,
 			);
 			path = PlanuPlanu;
 			sourceTree = "<group>";
@@ -471,6 +476,7 @@
 				7EF364F014AE4F16009BBE86 /* ShipDatabaseWindowController.m in Sources */,
 				7EF364F314AE9CBF009BBE86 /* NuHull+Sorting.m in Sources */,
 				7EF364FB14AFAE04009BBE86 /* NuPlanetaryConnectionView.m in Sources */,
+				7EF364FE14AFC782009BBE86 /* ScanRangeVisibilityView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
