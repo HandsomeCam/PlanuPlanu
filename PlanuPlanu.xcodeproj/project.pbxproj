@@ -41,6 +41,9 @@
 		7EC24CD414A2D2EF0081022A /* NSAttributedString+Hyperlink.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC24CD314A2D2EF0081022A /* NSAttributedString+Hyperlink.m */; };
 		7EC24CD714A2D5E60081022A /* PlanuMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC24CD614A2D5E60081022A /* PlanuMenuController.m */; };
 		7EC24CDE14A2EB950081022A /* LoginRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC24CDC14A2E97E0081022A /* LoginRequestTest.m */; };
+		7ECC437C14B00E230083591C /* ColorSchemes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ECC437B14B00E220083591C /* ColorSchemes.plist */; };
+		7ECC437F14B016920083591C /* NuColorScheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC437E14B016920083591C /* NuColorScheme.m */; };
+		7ECC438214B020FA0083591C /* NSColor+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC438114B020FA0083591C /* NSColor+Serialize.m */; };
 		7EF364ED14AE3163009BBE86 /* ShipDatabaseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EF364EC14AE3163009BBE86 /* ShipDatabaseWindow.xib */; };
 		7EF364F014AE4F16009BBE86 /* ShipDatabaseWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF364EF14AE4F16009BBE86 /* ShipDatabaseWindowController.m */; };
 		7EF364F314AE9CBF009BBE86 /* NuHull+Sorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF364F214AE9CBF009BBE86 /* NuHull+Sorting.m */; };
@@ -143,6 +146,11 @@
 		7EC24CD614A2D5E60081022A /* PlanuMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanuMenuController.m; sourceTree = "<group>"; };
 		7EC24CDB14A2E97E0081022A /* LoginRequestTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequestTest.h; sourceTree = "<group>"; };
 		7EC24CDC14A2E97E0081022A /* LoginRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequestTest.m; sourceTree = "<group>"; };
+		7ECC437B14B00E220083591C /* ColorSchemes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ColorSchemes.plist; sourceTree = "<group>"; };
+		7ECC437D14B016920083591C /* NuColorScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuColorScheme.h; sourceTree = "<group>"; };
+		7ECC437E14B016920083591C /* NuColorScheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuColorScheme.m; sourceTree = "<group>"; };
+		7ECC438014B020FA0083591C /* NSColor+Serialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+Serialize.h"; sourceTree = "<group>"; };
+		7ECC438114B020FA0083591C /* NSColor+Serialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+Serialize.m"; sourceTree = "<group>"; };
 		7EF364EC14AE3163009BBE86 /* ShipDatabaseWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShipDatabaseWindow.xib; sourceTree = "<group>"; };
 		7EF364EE14AE4F16009BBE86 /* ShipDatabaseWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShipDatabaseWindowController.h; sourceTree = "<group>"; };
 		7EF364EF14AE4F16009BBE86 /* ShipDatabaseWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShipDatabaseWindowController.m; sourceTree = "<group>"; };
@@ -278,6 +286,11 @@
 				7EF364FA14AFAE04009BBE86 /* NuPlanetaryConnectionView.m */,
 				7EF364FC14AFC781009BBE86 /* ScanRangeVisibilityView.h */,
 				7EF364FD14AFC782009BBE86 /* ScanRangeVisibilityView.m */,
+				7ECC437B14B00E220083591C /* ColorSchemes.plist */,
+				7ECC437D14B016920083591C /* NuColorScheme.h */,
+				7ECC437E14B016920083591C /* NuColorScheme.m */,
+				7ECC438014B020FA0083591C /* NSColor+Serialize.h */,
+				7ECC438114B020FA0083591C /* NSColor+Serialize.m */,
 			);
 			path = PlanuPlanu;
 			sourceTree = "<group>";
@@ -424,6 +437,7 @@
 				7EA504B714A573A3000B1615 /* StarMap.xib in Resources */,
 				7E8644D114A6D6A20002986F /* PlanetPopover.xib in Resources */,
 				7EF364ED14AE3163009BBE86 /* ShipDatabaseWindow.xib in Resources */,
+				7ECC437C14B00E230083591C /* ColorSchemes.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +491,8 @@
 				7EF364F314AE9CBF009BBE86 /* NuHull+Sorting.m in Sources */,
 				7EF364FB14AFAE04009BBE86 /* NuPlanetaryConnectionView.m in Sources */,
 				7EF364FE14AFC782009BBE86 /* ScanRangeVisibilityView.m in Sources */,
+				7ECC437F14B016920083591C /* NuColorScheme.m in Sources */,
+				7ECC438214B020FA0083591C /* NSColor+Serialize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

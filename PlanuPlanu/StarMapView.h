@@ -10,6 +10,7 @@
 #import <PlanuKit/PlanuKit.h>
 #import "PlanetPopoverController.h" 
 #import "ScanRangeVisibilityView.h"
+#import "NuColorScheme.h"
 
 @interface StarMapView : NSView
 {
@@ -29,6 +30,8 @@
     NSArray* stormViews;
     NSArray* connectionViews;
     
+    NuColorScheme* colorScheme;
+    
     ScanRangeVisibilityView* scanRangeView;
 }
 
@@ -43,6 +46,7 @@
 @property (nonatomic, retain) NSArray* stormViews;
 @property (nonatomic, retain) NSArray* connectionViews;
 @property (nonatomic, retain) ScanRangeVisibilityView* scanRangeView;
+@property (nonatomic, retain) NuColorScheme* colorScheme;
 
 - (id)initWithTurn:(NuTurn*)turn;
 
@@ -59,5 +63,7 @@
 - (void)setStormsHidden:(BOOL)visibility;
 - (void)setConnectionsHidden:(BOOL)visibility;
 - (void)setScanRangeHidden:(BOOL)visibility;
+
+- (void)setColorScheme:(NuColorScheme*)colorScheme;
 
 @end

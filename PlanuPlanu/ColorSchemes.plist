@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Frenemies</key>
+	<array>
+		<string>DIPL</string>
+		<string>1:0:0:1</string>
+		<string>1:.5:0:1</string>
+		<string>1:1:0:1</string>
+		<string>.4:.8:1:1</string>
+		<string>0:1:0:1</string>
+		<string>1:0:0:1</string>
+		<string>0:1:.5:1</string>
+	</array>
+	<key>That&apos;s Racist!</key>
+	<array>
+		<string>RACE</string>
+		<string>1:1:1:1</string>
+		<string>.1:1:.1:1</string>
+		<string>1:1:0:1</string>
+		<string>1:0:0:1</string>
+		<string>.9:0:.9:1</string>
+		<string>.3:.3:1:1</string>
+		<string>.8:.8:1:1</string>
+		<string>.6:.6:.6:1</string>
+		<string>.6:.6:1:1</string>
+		<string>.9:.7:0:1</string>
+		<string>.3:.8:.9:1</string>
+	</array>
+	<key>Xenophobe</key>
+	<array>
+		<string>XENO</string>
+		<string>0:1:0:1</string>
+		<string>1:0:0:1</string>
+	</array>
+</dict>
+</plist>

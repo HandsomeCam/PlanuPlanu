@@ -10,7 +10,7 @@
 
 @implementation NuShipView
 
-@synthesize ship, player;
+@synthesize ship, player, colors;
 
 - (id)initWithShip:(NuShip*)s
 {
@@ -56,15 +56,22 @@
     
     CGRect shipRect = CGRectMake(outerOrigin+2, outerOrigin+2, (shipRadius*2)-4, (shipRadius*2)-4);
     
-    if (ship.ownerId == player.playerId)
+    if (self.colors == nil)
     {
-        [[NSColor greenColor] setStroke]; 
+        if (ship.ownerId == player.playerId)
+        {
+            [[NSColor greenColor] setStroke]; 
+        }
+        else
+        {
+            [[NSColor redColor] setStroke]; 
+        }
     }
     else
     {
-        [[NSColor redColor] setStroke]; 
+        [[self.colors colorForPlayer:ship.ownerId] setStroke];
     }
-
+    
     NSBezierPath* circlePath = [NSBezierPath bezierPathWithOvalInRect:shipRect];
     [circlePath setLineWidth:2.0];
     
