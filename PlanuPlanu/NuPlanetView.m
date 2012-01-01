@@ -10,7 +10,7 @@
 
 @implementation NuPlanetView
 
-@synthesize planet, player;
+@synthesize planet, player, colors;
 
 - (id)initWithPlanet:(NuPlanet*)pln
 {
@@ -38,34 +38,44 @@
 {
     // Drawing code here.
     // Draw Circle 
-    CGContextRef context = [[NSGraphicsContext 
-                               currentContext] graphicsPort];
-    CGContextSetLineWidth(context, 2.0);
-    
-    CGColorRef grey =  CGColorCreateGenericRGB(.9, .9, .9, 1);
-    CGColorRef green = CGColorCreateGenericRGB(.1, 1, .2, 1);
-    
     CGRect planetRect = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     
-    if (planet.ownerId == player.playerId)
-    {
-        CGContextSetFillColorWithColor(context, green);
-    }
-    else
-    {
-        CGContextSetFillColorWithColor(context, grey);
-    }
-    
+    NSBezierPath *planetPath;
     if (planet.starbase == nil)
     {
-        CGContextFillEllipseInRect(context, planetRect);
+        planetPath = [NSBezierPath bezierPathWithOvalInRect:planetRect];
     }
     else
     {
-        CGContextFillRect(context, planetRect);
+        planetPath = [NSBezierPath bezierPathWithRect:planetRect];
     }
     
-    CGContextStrokePath(context);
+    [planetPath setLineWidth:0.0];
+    
+    if (self.colors == nil)
+    {
+        if (planet.ownerId == player.playerId)
+        {
+            [[NSColor greenColor] setFill]; 
+        }
+        else
+        {
+            [[NSColor redColor] setFill]; 
+        }
+    }
+    else
+    {
+        if (planet.ownerId > 0)
+        {
+            [[self.colors colorForPlayer:planet.ownerId] setFill];
+        }
+        else
+        {
+            [[NSColor grayColor] setFill];
+        }
+    }    
+
+    [planetPath fill];
 }
 
 @end

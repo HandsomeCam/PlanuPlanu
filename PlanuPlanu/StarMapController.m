@@ -8,6 +8,7 @@
 
 #import "StarMapController.h"
 #import "StarMapView.h"
+#import "NuColorScheme.h"
 
 @implementation StarMapController
 
@@ -15,6 +16,9 @@
 @synthesize mapScroll;
 @synthesize planetToolBarButton, shipToolBarButton;
 @synthesize stormToolBarButton, connectionToolBarButton, visibilityToolBarButton;
+
+@synthesize colorSchemeWindow, colorSchemeTableView;
+@synthesize loadScheme, colorSchemes, activeScheme;
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -52,6 +56,10 @@
 { 
     starMap = [[StarMapView alloc] initWithTurn:turn];
     
+    [self initColorScheme];
+    
+    starMap.colorScheme = self.activeScheme;
+    
     starMap.planets = turn.planets;
     starMap.player = turn.player;
     starMap.ionStorms = turn.ionStorms;
@@ -67,9 +75,42 @@
     [starMap scrollToHomeWorld];
 }
 
+- (void)initColorScheme
+{
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"ColorSchemes" ofType:@"plist"];
+    
+    NSDictionary *schemes = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
+    
+    NSMutableArray* colors = [NSMutableArray array];
+    
+    for (NSString *key in [schemes allKeys])
+    {
+        NuColorScheme* cs = [[NuColorScheme alloc] initWithArray:[schemes objectForKey:key]
+                                                         forTurn:self.turn];
+        [colors addObject:cs];
+        cs.name = key;
+        [cs release];
+        
+        [self.loadScheme addItemWithTitle:key];
+    }
+    
+    self.colorSchemes = colors;
+    self.activeScheme = [colorSchemes objectAtIndex:0];
+    
+    [schemes release];
+}
+
 - (IBAction)colorToolBarClicked:(id)sender
 {
+    [loadScheme removeAllItems];
+ 
+    for (NuColorScheme* cs in self.colorSchemes)
+    { 
+        [self.loadScheme addItemWithTitle:cs.name];
+    }
+      
     
+    [colorSchemeWindow makeKeyAndOrderFront:self];
 }
 
 - (IBAction)planetToolBarClicked:(id)sender
@@ -97,5 +138,98 @@
 {
     [starMap setScanRangeHidden:(((NSButton*)sender).state == NSOffState)];
 }
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
+{
+    // In case the nib didn't hook up right
+    if (self.colorSchemeTableView != aTableView)
+    {
+        self.colorSchemeTableView = aTableView;
+    }
+    
+    return [turn.players count];
+}
+
+- (void)colorChanged:(NSColorWell*)sender
+{
+    [self.activeScheme setColor:sender.color forPlayer:sender.tag];
+    
+    starMap.colorScheme = self.activeScheme;
+}
+
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+{
+    NuPlayer* player = [self.turn.players objectAtIndex:row];
+    
+    CGFloat tw = tableView.frame.size.width;
+    
+    if ([tableColumn.identifier isEqualToString:@"color"])
+    {
+        NSColorWell* cw = [[NSColorWell alloc] initWithFrame:CGRectMake(0, 0, tw, 20)];
+        cw.color = [activeScheme colorForPlayer:player.playerId];
+        cw.target = self;
+        [cw setAction:@selector(colorChanged:)];
+        
+        cw.tag = player.playerId;
+        return cw;
+    }
+    else
+    {
+        // get an existing cell with the MyView identifier if it exists
+        NSTextField *lbl = [tableView makeViewWithIdentifier:@"textCell" owner:self];
+        
+        // There is no existing cell to reuse so we will create a new one
+        if (lbl == nil) 
+        {
+            lbl = [[[NSTextField alloc] initWithFrame:CGRectMake(0,0, tw, 20)] autorelease];
+            lbl.identifier = @"textCell";
+            [lbl setBezeled:NO];
+            [lbl setDrawsBackground:NO];
+            [lbl setEditable:NO];
+            [lbl setSelectable:NO];
+        }
+        
+        if ([tableColumn.identifier isEqualToString:@"player"])
+        {         
+            lbl.stringValue = player.username;
+            return lbl;
+        }
+        else if ([tableColumn.identifier isEqualToString:@"race"])
+        {
+            NSInteger raceId = player.raceId;
+            NSString* raceName;
+            
+            for (NuPlayerRace* race in turn.races)
+            {
+                if (race.raceId == raceId)
+                {
+                    raceName = race.shortName;
+                }
+            }
+             
+            lbl.stringValue = raceName;
+            
+            return lbl;
+        }
+    }
+    
+    return nil;
+}
+
+- (IBAction)loadColorScheme:(id)sender
+{
+    NSString* schemeName = [loadScheme titleOfSelectedItem];
+    
+    for (NuColorScheme* cs in self.colorSchemes)
+    {
+        if ([schemeName isEqualToString:cs.name])
+        {
+            self.activeScheme = cs;
+            starMap.colorScheme = cs;
+            [self.colorSchemeTableView reloadData];
+        }
+    }
+}
+ 
 
 @end

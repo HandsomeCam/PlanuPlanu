@@ -11,7 +11,7 @@
 
 @implementation NuColorScheme
 
-@synthesize turn, name, lastUpdate;
+@synthesize turn, name;
 
 - (NSArray*)deserialize:(NSArray *)stringColors
 {
@@ -196,8 +196,6 @@
 
 - (void)setColor:(NSColor*)color forPlayer:(NSInteger)playerId
 {
-    lastUpdate = playerId;
-    
     [colors replaceObjectAtIndex:playerId-1
                       withObject:color];
 }

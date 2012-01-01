@@ -9,15 +9,19 @@
 #import <Cocoa/Cocoa.h>
 #import <PlanuKit/PlanuKit.h>
 
+#import "NuColorScheme.h"
+
 @interface NuShipView : NSView
 {
     NuShip* ship;
     NuPlayer* player;
     NSInteger shipRadius;
+    NuColorScheme* colors;
 }
 
 @property (nonatomic, retain) NuShip* ship;
 @property (nonatomic, retain) NuPlayer* player;
+@property (nonatomic, retain) NuColorScheme* colors;
 
 - (id)initWithShip:(NuShip*)ship;
 

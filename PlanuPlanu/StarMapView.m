@@ -17,7 +17,7 @@
 
 @synthesize planets, player, ionStorms, ships, turn;
 @synthesize planetViews, shipViews, stormViews, connectionViews;
-@synthesize scanRangeView;
+@synthesize scanRangeView, colorScheme;
 
 - (void)setScanRangeHidden:(BOOL)visibility
 {
@@ -281,6 +281,28 @@
                                                         startPt.y));
     
     [self scrollPoint:scrollPoint];
+}
+
+
+- (void)setColorScheme:(NuColorScheme*)cs
+{
+    if (colorScheme != nil)
+    {
+        [colorScheme release];
+    }
+    colorScheme = [cs retain];
+    
+    for (NuPlanetView* pl in self.planetViews)
+    {
+        pl.colors = cs;
+    }
+    
+    for (NuShipView* sv in self.shipViews)
+    {
+        sv.colors = cs;
+    }
+    
+    [self setNeedsDisplay:YES];
 }
 
 @end
