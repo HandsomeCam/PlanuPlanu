@@ -14,7 +14,7 @@
 @synthesize turn;
 @synthesize mapScroll;
 @synthesize planetToolBarButton, shipToolBarButton;
-@synthesize stormToolBarButton, connectionToolBarButton;
+@synthesize stormToolBarButton, connectionToolBarButton, visibilityToolBarButton;
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -44,8 +44,8 @@
     [planetToolBarButton setState:NSOnState];
     [shipToolBarButton setState:NSOnState];
     [stormToolBarButton setState:NSOnState];
-    [connectionToolBarButton setState:NSOnState];
-
+    [connectionToolBarButton setState:NSOffState];
+    [visibilityToolBarButton setState:NSOffState];
 }
 
 - (void)initStarMapView
@@ -56,6 +56,9 @@
     starMap.player = turn.player;
     starMap.ionStorms = turn.ionStorms;
     starMap.ships = turn.ships;
+    
+    [starMap setScanRangeHidden:YES];
+    [starMap setConnectionsHidden:YES];
     
     [mapScroll setHasHorizontalScroller:YES];
     [mapScroll setHasVerticalScroller:YES];
@@ -92,7 +95,7 @@
 
 - (IBAction)visibilityToolBarClicked:(id)sender
 {
-    
+    [starMap setScanRangeHidden:(((NSButton*)sender).state == NSOffState)];
 }
 
 @end

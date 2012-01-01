@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import <PlanuKit/PlanuKit.h>
 #import "PlanetPopoverController.h" 
+#import "ScanRangeVisibilityView.h"
 
 @interface StarMapView : NSView
 {
@@ -17,6 +18,9 @@
     CGPoint startPt;
     NuPlayer* player;
     PlanetPopoverController *popover;
+    
+    NuTurn* turn;
+    
     NSArray *ionStorms;
     NSArray *ships;
     
@@ -24,17 +28,21 @@
     NSArray* shipViews;
     NSArray* stormViews;
     NSArray* connectionViews;
+    
+    ScanRangeVisibilityView* scanRangeView;
 }
 
 @property (nonatomic, retain) NSArray* planets;
 @property (nonatomic, retain) NuPlayer* player;
 @property (nonatomic, retain) NSArray* ionStorms;
 @property (nonatomic, retain) NSArray* ships;
+@property (nonatomic, retain) NuTurn* turn;
 
 @property (nonatomic, retain) NSArray* planetViews;
 @property (nonatomic, retain) NSArray* shipViews;
 @property (nonatomic, retain) NSArray* stormViews;
 @property (nonatomic, retain) NSArray* connectionViews;
+@property (nonatomic, retain) ScanRangeVisibilityView* scanRangeView;
 
 - (id)initWithTurn:(NuTurn*)turn;
 
@@ -50,5 +58,6 @@
 - (void)setShipsHidden:(BOOL)visibility;
 - (void)setStormsHidden:(BOOL)visibility;
 - (void)setConnectionsHidden:(BOOL)visibility;
+- (void)setScanRangeHidden:(BOOL)visibility;
 
 @end

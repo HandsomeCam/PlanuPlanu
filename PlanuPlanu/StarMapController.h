@@ -20,6 +20,7 @@
     NSButton* shipToolBarButton;
     NSButton* stormToolBarButton;
     NSButton* connectionToolBarButton;
+    NSButton* visibilityToolBarButton;
 }
 
 @property (nonatomic, retain) NuTurn* turn;
@@ -29,6 +30,7 @@
 @property (assign) IBOutlet NSButton* shipToolBarButton;
 @property (assign) IBOutlet NSButton* stormToolBarButton;
 @property (assign) IBOutlet NSButton* connectionToolBarButton;
+@property (assign) IBOutlet NSButton* visibilityToolBarButton;
 
 - (void)initStarMapView;
 - (void)initToolBar;

@@ -15,9 +15,14 @@
 
 @implementation StarMapView
 
-@synthesize planets, player, ionStorms, ships;
+@synthesize planets, player, ionStorms, ships, turn;
 @synthesize planetViews, shipViews, stormViews, connectionViews;
+@synthesize scanRangeView;
 
+- (void)setScanRangeHidden:(BOOL)visibility
+{
+    [self.scanRangeView setHidden:visibility];
+}
 
 - (void)setPlanetsHidden:(BOOL)visibility
 {
@@ -53,6 +58,7 @@
 
 - (id)initWithTurn:(NuTurn*)trn
 {
+    self.turn = trn;
     self.ionStorms = trn.ionStorms;
     self.planets = trn.planets;
     self.player = trn.player;
@@ -68,6 +74,13 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code here.
+        
+        ScanRangeVisibilityView* srvv = 
+            [[[ScanRangeVisibilityView alloc] initWithFrame:frame 
+                                                    forTurn:self.turn] autorelease];
+        [self addSubview:srvv];
+        self.scanRangeView = srvv;
+        
         if (self.ionStorms != nil)
         {
             [self addIonStorms];
