@@ -10,7 +10,7 @@
 
 @implementation NuPlanetView
 
-@synthesize planet, player, colors;
+@synthesize planet, player, colors, delegate;
 
 - (id)initWithPlanet:(NuPlanet*)pln
 {
@@ -20,22 +20,37 @@
                                   planet.y - planetRadius,
                                   planetRadius*2, planetRadius*2);
     
-    return [self initWithFrame:rectangle];
-    
-}
-
-- (id)initWithFrame:(NSRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code here.
-    }
+    self.identifier = self.planet.planetId;
+    [self init];
+    self.frame = rectangle;
     
     return self;
+    
+}
+ 
+- (void)setColors:(NuColorScheme *)c
+{
+    if (colors != nil)
+    {
+        [colors release];
+    }
+    
+    colors = [c retain];
+    
+    if (colors.lastUpdate == planet.ownerId)
+    {
+        [self setNeedsDisplay];
+    }
 }
 
-- (void)drawRect:(NSRect)dirtyRect
+- (void)drawInContext:(CGContextRef)ctx
 {
+    NSGraphicsContext *nsGraphicsContext;
+    nsGraphicsContext = [NSGraphicsContext graphicsContextWithGraphicsPort:ctx
+                                                                   flipped:NO];
+    [NSGraphicsContext saveGraphicsState];
+    [NSGraphicsContext setCurrentContext:nsGraphicsContext];
+    
     // Drawing code here.
     // Draw Circle 
     CGRect planetRect = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
@@ -76,6 +91,30 @@
     }    
 
     [planetPath fill];
+    
+    [NSGraphicsContext restoreGraphicsState];
 }
+
+//- (void)mouseDown:(NSEvent *)theEvent
+//{
+//    if (self.delegate != nil)
+//    {
+//        CGPoint center = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
+//        
+//        NSPoint local_point = [self convertPoint:theEvent.locationInWindow fromView:nil];
+//        
+//        CGFloat distX = center.x - local_point.x;
+//        CGFloat distY = center.y - local_point.y;
+//        
+//        CGFloat dist = sqrt(pow(distX, 2) + pow(distY, 2));
+//        
+//        if ((NSInteger)dist <= 5) // TODO: make a local ivar
+//        {
+//            [delegate planetSelected:self atLocation:theEvent.locationInWindow];
+//        }
+//    }
+//    
+//    return;
+//}
 
 @end

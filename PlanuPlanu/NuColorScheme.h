@@ -14,10 +14,12 @@
     NSMutableArray* colors;
     NuTurn* turn;
     NSString* name;
+    NSInteger lastUpdate;
 }
 
 @property (nonatomic, retain) NuTurn* turn;
 @property (nonatomic, retain) NSString* name;
+@property (nonatomic, assign) NSInteger lastUpdate;
 
 - (id)initWithArray:(NSArray*)playerColorArray forTurn:(NuTurn*)turn;
 

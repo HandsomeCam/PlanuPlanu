@@ -11,8 +11,10 @@
 #import "PlanetPopoverController.h" 
 #import "ScanRangeVisibilityView.h"
 #import "NuColorScheme.h"
+#import "NuShipView.h"
+#import "NuPlanetView.h"
 
-@interface StarMapView : NSView
+@interface StarMapView : NSView <NuShipViewDelegate, NuPlanetViewDelegate>
 {
     NSArray *planets;
     CGPoint startOrigin;
@@ -50,7 +52,7 @@
 
 - (id)initWithTurn:(NuTurn*)turn;
 
-- (void)showPlanetPopover:(NuPlanet*)planet;
+- (void)showPlanetPopover:(NuPlanetView*)planet;
 - (void)scrollToHomeWorld;
 
 - (void)addIonStorms;

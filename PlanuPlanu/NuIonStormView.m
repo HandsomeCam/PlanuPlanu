@@ -16,6 +16,7 @@
 - (id)initWithIonStorm:(NuIonStorm*)ionStorm;
 {
     self.storm = ionStorm;
+    self.identifier = self.storm.ionStormId;
     
     NSRect rect = CGRectMake(storm.x - storm.radius,
                              storm.y - storm.radius,
@@ -46,48 +47,42 @@
     
     lightning = [lt retain];
     
-    return [self initWithFrame:rect];
-}
-
-- (id)initWithFrame:(NSRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code here.
-    }
+    [self init];
+    
+    self.frame = rect;
     
     return self;
 }
 
-- (void)drawRect:(NSRect)dirtyRect
+- (void)drawInContext:(CGContextRef)ctx
 {
-    // Drawing code here.
-    CGContextRef context = [[NSGraphicsContext // 1
-                               currentContext] graphicsPort];
+    NSGraphicsContext *nsGraphicsContext;
+    nsGraphicsContext = [NSGraphicsContext graphicsContextWithGraphicsPort:ctx
+                                                                   flipped:NO];
+    [NSGraphicsContext saveGraphicsState];
+    [NSGraphicsContext setCurrentContext:nsGraphicsContext];
     
-//    //    // Add bg
-//    CGContextSetRGBFillColor (context, 0, 0, 1, 1);// 3
-//    CGContextFillRect (context, dirtyRect);// 4
+     
 
     CGRect stormRect = CGRectMake(0,0,self.frame.size.width, self.frame.size.height);
     
-    CGContextSetLineWidth(context, 1.0);
+    CGContextSetLineWidth(ctx, 1.0);
     CGColorRef thickYellow = CGColorCreateGenericRGB(.7, .9, 0, .7);
     
     CGColorRef yellow = CGColorCreateGenericRGB(.5 + (.01 * storm.voltage), .9, 0, .5);
-    CGContextSetFillColorWithColor(context, yellow);
+    CGContextSetFillColorWithColor(ctx, yellow);
      
-    CGContextFillEllipseInRect(context, stormRect);
+    CGContextFillEllipseInRect(ctx, stormRect);
     
-    CGContextStrokePath(context);
+    CGContextStrokePath(ctx);
     
     // draw heading line
-    CGContextSetStrokeColorWithColor(context, thickYellow);
-    CGContextSetLineWidth(context, 2.0);
+    CGContextSetStrokeColorWithColor(ctx, thickYellow);
+    CGContextSetLineWidth(ctx, 2.0);
     
     NSInteger centerX = storm.radius;
     NSInteger centerY = storm.radius;
-    CGContextMoveToPoint(context, centerX, centerY);
+    CGContextMoveToPoint(ctx, centerX, centerY);
     
     double headingLength = pow(storm.warp, 2); 
     CGPoint endPoint; 
@@ -96,27 +91,29 @@
     endPoint.x = headingX + centerX;
     endPoint.y = headingY + centerY;
     
-    CGContextAddLineToPoint(context, endPoint.x, endPoint.y);
-    CGContextStrokePath(context);
+    CGContextAddLineToPoint(ctx, endPoint.x, endPoint.y);
+    CGContextStrokePath(ctx);
         
     for (NSArray *path in lightning)
     {
         CGColorRef lightningColor = CGColorCreateGenericRGB(.95, .95, 0, .2);        
-        CGContextSetLineWidth(context, 1.8);
-        CGContextSetStrokeColorWithColor(context, lightningColor);
+        CGContextSetLineWidth(ctx, 1.8);
+        CGContextSetStrokeColorWithColor(ctx, lightningColor);
         
-        CGContextMoveToPoint(context, storm.radius, storm.radius);
+        CGContextMoveToPoint(ctx, storm.radius, storm.radius);
         
         for (NSString* step in path)
         {
             NSArray* pts = [step componentsSeparatedByString:@","];
             CGFloat pathX = [[pts objectAtIndex:0] doubleValue];
             CGFloat pathY = [[pts objectAtIndex:1] doubleValue];
-            CGContextAddLineToPoint(context, pathX, pathY);
+            CGContextAddLineToPoint(ctx, pathX, pathY);
         }
         
-        CGContextStrokePath(context);
+        CGContextStrokePath(ctx);
     }
+    
+    [NSGraphicsContext restoreGraphicsState];
 }
 
 

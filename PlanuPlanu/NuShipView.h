@@ -10,18 +10,30 @@
 #import <PlanuKit/PlanuKit.h>
 
 #import "NuColorScheme.h"
+#import "NuMappableEntityLayer.h"
 
-@interface NuShipView : NSView
+@class NuShipView;
+
+@protocol NuShipViewDelegate <NSObject>
+
+- (void)shipSelected:(NuShipView*)sender atLocation:(CGPoint)point;
+
+@end
+
+@interface NuShipView : NuMappableEntityLayer
 {
     NuShip* ship;
     NuPlayer* player;
     NSInteger shipRadius;
     NuColorScheme* colors;
+    id<NuShipViewDelegate> delegate;
+     
 }
 
 @property (nonatomic, retain) NuShip* ship;
 @property (nonatomic, retain) NuPlayer* player;
 @property (nonatomic, retain) NuColorScheme* colors;
+@property (assign) id<NuShipViewDelegate> delegate; 
 
 - (id)initWithShip:(NuShip*)ship;
 
