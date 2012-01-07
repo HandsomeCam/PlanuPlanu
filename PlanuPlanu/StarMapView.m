@@ -10,8 +10,8 @@
 #import "PlanetPopoverController.h" 
 #import "NuIonStormView.h"
 #import "NuPlanetView.h"
-#import "NuShipView.h"
 #import "NuPlanetaryConnectionView.h"
+#import <QuartzCore/CoreAnimation.h>
 
 @implementation StarMapView
 
@@ -75,10 +75,26 @@
     if (self) {
         // Initialization code here.
         
+        CALayer *newLayer = [[CALayer alloc] init];
+        newLayer.bounds = self.bounds;
+        
+        self.layer = newLayer;
+        //[[self enclosingScrollView] setLayer:newLayer];
+        [self setWantsLayer: YES];
+        //[[self enclosingScrollView] setWantsLayer:YES];
+        
+//        CALayer* bg = [CALayer layer];
+//        bg.frame = self.frame;
+//        
+//        [self setLayer:bg];
+//        
         ScanRangeVisibilityView* srvv = 
             [[[ScanRangeVisibilityView alloc] initWithFrame:frame 
-                                                    forTurn:self.turn] autorelease];
-        [self addSubview:srvv];
+                                                    forTurn:self.turn] autorelease
+             ];
+        [srvv setNeedsDisplay];
+        [self.layer addSublayer:srvv];
+        
         self.scanRangeView = srvv;
         
         if (self.ionStorms != nil)
@@ -100,8 +116,26 @@
         }
     }
     
+    [self.layer setNeedsDisplay];
+  
     return self;
 }
+
+//-(void)displayLayer:(CALayer *)layer
+//{
+//    CGDataProviderRef data;
+//    data = CGDataProviderCreateWithFilename("Compass.png");
+//	
+//    CGImageRef compass;
+//    compass = CGImageCreateWithPNGDataProvider(data, NULL, FALSE, 
+//                                               kCGRenderingIntentDefault);
+//	
+//    layer.contents = compass;
+//    layer.contentsGravity = kCAGravityCenter;
+//	
+//    CGImageRelease(compass);
+//    CGDataProviderRelease(data);
+//}
 
 - (void)addShips
 {
@@ -111,8 +145,11 @@
     {
         NuShipView* sv = [[[NuShipView alloc] initWithShip:ship] autorelease];
         sv.player = self.player;
+        sv.delegate = self;
         
-        [self addSubview:sv];
+        [self.layer addSublayer:sv];
+        //sv.delegate = self;
+        [sv setNeedsDisplay];
         [svs addObject:sv];
     }
     
@@ -127,8 +164,10 @@
     {
         NuPlanetView* pv = [[[NuPlanetView alloc] initWithPlanet:planet] autorelease];
         pv.player = self.player;
-        
-        [self addSubview:pv];
+        pv.delegate = self;
+          
+        [self.layer addSublayer:pv];
+        [pv setNeedsDisplay];
         [pvs addObject:pv];
     }
     
@@ -157,7 +196,8 @@
                 NuPlanetaryConnectionView* pcv = 
                     [[NuPlanetaryConnectionView alloc] initWithPlanet:a 
                                                             andPlanet:b];
-                [self addSubview:pcv];
+                [self.layer addSublayer:pcv];
+                [pcv setNeedsDisplay];
                 [connections addObject:pcv];
             }
         }
@@ -174,49 +214,14 @@
     {
         NuIonStormView* isv = [[[NuIonStormView alloc] initWithIonStorm:storm] autorelease];
        
-        [self addSubview:isv];
+        [self.layer addSublayer:isv];
+        [isv setNeedsDisplay];
         [isvs addObject:isv];
     }
     
     self.stormViews = isvs;
 }
-
-- (void)drawRect:(NSRect)dirtyRect
-{
-    // Drawing code here.
-    
-}
  
-- (void)mouseDown:(NSEvent *)theEvent
-{
-    if (popover != nil)
-    {
-        [popover.child close];
-        [popover release];
-        popover = nil;
-    }
-    
-    startOrigin = [self visibleRect].origin;
-    // For some reason this is always offset by 25, possibly it's the window origin, not the 
-    // scroll box
-    CGPoint realLocation = CGPointMake(theEvent.locationInWindow.x + startOrigin.x - 20,
-                theEvent.locationInWindow.y + startOrigin.y - 20);
-
-    for (NuPlanet* planet in planets)
-    {
-        if ( (abs(realLocation.x - planet.x) < 10)
-            && (abs(realLocation.y - planet.y) < 10) )
-        {
-            [self showPlanetPopover:planet];
-            break;
-        }
-    }
-    
-    
-    startPt = theEvent.locationInWindow;
-    
-    return;
-}
 
 - (void)scrollToHomeWorld
 {
@@ -254,23 +259,32 @@
     [self scrollPoint:scrollPoint];
 }
 
-- (void)showPlanetPopover:(NuPlanet*)planet
+- (void)showPlanetPopover:(NuPlanetView*)planet
 {
     NSPopover* planetPopover = [[NSPopover alloc] init];
   
-    CGRect planetRect = CGRectMake(planet.x - 5, planet.y - 5, 10, 10);
+//    CGRect planetRect = CGRectMake(planet.x - 5, planet.y - 5, 10, 10);
     
     PlanetPopoverController* ppc = [[PlanetPopoverController alloc] initWithNibName:@"PlanetPopover" bundle:nil];
     planetPopover.contentViewController = [ppc autorelease];
     planetPopover.delegate = ppc;
-    ppc.planet = planet;
+    ppc.planet = planet.planet;
     planetPopover.behavior = NSPopoverBehaviorTransient;
     ppc.child = planetPopover;
     
-    [planetPopover showRelativeToRect:planetRect
+    [planetPopover showRelativeToRect:planet.frame
                          ofView:self 
                   preferredEdge:NSMinYEdge];
     popover = [ppc retain];
+}
+
+- (void)mouseDown:(NSEvent *)theEvent
+{
+    // This is used for dragging the map
+    startOrigin = [self visibleRect].origin;
+    startPt = theEvent.locationInWindow;
+    
+    return;
 }
 
 - (void)mouseDragged:(NSEvent *)theEvent
@@ -301,8 +315,34 @@
     {
         sv.colors = cs;
     }
+}
+
+- (void)shipSelected:(NuShipView *)sender atLocation:(CGPoint)point
+{
+    startOrigin = [self visibleRect].origin;
+    startPt = point;
     
-    [self setNeedsDisplay:YES];
+    NSLog(@"Tapped Ship: %@ (%ld)", sender.ship.name, sender.ship.shipId);
+}
+
+- (void)planetSelected:(NuPlanetView *)sender atLocation:(CGPoint)point
+{
+    startOrigin = [self visibleRect].origin;
+    startPt = point;
+    
+    if (popover != nil)
+    {
+        [popover.child close];
+        [popover release];
+        popover = nil;
+    }
+    
+     
+    [self showPlanetPopover:sender];
+          
+    
+    return;
+    
 }
 
 @end

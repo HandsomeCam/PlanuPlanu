@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7E1518BF14A3F15B00BAB34E /* CaptainDashboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E1518BE14A3F15B00BAB34E /* CaptainDashboard.xib */; };
+		7E15E64014B518A500650246 /* NuMappableEntityLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E15E63F14B518A500650246 /* NuMappableEntityLayer.m */; };
+		7E15E64214B7BC8F00650246 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E15E64114B7BC8F00650246 /* QuartzCore.framework */; };
 		7E2908CF14ABC66A00B11972 /* StarMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2908CE14ABC66A00B11972 /* StarMapController.m */; };
 		7E2908D414ACFF9E00B11972 /* NuIonStormView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2908D314ACFF9D00B11972 /* NuIonStormView.m */; };
 		7E2908D714AD299E00B11972 /* NuPlanetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2908D614AD299E00B11972 /* NuPlanetView.m */; };
@@ -90,6 +92,9 @@
 
 /* Begin PBXFileReference section */
 		7E1518BE14A3F15B00BAB34E /* CaptainDashboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CaptainDashboard.xib; sourceTree = "<group>"; };
+		7E15E63E14B518A500650246 /* NuMappableEntityLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuMappableEntityLayer.h; sourceTree = "<group>"; };
+		7E15E63F14B518A500650246 /* NuMappableEntityLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuMappableEntityLayer.m; sourceTree = "<group>"; };
+		7E15E64114B7BC8F00650246 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7E2908CE14ABC66A00B11972 /* StarMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarMapController.m; sourceTree = "<group>"; };
 		7E2908D214ACFF9D00B11972 /* NuIonStormView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuIonStormView.h; sourceTree = "<group>"; };
 		7E2908D314ACFF9D00B11972 /* NuIonStormView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuIonStormView.m; sourceTree = "<group>"; };
@@ -167,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E15E64214B7BC8F00650246 /* QuartzCore.framework in Frameworks */,
 				7EB9CC5314ABB57400A6ECB3 /* PlanuKit.framework in Frameworks */,
 				7EC24C9614A2CC9E0081022A /* Cocoa.framework in Frameworks */,
 			);
@@ -209,6 +215,7 @@
 		7EC24C8614A2CC9E0081022A = {
 			isa = PBXGroup;
 			children = (
+				7E15E64114B7BC8F00650246 /* QuartzCore.framework */,
 				7EB9CC4A14ABB4D800A6ECB3 /* PlanuKit.xcodeproj */,
 				7EC24C9B14A2CC9E0081022A /* PlanuPlanu */,
 				7EC24CB814A2CC9F0081022A /* PlanuPlanuTests */,
@@ -291,6 +298,8 @@
 				7ECC437E14B016920083591C /* NuColorScheme.m */,
 				7ECC438014B020FA0083591C /* NSColor+Serialize.h */,
 				7ECC438114B020FA0083591C /* NSColor+Serialize.m */,
+				7E15E63E14B518A500650246 /* NuMappableEntityLayer.h */,
+				7E15E63F14B518A500650246 /* NuMappableEntityLayer.m */,
 			);
 			path = PlanuPlanu;
 			sourceTree = "<group>";
@@ -493,6 +502,7 @@
 				7EF364FE14AFC782009BBE86 /* ScanRangeVisibilityView.m in Sources */,
 				7ECC437F14B016920083591C /* NuColorScheme.m in Sources */,
 				7ECC438214B020FA0083591C /* NSColor+Serialize.m in Sources */,
+				7E15E64014B518A500650246 /* NuMappableEntityLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

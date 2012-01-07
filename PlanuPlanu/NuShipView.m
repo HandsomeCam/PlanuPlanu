@@ -10,11 +10,27 @@
 
 @implementation NuShipView
 
-@synthesize ship, player, colors;
+@synthesize ship, player, colors, delegate;
+
+- (void)setColors:(NuColorScheme *)c
+{
+    if (colors != nil)
+    {
+        [colors release];
+    }
+    
+    colors = [c retain];
+    
+    if (colors.lastUpdate == ship.ownerId)
+    {
+        [self setNeedsDisplay];
+    }
+}
 
 - (id)initWithShip:(NuShip*)s
 {
     self.ship = s;
+    self.identifier = self.ship.shipId;
     
     shipRadius = 6;
     
@@ -36,21 +52,47 @@
                                   ship.y - viewRadius,
                                   viewRadius*2, viewRadius*2);
     
-    return [self initWithFrame:rectangle];
-}
-
-- (id)initWithFrame:(NSRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code here.
-    }
+    [self init];
+    self.frame = rectangle;
     
     return self;
 }
 
-- (void)drawRect:(NSRect)dirtyRect
+ 
+
+//- (NSView *)hitTest:(NSPoint)aPoint
+//{
+//    // pass-through events that don't hit one of the visible subviews
+//    CGPoint center = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
+//      
+//    NSPoint local_point = [self convertPoint:aPoint fromView:nil];
+//    
+//    CGFloat distX = self.ship.x - aPoint.x;
+//    CGFloat distY = self.ship.y - aPoint.y;
+//    
+//    CGFloat dist = sqrt(pow(distX, 2) + pow(distY, 2));
+//    
+//    if (self.ship.shipId == 182)
+//    {
+//        NSLog(@"Dist: %lf ap: (%lf, %lf) LP: (%lf, %lf)", dist, aPoint.x, aPoint.y, local_point.x, local_point.y);
+//    }
+//    
+//    if ((NSInteger)dist <= shipRadius)
+//    {
+//        return self;
+//    }
+//    
+//    return nil;
+//}
+
+- (void)drawInContext:(CGContextRef)ctx
 {
+    NSGraphicsContext *nsGraphicsContext;
+    nsGraphicsContext = [NSGraphicsContext graphicsContextWithGraphicsPort:ctx
+                                                                   flipped:NO];
+    [NSGraphicsContext saveGraphicsState];
+    [NSGraphicsContext setCurrentContext:nsGraphicsContext];
+    
     NSInteger centerBorder = self.frame.size.width / 2;
     NSInteger outerOrigin = centerBorder - (shipRadius);
     
@@ -102,6 +144,33 @@
         [flightPath lineToPoint:endPoint];
         [flightPath stroke];
     }   
+    
+    [NSGraphicsContext restoreGraphicsState];
 }
+//
+//- (void)mouseDown:(NSEvent *)theEvent
+//{
+//    if (self.delegate != nil)
+//    {
+//        CGPoint center = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
+//        
+//        CGPoint liw = theEvent.locationInWindow;
+//        NSPoint local_point = [self convertPoint:theEvent.locationInWindow fromView:nil];
+//        
+//        CGFloat distX = center.x - local_point.x;
+//        CGFloat distY = center.y - local_point.y;
+//        
+//        CGFloat dist = sqrt(pow(distX, 2) + pow(distY, 2));
+//        
+//        if ((NSInteger)dist <= shipRadius)
+//        {
+//            [delegate shipSelected:self atLocation:theEvent.locationInWindow];
+//            [self findNextSiblingBelowEventLocation:theEvent];
+//            
+//        }
+//    }
+//    
+//    return;
+//}
 
 @end
