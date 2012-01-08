@@ -14,7 +14,7 @@
 #import "NuShipView.h"
 #import "NuPlanetView.h"
 
-@interface StarMapView : NSView <NuShipViewDelegate, NuPlanetViewDelegate>
+@interface StarMapView : NSView
 {
     NSArray *planets;
     CGPoint startOrigin;
@@ -31,6 +31,8 @@
     NSArray* shipViews;
     NSArray* stormViews;
     NSArray* connectionViews;
+    
+    NSMutableDictionary* viewsByLocation;
     
     NuColorScheme* colorScheme;
     
