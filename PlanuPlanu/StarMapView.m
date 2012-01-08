@@ -10,6 +10,7 @@
 #import "PlanetPopoverController.h" 
 #import "NuIonStormView.h"
 #import "NuPlanetView.h"
+#import "NuShipView.h"
 #import "NuPlanetaryConnectionView.h"
 #import <QuartzCore/CoreAnimation.h>
 
@@ -97,6 +98,8 @@
         
         self.scanRangeView = srvv;
         
+        viewsByLocation = [[NSMutableDictionary dictionary] retain];
+        
         if (self.ionStorms != nil)
         {
             [self addIonStorms];
@@ -120,37 +123,51 @@
   
     return self;
 }
-
-//-(void)displayLayer:(CALayer *)layer
-//{
-//    CGDataProviderRef data;
-//    data = CGDataProviderCreateWithFilename("Compass.png");
-//	
-//    CGImageRef compass;
-//    compass = CGImageCreateWithPNGDataProvider(data, NULL, FALSE, 
-//                                               kCGRenderingIntentDefault);
-//	
-//    layer.contents = compass;
-//    layer.contentsGravity = kCAGravityCenter;
-//	
-//    CGImageRelease(compass);
-//    CGDataProviderRelease(data);
-//}
-
+ 
 - (void)addShips
 {
     NSMutableArray* svs = [NSMutableArray array];
     
     for (NuShip* ship in self.ships)
     {
-        NuShipView* sv = [[[NuShipView alloc] initWithShip:ship] autorelease];
-        sv.player = self.player;
-        sv.delegate = self;
+        BOOL newShip = YES;
+         
+        NSPoint loc;
+        loc.x = ship.x;
+        loc.y = ship.y;
+        NSValue* locVal = [NSValue valueWithPoint:loc];
         
-        [self.layer addSublayer:sv];
-        //sv.delegate = self;
-        [sv setNeedsDisplay];
-        [svs addObject:sv];
+        if ([viewsByLocation objectForKey:locVal] == nil)
+        {
+            [viewsByLocation setObject:[NSMutableArray array]
+                               forKey:locVal];
+        }
+        
+        
+        for (NuMappableEntityLayer* layer in
+             [viewsByLocation objectForKey:locVal])
+        {
+            if ([layer isKindOfClass:[NuShipView class]])
+            {
+                NuShipView* nsv = (NuShipView*)layer;
+                [nsv addShip:ship];
+                newShip = NO;
+            }
+        }
+        
+        if (newShip == YES)
+        {
+            NuShipView* sv = [[[NuShipView alloc] initWithShip:ship] autorelease];
+            sv.player = self.player; 
+            
+            NSMutableArray* arr = [viewsByLocation objectForKey:locVal];
+            [arr addObject:sv];
+            
+            [self.layer addSublayer:sv];
+            //sv.delegate = self;
+            [sv setNeedsDisplay];
+            [svs addObject:sv];
+        }
     }
     
     self.shipViews = svs;
@@ -163,9 +180,22 @@
     for (NuPlanet* planet in self.planets)
     {
         NuPlanetView* pv = [[[NuPlanetView alloc] initWithPlanet:planet] autorelease];
-        pv.player = self.player;
-        pv.delegate = self;
-          
+        pv.player = self.player; 
+        
+        NSPoint loc;
+        loc.x = planet.x;
+        loc.y = planet.y;
+        NSValue* locVal = [NSValue valueWithPoint:loc];
+        
+        if ([viewsByLocation objectForKey:locVal] == nil)
+        {
+            [viewsByLocation setObject:[NSMutableArray array]
+                                forKey:locVal];
+        }
+        
+        NSMutableArray* arr = [viewsByLocation objectForKey:locVal];
+        [arr addObject:pv];
+        
         [self.layer addSublayer:pv];
         [pv setNeedsDisplay];
         [pvs addObject:pv];
@@ -278,11 +308,62 @@
     popover = [ppc retain];
 }
 
+ 
 - (void)mouseDown:(NSEvent *)theEvent
 {
     // This is used for dragging the map
     startOrigin = [self visibleRect].origin;
     startPt = theEvent.locationInWindow;
+    
+    NSPoint scPt = [[self enclosingScrollView] convertPointFromBase:startPt];
+
+    NSPoint layerPt = [self.layer convertPoint:scPt fromLayer:nil];
+    
+    
+    NSRect vr = self.visibleRect;
+ 
+    NSPoint reflection = NSMakePoint(scPt.x, vr.size.height - scPt.y);
+ 
+    NSPoint refLayerPt = [self.layer convertPoint:reflection fromLayer:nil];
+     
+    NSMutableArray* entities = [NSMutableArray array];
+    
+    for (NSArray* vws in [viewsByLocation allValues])
+    {
+        for (NuMappableEntityLayer* layer in vws)
+        {
+            if ([layer isKindOfClass:[NuPlanetView class]])
+            {
+                NuPlanetView* pv = (NuPlanetView*)layer;
+                
+                NuPlanet* pl = pv.planet;
+               
+                if ([pv hitTest:refLayerPt])
+                {
+                     NSLog(@"HIT! %@: (%ld, %ld)", pl.name, pl.x, pl.y);
+                    [entities addObject:pl];
+                }
+            }
+            
+            if ([layer isKindOfClass:[NuShipView class]] == YES)
+            {
+                NuShipView* sv = (NuShipView*)layer;
+                if ([sv hitTest:refLayerPt])
+                {
+                    for (NuShip* ship in sv.ships)
+                    {
+                        NSLog(@"HIT! %@: (%ld, %ld)", ship.name, ship.x, ship.y);
+                        [entities addObject:ship];
+                    }
+                }
+            }
+            
+            // TODO: ion storms
+            
+            // TODO: minefields
+        }
+        
+    }
     
     return;
 }
@@ -317,32 +398,36 @@
     }
 }
 
-- (void)shipSelected:(NuShipView *)sender atLocation:(CGPoint)point
-{
-    startOrigin = [self visibleRect].origin;
-    startPt = point;
-    
-    NSLog(@"Tapped Ship: %@ (%ld)", sender.ship.name, sender.ship.shipId);
-}
-
-- (void)planetSelected:(NuPlanetView *)sender atLocation:(CGPoint)point
-{
-    startOrigin = [self visibleRect].origin;
-    startPt = point;
-    
-    if (popover != nil)
-    {
-        [popover.child close];
-        [popover release];
-        popover = nil;
-    }
-    
-     
-    [self showPlanetPopover:sender];
-          
-    
-    return;
-    
-}
+//- (void)shipSelected:(NuShipView *)sender atLocation:(CGPoint)point
+//{
+//    startOrigin = [self visibleRect].origin;
+//    startPt = point;
+//    
+//    
+//    
+//    NSLog(@"Tapped Ship: %@ (%ld)", 
+//          sender.ship.name, 
+//          sender.ship.shipId);
+//}
+//
+//- (void)planetSelected:(NuPlanetView *)sender atLocation:(CGPoint)point
+//{
+//    startOrigin = [self visibleRect].origin;
+//    startPt = point;
+//    
+//    if (popover != nil)
+//    {
+//        [popover.child close];
+//        [popover release];
+//        popover = nil;
+//    }
+//    
+//     
+//    [self showPlanetPopover:sender];
+//          
+//    
+//    return;
+//    
+//}
 
 @end

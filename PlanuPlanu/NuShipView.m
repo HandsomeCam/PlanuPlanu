@@ -10,7 +10,10 @@
 
 @implementation NuShipView
 
-@synthesize ship, player, colors, delegate;
+#define kShipRadius 6
+#define kShipAtPlanetRadius 12
+
+@synthesize ships, player, colors;
 
 - (void)setColors:(NuColorScheme *)c
 {
@@ -21,36 +24,61 @@
     
     colors = [c retain];
     
-    if (colors.lastUpdate == ship.ownerId)
+    // TODO: check all ships
+    NuShip* baseShip = [self.ships objectAtIndex:0];
+    
+    if (colors.lastUpdate == baseShip.ownerId)
     {
         [self setNeedsDisplay];
     }
 }
 
+- (NSRect)calculateLayerBounds
+{
+    shipRadius = kShipRadius;
+    
+    NSRect retVal = CGRectZero;
+    
+    for (NuShip* ship in ships)
+    {
+        if (ship.distanceToClosestPlanet <= 10)
+        {
+            shipRadius = kShipAtPlanetRadius;
+        }
+        
+        NSInteger nextTurnTravel = [ship flightLength];
+        
+        NSInteger viewRadius = shipRadius;
+        
+        if (ship.heading != -1 && nextTurnTravel > shipRadius)
+        {
+            viewRadius = nextTurnTravel;
+        }
+        
+        CGRect currentFrame = CGRectMake(ship.x - viewRadius,
+                                      ship.y - viewRadius,
+                                      viewRadius*2, viewRadius*2);
+        
+        if (currentFrame.size.width * currentFrame.size.height > retVal.size.width * retVal.size.height)
+        {
+            retVal = currentFrame;
+        }
+    }
+    
+    return retVal;
+}
+
 - (id)initWithShip:(NuShip*)s
 {
-    self.ship = s;
-    self.identifier = self.ship.shipId;
+    self.ships = [NSMutableArray array];
+    [self.ships addObject:s];
     
-    shipRadius = 6;
+    // TODO: check all ships
+    NuShip* baseShip = [self.ships objectAtIndex:0];
     
-    if (ship.distanceToClosestPlanet <= 10)
-    {
-        shipRadius *= 2;
-    }
+    self.identifier = baseShip.shipId;
     
-    NSInteger nextTurnTravel = [self.ship flightLength];
-    
-    NSInteger viewRadius = shipRadius;
-    
-    if (ship.heading != -1 && nextTurnTravel > shipRadius)
-    {
-        viewRadius = nextTurnTravel;
-    }
-    
-    CGRect rectangle = CGRectMake(ship.x - viewRadius,
-                                  ship.y - viewRadius,
-                                  viewRadius*2, viewRadius*2);
+    NSRect rectangle = [self calculateLayerBounds];
     
     [self init];
     self.frame = rectangle;
@@ -60,30 +88,25 @@
 
  
 
-//- (NSView *)hitTest:(NSPoint)aPoint
-//{
-//    // pass-through events that don't hit one of the visible subviews
-//    CGPoint center = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
-//      
-//    NSPoint local_point = [self convertPoint:aPoint fromView:nil];
-//    
-//    CGFloat distX = self.ship.x - aPoint.x;
-//    CGFloat distY = self.ship.y - aPoint.y;
-//    
-//    CGFloat dist = sqrt(pow(distX, 2) + pow(distY, 2));
-//    
-//    if (self.ship.shipId == 182)
-//    {
-//        NSLog(@"Dist: %lf ap: (%lf, %lf) LP: (%lf, %lf)", dist, aPoint.x, aPoint.y, local_point.x, local_point.y);
-//    }
-//    
-//    if ((NSInteger)dist <= shipRadius)
-//    {
-//        return self;
-//    }
-//    
-//    return nil;
-//}
+- (id)hitTest:(NSPoint)aPoint
+{
+    // pass-through events that don't hit one of the visible subviews
+    CGPoint center = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
+      
+    NSPoint local_point = [self convertPoint:aPoint fromLayer:[self superlayer]];
+    
+    CGFloat distX = center.x - local_point.x;
+    CGFloat distY = center.y - local_point.y;
+    
+    CGFloat dist = sqrt(pow(distX, 2) + pow(distY, 2));
+    
+    if ((NSInteger)dist <= shipRadius)
+    {
+        return self;
+    }
+    
+    return nil;
+}
 
 - (void)drawInContext:(CGContextRef)ctx
 {
@@ -98,79 +121,80 @@
     
     CGRect shipRect = CGRectMake(outerOrigin+2, outerOrigin+2, (shipRadius*2)-4, (shipRadius*2)-4);
     
-    if (self.colors == nil)
+    
+    for (NuShip* ship in self.ships)
     {
-        if (ship.ownerId == player.playerId)
+        if (self.colors == nil)
         {
-            [[NSColor greenColor] setStroke]; 
+            if (ship.ownerId == player.playerId)
+            {
+                [[NSColor greenColor] setStroke]; 
+            }
+            else
+            {
+                [[NSColor redColor] setStroke]; 
+            }
         }
         else
         {
-            [[NSColor redColor] setStroke]; 
+            [[self.colors colorForPlayer:ship.ownerId] setStroke];
         }
-    }
-    else
-    {
-        [[self.colors colorForPlayer:ship.ownerId] setStroke];
-    }
-    
-    NSBezierPath* circlePath = [NSBezierPath bezierPathWithOvalInRect:shipRect];
-    [circlePath setLineWidth:2.0];
-    
-    [circlePath stroke];
-    
-    
-    if (ship.heading != -1 && ship.warp > 0)
-    {
-        NSBezierPath* flightPath = [NSBezierPath bezierPath];
-        [flightPath setLineWidth:2.0];
         
-        [flightPath moveToPoint:CGPointMake(centerBorder, centerBorder)];
-        NSInteger flightLength = [ship flightLength];
-              
-        CGPoint endPoint = CGPointMake(flightLength * sin(ship.heading*pi/180), 
-                                       flightLength * cos(ship.heading*pi/180));
+        NSBezierPath* circlePath = [NSBezierPath bezierPathWithOvalInRect:shipRect];
+        [circlePath setLineWidth:2.0];
         
-        endPoint.x += centerBorder;
-        endPoint.y += centerBorder;
+        [circlePath stroke];
         
-        CGFloat pattern = 4.0;
-        // TODO: check the HYP capability
-        if (flightLength == 350 && [self.ship.friendlyCode isEqualToString:@"HYP"])
+        
+        if (ship.heading != -1 && ship.warp > 0)
         {
-            [flightPath setLineDash:&pattern count:1 phase:0];
-        }
-        
-        [flightPath lineToPoint:endPoint];
-        [flightPath stroke];
-    }   
+            NSBezierPath* flightPath = [NSBezierPath bezierPath];
+            [flightPath setLineWidth:2.0];
+            
+            [flightPath moveToPoint:CGPointMake(centerBorder, centerBorder)];
+            NSInteger flightLength = [ship flightLength];
+                  
+            CGPoint endPoint = CGPointZero;
+            
+            
+            if (ship.targetX >= 0 && ship.targetY >= 0)
+            {
+                // Targets give us exact points
+                endPoint = CGPointMake(ship.targetX - ship.x,
+                                       ship.targetY - ship.y);
+            }
+            else
+            {
+                endPoint = CGPointMake(flightLength * sin(ship.heading*pi/180), 
+                                           flightLength * cos(ship.heading*pi/180));
+            }
+            endPoint.x += centerBorder;
+            endPoint.y += centerBorder;
+            
+            endPoint.x = round(endPoint.x);
+            endPoint.y = round(endPoint.y);
+            
+            CGFloat pattern = 4.0;
+            // TODO: check the HYP capability
+            if (flightLength == 350 && [ship.friendlyCode isEqualToString:@"HYP"])
+            {
+                [flightPath setLineDash:&pattern count:1 phase:0];
+            }
+            
+            [flightPath lineToPoint:endPoint];
+            [flightPath stroke];
+        }   
+    }
     
     [NSGraphicsContext restoreGraphicsState];
 }
-//
-//- (void)mouseDown:(NSEvent *)theEvent
-//{
-//    if (self.delegate != nil)
-//    {
-//        CGPoint center = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
-//        
-//        CGPoint liw = theEvent.locationInWindow;
-//        NSPoint local_point = [self convertPoint:theEvent.locationInWindow fromView:nil];
-//        
-//        CGFloat distX = center.x - local_point.x;
-//        CGFloat distY = center.y - local_point.y;
-//        
-//        CGFloat dist = sqrt(pow(distX, 2) + pow(distY, 2));
-//        
-//        if ((NSInteger)dist <= shipRadius)
-//        {
-//            [delegate shipSelected:self atLocation:theEvent.locationInWindow];
-//            [self findNextSiblingBelowEventLocation:theEvent];
-//            
-//        }
-//    }
-//    
-//    return;
-//}
+
+
+- (void)addShip:(NuShip*)ship
+{
+    [self.ships addObject:ship];
+    
+    self.frame = [self calculateLayerBounds];
+}
 
 @end

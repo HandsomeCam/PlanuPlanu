@@ -13,28 +13,23 @@
 #import "NuMappableEntityLayer.h"
 
 @class NuShipView;
-
-@protocol NuShipViewDelegate <NSObject>
-
-- (void)shipSelected:(NuShipView*)sender atLocation:(CGPoint)point;
-
-@end
+ 
 
 @interface NuShipView : NuMappableEntityLayer
 {
-    NuShip* ship;
+    NSMutableArray* ships;
     NuPlayer* player;
     NSInteger shipRadius;
-    NuColorScheme* colors;
-    id<NuShipViewDelegate> delegate;
+    NuColorScheme* colors; 
      
 }
 
-@property (nonatomic, retain) NuShip* ship;
+@property (nonatomic, retain) NSMutableArray* ships;
 @property (nonatomic, retain) NuPlayer* player;
-@property (nonatomic, retain) NuColorScheme* colors;
-@property (assign) id<NuShipViewDelegate> delegate; 
+@property (nonatomic, retain) NuColorScheme* colors; 
 
 - (id)initWithShip:(NuShip*)ship;
+- (NSRect)calculateLayerBounds;
+- (void)addShip:(NuShip*)ship;
 
 @end
