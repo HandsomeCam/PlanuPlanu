@@ -3,12 +3,12 @@
 	<data>
 		<int key="IBDocument.SystemTarget">1070</int>
 		<string key="IBDocument.SystemVersion">11C74</string>
-		<string key="IBDocument.InterfaceBuilderVersion">1617</string>
+		<string key="IBDocument.InterfaceBuilderVersion">1938</string>
 		<string key="IBDocument.AppKitVersion">1138.23</string>
 		<string key="IBDocument.HIToolboxVersion">567.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">1617</string>
+			<string key="NS.object.0">1938</string>
 		</object>
 		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -40,11 +40,8 @@
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 		</object>
 		<object class="NSMutableDictionary" key="IBDocument.Metadata">
-			<bool key="EncodedWithXMLCoder">YES</bool>
-			<object class="NSArray" key="dict.sortedKeys" id="0">
-				<bool key="EncodedWithXMLCoder">YES</bool>
-			</object>
-			<reference key="dict.values" ref="0"/>
+			<string key="NS.key.0">PluginDependencyRecalculationVersion</string>
+			<integer value="1" key="NS.object.0"/>
 		</object>
 		<object class="NSMutableArray" key="IBDocument.RootObjects" id="1000">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -415,7 +412,9 @@
 						<reference ref="55868726"/>
 						<reference ref="873067808"/>
 					</object>
-					<reference key="NSToolbarIBSelectableItems" ref="0"/>
+					<object class="NSArray" key="NSToolbarIBSelectableItems" id="0">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+					</object>
 				</object>
 				<nil key="NSUserInterfaceItemIdentifier"/>
 				<object class="NSView" key="NSWindowView" id="1006">
@@ -531,6 +530,7 @@
 											<int key="NSvFlags">256</int>
 											<string key="NSFrameSize">{438, 327}</string>
 											<reference key="NSSuperview" ref="921363838"/>
+											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="530289501"/>
 											<string key="NSReuseIdentifierKey">_NS:1197</string>
 											<bool key="NSEnabled">YES</bool>
@@ -539,6 +539,7 @@
 												<int key="NSvFlags">256</int>
 												<string key="NSFrameSize">{438, 17}</string>
 												<reference key="NSSuperview" ref="1045904147"/>
+												<reference key="NSWindow"/>
 												<reference key="NSNextKeyView" ref="921363838"/>
 												<string key="NSReuseIdentifierKey">_NS:1199</string>
 												<reference key="NSTableView" ref="119217572"/>
@@ -695,6 +696,7 @@
 									</object>
 									<string key="NSFrame">{{1, 17}, {438, 327}}</string>
 									<reference key="NSSuperview" ref="106922608"/>
+									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="119217572"/>
 									<string key="NSReuseIdentifierKey">_NS:1195</string>
 									<reference key="NSDocView" ref="119217572"/>
@@ -706,6 +708,7 @@
 									<int key="NSvFlags">-2147483392</int>
 									<string key="NSFrame">{{224, 17}, {15, 102}}</string>
 									<reference key="NSSuperview" ref="106922608"/>
+									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="529657749"/>
 									<string key="NSReuseIdentifierKey">_NS:1214</string>
 									<reference key="NSTarget" ref="106922608"/>
@@ -718,6 +721,7 @@
 									<int key="NSvFlags">-2147483392</int>
 									<string key="NSFrame">{{1, 357}, {438, 15}}</string>
 									<reference key="NSSuperview" ref="106922608"/>
+									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="834197679"/>
 									<string key="NSReuseIdentifierKey">_NS:1216</string>
 									<int key="NSsFlags">1</int>
@@ -734,6 +738,7 @@
 									</object>
 									<string key="NSFrame">{{1, 0}, {438, 17}}</string>
 									<reference key="NSSuperview" ref="106922608"/>
+									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="885481234"/>
 									<string key="NSReuseIdentifierKey">_NS:1200</string>
 									<reference key="NSDocView" ref="885481234"/>
@@ -743,6 +748,7 @@
 							</object>
 							<string key="NSFrame">{{20, 48}, {440, 345}}</string>
 							<reference key="NSSuperview" ref="544331290"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="1045904147"/>
 							<string key="NSReuseIdentifierKey">_NS:1193</string>
 							<int key="NSsFlags">133682</int>
@@ -757,6 +763,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{291, 16}, {172, 26}}</string>
 							<reference key="NSSuperview" ref="544331290"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:179</string>
 							<bool key="NSEnabled">YES</bool>
@@ -826,6 +833,7 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{14, 12}, {159, 32}}</string>
 							<reference key="NSSuperview" ref="544331290"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="655093738"/>
 							<string key="NSReuseIdentifierKey">_NS:161</string>
 							<bool key="NSEnabled">YES</bool>
@@ -847,6 +855,7 @@
 					</object>
 					<string key="NSFrameSize">{480, 413}</string>
 					<reference key="NSSuperview"/>
+					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="106922608"/>
 					<string key="NSReuseIdentifierKey">_NS:2827</string>
 				</object>
@@ -948,19 +957,51 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">delegate</string>
-						<reference key="source" ref="974939115"/>
-						<reference key="destination" ref="1001"/>
-					</object>
-					<int key="connectionID">62</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">colorSchemeWindow</string>
 						<reference key="source" ref="1001"/>
 						<reference key="destination" ref="213434642"/>
 					</object>
 					<int key="connectionID">93</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">colorSchemeTableView</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="119217572"/>
+					</object>
+					<int key="connectionID">107</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">loadScheme</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="655093738"/>
+					</object>
+					<int key="connectionID">137</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">visibilityToolBarButton</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="171169385"/>
+					</object>
+					<int key="connectionID">139</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">loadColorScheme:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="655093738"/>
+					</object>
+					<int key="connectionID">140</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="974939115"/>
+						<reference key="destination" ref="1001"/>
+					</object>
+					<int key="connectionID">62</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -977,14 +1018,6 @@
 						<reference key="destination" ref="1001"/>
 					</object>
 					<int key="connectionID">106</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">colorSchemeTableView</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="119217572"/>
-					</object>
-					<int key="connectionID">107</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -1056,30 +1089,6 @@
 						<reference key="destination" ref="42609271"/>
 					</object>
 					<int key="connectionID">128</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">loadScheme</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="655093738"/>
-					</object>
-					<int key="connectionID">137</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">visibilityToolBarButton</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="171169385"/>
-					</object>
-					<int key="connectionID">139</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">loadColorScheme:</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="655093738"/>
-					</object>
-					<int key="connectionID">140</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1718,11 +1727,19 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">140</int>
+			<int key="maxID">156</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<bool key="EncodedWithXMLCoder">YES</bool>
+				<object class="IBPartialClassDescription">
+					<string key="className">MapMuxPopoverController</string>
+					<string key="superclassName">NSViewController</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/MapMuxPopoverController.h</string>
+					</object>
+				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">StarMapController</string>
 					<string key="superclassName">NSWindowController</string>
@@ -1734,12 +1751,14 @@
 							<string>connectionToolBarClicked:</string>
 							<string>loadColorScheme:</string>
 							<string>planetToolBarClicked:</string>
+							<string>ppvr:</string>
 							<string>shipToolBarClicked:</string>
 							<string>stormToolBarClicked:</string>
 							<string>visibilityToolBarClicked:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -1757,6 +1776,7 @@
 							<string>connectionToolBarClicked:</string>
 							<string>loadColorScheme:</string>
 							<string>planetToolBarClicked:</string>
+							<string>ppvr:</string>
 							<string>shipToolBarClicked:</string>
 							<string>stormToolBarClicked:</string>
 							<string>visibilityToolBarClicked:</string>
@@ -1777,6 +1797,10 @@
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">planetToolBarClicked:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">ppvr:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
@@ -1802,6 +1826,8 @@
 							<string>connectionToolBarButton</string>
 							<string>loadScheme</string>
 							<string>mapScroll</string>
+							<string>mmpc</string>
+							<string>muxPopover</string>
 							<string>planetToolBarButton</string>
 							<string>shipToolBarButton</string>
 							<string>stormToolBarButton</string>
@@ -1814,6 +1840,8 @@
 							<string>NSButton</string>
 							<string>NSPopUpButton</string>
 							<string>NSScrollView</string>
+							<string>MapMuxPopoverController</string>
+							<string>NSPopover</string>
 							<string>NSButton</string>
 							<string>NSButton</string>
 							<string>NSButton</string>
@@ -1829,6 +1857,8 @@
 							<string>connectionToolBarButton</string>
 							<string>loadScheme</string>
 							<string>mapScroll</string>
+							<string>mmpc</string>
+							<string>muxPopover</string>
 							<string>planetToolBarButton</string>
 							<string>shipToolBarButton</string>
 							<string>stormToolBarButton</string>
@@ -1855,6 +1885,14 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">mapScroll</string>
 								<string key="candidateClassName">NSScrollView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">mmpc</string>
+								<string key="candidateClassName">MapMuxPopoverController</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">muxPopover</string>
+								<string key="candidateClassName">NSPopover</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">planetToolBarButton</string>
