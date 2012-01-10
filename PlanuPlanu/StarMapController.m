@@ -19,6 +19,7 @@
 
 @synthesize colorSchemeWindow, colorSchemeTableView;
 @synthesize loadScheme, colorSchemes, activeScheme;
+@synthesize muxPopover, mmpc;
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -229,6 +230,44 @@
             [self.colorSchemeTableView reloadData];
         }
     }
+}
+
+
+- (IBAction)ppvr:(NSView*)sender
+{
+   NSRect r = NSMakeRect(10, 10, 0, 0);
+       [self.muxPopover showRelativeToRect:r ofView:starMap preferredEdge:NSMaxYEdge];
+}
+
+- (void)showMultiplexPopover:(NSArray *)entities at:(NSRect)popFrame
+{
+    
+//    NSPopover* muxPopover = [[NSPopover alloc] init];
+//    //[muxPopover setContentSize:NSMakeSize(50, 50)];
+//    //    CGRect planetRect = CGRectMake(planet.x - 5, planet.y - 5, 10, 10);
+//   
+//    NSView *anchor = [[NSView alloc] initWithFrame:popFrame];
+//    [self addSubview:anchor];
+//    
+//    MapMuxPopoverController* mmpc = [[MapMuxPopoverController alloc] initWithNibName:@"MapMuxPopover" bundle:nil];
+//    
+//    [muxPopover setAnimates:YES];
+//    muxPopover.contentViewController = [mmpc autorelease];
+//    muxPopover.delegate = mmpc;
+//    
+//    // TODO: add shit
+//    
+//    muxPopover.behavior = NSPopoverBehaviorTransient;
+//    // mmpc.child = planetPopover;
+//    
+//    NSLog(@"Show it!");
+//    [muxPopover showRelativeToRect:anchor.frame
+//                            ofView:anchor 
+//                     preferredEdge:NSMinYEdge];
+//    muxover = [mmpc retain];
+//    
+    
+//    [self.muxPopover showRelativeToRect:starMap.bounds ofView:starMap preferredEdge:NSMinXEdge];
 }
  
 

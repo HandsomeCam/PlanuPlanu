@@ -10,8 +10,9 @@
 #import <PlanuKit/PlanuKit.h>
 #import "StarMapView.h"
 #import "NuColorScheme.h"
+#import "MapMuxPopoverController.h"
 
-@interface StarMapController : NSWindowController <NSTabViewDelegate, NSTableViewDataSource>
+@interface StarMapController : NSWindowController <NSTabViewDelegate, NSTableViewDataSource, StarMapViewDelegate>
 {
     NuTurn* turn;
     NSScrollView* mapScroll;
@@ -29,6 +30,11 @@
     NSPopUpButton* loadScheme;
     NSArray* colorSchemes;
     NuColorScheme* activeScheme;
+    
+    NSPopover* muxPopover;
+    MapMuxPopoverController* mmpc;
+    
+    
 }
 
 @property (nonatomic, retain) NuTurn* turn;
@@ -46,6 +52,8 @@
 @property (nonatomic, retain) NSArray* colorSchemes;
 @property (nonatomic, retain) NuColorScheme* activeScheme;
 
+@property (nonatomic, assign) IBOutlet NSPopover* muxPopover;
+@property (nonatomic, assign) IBOutlet MapMuxPopoverController* mmpc;
 
 - (void)initStarMapView;
 - (void)initToolBar;
@@ -59,4 +67,6 @@
 
 - (IBAction)loadColorScheme:(id)sender;
 - (void)initColorScheme;
+
+- (IBAction)ppvr:(id)sender;
 @end

@@ -8,11 +8,10 @@
 
 #import "MapMuxPopoverController.h"
 #import <PlanuKit/PlanuKit.h>
-#import "MuxCellView.h"
 
 @implementation MapMuxPopoverController
 
-@synthesize entities, turn, tableview, delegate, child;
+@synthesize entities;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,34 +29,38 @@
     
 }
 
-- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row 
+- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
 {
-    MuxCellView *result = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
-    NuMappableEntity *item = [entities objectAtIndex:row];
-    
-    if ([item isKindOfClass:[NuPlanet class]])
+    if ([[entities objectAtIndex:rowIndex] isKindOfClass:[NuShip class]])
     {
-        NuPlanet* planet = (NuPlanet*)item;
-        result.imageView.image = [NSImage imageNamed:@"planet.png"];
-        result.textField.stringValue = planet.name;
+        NuShip* ship = [entities objectAtIndex:rowIndex];
         
-        NSInteger planetOwner = planet.ownerId;
-        NuPlayer* player = [turn playerForId:planetOwner];
-        NSInteger playerRace = player.raceId;
-        NuPlayerRace* race = [turn.races objectAtIndex:playerRace];
-        
-        result.entityClass.stringValue = [NSString stringWithFormat:@"Owned by: %@", race.name];
+        if ([aTableColumn.identifier isEqualToString:@"id"])
+        {
+            return [NSString stringWithFormat:@"%d", ship.shipId];
+        }
+        else
+        {
+            return ship.name;
+        }
     }
-    else if ([item isKindOfClass:[NuShip class]])
+    else if ([[entities objectAtIndex:rowIndex] isKindOfClass:[NuPlanet class]])
     {
-        NuShip* ship = (NuShip*)item;
-        result.imageView.image = [NSImage imageNamed:@"ship.png"];
-        result.textField.stringValue =  ship.name;
-        NuHull* hull = [[[NuShipDatabase sharedDatabase] hulls] objectAtIndex:ship.hullId - 1];
-        result.entityClass.stringValue = hull.name;
+        NuPlanet* planet = [entities objectAtIndex:rowIndex];
+        
+        if ([aTableColumn.identifier isEqualToString:@"id"])
+        {
+            return [NSString stringWithFormat:@"%d", planet.planetId];
+        }
+        else
+        {
+            return planet.name;
+        }
     }
-    
-    return result;
+    else
+    {
+        return @"poop";
+    }
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
@@ -69,21 +72,5 @@
     
     return [entities count];
 }
-
-- (void) tableViewSelectionDidChange: (NSNotification *) notification
-{
-    NSInteger row;
-    row = [tableview selectedRow];
-    
-    if (row != -1)
-    {
-        [tableview deselectRow:row];
-        
-        [delegate entitySelected:[entities objectAtIndex:row]];
-        
-        // TODO: dismiss the popover
-    }
-    
-} 
 
 @end

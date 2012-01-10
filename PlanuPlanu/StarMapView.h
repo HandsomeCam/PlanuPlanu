@@ -13,6 +13,13 @@
 #import "NuColorScheme.h"
 #import "NuShipView.h"
 #import "NuPlanetView.h"
+#import "MapMuxPopoverController.h"
+
+@protocol StarMapViewDelegate <NSObject>
+
+- (void)showMultiplexPopover:(NSArray*)entities at:(NSRect)popFrame;
+
+@end
 
 @interface StarMapView : NSView
 {
@@ -21,6 +28,7 @@
     CGPoint startPt;
     NuPlayer* player;
     PlanetPopoverController *popover;
+    MapMuxPopoverController *muxover;
     
     NuTurn* turn;
     
@@ -37,6 +45,8 @@
     NuColorScheme* colorScheme;
     
     ScanRangeVisibilityView* scanRangeView;
+    
+    id<StarMapViewDelegate> delegate;
 }
 
 @property (nonatomic, retain) NSArray* planets;
@@ -52,9 +62,13 @@
 @property (nonatomic, retain) ScanRangeVisibilityView* scanRangeView;
 @property (nonatomic, retain) NuColorScheme* colorScheme;
 
+@property (nonatomic, assign) id<StarMapViewDelegate> delegate;
+
 - (id)initWithTurn:(NuTurn*)turn;
 
 - (void)showPlanetPopover:(NuPlanetView*)planet;
+- (void)showMultiplexPopover:(NSArray*)entities at:(NSRect)popFrame;
+
 - (void)scrollToHomeWorld;
 
 - (void)addIonStorms;

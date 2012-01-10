@@ -6,19 +6,21 @@
 //  Copyright 2011 Roboboogie Studios. All rights reserved.
 //
 
+#import <QuartzCore/CoreAnimation.h>
+
 #import "StarMapView.h" 
 #import "PlanetPopoverController.h" 
 #import "NuIonStormView.h"
 #import "NuPlanetView.h"
 #import "NuShipView.h"
 #import "NuPlanetaryConnectionView.h"
-#import <QuartzCore/CoreAnimation.h>
+#import "MapMuxPopoverController.h"
 
 @implementation StarMapView
 
 @synthesize planets, player, ionStorms, ships, turn;
 @synthesize planetViews, shipViews, stormViews, connectionViews;
-@synthesize scanRangeView, colorScheme;
+@synthesize scanRangeView, colorScheme, delegate;
 
 - (void)setScanRangeHidden:(BOOL)visibility
 {
@@ -308,7 +310,38 @@
     popover = [ppc retain];
 }
 
- 
+- (void)showMultiplexPopover:(NSArray*)entities at:(NSRect)popFrame
+{
+    //[delegate showMultiplexPopover:entities at:popFrame];
+    
+        NSPopover* muxPopover = [[NSPopover alloc] init];
+      //  [muxPopover setContentSize:NSMakeSize(50, 50)];
+    //    //    CGRect planetRect = CGRectMake(planet.x - 5, planet.y - 5, 10, 10);
+    //   
+    
+    MapMuxPopoverController* mmpc = [[MapMuxPopoverController alloc] initWithNibName:@"MapMuxPopover" bundle:nil];
+    
+    [muxPopover setAnimates:YES];
+    muxPopover.appearance = NSPopoverAppearanceHUD;
+      muxPopover.contentViewController = [mmpc autorelease];
+    muxPopover.delegate = mmpc;
+    //    
+    mmpc.entities = entities;
+    //    
+    muxPopover.behavior = NSPopoverBehaviorTransient;
+      // mmpc.child = planetPopover;
+    //    
+     NSLog(@"Show it!");
+     [muxPopover showRelativeToRect:popFrame
+                            ofView:self 
+                       preferredEdge:NSMinYEdge];
+       muxover = [mmpc retain];
+    //    
+    
+ //   [self.muxPopover showRelativeToRect:starMap.bounds ofView:starMap preferredEdge:NSMinXEdge];
+} 
+
+
 - (void)mouseDown:(NSEvent *)theEvent
 {
     // This is used for dragging the map
@@ -316,10 +349,7 @@
     startPt = theEvent.locationInWindow;
     
     NSPoint scPt = [[self enclosingScrollView] convertPointFromBase:startPt];
-
-    NSPoint layerPt = [self.layer convertPoint:scPt fromLayer:nil];
-    
-    
+     
     NSRect vr = self.visibleRect;
  
     NSPoint reflection = NSMakePoint(scPt.x, vr.size.height - scPt.y);
@@ -328,6 +358,8 @@
      
     NSMutableArray* entities = [NSMutableArray array];
     
+    NSRect r = CGRectZero;
+    
     for (NSArray* vws in [viewsByLocation allValues])
     {
         for (NuMappableEntityLayer* layer in vws)
@@ -335,6 +367,8 @@
             if ([layer isKindOfClass:[NuPlanetView class]])
             {
                 NuPlanetView* pv = (NuPlanetView*)layer;
+                
+                r = pv.frame;
                 
                 NuPlanet* pl = pv.planet;
                
@@ -363,6 +397,13 @@
             // TODO: minefields
         }
         
+    }
+    
+    if ([entities count] > 1)
+    {
+        NuMappableEntity* e = [entities objectAtIndex:0];
+        NSRect r = NSMakeRect(e.x, e.y, 1, 1);
+        [self showMultiplexPopover:entities at:r];
     }
     
     return;
