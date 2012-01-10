@@ -389,6 +389,7 @@
 		7EC24C8814A2CC9E0081022A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Roboboogie Studios";
 			};
 			buildConfigurationList = 7EC24C8B14A2CC9E0081022A /* Build configuration list for PBXProject "PlanuPlanu" */;
