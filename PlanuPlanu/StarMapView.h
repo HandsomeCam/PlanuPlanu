@@ -14,6 +14,7 @@
 #import "NuShipView.h"
 #import "NuPlanetView.h"
 #import "MapMuxPopoverController.h"
+#import "ShipPopoverController.h"
 
 @protocol StarMapViewDelegate <NSObject>
 
@@ -21,7 +22,7 @@
 
 @end
 
-@interface StarMapView : NSView
+@interface StarMapView : NSView <MapMuxDelegate>
 {
     NSArray *planets;
     CGPoint startOrigin;
@@ -29,6 +30,7 @@
     NuPlayer* player;
     PlanetPopoverController *popover;
     MapMuxPopoverController *muxover;
+    ShipPopoverController *shipover;
     
     NuTurn* turn;
     
@@ -66,7 +68,8 @@
 
 - (id)initWithTurn:(NuTurn*)turn;
 
-- (void)showPlanetPopover:(NuPlanetView*)planet;
+- (void)showPlanetPopover:(NuPlanet*)planet;
+- (void)showShipPopover:(NuShip*)ship;
 - (void)showMultiplexPopover:(NSArray*)entities at:(NSRect)popFrame;
 
 - (void)scrollToHomeWorld;

@@ -15,10 +15,12 @@
     NuPlanet* planet;
     NSPopover *child;
     NSTextField* clanQuantity;
+    NSTextField* temperature;
 }
 
 @property (nonatomic, assign) IBOutlet NSTextField* planetName;
 @property (nonatomic, assign) IBOutlet NSTextField* clanQuantity;
+@property (nonatomic, assign) IBOutlet NSTextField* temperature;
 
 @property (nonatomic, retain) NuPlanet* planet;
 @property (nonatomic, assign) NSPopover* child;

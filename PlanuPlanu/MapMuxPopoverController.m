@@ -12,7 +12,7 @@
 
 @implementation MapMuxPopoverController
 
-@synthesize entities, turn;
+@synthesize entities, turn, tableview, delegate, child;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -69,5 +69,21 @@
     
     return [entities count];
 }
+
+- (void) tableViewSelectionDidChange: (NSNotification *) notification
+{
+    NSInteger row;
+    row = [tableview selectedRow];
+    
+    if (row != -1)
+    {
+        [tableview deselectRow:row];
+        
+        [delegate entitySelected:[entities objectAtIndex:row]];
+        
+        // TODO: dismiss the popover
+    }
+    
+} 
 
 @end

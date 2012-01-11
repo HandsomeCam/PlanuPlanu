@@ -54,6 +54,8 @@
 		7ECC437C14B00E230083591C /* ColorSchemes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7ECC437B14B00E220083591C /* ColorSchemes.plist */; };
 		7ECC437F14B016920083591C /* NuColorScheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC437E14B016920083591C /* NuColorScheme.m */; };
 		7ECC438214B020FA0083591C /* NSColor+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC438114B020FA0083591C /* NSColor+Serialize.m */; };
+		7ED904C414BD4F4900F189E5 /* ShipPopover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7ED904C314BD4F4900F189E5 /* ShipPopover.xib */; };
+		7ED904C814BD504100F189E5 /* ShipPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED904C614BD504100F189E5 /* ShipPopoverController.m */; };
 		7EF364ED14AE3163009BBE86 /* ShipDatabaseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EF364EC14AE3163009BBE86 /* ShipDatabaseWindow.xib */; };
 		7EF364F014AE4F16009BBE86 /* ShipDatabaseWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF364EF14AE4F16009BBE86 /* ShipDatabaseWindowController.m */; };
 		7EF364F314AE9CBF009BBE86 /* NuHull+Sorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF364F214AE9CBF009BBE86 /* NuHull+Sorting.m */; };
@@ -181,6 +183,9 @@
 		7ECC437E14B016920083591C /* NuColorScheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuColorScheme.m; sourceTree = "<group>"; };
 		7ECC438014B020FA0083591C /* NSColor+Serialize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+Serialize.h"; sourceTree = "<group>"; };
 		7ECC438114B020FA0083591C /* NSColor+Serialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+Serialize.m"; sourceTree = "<group>"; };
+		7ED904C314BD4F4900F189E5 /* ShipPopover.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShipPopover.xib; sourceTree = "<group>"; };
+		7ED904C514BD504100F189E5 /* ShipPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShipPopoverController.h; sourceTree = "<group>"; };
+		7ED904C614BD504100F189E5 /* ShipPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShipPopoverController.m; sourceTree = "<group>"; };
 		7EF364EC14AE3163009BBE86 /* ShipDatabaseWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShipDatabaseWindow.xib; sourceTree = "<group>"; };
 		7EF364EE14AE4F16009BBE86 /* ShipDatabaseWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShipDatabaseWindowController.h; sourceTree = "<group>"; };
 		7EF364EF14AE4F16009BBE86 /* ShipDatabaseWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShipDatabaseWindowController.m; sourceTree = "<group>"; };
@@ -237,6 +242,7 @@
 				7E8644D014A6D6A20002986F /* PlanetPopover.xib */,
 				7EF364EC14AE3163009BBE86 /* ShipDatabaseWindow.xib */,
 				7E38629414BBF5A800747D17 /* MapMuxPopover.xib */,
+				7ED904C314BD4F4900F189E5 /* ShipPopover.xib */,
 			);
 			name = "User Interfaces";
 			sourceTree = "<group>";
@@ -320,6 +326,8 @@
 				7E8644C314A5A8C50002986F /* StarMapView.m */,
 				7E8644CB14A6D5F60002986F /* PlanetPopoverController.h */,
 				7E8644CC14A6D5F70002986F /* PlanetPopoverController.m */,
+				7ED904C514BD504100F189E5 /* ShipPopoverController.h */,
+				7ED904C614BD504100F189E5 /* ShipPopoverController.m */,
 				7E38629614BBF5CC00747D17 /* MapMuxPopoverController.h */,
 				7E38629714BBF5CC00747D17 /* MapMuxPopoverController.m */,
 				7E2908D214ACFF9D00B11972 /* NuIonStormView.h */,
@@ -498,6 +506,7 @@
 				7E3862A114BCF35000747D17 /* connection.png in Resources */,
 				7E3862A214BCF35000747D17 /* scanvisibility.png in Resources */,
 				7E3862A314BCF35000747D17 /* storm.png in Resources */,
+				7ED904C414BD4F4900F189E5 /* ShipPopover.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +565,7 @@
 				7E15E64014B518A500650246 /* NuMappableEntityLayer.m in Sources */,
 				7E38629814BBF5CC00747D17 /* MapMuxPopoverController.m in Sources */,
 				7E3862A614BCF4E400747D17 /* MuxCellView.m in Sources */,
+				7ED904C814BD504100F189E5 /* ShipPopoverController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

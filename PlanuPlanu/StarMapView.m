@@ -253,7 +253,6 @@
     
     self.stormViews = isvs;
 }
- 
 
 - (void)scrollToHomeWorld
 {
@@ -291,7 +290,7 @@
     [self scrollPoint:scrollPoint];
 }
 
-- (void)showPlanetPopover:(NuPlanetView*)planet
+- (void)showPlanetPopover:(NuPlanet*)planet
 {
     NSPopover* planetPopover = [[NSPopover alloc] init];
   
@@ -300,46 +299,69 @@
     PlanetPopoverController* ppc = [[PlanetPopoverController alloc] initWithNibName:@"PlanetPopover" bundle:nil];
     planetPopover.contentViewController = [ppc autorelease];
     planetPopover.delegate = ppc;
-    ppc.planet = planet.planet;
+    planetPopover.appearance = NSPopoverAppearanceHUD;
+    
+    ppc.planet = planet;
     planetPopover.behavior = NSPopoverBehaviorTransient;
     ppc.child = planetPopover;
     
-    [planetPopover showRelativeToRect:planet.frame
+    NSRect f = NSMakeRect(planet.x, planet.y, 1, 1);
+    
+    [planetPopover showRelativeToRect:f
                          ofView:self 
                   preferredEdge:NSMinYEdge];
     popover = [ppc retain];
 }
 
+- (void)showShipPopover:(NuShip*)ship
+{
+    NSPopover* shipPopover = [[NSPopover alloc] init];
+    
+    //    CGRect planetRect = CGRectMake(planet.x - 5, planet.y - 5, 10, 10);
+    
+    ShipPopoverController* ppc = [[ShipPopoverController alloc] initWithNibName:@"ShipPopover" bundle:nil];
+    shipPopover.contentViewController = [ppc autorelease];
+    shipPopover.delegate = ppc;
+    shipPopover.appearance = NSPopoverAppearanceHUD;
+    
+    ppc.ship = ship;
+    shipPopover.behavior = NSPopoverBehaviorTransient;
+    ppc.child = shipPopover;
+    
+    NSRect f = NSMakeRect(ship.x, ship.y, 1, 1);
+    
+    [shipPopover showRelativeToRect:f
+                               ofView:self 
+                        preferredEdge:NSMinYEdge];
+    shipover = [ppc retain];
+}
+
 - (void)showMultiplexPopover:(NSArray*)entities at:(NSRect)popFrame
 {
-    //[delegate showMultiplexPopover:entities at:popFrame];
-    
-        NSPopover* muxPopover = [[NSPopover alloc] init];
-      //  [muxPopover setContentSize:NSMakeSize(50, 50)];
-    //    //    CGRect planetRect = CGRectMake(planet.x - 5, planet.y - 5, 10, 10);
-    //   
-    
+    NSPopover* muxPopover = [[NSPopover alloc] init];
+      
     MapMuxPopoverController* mmpc = [[MapMuxPopoverController alloc] initWithNibName:@"MapMuxPopover" bundle:nil];
     
     [muxPopover setAnimates:YES];
     muxPopover.appearance = NSPopoverAppearanceHUD;
-      muxPopover.contentViewController = [mmpc autorelease];
+    muxPopover.contentViewController = [mmpc autorelease];
     muxPopover.delegate = mmpc;
+    
     //    
     mmpc.entities = entities;
     mmpc.turn = self.turn;
-    //    
-    muxPopover.behavior = NSPopoverBehaviorTransient;
-      // mmpc.child = planetPopover;
-    //    
-     NSLog(@"Show it!");
-     [muxPopover showRelativeToRect:popFrame
-                            ofView:self 
-                       preferredEdge:NSMinYEdge];
-       muxover = [mmpc retain];
+    mmpc.delegate = self;
+    mmpc.child = [muxPopover autorelease];
     //    
     
- //   [self.muxPopover showRelativeToRect:starMap.bounds ofView:starMap preferredEdge:NSMinXEdge];
+    muxPopover.behavior = NSPopoverBehaviorTransient;
+      // mmpc.child = planetPopover;
+     
+    [muxPopover showRelativeToRect:popFrame
+                            ofView:self 
+                       preferredEdge:NSMinYEdge];
+    muxover = [mmpc retain];
+   
 } 
 
 
@@ -406,6 +428,11 @@
         NSRect r = NSMakeRect(e.x, e.y, 1, 1);
         [self showMultiplexPopover:entities at:r];
     }
+    else if ([entities count] == 1)
+    {
+        NuMappableEntity* e = [entities objectAtIndex:0];
+        [self entitySelected:e];
+    }
     
     return;
 }
@@ -451,25 +478,21 @@
 //          sender.ship.name, 
 //          sender.ship.shipId);
 //}
-//
-//- (void)planetSelected:(NuPlanetView *)sender atLocation:(CGPoint)point
-//{
-//    startOrigin = [self visibleRect].origin;
-//    startPt = point;
-//    
-//    if (popover != nil)
-//    {
-//        [popover.child close];
-//        [popover release];
-//        popover = nil;
-//    }
-//    
-//     
-//    [self showPlanetPopover:sender];
-//          
-//    
-//    return;
-//    
-//}
+
+
+
+- (void)entitySelected:(NuMappableEntity *)entity
+{
+    [muxover.child close];
+    
+    if ([entity isKindOfClass:[NuPlanet class]])
+    {
+        [self showPlanetPopover:(NuPlanet*)entity];
+    }
+    else if ([entity isKindOfClass:[NuShip class]])
+    {
+        [self showShipPopover:(NuShip*)entity];
+    }
+}
 
 @end
