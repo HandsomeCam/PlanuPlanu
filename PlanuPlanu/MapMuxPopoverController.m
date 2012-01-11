@@ -8,10 +8,11 @@
 
 #import "MapMuxPopoverController.h"
 #import <PlanuKit/PlanuKit.h>
+#import "MuxCellView.h"
 
 @implementation MapMuxPopoverController
 
-@synthesize entities;
+@synthesize entities, turn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,38 +30,34 @@
     
 }
 
-- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row 
 {
-    if ([[entities objectAtIndex:rowIndex] isKindOfClass:[NuShip class]])
+    MuxCellView *result = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
+    NuMappableEntity *item = [entities objectAtIndex:row];
+    
+    if ([item isKindOfClass:[NuPlanet class]])
     {
-        NuShip* ship = [entities objectAtIndex:rowIndex];
+        NuPlanet* planet = (NuPlanet*)item;
+        result.imageView.image = [NSImage imageNamed:@"planet.png"];
+        result.textField.stringValue = planet.name;
         
-        if ([aTableColumn.identifier isEqualToString:@"id"])
-        {
-            return [NSString stringWithFormat:@"%d", ship.shipId];
-        }
-        else
-        {
-            return ship.name;
-        }
-    }
-    else if ([[entities objectAtIndex:rowIndex] isKindOfClass:[NuPlanet class]])
-    {
-        NuPlanet* planet = [entities objectAtIndex:rowIndex];
+        NSInteger planetOwner = planet.ownerId;
+        NuPlayer* player = [turn playerForId:planetOwner];
+        NSInteger playerRace = player.raceId;
+        NuPlayerRace* race = [turn.races objectAtIndex:playerRace];
         
-        if ([aTableColumn.identifier isEqualToString:@"id"])
-        {
-            return [NSString stringWithFormat:@"%d", planet.planetId];
-        }
-        else
-        {
-            return planet.name;
-        }
+        result.entityClass.stringValue = [NSString stringWithFormat:@"Owned by: %@", race.name];
     }
-    else
+    else if ([item isKindOfClass:[NuShip class]])
     {
-        return @"poop";
+        NuShip* ship = (NuShip*)item;
+        result.imageView.image = [NSImage imageNamed:@"ship.png"];
+        result.textField.stringValue =  ship.name;
+        NuHull* hull = [[[NuShipDatabase sharedDatabase] hulls] objectAtIndex:ship.hullId - 1];
+        result.entityClass.stringValue = hull.name;
     }
+    
+    return result;
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView

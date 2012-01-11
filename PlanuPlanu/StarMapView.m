@@ -327,6 +327,7 @@
     muxPopover.delegate = mmpc;
     //    
     mmpc.entities = entities;
+    mmpc.turn = self.turn;
     //    
     muxPopover.behavior = NSPopoverBehaviorTransient;
       // mmpc.child = planetPopover;
