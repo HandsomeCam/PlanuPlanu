@@ -88,6 +88,7 @@
 - (void)setStormsHidden:(BOOL)visibility;
 - (void)setConnectionsHidden:(BOOL)visibility;
 - (void)setScanRangeHidden:(BOOL)visibility;
+- (void)setMinefieldsHidden:(BOOL)visibility;
 
 - (void)setColorScheme:(NuColorScheme*)colorScheme;
 

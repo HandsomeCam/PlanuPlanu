@@ -23,6 +23,7 @@
     NSButton* stormToolBarButton;
     NSButton* connectionToolBarButton;
     NSButton* visibilityToolBarButton;
+    NSButton* minefieldToolBarButton;
     
     // Color Scheme Selection
     NSWindow* colorSchemeWindow;
@@ -45,6 +46,7 @@
 @property (assign) IBOutlet NSButton* stormToolBarButton;
 @property (assign) IBOutlet NSButton* connectionToolBarButton;
 @property (assign) IBOutlet NSButton* visibilityToolBarButton;
+@property (assign) IBOutlet NSButton* minefieldToolBarButton;
 
 @property (assign) IBOutlet NSWindow* colorSchemeWindow;
 @property (assign) IBOutlet NSTableView* colorSchemeTableView;
@@ -64,6 +66,7 @@
 - (IBAction)stormToolBarClicked:(id)sender;
 - (IBAction)connectionToolBarClicked:(id)sender;
 - (IBAction)visibilityToolBarClicked:(id)sender;
+- (IBAction)minefieldToolBarClicked:(id)sender;
 
 - (IBAction)loadColorScheme:(id)sender;
 - (void)initColorScheme;
