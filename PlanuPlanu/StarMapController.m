@@ -14,7 +14,7 @@
 
 @synthesize turn;
 @synthesize mapScroll;
-@synthesize planetToolBarButton, shipToolBarButton;
+@synthesize planetToolBarButton, shipToolBarButton, minefieldToolBarButton;
 @synthesize stormToolBarButton, connectionToolBarButton, visibilityToolBarButton;
 
 @synthesize colorSchemeWindow, colorSchemeTableView;
@@ -51,6 +51,8 @@
     [stormToolBarButton setState:NSOnState];
     [connectionToolBarButton setState:NSOffState];
     [visibilityToolBarButton setState:NSOffState];
+    
+    [minefieldToolBarButton setState:NSOnState];
 }
 
 - (void)initStarMapView
@@ -138,6 +140,12 @@
 - (IBAction)visibilityToolBarClicked:(id)sender
 {
     [starMap setScanRangeHidden:(((NSButton*)sender).state == NSOffState)];
+}
+
+
+- (IBAction)minefieldToolBarClicked:(id)sender
+{
+    [starMap setMinefieldsHidden:(((NSButton*)sender).state == NSOffState)];
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
