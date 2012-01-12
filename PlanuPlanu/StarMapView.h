@@ -41,6 +41,7 @@
     NSArray* shipViews;
     NSArray* stormViews;
     NSArray* connectionViews;
+    NSArray* mineLayers;
     
     NSMutableDictionary* viewsByLocation;
     
@@ -61,6 +62,8 @@
 @property (nonatomic, retain) NSArray* shipViews;
 @property (nonatomic, retain) NSArray* stormViews;
 @property (nonatomic, retain) NSArray* connectionViews;
+@property (nonatomic, retain) NSArray* mineLayers;
+
 @property (nonatomic, retain) ScanRangeVisibilityView* scanRangeView;
 @property (nonatomic, retain) NuColorScheme* colorScheme;
 
@@ -78,6 +81,7 @@
 - (void)addPlanets;
 - (void)addShips;
 - (void)addPlanetaryConnections;
+- (void)addMinefields;
 
 - (void)setPlanetsHidden:(BOOL)visibility;
 - (void)setShipsHidden:(BOOL)visibility;
