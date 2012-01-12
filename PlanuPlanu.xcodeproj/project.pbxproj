@@ -61,6 +61,7 @@
 		7EF364F314AE9CBF009BBE86 /* NuHull+Sorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF364F214AE9CBF009BBE86 /* NuHull+Sorting.m */; };
 		7EF364FB14AFAE04009BBE86 /* NuPlanetaryConnectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF364FA14AFAE04009BBE86 /* NuPlanetaryConnectionView.m */; };
 		7EF364FE14AFC782009BBE86 /* ScanRangeVisibilityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF364FD14AFC782009BBE86 /* ScanRangeVisibilityView.m */; };
+		7EFFD36D14BE8997009CA6DE /* NuMinefieldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFFD36C14BE8997009CA6DE /* NuMinefieldLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,6 +196,8 @@
 		7EF364FA14AFAE04009BBE86 /* NuPlanetaryConnectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuPlanetaryConnectionView.m; sourceTree = "<group>"; };
 		7EF364FC14AFC781009BBE86 /* ScanRangeVisibilityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanRangeVisibilityView.h; sourceTree = "<group>"; };
 		7EF364FD14AFC782009BBE86 /* ScanRangeVisibilityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanRangeVisibilityView.m; sourceTree = "<group>"; };
+		7EFFD36B14BE8997009CA6DE /* NuMinefieldLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuMinefieldLayer.h; sourceTree = "<group>"; };
+		7EFFD36C14BE8997009CA6DE /* NuMinefieldLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuMinefieldLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +335,8 @@
 				7E38629714BBF5CC00747D17 /* MapMuxPopoverController.m */,
 				7E2908D214ACFF9D00B11972 /* NuIonStormView.h */,
 				7E2908D314ACFF9D00B11972 /* NuIonStormView.m */,
+				7EFFD36B14BE8997009CA6DE /* NuMinefieldLayer.h */,
+				7EFFD36C14BE8997009CA6DE /* NuMinefieldLayer.m */,
 				7E2908D514AD299D00B11972 /* NuPlanetView.h */,
 				7E2908D614AD299E00B11972 /* NuPlanetView.m */,
 				7E2908DA14AD604F00B11972 /* NuShipView.h */,
@@ -566,6 +571,7 @@
 				7E38629814BBF5CC00747D17 /* MapMuxPopoverController.m in Sources */,
 				7E3862A614BCF4E400747D17 /* MuxCellView.m in Sources */,
 				7ED904C814BD504100F189E5 /* ShipPopoverController.m in Sources */,
+				7EFFD36D14BE8997009CA6DE /* NuMinefieldLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

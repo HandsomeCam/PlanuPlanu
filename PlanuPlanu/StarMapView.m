@@ -15,11 +15,12 @@
 #import "NuShipView.h"
 #import "NuPlanetaryConnectionView.h"
 #import "MapMuxPopoverController.h"
+#import "NuMinefieldLayer.h"
 
 @implementation StarMapView
 
 @synthesize planets, player, ionStorms, ships, turn;
-@synthesize planetViews, shipViews, stormViews, connectionViews;
+@synthesize planetViews, shipViews, stormViews, connectionViews, mineLayers;
 @synthesize scanRangeView, colorScheme, delegate;
 
 - (void)setScanRangeHidden:(BOOL)visibility
@@ -56,6 +57,14 @@
     for (NuPlanetaryConnectionView* cnx in self.connectionViews)
     {
         [cnx setHidden:visibility];
+    }
+}
+
+- (void)setMinefieldsHidden:(BOOL)visibility
+{
+    for (NuMinefieldLayer* mfl in self.mineLayers)
+    {
+        [mfl setHidden:visibility];
     }
 }
 
@@ -107,6 +116,11 @@
             [self addIonStorms];
         }
         
+        if (turn.minefields != nil)
+        {
+            [self addMinefields];
+        }
+        
         if (self.planets != nil)
         {
             // connections go first for the Z-order
@@ -119,6 +133,7 @@
         {
             [self addShips];
         }
+        
     }
     
     [self.layer setNeedsDisplay];
@@ -252,6 +267,23 @@
     }
     
     self.stormViews = isvs;
+}
+
+- (void)addMinefields
+{
+    NSMutableArray* mfs = [NSMutableArray array];
+    
+    for (NuMinefield* mf in turn.minefields)
+    {
+        NuMinefieldLayer* mfl = [[[NuMinefieldLayer alloc] initWithMinefield:mf] autorelease];
+        mfl.player = self.player;
+        
+        [self.layer addSublayer:mfl];
+        [mfl setNeedsDisplay];
+        [mfs addObject:mfl];
+    }
+    
+    self.mineLayers = mfs;
 }
 
 - (void)scrollToHomeWorld
@@ -464,6 +496,11 @@
     for (NuShipView* sv in self.shipViews)
     {
         sv.colors = cs;
+    }
+    
+    for (NuMinefieldLayer* mfl in self.mineLayers)
+    {
+        mfl.colors = cs;
     }
 }
 
