@@ -86,8 +86,21 @@
 
 - (void)loginClicked:(id)sender
 {
-    NuLoginRequest* lr = [[NuLoginRequest alloc] init];
-    [lr performLoginWithUsername:username.stringValue withPassword:password.stringValue withDelegate:self];
+    if ([[username.stringValue lowercaseString] isEqualTo:@"handsomecam"]
+        || [[username.stringValue lowercaseString] isEqualTo:@"astronomix"])
+    {
+        NuLoginRequest* lr = [[NuLoginRequest alloc] init];
+        [lr performLoginWithUsername:username.stringValue withPassword:password.stringValue withDelegate:self];
+    }
+    else
+    {
+        NSAlert* alert = [[NSAlert alloc] init];
+        alert.messageText = @"This account has not been approved for the beta test. Please email handsomecam@semisafe.com to get added";
+        [alert runModal];
+        [alert release];
+
+    }
+    
 }
 
 
