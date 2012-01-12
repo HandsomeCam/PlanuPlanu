@@ -9,6 +9,7 @@
 #import "CaptainDashboardController.h"
 #import "Preferences.h"
 #import "StarMapController.h"
+#import "JSONKit.h"
 
 @implementation CaptainDashboardController
 
@@ -106,6 +107,42 @@
     [tr requestTurnFor:game.gameId With:apiKey andDelegate:self];
 }
 
+- (void)loadFile:(id)sender
+{
+    NSOpenPanel* importJson = [NSOpenPanel openPanel];
+    
+    importJson.canChooseFiles = YES;
+    importJson.canChooseDirectories = NO;
+    
+    // Display the dialog.  If the OK button was pressed,
+    // process the files.
+    if ( [importJson runModal] == NSOKButton )
+    {
+        // Get an array containing the full filenames of all
+        // files and directories selected.
+        NSArray* files = [importJson filenames];
+        
+        // Loop through all the files and process them.
+        for(int i = 0; i < [files count]; i++ )
+        {
+            NSString* fileName = [files objectAtIndex:i];
+            
+            NSString* response = [NSString stringWithContentsOfFile:fileName encoding:NSASCIIStringEncoding error:nil];
+            
+            // Do something with the filename.
+            NuTurn* trn = [[NuTurn alloc] init];
+            
+            id decodedJson = [response objectFromJSONString];
+            
+            if ([decodedJson isKindOfClass:[NSDictionary class]] == YES)
+            {
+                [trn loadFromDict:decodedJson];
+                [self turnRequestSucceededWith:trn];
+            }
+        }
+    }
+
+}
 
 - (void)turnRequestSucceededWith:(NuTurn*) turn
 {

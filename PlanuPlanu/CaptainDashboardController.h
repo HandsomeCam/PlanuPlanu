@@ -24,5 +24,6 @@
 @property (assign) IBOutlet NSProgressIndicator* progress;
 
 - (IBAction)loadGame:(id)sender;
+- (IBAction)loadFile:(id)sender;
 
 @end

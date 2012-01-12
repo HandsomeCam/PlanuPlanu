@@ -137,6 +137,7 @@
 		7E698F7814BF601A008B0F95 /* MessagesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesWindowController.h; sourceTree = "<group>"; };
 		7E698F7914BF601A008B0F95 /* MessagesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesWindowController.m; sourceTree = "<group>"; };
 		7E698F7B14BF6032008B0F95 /* MessagesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagesWindow.xib; sourceTree = "<group>"; };
+		7E698F7E14BF96E1008B0F95 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		7E8644BF14A57F5B0002986F /* StarMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarMapController.h; sourceTree = "<group>"; };
 		7E8644C214A5A8C50002986F /* StarMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarMapView.h; sourceTree = "<group>"; };
 		7E8644C314A5A8C50002986F /* StarMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarMapView.m; sourceTree = "<group>"; };
@@ -240,6 +241,14 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		7E698F7D14BF96C2008B0F95 /* JSONKitDEV */ = {
+			isa = PBXGroup;
+			children = (
+				7E698F7E14BF96E1008B0F95 /* JSONKit.h */,
+			);
+			name = JSONKitDEV;
+			sourceTree = "<group>";
+		};
 		7EA504B514A564A7000B1615 /* User Interfaces */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +318,7 @@
 		7EC24C9B14A2CC9E0081022A /* PlanuPlanu */ = {
 			isa = PBXGroup;
 			children = (
+				7E698F7D14BF96C2008B0F95 /* JSONKitDEV */,
 				7E38629914BCF14600747D17 /* Images */,
 				7EA504B514A564A7000B1615 /* User Interfaces */,
 				7EC24CA714A2CC9E0081022A /* PlanuPlanuAppDelegate.h */,
