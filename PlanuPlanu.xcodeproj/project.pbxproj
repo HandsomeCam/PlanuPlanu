@@ -325,12 +325,12 @@
 		7EC24C9B14A2CC9E0081022A /* PlanuPlanu */ = {
 			isa = PBXGroup;
 			children = (
+				7EC24C9C14A2CC9E0081022A /* Supporting Files */,
 				7E698F7D14BF96C2008B0F95 /* JSONKitDEV */,
 				7E38629914BCF14600747D17 /* Images */,
 				7EA504B514A564A7000B1615 /* User Interfaces */,
 				7EC24CA714A2CC9E0081022A /* PlanuPlanuAppDelegate.h */,
 				7EC24CA814A2CC9E0081022A /* PlanuPlanuAppDelegate.m */,
-				7EC24C9C14A2CC9E0081022A /* Supporting Files */,
 				7EC24CCF14A2D2070081022A /* AccountWindowController.h */,
 				7EC24CD014A2D2070081022A /* AccountWindowController.m */,
 				7E698F7814BF601A008B0F95 /* MessagesWindowController.h */,

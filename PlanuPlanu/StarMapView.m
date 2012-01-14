@@ -81,9 +81,31 @@
     return [self initWithFrame:smvFrame];
 }
 
+- (void)addObservers
+{
+    NSUserDefaultsController *defaultsc = [NSUserDefaultsController sharedUserDefaultsController];
+    [defaultsc addObserver:self forKeyPath:@"values.shipPathSingleTurn" 
+                   options:NSKeyValueObservingOptionNew 
+                   context:NULL];
+    
+    
+    
+    [defaultsc addObserver:self forKeyPath:@"values.expandShipRadiusInWarpWells" 
+                   options:NSKeyValueObservingOptionNew 
+                   context:NULL];   
+}
+
 - (id)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
+    
+    [self addObservers];
+    
+//    [[NSUserDefaults standardUserDefaults] addObserver:self 
+//                                            forKeyPath:@"shipPathSingleTurn" 
+//                                               options:NSKeyValueObservingOptionNew 
+//                                               context:nil];
+     
     if (self) {
         // Initialization code here.
         
@@ -139,6 +161,20 @@
     [self.layer setNeedsDisplay];
   
     return self;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"values.shipPathSingleTurn"]
+        || [keyPath isEqualToString:@"values.expandShipRadiusInWarpWells"])
+    {
+        for (NuShipView* sv in self.shipViews)
+        {
+            // Recalculate the frame as it may have changed
+            sv.frame = [sv calculateLayerBounds];
+            [sv setNeedsDisplay];
+        }
+    }
 }
  
 - (void)addShips

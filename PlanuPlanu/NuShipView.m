@@ -41,12 +41,24 @@
     
     for (NuShip* ship in ships)
     {
-        if (ship.distanceToClosestPlanet <= 10)
+        NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+        
+        BOOL expandShipRadiusInWarpWells = [def boolForKey:@"expandShipRadiusInWarpWells"];
+        
+        double dcp = ship.distanceToClosestPlanet;
+        
+        if ( (expandShipRadiusInWarpWells == YES 
+              && dcp  <= 10)
+            || dcp < 1)
         {
             shipRadius = kShipAtPlanetRadius;
         }
         
         NSInteger nextTurnTravel = [ship flightLength];
+        if ([def boolForKey:@"shipPathSingleTurn"] == NO)
+        {
+            nextTurnTravel = pow(ship.warp, 2);
+        }
         
         NSInteger viewRadius = shipRadius;
         
@@ -122,7 +134,7 @@
     CGRect shipRect = CGRectMake(outerOrigin+2, outerOrigin+2, (shipRadius*2)-4, (shipRadius*2)-4);
     
     
-    for (NuShip* ship in self.ships)
+    for (NuShip* ship in self.ships) // TODO: this draws ships on top of each other
     {
         if (self.colors == nil)
         {
@@ -152,12 +164,22 @@
             [flightPath setLineWidth:2.0];
             
             [flightPath moveToPoint:CGPointMake(centerBorder, centerBorder)];
+            
+            NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+            
             NSInteger flightLength = [ship flightLength];
+            BOOL shipPathSingleTurn = [def boolForKey:@"shipPathSingleTurn"];
+            if (shipPathSingleTurn == NO)
+            {
+                flightLength = pow(ship.warp, 2);
+            }
+        
                   
             CGPoint endPoint = CGPointZero;
             
             
-            if (ship.targetX >= 0 && ship.targetY >= 0)
+            if ( shipPathSingleTurn == YES &&
+                (ship.targetX >= 0 && ship.targetY >= 0) )
             {
                 // Targets give us exact points
                 endPoint = CGPointMake(ship.targetX - ship.x,

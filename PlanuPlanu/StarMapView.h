@@ -91,5 +91,6 @@
 - (void)setMinefieldsHidden:(BOOL)visibility;
 
 - (void)setColorScheme:(NuColorScheme*)colorScheme;
+- (void)addObservers;
 
 @end
