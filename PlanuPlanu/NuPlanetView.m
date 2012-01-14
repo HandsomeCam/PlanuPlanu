@@ -37,7 +37,8 @@
     
     colors = [c retain];
     
-    if (colors.lastUpdate == planet.ownerId)
+    if (colors.lastUpdate == planet.ownerId
+        || colors.lastUpdate < 0)
     {
         [self setNeedsDisplay];
     }

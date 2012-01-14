@@ -36,7 +36,8 @@
     
     colors = [c retain];
     
-    if (colors.lastUpdate == minefield.ownerId)
+    if (colors.lastUpdate == minefield.ownerId
+        || colors.lastUpdate < 0)
     {
         [self setNeedsDisplay];
     }

@@ -27,7 +27,8 @@
     // TODO: check all ships
     NuShip* baseShip = [self.ships objectAtIndex:0];
     
-    if (colors.lastUpdate == baseShip.ownerId)
+    if (colors.lastUpdate == baseShip.ownerId
+        || colors.lastUpdate < 0)
     {
         [self setNeedsDisplay];
     }

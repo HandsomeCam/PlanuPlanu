@@ -258,6 +258,7 @@
         if ([schemeName isEqualToString:cs.name])
         {
             self.activeScheme = cs;
+            cs.lastUpdate = -1;
             starMap.colorScheme = cs;
             [self.colorSchemeTableView reloadData];
         }

@@ -22,7 +22,7 @@
 @synthesize planets, player, ionStorms, ships, turn;
 @synthesize planetViews, shipViews, stormViews, connectionViews, mineLayers;
 @synthesize scanRangeView, colorScheme, delegate;
-
+ 
 - (void)setScanRangeHidden:(BOOL)visibility
 {
     [self.scanRangeView setHidden:visibility];
