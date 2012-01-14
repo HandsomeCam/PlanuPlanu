@@ -25,6 +25,8 @@
 		7E4BFB1C14A5337C00E29659 /* GameListRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4BFB1B14A5337C00E29659 /* GameListRequestTest.m */; };
 		7E698F7A14BF601A008B0F95 /* MessagesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E698F7914BF601A008B0F95 /* MessagesWindowController.m */; };
 		7E698F7C14BF6032008B0F95 /* MessagesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E698F7B14BF6032008B0F95 /* MessagesWindow.xib */; };
+		7E698F8414BFDDDF008B0F95 /* MessageList.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E698F8314BFDDDF008B0F95 /* MessageList.m */; };
+		7E698F8614C0E1A9008B0F95 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E698F8514C0E1A9008B0F95 /* WebKit.framework */; };
 		7E6995C314BD0B3C007FDFD3 /* PlanuKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB9CC5014ABB4DA00A6ECB3 /* PlanuKit.framework */; };
 		7E6995C414BD0B94007FDFD3 /* PlanuKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EB9CC5014ABB4DA00A6ECB3 /* PlanuKit.framework */; };
 		7E8644C414A5A8C50002986F /* StarMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8644C314A5A8C50002986F /* StarMapView.m */; };
@@ -138,6 +140,9 @@
 		7E698F7914BF601A008B0F95 /* MessagesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesWindowController.m; sourceTree = "<group>"; };
 		7E698F7B14BF6032008B0F95 /* MessagesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessagesWindow.xib; sourceTree = "<group>"; };
 		7E698F7E14BF96E1008B0F95 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		7E698F8214BFDDDF008B0F95 /* MessageList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageList.h; sourceTree = "<group>"; };
+		7E698F8314BFDDDF008B0F95 /* MessageList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageList.m; sourceTree = "<group>"; };
+		7E698F8514C0E1A9008B0F95 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		7E8644BF14A57F5B0002986F /* StarMapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarMapController.h; sourceTree = "<group>"; };
 		7E8644C214A5A8C50002986F /* StarMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarMapView.h; sourceTree = "<group>"; };
 		7E8644C314A5A8C50002986F /* StarMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarMapView.m; sourceTree = "<group>"; };
@@ -211,6 +216,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E698F8614C0E1A9008B0F95 /* WebKit.framework in Frameworks */,
 				7E15E64214B7BC8F00650246 /* QuartzCore.framework in Frameworks */,
 				7EC24C9614A2CC9E0081022A /* Cocoa.framework in Frameworks */,
 				7E6995C314BD0B3C007FDFD3 /* PlanuKit.framework in Frameworks */,
@@ -297,6 +303,7 @@
 		7EC24C9414A2CC9E0081022A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E698F8514C0E1A9008B0F95 /* WebKit.framework */,
 				7E15E64114B7BC8F00650246 /* QuartzCore.framework */,
 				7EC24C9514A2CC9E0081022A /* Cocoa.framework */,
 				7EC24CB314A2CC9F0081022A /* SenTestingKit.framework */,
@@ -374,6 +381,8 @@
 				7ECC438114B020FA0083591C /* NSColor+Serialize.m */,
 				7E15E63E14B518A500650246 /* NuMappableEntityLayer.h */,
 				7E15E63F14B518A500650246 /* NuMappableEntityLayer.m */,
+				7E698F8214BFDDDF008B0F95 /* MessageList.h */,
+				7E698F8314BFDDDF008B0F95 /* MessageList.m */,
 			);
 			path = PlanuPlanu;
 			sourceTree = "<group>";
@@ -592,6 +601,7 @@
 				7ED904C814BD504100F189E5 /* ShipPopoverController.m in Sources */,
 				7EFFD36D14BE8997009CA6DE /* NuMinefieldLayer.m in Sources */,
 				7E698F7A14BF601A008B0F95 /* MessagesWindowController.m in Sources */,
+				7E698F8414BFDDDF008B0F95 /* MessageList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #import "StarMapController.h"
 #import "StarMapView.h"
 #import "NuColorScheme.h"
+#import "MessagesWindowController.h"
 
 @implementation StarMapController
 
@@ -19,7 +20,7 @@
 
 @synthesize colorSchemeWindow, colorSchemeTableView;
 @synthesize loadScheme, colorSchemes, activeScheme;
-@synthesize muxPopover, mmpc;
+@synthesize muxPopover, mmpc, commandDrawer;
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -42,6 +43,8 @@
         [self initStarMapView];
         [self initToolBar];
     }
+    
+    [commandDrawer open];
 }
 
 - (void)initToolBar
@@ -146,6 +149,27 @@
 - (IBAction)minefieldToolBarClicked:(id)sender
 {
     [starMap setMinefieldsHidden:(((NSButton*)sender).state == NSOffState)];
+}
+
+
+- (IBAction)commandCenterClicked:(id)sender
+{
+    if (((NSButton*)sender).state == NSOffState)
+    {
+        [commandDrawer close];
+    }
+    else
+    {
+        [commandDrawer open];
+    }
+}
+
+- (IBAction)communicationCenterClicked:(id)sender
+{
+    MessagesWindowController* mwc = [[MessagesWindowController alloc] initWithWindowNibName:@"MessagesWindow"];
+    mwc.turn = self.turn;
+    [mwc showWindow:self];
+//    [mwc release];
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
@@ -278,5 +302,9 @@
 //    [self.muxPopover showRelativeToRect:starMap.bounds ofView:starMap preferredEdge:NSMinXEdge];
 }
  
+- (BOOL)drawerShouldOpen:(NSDrawer *)sender
+{
+    return YES;
+}
 
 @end

@@ -12,7 +12,7 @@
 #import "NuColorScheme.h"
 #import "MapMuxPopoverController.h"
 
-@interface StarMapController : NSWindowController <NSTabViewDelegate, NSTableViewDataSource, StarMapViewDelegate>
+@interface StarMapController : NSWindowController <NSTabViewDelegate, NSTableViewDataSource, StarMapViewDelegate, NSDrawerDelegate>
 {
     NuTurn* turn;
     NSScrollView* mapScroll;
@@ -35,7 +35,7 @@
     NSPopover* muxPopover;
     MapMuxPopoverController* mmpc;
     
-    
+    NSDrawer* commandDrawer;
 }
 
 @property (nonatomic, retain) NuTurn* turn;
@@ -57,6 +57,8 @@
 @property (nonatomic, assign) IBOutlet NSPopover* muxPopover;
 @property (nonatomic, assign) IBOutlet MapMuxPopoverController* mmpc;
 
+@property (nonatomic, assign) IBOutlet NSDrawer* commandDrawer;
+
 - (void)initStarMapView;
 - (void)initToolBar;
 
@@ -67,6 +69,9 @@
 - (IBAction)connectionToolBarClicked:(id)sender;
 - (IBAction)visibilityToolBarClicked:(id)sender;
 - (IBAction)minefieldToolBarClicked:(id)sender;
+- (IBAction)commandCenterClicked:(id)sender;
+
+- (IBAction)communicationCenterClicked:(id)sender;
 
 - (IBAction)loadColorScheme:(id)sender;
 - (void)initColorScheme;
