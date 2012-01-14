@@ -53,7 +53,7 @@
     }
     else
     {
-        reverseSort = YES;
+        reverseSort = !reverseSort;
     }
     
     columnSortSelector = NSSelectorFromString([NSString stringWithFormat: @"%@Comparison:",

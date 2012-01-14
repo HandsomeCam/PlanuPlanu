@@ -103,11 +103,7 @@
     NSInteger row;
     row = [outline selectedRow];
     
-    if (row == -1) 
-    {
-        // do stuff for the no-rows-selected case
-    } 
-    else
+    if (row >= 0)
     {
         // do stuff for the selected row
         id item = [outline itemAtRow:row];
@@ -119,9 +115,7 @@
             
             NSString *html = [NSString stringWithFormat:
                               @"<html><style type=\"text/css\">body { font-family: \"Lucida Grande\"; }</style><body>%@</body></html>", msg.body];
-//            
-//            NSData * data = [html dataUsingEncoding:NSUTF8StringEncoding];
-//            [[body mainFrame] loadData:data MIMEType:@"text/html" textEncodingName:@"utf-8" baseURL:nil];
+ 
             [[body mainFrame] loadHTMLString:html baseURL:nil];
 
         }
