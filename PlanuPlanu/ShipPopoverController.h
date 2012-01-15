@@ -68,4 +68,6 @@
 @property (nonatomic, assign) IBOutlet NSTextField* suppAmount;
 @property (nonatomic, assign) IBOutlet NSTextField* mcAmount;
 
+@property (nonatomic, readonly) NSString* displayHeading;
+
 @end

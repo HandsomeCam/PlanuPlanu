@@ -368,10 +368,11 @@
     planetPopover.contentViewController = [ppc autorelease];
     planetPopover.delegate = ppc;
     planetPopover.appearance = NSPopoverAppearanceHUD;
-    
+    ppc.currentTurn = self.turn.gameSettings.turn;
     ppc.planet = planet;
     planetPopover.behavior = NSPopoverBehaviorTransient;
     ppc.child = planetPopover;
+    
     
     NSRect f = NSMakeRect(planet.x, planet.y, 1, 1);
     

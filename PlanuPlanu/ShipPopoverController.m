@@ -33,6 +33,16 @@
     return [NSString stringWithFormat:@"%@ / %ld", estFuel, ship.hull.fuel];
 }
 
+- (NSString*)displayHeading
+{
+    if (ship.heading < 0)
+    {
+        return @"?";
+    }
+    
+    return [[NSNumber numberWithInteger:self.ship.heading] stringValue];
+}
+
 - (NSString*)xy
 {
     return [NSString stringWithFormat:@"(%ld,%ld)", ship.x, ship.y];
