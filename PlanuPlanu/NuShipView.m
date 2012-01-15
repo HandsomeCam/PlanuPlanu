@@ -59,6 +59,10 @@
         if ([def boolForKey:@"shipPathSingleTurn"] == NO)
         {
             nextTurnTravel = pow(ship.warp, 2);
+            if (ship.hull.specialAbility == kShipSpecialGravitonic)
+            {
+                nextTurnTravel += nextTurnTravel;
+            }
         }
         
         NSInteger viewRadius = shipRadius;
@@ -173,6 +177,11 @@
             if (shipPathSingleTurn == NO)
             {
                 flightLength = pow(ship.warp, 2);
+                if (ship.hull.specialAbility == kShipSpecialGravitonic)
+                {
+                    flightLength += flightLength;
+                }
+
             }
         
                   
