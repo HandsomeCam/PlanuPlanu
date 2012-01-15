@@ -24,6 +24,7 @@
     NSButton* connectionToolBarButton;
     NSButton* visibilityToolBarButton;
     NSButton* minefieldToolBarButton;
+    NSButton* commandToolBarButton;
     
     // Color Scheme Selection
     NSWindow* colorSchemeWindow;
@@ -47,6 +48,7 @@
 @property (assign) IBOutlet NSButton* connectionToolBarButton;
 @property (assign) IBOutlet NSButton* visibilityToolBarButton;
 @property (assign) IBOutlet NSButton* minefieldToolBarButton;
+@property (assign) IBOutlet NSButton* commandToolBarButton;
 
 @property (assign) IBOutlet NSWindow* colorSchemeWindow;
 @property (assign) IBOutlet NSTableView* colorSchemeTableView;

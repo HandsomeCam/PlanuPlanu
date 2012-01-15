@@ -17,6 +17,7 @@
 @synthesize mapScroll;
 @synthesize planetToolBarButton, shipToolBarButton, minefieldToolBarButton;
 @synthesize stormToolBarButton, connectionToolBarButton, visibilityToolBarButton;
+@synthesize commandToolBarButton;
 
 @synthesize colorSchemeWindow, colorSchemeTableView;
 @synthesize loadScheme, colorSchemes, activeScheme;
@@ -56,6 +57,7 @@
     [visibilityToolBarButton setState:NSOffState];
     
     [minefieldToolBarButton setState:NSOnState];
+    [commandToolBarButton setState:NSOnState];
 }
 
 - (void)initStarMapView

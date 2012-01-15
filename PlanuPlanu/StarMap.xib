@@ -103,6 +103,7 @@
 									<int key="NSvFlags">268</int>
 									<string key="NSFrame">{{15, 14}, {32, 32}}</string>
 									<reference key="NSSuperview"/>
+									<reference key="NSWindow"/>
 									<string key="NSReuseIdentifierKey">_NS:1491</string>
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSButtonCell" key="NSCell" id="425676214">
@@ -151,6 +152,7 @@
 									<int key="NSvFlags">268</int>
 									<string key="NSFrame">{{7, 14}, {32, 32}}</string>
 									<reference key="NSSuperview"/>
+									<reference key="NSWindow"/>
 									<string key="NSReuseIdentifierKey">_NS:1491</string>
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSButtonCell" key="NSCell" id="907754936">
@@ -217,6 +219,7 @@
 									<int key="NSvFlags">268</int>
 									<string key="NSFrame">{{2, 14}, {32, 32}}</string>
 									<reference key="NSSuperview"/>
+									<reference key="NSWindow"/>
 									<string key="NSReuseIdentifierKey">_NS:1491</string>
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSButtonCell" key="NSCell" id="627163911">
@@ -261,6 +264,7 @@
 									<int key="NSvFlags">268</int>
 									<string key="NSFrame">{{7, 14}, {32, 32}}</string>
 									<reference key="NSSuperview"/>
+									<reference key="NSWindow"/>
 									<string key="NSReuseIdentifierKey">_NS:1491</string>
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSButtonCell" key="NSCell" id="209779133">
@@ -293,30 +297,31 @@
 								<bool key="NSToolbarIsUserRemovable">YES</bool>
 								<int key="NSToolbarItemVisibilityPriority">0</int>
 							</object>
-							<object class="NSToolbarItem" id="1003135143">
+							<object class="NSToolbarItem" id="1019831640">
 								<object class="NSMutableString" key="NSToolbarItemIdentifier">
 									<characters key="NS.bytes">E638DB91-6298-4297-B20C-78CCB1000E85</characters>
 								</object>
 								<string key="NSToolbarItemLabel">cmd</string>
 								<string key="NSToolbarItemPaletteLabel">cmd</string>
 								<nil key="NSToolbarItemToolTip"/>
-								<object class="NSButton" key="NSToolbarItemView" id="372665857">
+								<object class="NSButton" key="NSToolbarItemView" id="945856758">
 									<reference key="NSNextResponder"/>
 									<int key="NSvFlags">268</int>
 									<string key="NSFrame">{{0, 14}, {32, 32}}</string>
 									<reference key="NSSuperview"/>
+									<reference key="NSWindow"/>
 									<string key="NSReuseIdentifierKey">_NS:1491</string>
 									<bool key="NSEnabled">YES</bool>
-									<object class="NSButtonCell" key="NSCell" id="392964523">
+									<object class="NSButtonCell" key="NSCell" id="14205625">
 										<int key="NSCellFlags">67239424</int>
 										<int key="NSCellFlags2">134217728</int>
 										<string key="NSContents"/>
 										<reference key="NSSupport" ref="78225407"/>
 										<string key="NSCellIdentifier">_NS:1491</string>
-										<reference key="NSControlView" ref="372665857"/>
+										<reference key="NSControlView" ref="945856758"/>
 										<int key="NSButtonFlags">-1228652289</int>
 										<int key="NSButtonFlags2">134</int>
-										<object class="NSCustomResource" key="NSNormalImage" id="589523805">
+										<object class="NSCustomResource" key="NSNormalImage" id="364638431">
 											<string key="NSClassName">NSImage</string>
 											<string key="NSResourceName">cmd</string>
 										</object>
@@ -326,7 +331,7 @@
 										<int key="NSPeriodicInterval">75</int>
 									</object>
 								</object>
-								<reference key="NSToolbarItemImage" ref="589523805"/>
+								<reference key="NSToolbarItemImage" ref="364638431"/>
 								<nil key="NSToolbarItemTarget"/>
 								<nil key="NSToolbarItemAction"/>
 								<string key="NSToolbarItemMinSize">{32, 32}</string>
@@ -349,6 +354,7 @@
 									<int key="NSvFlags">268</int>
 									<string key="NSFrame">{{11, 14}, {32, 32}}</string>
 									<reference key="NSSuperview"/>
+									<reference key="NSWindow"/>
 									<string key="NSReuseIdentifierKey">_NS:1491</string>
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSButtonCell" key="NSCell" id="608887812">
@@ -393,6 +399,7 @@
 									<int key="NSvFlags">268</int>
 									<string key="NSFrame">{{21, 14}, {32, 32}}</string>
 									<reference key="NSSuperview"/>
+									<reference key="NSWindow"/>
 									<string key="NSReuseIdentifierKey">_NS:1491</string>
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSButtonCell" key="NSCell" id="324691986">
@@ -498,11 +505,11 @@
 						<reference ref="464318605"/>
 						<reference ref="595213578"/>
 						<reference ref="873067808"/>
-						<reference ref="1003135143"/>
+						<reference ref="1019831640"/>
 					</object>
 					<object class="NSArray" key="NSToolbarIBDefaultItems">
 						<bool key="EncodedWithXMLCoder">YES</bool>
-						<reference ref="1003135143"/>
+						<reference ref="1019831640"/>
 						<reference ref="483912485"/>
 						<reference ref="266015338"/>
 						<reference ref="396932741"/>
@@ -954,26 +961,26 @@
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
-			<object class="NSCustomView" id="544575130">
+			<object class="NSCustomView" id="976968988">
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<object class="NSButton" id="696253257">
-						<reference key="NSNextResponder" ref="544575130"/>
+					<object class="NSButton" id="1067635239">
+						<reference key="NSNextResponder" ref="976968988"/>
 						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{14, 200}, {140, 32}}</string>
-						<reference key="NSSuperview" ref="544575130"/>
+						<reference key="NSSuperview" ref="976968988"/>
 						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:687</string>
 						<bool key="NSEnabled">YES</bool>
-						<object class="NSButtonCell" key="NSCell" id="224188504">
+						<object class="NSButtonCell" key="NSCell" id="337009953">
 							<int key="NSCellFlags">67239424</int>
 							<int key="NSCellFlags2">134217728</int>
 							<string key="NSContents">Comm Center</string>
 							<reference key="NSSupport" ref="78225407"/>
 							<string key="NSCellIdentifier">_NS:687</string>
-							<reference key="NSControlView" ref="696253257"/>
+							<reference key="NSControlView" ref="1067635239"/>
 							<int key="NSButtonFlags">-2038284033</int>
 							<int key="NSButtonFlags2">129</int>
 							<string key="NSAlternateContents"/>
@@ -985,10 +992,10 @@
 				</object>
 				<string key="NSFrameSize">{168, 248}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSNextKeyView" ref="696253257"/>
+				<reference key="NSNextKeyView" ref="1067635239"/>
 				<string key="NSClassName">NSView</string>
 			</object>
-			<object class="NSDrawer" id="411367591">
+			<object class="NSDrawer" id="329655611">
 				<nil key="NSNextResponder"/>
 				<string key="NSContentSize">{168, 100}</string>
 				<string key="NSMinContentSize">{0, 0}</string>
@@ -1151,7 +1158,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">commandDrawer</string>
 						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="411367591"/>
+						<reference key="destination" ref="329655611"/>
 					</object>
 					<int key="connectionID">174</int>
 				</object>
@@ -1159,7 +1166,7 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">commandCenterClicked:</string>
 						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="372665857"/>
+						<reference key="destination" ref="945856758"/>
 					</object>
 					<int key="connectionID">183</int>
 				</object>
@@ -1167,9 +1174,17 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">communicationCenterClicked:</string>
 						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="696253257"/>
+						<reference key="destination" ref="1067635239"/>
 					</object>
 					<int key="connectionID">184</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">commandToolBarButton</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="945856758"/>
+					</object>
+					<int key="connectionID">185</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -1269,15 +1284,15 @@
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">contentView</string>
-						<reference key="source" ref="411367591"/>
-						<reference key="destination" ref="544575130"/>
+						<reference key="source" ref="329655611"/>
+						<reference key="destination" ref="976968988"/>
 					</object>
 					<int key="connectionID">168</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">parentWindow</string>
-						<reference key="source" ref="411367591"/>
+						<reference key="source" ref="329655611"/>
 						<reference key="destination" ref="1005"/>
 					</object>
 					<int key="connectionID">169</int>
@@ -1285,7 +1300,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">delegate</string>
-						<reference key="source" ref="411367591"/>
+						<reference key="source" ref="329655611"/>
 						<reference key="destination" ref="1001"/>
 					</object>
 					<int key="connectionID">173</int>
@@ -1378,7 +1393,7 @@
 							<reference ref="595213578"/>
 							<reference ref="873067808"/>
 							<reference ref="13342097"/>
-							<reference ref="1003135143"/>
+							<reference ref="1019831640"/>
 						</object>
 						<reference key="parent" ref="1005"/>
 					</object>
@@ -1772,55 +1787,55 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">164</int>
-						<reference key="object" ref="544575130"/>
+						<reference key="object" ref="976968988"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="696253257"/>
+							<reference ref="1067635239"/>
 						</object>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Drawer Content View</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">165</int>
-						<reference key="object" ref="411367591"/>
+						<reference key="object" ref="329655611"/>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">171</int>
-						<reference key="object" ref="696253257"/>
+						<reference key="object" ref="1067635239"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="224188504"/>
+							<reference ref="337009953"/>
 						</object>
-						<reference key="parent" ref="544575130"/>
+						<reference key="parent" ref="976968988"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">172</int>
-						<reference key="object" ref="224188504"/>
-						<reference key="parent" ref="696253257"/>
+						<reference key="object" ref="337009953"/>
+						<reference key="parent" ref="1067635239"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">178</int>
-						<reference key="object" ref="1003135143"/>
+						<reference key="object" ref="1019831640"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="372665857"/>
+							<reference ref="945856758"/>
 						</object>
 						<reference key="parent" ref="974939115"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">175</int>
-						<reference key="object" ref="372665857"/>
+						<reference key="object" ref="945856758"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="392964523"/>
+							<reference ref="14205625"/>
 						</object>
-						<reference key="parent" ref="1003135143"/>
+						<reference key="parent" ref="1019831640"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">176</int>
-						<reference key="object" ref="392964523"/>
-						<reference key="parent" ref="372665857"/>
+						<reference key="object" ref="14205625"/>
+						<reference key="parent" ref="945856758"/>
 					</object>
 				</object>
 			</object>
@@ -2018,7 +2033,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">184</int>
+			<int key="maxID">185</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -2147,6 +2162,7 @@
 							<string>colorSchemeTableView</string>
 							<string>colorSchemeWindow</string>
 							<string>commandDrawer</string>
+							<string>commandToolBarButton</string>
 							<string>connectionToolBarButton</string>
 							<string>loadScheme</string>
 							<string>mapScroll</string>
@@ -2163,6 +2179,7 @@
 							<string>NSTableView</string>
 							<string>NSWindow</string>
 							<string>NSDrawer</string>
+							<string>NSButton</string>
 							<string>NSButton</string>
 							<string>NSPopUpButton</string>
 							<string>NSScrollView</string>
@@ -2182,6 +2199,7 @@
 							<string>colorSchemeTableView</string>
 							<string>colorSchemeWindow</string>
 							<string>commandDrawer</string>
+							<string>commandToolBarButton</string>
 							<string>connectionToolBarButton</string>
 							<string>loadScheme</string>
 							<string>mapScroll</string>
@@ -2206,6 +2224,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">commandDrawer</string>
 								<string key="candidateClassName">NSDrawer</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">commandToolBarButton</string>
+								<string key="candidateClassName">NSButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">connectionToolBarButton</string>
