@@ -127,6 +127,8 @@
 
 - (void)drawInContext:(CGContextRef)ctx
 {
+    CGFloat lineWidth = 1.5;
+    
     NSGraphicsContext *nsGraphicsContext;
     nsGraphicsContext = [NSGraphicsContext graphicsContextWithGraphicsPort:ctx
                                                                    flipped:NO];
@@ -138,8 +140,58 @@
     
     CGRect shipRect = CGRectMake(outerOrigin+2, outerOrigin+2, (shipRadius*2)-4, (shipRadius*2)-4);
     
+    CGFloat shipCircleSegments = 360 / [self.ships count];
+    
+    NSInteger segmentCounter = 0;
     
     for (NuShip* ship in self.ships) // TODO: this draws ships on top of each other
+    {
+        NSBezierPath* cPath = [NSBezierPath bezierPath];
+        [cPath setLineWidth:lineWidth];
+        
+        segmentCounter++;
+        
+        CGFloat startAngle = (-1 * (segmentCounter-1) * shipCircleSegments) + 90;
+        CGFloat endAngle = (-1 * segmentCounter * shipCircleSegments) + 90;
+         
+        if (self.colors == nil)
+        {
+            if (ship.ownerId == player.playerId)
+            {
+                [[NSColor greenColor] setStroke]; 
+            }
+            else
+            {
+                [[NSColor redColor] setStroke]; 
+            }
+        }
+        else
+        {
+            [[self.colors colorForPlayer:ship.ownerId] setStroke];
+        }
+ 
+        // a single ship won't draw a circle segment properly
+        if ([ships count] > 1 /*&& segmentCounter == 1*/)
+        {
+            [cPath appendBezierPathWithArcWithCenter:NSMakePoint(
+                                                             centerBorder,
+                                                             centerBorder)
+                                              radius:shipRadius-1
+                                          startAngle:endAngle
+                                            endAngle:startAngle
+                                           clockwise:NO];
+        }
+        else if ([ships count] == 1)
+        {
+            cPath = [NSBezierPath bezierPathWithOvalInRect:shipRect];
+            [cPath setLineWidth:lineWidth];
+        }
+        
+        [cPath stroke];
+    }
+    
+    
+    for (NuShip* ship in self.ships) 
     {
         if (self.colors == nil)
         {
@@ -157,16 +209,11 @@
             [[self.colors colorForPlayer:ship.ownerId] setStroke];
         }
         
-        NSBezierPath* circlePath = [NSBezierPath bezierPathWithOvalInRect:shipRect];
-        [circlePath setLineWidth:2.0];
-        
-        [circlePath stroke];
-        
-        
+    
         if (ship.heading != -1 && ship.warp > 0)
         {
             NSBezierPath* flightPath = [NSBezierPath bezierPath];
-            [flightPath setLineWidth:2.0];
+            [flightPath setLineWidth:lineWidth];
             
             [flightPath moveToPoint:CGPointMake(centerBorder, centerBorder)];
             
@@ -217,6 +264,7 @@
             [flightPath stroke];
         }   
     }
+    
     
     [NSGraphicsContext restoreGraphicsState];
 }
