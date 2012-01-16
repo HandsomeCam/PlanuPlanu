@@ -11,9 +11,9 @@
 		7E15E64014B518A500650246 /* NuMappableEntityLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E15E63F14B518A500650246 /* NuMappableEntityLayer.m */; };
 		7E15E64214B7BC8F00650246 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E15E64114B7BC8F00650246 /* QuartzCore.framework */; };
 		7E2908CF14ABC66A00B11972 /* StarMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2908CE14ABC66A00B11972 /* StarMapController.m */; };
-		7E2908D414ACFF9E00B11972 /* NuIonStormView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2908D314ACFF9D00B11972 /* NuIonStormView.m */; };
-		7E2908D714AD299E00B11972 /* NuPlanetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2908D614AD299E00B11972 /* NuPlanetView.m */; };
-		7E2908DC14AD605000B11972 /* NuShipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2908DB14AD604F00B11972 /* NuShipView.m */; };
+		7E2908D414ACFF9E00B11972 /* NuIonStormLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2908D314ACFF9D00B11972 /* NuIonStormLayer.m */; };
+		7E2908D714AD299E00B11972 /* NuPlanetLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2908D614AD299E00B11972 /* NuPlanetLayer.m */; };
+		7E2908DC14AD605000B11972 /* NuShipLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2908DB14AD604F00B11972 /* NuShipLayer.m */; };
 		7E38629514BBF5A800747D17 /* MapMuxPopover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E38629414BBF5A800747D17 /* MapMuxPopover.xib */; };
 		7E38629814BBF5CC00747D17 /* MapMuxPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E38629714BBF5CC00747D17 /* MapMuxPopoverController.m */; };
 		7E38629C14BCF16200747D17 /* planet.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E38629A14BCF16200747D17 /* planet.png */; };
@@ -65,7 +65,7 @@
 		7EF364ED14AE3163009BBE86 /* ShipDatabaseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EF364EC14AE3163009BBE86 /* ShipDatabaseWindow.xib */; };
 		7EF364F014AE4F16009BBE86 /* ShipDatabaseWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF364EF14AE4F16009BBE86 /* ShipDatabaseWindowController.m */; };
 		7EF364F314AE9CBF009BBE86 /* NuHull+Sorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF364F214AE9CBF009BBE86 /* NuHull+Sorting.m */; };
-		7EF364FB14AFAE04009BBE86 /* NuPlanetaryConnectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF364FA14AFAE04009BBE86 /* NuPlanetaryConnectionView.m */; };
+		7EF364FB14AFAE04009BBE86 /* NuPlanetaryConnectionLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF364FA14AFAE04009BBE86 /* NuPlanetaryConnectionLayer.m */; };
 		7EF364FE14AFC782009BBE86 /* ScanRangeVisibilityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF364FD14AFC782009BBE86 /* ScanRangeVisibilityView.m */; };
 		7EFFD36D14BE8997009CA6DE /* NuMinefieldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFFD36C14BE8997009CA6DE /* NuMinefieldLayer.m */; };
 /* End PBXBuildFile section */
@@ -120,12 +120,12 @@
 		7E15E63F14B518A500650246 /* NuMappableEntityLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuMappableEntityLayer.m; sourceTree = "<group>"; };
 		7E15E64114B7BC8F00650246 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7E2908CE14ABC66A00B11972 /* StarMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarMapController.m; sourceTree = "<group>"; };
-		7E2908D214ACFF9D00B11972 /* NuIonStormView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuIonStormView.h; sourceTree = "<group>"; };
-		7E2908D314ACFF9D00B11972 /* NuIonStormView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuIonStormView.m; sourceTree = "<group>"; };
-		7E2908D514AD299D00B11972 /* NuPlanetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuPlanetView.h; sourceTree = "<group>"; };
-		7E2908D614AD299E00B11972 /* NuPlanetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuPlanetView.m; sourceTree = "<group>"; };
-		7E2908DA14AD604F00B11972 /* NuShipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuShipView.h; sourceTree = "<group>"; };
-		7E2908DB14AD604F00B11972 /* NuShipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuShipView.m; sourceTree = "<group>"; };
+		7E2908D214ACFF9D00B11972 /* NuIonStormLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuIonStormLayer.h; sourceTree = "<group>"; };
+		7E2908D314ACFF9D00B11972 /* NuIonStormLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuIonStormLayer.m; sourceTree = "<group>"; };
+		7E2908D514AD299D00B11972 /* NuPlanetLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuPlanetLayer.h; sourceTree = "<group>"; };
+		7E2908D614AD299E00B11972 /* NuPlanetLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuPlanetLayer.m; sourceTree = "<group>"; };
+		7E2908DA14AD604F00B11972 /* NuShipLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuShipLayer.h; sourceTree = "<group>"; };
+		7E2908DB14AD604F00B11972 /* NuShipLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuShipLayer.m; sourceTree = "<group>"; };
 		7E38629414BBF5A800747D17 /* MapMuxPopover.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapMuxPopover.xib; sourceTree = "<group>"; };
 		7E38629614BBF5CC00747D17 /* MapMuxPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapMuxPopoverController.h; sourceTree = "<group>"; };
 		7E38629714BBF5CC00747D17 /* MapMuxPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapMuxPopoverController.m; sourceTree = "<group>"; };
@@ -208,8 +208,8 @@
 		7EF364EF14AE4F16009BBE86 /* ShipDatabaseWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShipDatabaseWindowController.m; sourceTree = "<group>"; };
 		7EF364F114AE9CBF009BBE86 /* NuHull+Sorting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NuHull+Sorting.h"; sourceTree = "<group>"; };
 		7EF364F214AE9CBF009BBE86 /* NuHull+Sorting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NuHull+Sorting.m"; sourceTree = "<group>"; };
-		7EF364F914AFAE04009BBE86 /* NuPlanetaryConnectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuPlanetaryConnectionView.h; sourceTree = "<group>"; };
-		7EF364FA14AFAE04009BBE86 /* NuPlanetaryConnectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuPlanetaryConnectionView.m; sourceTree = "<group>"; };
+		7EF364F914AFAE04009BBE86 /* NuPlanetaryConnectionLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuPlanetaryConnectionLayer.h; sourceTree = "<group>"; };
+		7EF364FA14AFAE04009BBE86 /* NuPlanetaryConnectionLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuPlanetaryConnectionLayer.m; sourceTree = "<group>"; };
 		7EF364FC14AFC781009BBE86 /* ScanRangeVisibilityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanRangeVisibilityView.h; sourceTree = "<group>"; };
 		7EF364FD14AFC782009BBE86 /* ScanRangeVisibilityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanRangeVisibilityView.m; sourceTree = "<group>"; };
 		7EFFD36B14BE8997009CA6DE /* NuMinefieldLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuMinefieldLayer.h; sourceTree = "<group>"; };
@@ -260,9 +260,43 @@
 			name = JSONKitDEV;
 			sourceTree = "<group>";
 		};
+		7E86FDC314C4CE250062C0C2 /* Popovers */ = {
+			isa = PBXGroup;
+			children = (
+				7E8644CB14A6D5F60002986F /* PlanetPopoverController.h */,
+				7E8644CC14A6D5F70002986F /* PlanetPopoverController.m */,
+				7ED904C514BD504100F189E5 /* ShipPopoverController.h */,
+				7ED904C614BD504100F189E5 /* ShipPopoverController.m */,
+				7E38629614BBF5CC00747D17 /* MapMuxPopoverController.h */,
+				7E38629714BBF5CC00747D17 /* MapMuxPopoverController.m */,
+			);
+			name = Popovers;
+			sourceTree = "<group>";
+		};
+		7E86FDC414C4CFDB0062C0C2 /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				7E2908D214ACFF9D00B11972 /* NuIonStormLayer.h */,
+				7E2908D314ACFF9D00B11972 /* NuIonStormLayer.m */,
+				7E15E63E14B518A500650246 /* NuMappableEntityLayer.h */,
+				7E15E63F14B518A500650246 /* NuMappableEntityLayer.m */,
+				7EFFD36B14BE8997009CA6DE /* NuMinefieldLayer.h */,
+				7EFFD36C14BE8997009CA6DE /* NuMinefieldLayer.m */,
+				7EF364F914AFAE04009BBE86 /* NuPlanetaryConnectionLayer.h */,
+				7EF364FA14AFAE04009BBE86 /* NuPlanetaryConnectionLayer.m */,
+				7E2908D514AD299D00B11972 /* NuPlanetLayer.h */,
+				7E2908D614AD299E00B11972 /* NuPlanetLayer.m */,
+				7E2908DA14AD604F00B11972 /* NuShipLayer.h */,
+				7E2908DB14AD604F00B11972 /* NuShipLayer.m */,
+			);
+			name = Layers;
+			sourceTree = "<group>";
+		};
 		7EA504B514A564A7000B1615 /* User Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				7E86FDC414C4CFDB0062C0C2 /* Layers */,
+				7E86FDC314C4CE250062C0C2 /* Popovers */,
 				7EE440F114C36942006745D7 /* Window Controllers */,
 				7EC24CAA14A2CC9F0081022A /* MainMenu.xib */,
 				7EC24CCA14A2CE380081022A /* AccountWindow.xib */,
@@ -351,26 +385,8 @@
 				7E3862A514BCF4E400747D17 /* MuxCellView.m */,
 				7E8644C214A5A8C50002986F /* StarMapView.h */,
 				7E8644C314A5A8C50002986F /* StarMapView.m */,
-				7E8644CB14A6D5F60002986F /* PlanetPopoverController.h */,
-				7E8644CC14A6D5F70002986F /* PlanetPopoverController.m */,
-				7ED904C514BD504100F189E5 /* ShipPopoverController.h */,
-				7ED904C614BD504100F189E5 /* ShipPopoverController.m */,
-				7E38629614BBF5CC00747D17 /* MapMuxPopoverController.h */,
-				7E38629714BBF5CC00747D17 /* MapMuxPopoverController.m */,
-				7E2908D214ACFF9D00B11972 /* NuIonStormView.h */,
-				7E2908D314ACFF9D00B11972 /* NuIonStormView.m */,
-				7EFFD36B14BE8997009CA6DE /* NuMinefieldLayer.h */,
-				7EFFD36C14BE8997009CA6DE /* NuMinefieldLayer.m */,
-				7E2908D514AD299D00B11972 /* NuPlanetView.h */,
-				7E2908D614AD299E00B11972 /* NuPlanetView.m */,
-				7E2908DA14AD604F00B11972 /* NuShipView.h */,
-				7E2908DB14AD604F00B11972 /* NuShipView.m */,
-				7EF364EE14AE4F16009BBE86 /* ShipDatabaseWindowController.h */,
-				7EF364EF14AE4F16009BBE86 /* ShipDatabaseWindowController.m */,
 				7EF364F114AE9CBF009BBE86 /* NuHull+Sorting.h */,
 				7EF364F214AE9CBF009BBE86 /* NuHull+Sorting.m */,
-				7EF364F914AFAE04009BBE86 /* NuPlanetaryConnectionView.h */,
-				7EF364FA14AFAE04009BBE86 /* NuPlanetaryConnectionView.m */,
 				7EF364FC14AFC781009BBE86 /* ScanRangeVisibilityView.h */,
 				7EF364FD14AFC782009BBE86 /* ScanRangeVisibilityView.m */,
 				7ECC437B14B00E220083591C /* ColorSchemes.plist */,
@@ -378,8 +394,6 @@
 				7ECC437E14B016920083591C /* NuColorScheme.m */,
 				7ECC438014B020FA0083591C /* NSColor+Serialize.h */,
 				7ECC438114B020FA0083591C /* NSColor+Serialize.m */,
-				7E15E63E14B518A500650246 /* NuMappableEntityLayer.h */,
-				7E15E63F14B518A500650246 /* NuMappableEntityLayer.m */,
 				7E698F8214BFDDDF008B0F95 /* MessageList.h */,
 				7E698F8314BFDDDF008B0F95 /* MessageList.m */,
 			);
@@ -436,6 +450,8 @@
 				7EE440EF14C3693A006745D7 /* FleetManifestWindowController.m */,
 				7E698F7814BF601A008B0F95 /* MessagesWindowController.h */,
 				7E698F7914BF601A008B0F95 /* MessagesWindowController.m */,
+				7EF364EE14AE4F16009BBE86 /* ShipDatabaseWindowController.h */,
+				7EF364EF14AE4F16009BBE86 /* ShipDatabaseWindowController.m */,
 				7E8644BF14A57F5B0002986F /* StarMapController.h */,
 				7E2908CE14ABC66A00B11972 /* StarMapController.m */,
 			);
@@ -603,12 +619,12 @@
 				7E8644C414A5A8C50002986F /* StarMapView.m in Sources */,
 				7E8644CE14A6D5F70002986F /* PlanetPopoverController.m in Sources */,
 				7E2908CF14ABC66A00B11972 /* StarMapController.m in Sources */,
-				7E2908D414ACFF9E00B11972 /* NuIonStormView.m in Sources */,
-				7E2908D714AD299E00B11972 /* NuPlanetView.m in Sources */,
-				7E2908DC14AD605000B11972 /* NuShipView.m in Sources */,
+				7E2908D414ACFF9E00B11972 /* NuIonStormLayer.m in Sources */,
+				7E2908D714AD299E00B11972 /* NuPlanetLayer.m in Sources */,
+				7E2908DC14AD605000B11972 /* NuShipLayer.m in Sources */,
 				7EF364F014AE4F16009BBE86 /* ShipDatabaseWindowController.m in Sources */,
 				7EF364F314AE9CBF009BBE86 /* NuHull+Sorting.m in Sources */,
-				7EF364FB14AFAE04009BBE86 /* NuPlanetaryConnectionView.m in Sources */,
+				7EF364FB14AFAE04009BBE86 /* NuPlanetaryConnectionLayer.m in Sources */,
 				7EF364FE14AFC782009BBE86 /* ScanRangeVisibilityView.m in Sources */,
 				7ECC437F14B016920083591C /* NuColorScheme.m in Sources */,
 				7ECC438214B020FA0083591C /* NSColor+Serialize.m in Sources */,

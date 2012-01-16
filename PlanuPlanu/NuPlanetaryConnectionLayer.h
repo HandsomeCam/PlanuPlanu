@@ -10,7 +10,7 @@
 #import <PlanuKit/PlanuKit.h>
 #import "NuMappableEntityLayer.h"
 
-@interface NuPlanetaryConnectionView : NuMappableEntityLayer
+@interface NuPlanetaryConnectionLayer : NuMappableEntityLayer
 {
     NuPlanet* first;
     NuPlanet* second;

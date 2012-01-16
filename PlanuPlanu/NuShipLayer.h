@@ -15,7 +15,7 @@
 @class NuShipView;
  
 
-@interface NuShipView : NuMappableEntityLayer
+@interface NuShipLayer : NuMappableEntityLayer
 {
     NSMutableArray* ships;
     NuPlayer* player;

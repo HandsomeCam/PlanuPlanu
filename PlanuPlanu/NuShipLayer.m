@@ -6,9 +6,9 @@
 //  Copyright 2011 Roboboogie Studios. All rights reserved.
 //
 
-#import "NuShipView.h"
+#import "NuShipLayer.h"
 
-@implementation NuShipView
+@implementation NuShipLayer
 
 #define kShipRadius 6
 #define kShipAtPlanetRadius 12

@@ -11,8 +11,8 @@
 #import "PlanetPopoverController.h" 
 #import "ScanRangeVisibilityView.h"
 #import "NuColorScheme.h"
-#import "NuShipView.h"
-#import "NuPlanetView.h"
+#import "NuShipLayer.h"
+#import "NuPlanetLayer.h"
 #import "MapMuxPopoverController.h"
 #import "ShipPopoverController.h"
 
@@ -37,10 +37,10 @@
     NSArray *ionStorms;
     NSArray *ships;
     
-    NSArray* planetViews;
-    NSArray* shipViews;
-    NSArray* stormViews;
-    NSArray* connectionViews;
+    NSArray* planetLayers;
+    NSArray* shipLayers;
+    NSArray* stormLayers;
+    NSArray* connectionLayers;
     NSArray* mineLayers;
     
     NSMutableDictionary* viewsByLocation;
@@ -58,10 +58,10 @@
 @property (nonatomic, retain) NSArray* ships;
 @property (nonatomic, retain) NuTurn* turn;
 
-@property (nonatomic, retain) NSArray* planetViews;
-@property (nonatomic, retain) NSArray* shipViews;
-@property (nonatomic, retain) NSArray* stormViews;
-@property (nonatomic, retain) NSArray* connectionViews;
+@property (nonatomic, retain) NSArray* planetLayers;
+@property (nonatomic, retain) NSArray* shipLayers;
+@property (nonatomic, retain) NSArray* stormLayers;
+@property (nonatomic, retain) NSArray* connectionLayers;
 @property (nonatomic, retain) NSArray* mineLayers;
 
 @property (nonatomic, retain) ScanRangeVisibilityView* scanRangeView;

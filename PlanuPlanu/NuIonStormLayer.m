@@ -6,10 +6,10 @@
 //  Copyright 2011 Roboboogie Studios. All rights reserved.
 //
 
-#import "NuIonStormView.h"
+#import "NuIonStormLayer.h"
 #include <stdlib.h>
 
-@implementation NuIonStormView
+@implementation NuIonStormLayer
 
 @synthesize storm;
 

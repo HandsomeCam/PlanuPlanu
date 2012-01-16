@@ -6,9 +6,9 @@
 //  Copyright 2011 Roboboogie Studios. All rights reserved.
 //
 
-#import "NuPlanetView.h"
+#import "NuPlanetLayer.h"
 
-@implementation NuPlanetView
+@implementation NuPlanetLayer
 
 @synthesize planet, player, colors, delegate;
 

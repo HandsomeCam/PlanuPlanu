@@ -11,7 +11,7 @@
 
 #import "NuMappableEntityLayer.h"
 
-@interface NuIonStormView : NuMappableEntityLayer
+@interface NuIonStormLayer : NuMappableEntityLayer
 {
     NuIonStorm* storm;
     NSArray* lightning;

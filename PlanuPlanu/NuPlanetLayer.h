@@ -11,27 +11,27 @@
 #import "NuColorScheme.h"
 #import "NuMappableEntityLayer.h"
 
-@class NuPlanetView;
+@class NuPlanetLayer;
 
-@protocol NuPlanetViewDelegate <NSObject>
+@protocol NuPlanetLayerDelegate <NSObject>
 
-- (void)planetSelected:(NuPlanetView*)sender atLocation:(CGPoint)point;
+- (void)planetSelected:(NuPlanetLayer*)sender atLocation:(CGPoint)point;
 
 @end
 
-@interface NuPlanetView : NuMappableEntityLayer
+@interface NuPlanetLayer : NuMappableEntityLayer
 {
     NuPlanet* planet;
     NuPlayer* player;
     NuColorScheme* colors;
-    id<NuPlanetViewDelegate> delegate;
+    id<NuPlanetLayerDelegate> delegate;
     
 }
 
 @property (nonatomic, retain) NuPlanet* planet;
 @property (nonatomic, retain) NuPlayer* player;
 @property (nonatomic, retain) NuColorScheme* colors;
-@property (assign) id<NuPlanetViewDelegate> delegate;
+@property (assign) id<NuPlanetLayerDelegate> delegate;
 
 - (id)initWithPlanet:(NuPlanet*)planet;
 

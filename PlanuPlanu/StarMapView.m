@@ -10,17 +10,15 @@
 
 #import "StarMapView.h" 
 #import "PlanetPopoverController.h" 
-#import "NuIonStormView.h"
-#import "NuPlanetView.h"
-#import "NuShipView.h"
-#import "NuPlanetaryConnectionView.h"
+#import "NuIonStormLayer.h"
+#import "NuPlanetaryConnectionLayer.h"
 #import "MapMuxPopoverController.h"
 #import "NuMinefieldLayer.h"
 
 @implementation StarMapView
 
 @synthesize planets, player, ionStorms, ships, turn;
-@synthesize planetViews, shipViews, stormViews, connectionViews, mineLayers;
+@synthesize planetLayers, shipLayers, stormLayers, connectionLayers, mineLayers;
 @synthesize scanRangeView, colorScheme, delegate;
  
 - (void)setScanRangeHidden:(BOOL)visibility
@@ -30,7 +28,7 @@
 
 - (void)setPlanetsHidden:(BOOL)visibility
 {
-    for (NuPlanetView* pv in self.planetViews)
+    for (NuPlanetLayer* pv in self.planetLayers)
     {
         [pv setHidden:visibility];
     }
@@ -38,7 +36,7 @@
 
 - (void)setShipsHidden:(BOOL)visibility
 {
-    for (NuShipView* ship in self.shipViews)
+    for (NuShipLayer* ship in self.shipLayers)
     {
         [ship setHidden:visibility];
     }
@@ -46,7 +44,7 @@
 
 - (void)setStormsHidden:(BOOL)visibility
 {
-    for (NuIonStormView* storm in self.stormViews)
+    for (NuIonStormLayer* storm in self.stormLayers)
     {
         [storm setHidden:visibility];
     }
@@ -54,7 +52,7 @@
 
 - (void)setConnectionsHidden:(BOOL)visibility
 {
-    for (NuPlanetaryConnectionView* cnx in self.connectionViews)
+    for (NuPlanetaryConnectionLayer* cnx in self.connectionLayers)
     {
         [cnx setHidden:visibility];
     }
@@ -168,7 +166,7 @@
     if ([keyPath isEqualToString:@"values.shipPathSingleTurn"]
         || [keyPath isEqualToString:@"values.expandShipRadiusInWarpWells"])
     {
-        for (NuShipView* sv in self.shipViews)
+        for (NuShipLayer* sv in self.shipLayers)
         {
             // Recalculate the frame as it may have changed
             sv.frame = [sv calculateLayerBounds];
@@ -200,7 +198,7 @@
         for (NuMappableEntityLayer* layer in
              [viewsByLocation objectForKey:locVal])
         {
-            if ([layer isKindOfClass:[NuShipView class]])
+            if ([layer isKindOfClass:[NuShipLayer class]])
             {
                 NuShipView* nsv = (NuShipView*)layer;
                 [nsv addShip:ship];
@@ -210,7 +208,7 @@
         
         if (newShip == YES)
         {
-            NuShipView* sv = [[[NuShipView alloc] initWithShip:ship] autorelease];
+            NuShipLayer* sv = [[[NuShipLayer alloc] initWithShip:ship] autorelease];
             sv.player = self.player; 
             
             NSMutableArray* arr = [viewsByLocation objectForKey:locVal];
@@ -223,7 +221,7 @@
         }
     }
     
-    self.shipViews = svs;
+    self.shipLayers = svs;
 }
 
 - (void)addPlanets
@@ -232,7 +230,7 @@
     
     for (NuPlanet* planet in self.planets)
     {
-        NuPlanetView* pv = [[[NuPlanetView alloc] initWithPlanet:planet] autorelease];
+        NuPlanetLayer* pv = [[[NuPlanetLayer alloc] initWithPlanet:planet] autorelease];
         pv.player = self.player; 
         
         NSPoint loc;
@@ -254,7 +252,7 @@
         [pvs addObject:pv];
     }
     
-    self.planetViews = pvs;
+    self.planetLayers = pvs;
 }
 
 - (void)addPlanetaryConnections
@@ -276,8 +274,8 @@
             
             if (len <= 81)
             {
-                NuPlanetaryConnectionView* pcv = 
-                    [[NuPlanetaryConnectionView alloc] initWithPlanet:a 
+                NuPlanetaryConnectionLayer* pcv = 
+                    [[NuPlanetaryConnectionLayer alloc] initWithPlanet:a 
                                                             andPlanet:b];
                 [self.layer addSublayer:pcv];
                 [pcv setNeedsDisplay];
@@ -286,7 +284,7 @@
         }
     }
     
-    self.connectionViews = connections;
+    self.connectionLayers = connections;
 }
 
 - (void)addIonStorms
@@ -295,14 +293,14 @@
     
     for (NuIonStorm* storm in ionStorms)
     {
-        NuIonStormView* isv = [[[NuIonStormView alloc] initWithIonStorm:storm] autorelease];
+        NuIonStormLayer* isv = [[[NuIonStormLayer alloc] initWithIonStorm:storm] autorelease];
        
         [self.layer addSublayer:isv];
         [isv setNeedsDisplay];
         [isvs addObject:isv];
     }
     
-    self.stormViews = isvs;
+    self.stormLayers = isvs;
 }
 
 - (void)addMinefields
@@ -456,9 +454,9 @@
     {
         for (NuMappableEntityLayer* layer in vws)
         {
-            if ([layer isKindOfClass:[NuPlanetView class]])
+            if ([layer isKindOfClass:[NuPlanetLayer class]])
             {
-                NuPlanetView* pv = (NuPlanetView*)layer;
+                NuPlanetLayer* pv = (NuPlanetLayer*)layer;
                 
                 r = pv.frame;
                 
@@ -471,9 +469,9 @@
                 }
             }
             
-            if ([layer isKindOfClass:[NuShipView class]] == YES)
+            if ([layer isKindOfClass:[NuShipLayer class]] == YES)
             {
-                NuShipView* sv = (NuShipView*)layer;
+                NuShipLayer* sv = (NuShipLayer*)layer;
                 if ([sv hitTest:refLayerPt])
                 {
                     for (NuShip* ship in sv.ships)
@@ -525,12 +523,12 @@
     }
     colorScheme = [cs retain];
     
-    for (NuPlanetView* pl in self.planetViews)
+    for (NuPlanetLayer* pl in self.planetLayers)
     {
         pl.colors = cs;
     }
     
-    for (NuShipView* sv in self.shipViews)
+    for (NuShipLayer* sv in self.shipLayers)
     {
         sv.colors = cs;
     }

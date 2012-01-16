@@ -6,9 +6,9 @@
 //  Copyright 2011 Roboboogie Studios. All rights reserved.
 //
 
-#import "NuPlanetaryConnectionView.h"
+#import "NuPlanetaryConnectionLayer.h"
 
-@implementation NuPlanetaryConnectionView
+@implementation NuPlanetaryConnectionLayer
 
 @synthesize first, second;
 
