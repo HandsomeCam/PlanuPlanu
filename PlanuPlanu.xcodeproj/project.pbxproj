@@ -60,6 +60,8 @@
 		7ECC438214B020FA0083591C /* NSColor+Serialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC438114B020FA0083591C /* NSColor+Serialize.m */; };
 		7ED904C414BD4F4900F189E5 /* ShipPopover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7ED904C314BD4F4900F189E5 /* ShipPopover.xib */; };
 		7ED904C814BD504100F189E5 /* ShipPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED904C614BD504100F189E5 /* ShipPopoverController.m */; };
+		7EE440F014C3693A006745D7 /* FleetManifestWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE440EF14C3693A006745D7 /* FleetManifestWindowController.m */; };
+		7EE440F314C36973006745D7 /* FleetManifestWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EE440F214C36973006745D7 /* FleetManifestWindow.xib */; };
 		7EF364ED14AE3163009BBE86 /* ShipDatabaseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EF364EC14AE3163009BBE86 /* ShipDatabaseWindow.xib */; };
 		7EF364F014AE4F16009BBE86 /* ShipDatabaseWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF364EF14AE4F16009BBE86 /* ShipDatabaseWindowController.m */; };
 		7EF364F314AE9CBF009BBE86 /* NuHull+Sorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF364F214AE9CBF009BBE86 /* NuHull+Sorting.m */; };
@@ -198,6 +200,9 @@
 		7ED904C314BD4F4900F189E5 /* ShipPopover.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShipPopover.xib; sourceTree = "<group>"; };
 		7ED904C514BD504100F189E5 /* ShipPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShipPopoverController.h; sourceTree = "<group>"; };
 		7ED904C614BD504100F189E5 /* ShipPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShipPopoverController.m; sourceTree = "<group>"; };
+		7EE440EE14C3693A006745D7 /* FleetManifestWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FleetManifestWindowController.h; sourceTree = "<group>"; };
+		7EE440EF14C3693A006745D7 /* FleetManifestWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FleetManifestWindowController.m; sourceTree = "<group>"; };
+		7EE440F214C36973006745D7 /* FleetManifestWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FleetManifestWindow.xib; sourceTree = "<group>"; };
 		7EF364EC14AE3163009BBE86 /* ShipDatabaseWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShipDatabaseWindow.xib; sourceTree = "<group>"; };
 		7EF364EE14AE4F16009BBE86 /* ShipDatabaseWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShipDatabaseWindowController.h; sourceTree = "<group>"; };
 		7EF364EF14AE4F16009BBE86 /* ShipDatabaseWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShipDatabaseWindowController.m; sourceTree = "<group>"; };
@@ -258,6 +263,7 @@
 		7EA504B514A564A7000B1615 /* User Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				7EE440F114C36942006745D7 /* Window Controllers */,
 				7EC24CAA14A2CC9F0081022A /* MainMenu.xib */,
 				7EC24CCA14A2CE380081022A /* AccountWindow.xib */,
 				7E1518BE14A3F15B00BAB34E /* CaptainDashboard.xib */,
@@ -267,6 +273,7 @@
 				7E38629414BBF5A800747D17 /* MapMuxPopover.xib */,
 				7ED904C314BD4F4900F189E5 /* ShipPopover.xib */,
 				7E698F7B14BF6032008B0F95 /* MessagesWindow.xib */,
+				7EE440F214C36973006745D7 /* FleetManifestWindow.xib */,
 			);
 			name = "User Interfaces";
 			sourceTree = "<group>";
@@ -331,10 +338,6 @@
 				7EA504B514A564A7000B1615 /* User Interfaces */,
 				7EC24CA714A2CC9E0081022A /* PlanuPlanuAppDelegate.h */,
 				7EC24CA814A2CC9E0081022A /* PlanuPlanuAppDelegate.m */,
-				7EC24CCF14A2D2070081022A /* AccountWindowController.h */,
-				7EC24CD014A2D2070081022A /* AccountWindowController.m */,
-				7E698F7814BF601A008B0F95 /* MessagesWindowController.h */,
-				7E698F7914BF601A008B0F95 /* MessagesWindowController.m */,
 				7EC24CD214A2D2EF0081022A /* NSAttributedString+Hyperlink.h */,
 				7EC24CD314A2D2EF0081022A /* NSAttributedString+Hyperlink.m */,
 				7EC24CD514A2D5E50081022A /* PlanuMenuController.h */,
@@ -343,13 +346,9 @@
 				7E97ED3114A3D84100FD46DD /* Preferences.plist */,
 				7E97ED3714A3DEE600FD46DD /* AGKeychain.h */,
 				7E97ED3814A3DEE600FD46DD /* AGKeychain.m */,
-				7E97ED3A14A3ED4900FD46DD /* CaptainDashboardController.h */,
-				7E97ED3B14A3ED4900FD46DD /* CaptainDashboardController.m */,
 				7E97ED3D14A3EDD700FD46DD /* Preferences.h */,
 				7E3862A414BCF4E400747D17 /* MuxCellView.h */,
 				7E3862A514BCF4E400747D17 /* MuxCellView.m */,
-				7E8644BF14A57F5B0002986F /* StarMapController.h */,
-				7E2908CE14ABC66A00B11972 /* StarMapController.m */,
 				7E8644C214A5A8C50002986F /* StarMapView.h */,
 				7E8644C314A5A8C50002986F /* StarMapView.m */,
 				7E8644CB14A6D5F60002986F /* PlanetPopoverController.h */,
@@ -424,6 +423,23 @@
 				7EC24CBB14A2CC9F0081022A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7EE440F114C36942006745D7 /* Window Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7EC24CCF14A2D2070081022A /* AccountWindowController.h */,
+				7EC24CD014A2D2070081022A /* AccountWindowController.m */,
+				7E97ED3A14A3ED4900FD46DD /* CaptainDashboardController.h */,
+				7E97ED3B14A3ED4900FD46DD /* CaptainDashboardController.m */,
+				7EE440EE14C3693A006745D7 /* FleetManifestWindowController.h */,
+				7EE440EF14C3693A006745D7 /* FleetManifestWindowController.m */,
+				7E698F7814BF601A008B0F95 /* MessagesWindowController.h */,
+				7E698F7914BF601A008B0F95 /* MessagesWindowController.m */,
+				7E8644BF14A57F5B0002986F /* StarMapController.h */,
+				7E2908CE14ABC66A00B11972 /* StarMapController.m */,
+			);
+			name = "Window Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -540,6 +556,7 @@
 				7E3862A314BCF35000747D17 /* storm.png in Resources */,
 				7ED904C414BD4F4900F189E5 /* ShipPopover.xib in Resources */,
 				7E698F7C14BF6032008B0F95 /* MessagesWindow.xib in Resources */,
+				7EE440F314C36973006745D7 /* FleetManifestWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,6 +619,7 @@
 				7EFFD36D14BE8997009CA6DE /* NuMinefieldLayer.m in Sources */,
 				7E698F7A14BF601A008B0F95 /* MessagesWindowController.m in Sources */,
 				7E698F8414BFDDDF008B0F95 /* MessageList.m in Sources */,
+				7EE440F014C3693A006745D7 /* FleetManifestWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

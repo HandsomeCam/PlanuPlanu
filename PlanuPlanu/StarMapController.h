@@ -77,6 +77,7 @@
 
 - (IBAction)loadColorScheme:(id)sender;
 - (void)initColorScheme;
+- (IBAction)showFleetManifest:(id)sender;
 
 - (IBAction)ppvr:(id)sender;
 @end

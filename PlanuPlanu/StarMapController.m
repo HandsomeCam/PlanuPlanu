@@ -10,6 +10,7 @@
 #import "StarMapView.h"
 #import "NuColorScheme.h"
 #import "MessagesWindowController.h"
+#import "FleetManifestWindowController.h"
 
 @implementation StarMapController
 
@@ -308,6 +309,27 @@
 - (BOOL)drawerShouldOpen:(NSDrawer *)sender
 {
     return YES;
+}
+
+- (void)showFleetManifest:(id)sender
+{
+    // TODO: this
+    NSMutableArray* fm = [NSMutableArray array];
+    
+    for (NuShip* ship in self.turn.ships)
+    {
+        if (ship.ownerId == self.turn.player.playerId)
+        {
+            [fm addObject:ship];
+        }
+    }
+    
+    FleetManifestWindowController* fmwc = 
+        [[FleetManifestWindowController alloc]
+         initWithWindowNibName:@"FleetManifestWindow" ];
+    fmwc.fleetManifest = fm;
+    
+    [fmwc showWindow:self];
 }
 
 @end
