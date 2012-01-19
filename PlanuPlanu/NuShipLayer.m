@@ -140,7 +140,7 @@
     
     CGRect shipRect = CGRectMake(outerOrigin+2, outerOrigin+2, (shipRadius*2)-4, (shipRadius*2)-4);
     
-    CGFloat shipCircleSegments = 360 / [self.ships count];
+    CGFloat shipCircleSegments = ceil( 360 / [self.ships count] );
     
     NSInteger segmentCounter = 0;
     

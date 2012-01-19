@@ -7,12 +7,12 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
-#import "LoginRequest.h"
-
-@interface LoginRequestTest : SenTestCase <LoginRequestDelegate>
-{
-    @private
-    LoginRequest *loginRequest;
-    BOOL  requestComplete;
-}
+//#import "LoginRequest.h"
+//
+@interface LoginRequestTest : SenTestCase //<LoginRequestDelegate>
+//{
+//    @private
+//    LoginRequest *loginRequest;
+//    BOOL  requestComplete;
+//}
 @end

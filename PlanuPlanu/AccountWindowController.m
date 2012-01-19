@@ -87,7 +87,8 @@
 - (void)loginClicked:(id)sender
 {
     if ([[username.stringValue lowercaseString] isEqualTo:@"handsomecam"]
-        || [[username.stringValue lowercaseString] isEqualTo:@"astronomix"])
+        || [[username.stringValue lowercaseString] isEqualTo:@"astronomix"]
+        || [[username.stringValue lowercaseString] isEqualToString:@"fignutz"])
     {
         NuLoginRequest* lr = [[NuLoginRequest alloc] init];
         [lr performLoginWithUsername:username.stringValue withPassword:password.stringValue withDelegate:self];

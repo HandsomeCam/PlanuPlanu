@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "NuShip+WeaponDisplay.h"
 
 @interface FleetManifestWindowController : NSWindowController
 {

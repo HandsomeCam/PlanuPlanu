@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E09C54114C7B93400CE7E9F /* TurnWarning.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E09C54014C7B93400CE7E9F /* TurnWarning.m */; };
+		7E09C54814C8BA8D00CE7E9F /* minefields.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E09C54714C8BA8D00CE7E9F /* minefields.png */; };
+		7E09C54A14C8BB3B00CE7E9F /* cmd.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E09C54914C8BB3B00CE7E9F /* cmd.png */; };
 		7E1518BF14A3F15B00BAB34E /* CaptainDashboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E1518BE14A3F15B00BAB34E /* CaptainDashboard.xib */; };
 		7E15E64014B518A500650246 /* NuMappableEntityLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E15E63F14B518A500650246 /* NuMappableEntityLayer.m */; };
 		7E15E64214B7BC8F00650246 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E15E64114B7BC8F00650246 /* QuartzCore.framework */; };
+		7E20647E14C54D9100E7A484 /* TurnWarningWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E20647D14C54D9100E7A484 /* TurnWarningWindowController.m */; };
+		7E20648014C54DB100E7A484 /* TurnWarningWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E20647F14C54DB100E7A484 /* TurnWarningWindow.xib */; };
 		7E2908CF14ABC66A00B11972 /* StarMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2908CE14ABC66A00B11972 /* StarMapController.m */; };
 		7E2908D414ACFF9E00B11972 /* NuIonStormLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2908D314ACFF9D00B11972 /* NuIonStormLayer.m */; };
 		7E2908D714AD299E00B11972 /* NuPlanetLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2908D614AD299E00B11972 /* NuPlanetLayer.m */; };
@@ -32,6 +37,7 @@
 		7E8644C414A5A8C50002986F /* StarMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8644C314A5A8C50002986F /* StarMapView.m */; };
 		7E8644CE14A6D5F70002986F /* PlanetPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8644CC14A6D5F70002986F /* PlanetPopoverController.m */; };
 		7E8644D114A6D6A20002986F /* PlanetPopover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E8644D014A6D6A20002986F /* PlanetPopover.xib */; };
+		7E86FDC714C4D5AC0062C0C2 /* NuShip+WeaponDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E86FDC614C4D5AC0062C0C2 /* NuShip+WeaponDisplay.m */; };
 		7E97ED2F14A3D5E200FD46DD /* AccountModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E97ED2D14A3D5E200FD46DD /* AccountModel.xcdatamodeld */; };
 		7E97ED3214A3D84100FD46DD /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E97ED3114A3D84100FD46DD /* Preferences.plist */; };
 		7E97ED3914A3DEE600FD46DD /* AGKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E97ED3814A3DEE600FD46DD /* AGKeychain.m */; };
@@ -115,10 +121,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7E09C53F14C7B93400CE7E9F /* TurnWarning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurnWarning.h; sourceTree = "<group>"; };
+		7E09C54014C7B93400CE7E9F /* TurnWarning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TurnWarning.m; sourceTree = "<group>"; };
+		7E09C54714C8BA8D00CE7E9F /* minefields.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minefields.png; sourceTree = "<group>"; };
+		7E09C54914C8BB3B00CE7E9F /* cmd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cmd.png; sourceTree = "<group>"; };
 		7E1518BE14A3F15B00BAB34E /* CaptainDashboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CaptainDashboard.xib; sourceTree = "<group>"; };
 		7E15E63E14B518A500650246 /* NuMappableEntityLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuMappableEntityLayer.h; sourceTree = "<group>"; };
 		7E15E63F14B518A500650246 /* NuMappableEntityLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuMappableEntityLayer.m; sourceTree = "<group>"; };
 		7E15E64114B7BC8F00650246 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7E20647C14C54D9100E7A484 /* TurnWarningWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurnWarningWindowController.h; sourceTree = "<group>"; };
+		7E20647D14C54D9100E7A484 /* TurnWarningWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TurnWarningWindowController.m; sourceTree = "<group>"; };
+		7E20647F14C54DB100E7A484 /* TurnWarningWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TurnWarningWindow.xib; sourceTree = "<group>"; };
 		7E2908CE14ABC66A00B11972 /* StarMapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarMapController.m; sourceTree = "<group>"; };
 		7E2908D214ACFF9D00B11972 /* NuIonStormLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuIonStormLayer.h; sourceTree = "<group>"; };
 		7E2908D314ACFF9D00B11972 /* NuIonStormLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuIonStormLayer.m; sourceTree = "<group>"; };
@@ -151,6 +164,8 @@
 		7E8644CB14A6D5F60002986F /* PlanetPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlanetPopoverController.h; sourceTree = "<group>"; };
 		7E8644CC14A6D5F70002986F /* PlanetPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlanetPopoverController.m; sourceTree = "<group>"; };
 		7E8644D014A6D6A20002986F /* PlanetPopover.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlanetPopover.xib; sourceTree = "<group>"; };
+		7E86FDC514C4D5AC0062C0C2 /* NuShip+WeaponDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NuShip+WeaponDisplay.h"; sourceTree = "<group>"; };
+		7E86FDC614C4D5AC0062C0C2 /* NuShip+WeaponDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NuShip+WeaponDisplay.m"; sourceTree = "<group>"; };
 		7E97ED2E14A3D5E200FD46DD /* AccountModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AccountModel.xcdatamodel; sourceTree = "<group>"; };
 		7E97ED3114A3D84100FD46DD /* Preferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Preferences.plist; sourceTree = "<group>"; };
 		7E97ED3714A3DEE600FD46DD /* AGKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGKeychain.h; sourceTree = "<group>"; };
@@ -243,6 +258,8 @@
 		7E38629914BCF14600747D17 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7E09C54914C8BB3B00CE7E9F /* cmd.png */,
+				7E09C54714C8BA8D00CE7E9F /* minefields.png */,
 				7E38629E14BCF35000747D17 /* connection.png */,
 				7E38629F14BCF35000747D17 /* scanvisibility.png */,
 				7E3862A014BCF35000747D17 /* storm.png */,
@@ -308,6 +325,7 @@
 				7ED904C314BD4F4900F189E5 /* ShipPopover.xib */,
 				7E698F7B14BF6032008B0F95 /* MessagesWindow.xib */,
 				7EE440F214C36973006745D7 /* FleetManifestWindow.xib */,
+				7E20647F14C54DB100E7A484 /* TurnWarningWindow.xib */,
 			);
 			name = "User Interfaces";
 			sourceTree = "<group>";
@@ -389,6 +407,8 @@
 				7EF364F214AE9CBF009BBE86 /* NuHull+Sorting.m */,
 				7EF364FC14AFC781009BBE86 /* ScanRangeVisibilityView.h */,
 				7EF364FD14AFC782009BBE86 /* ScanRangeVisibilityView.m */,
+				7E09C53F14C7B93400CE7E9F /* TurnWarning.h */,
+				7E09C54014C7B93400CE7E9F /* TurnWarning.m */,
 				7ECC437B14B00E220083591C /* ColorSchemes.plist */,
 				7ECC437D14B016920083591C /* NuColorScheme.h */,
 				7ECC437E14B016920083591C /* NuColorScheme.m */,
@@ -396,6 +416,8 @@
 				7ECC438114B020FA0083591C /* NSColor+Serialize.m */,
 				7E698F8214BFDDDF008B0F95 /* MessageList.h */,
 				7E698F8314BFDDDF008B0F95 /* MessageList.m */,
+				7E86FDC514C4D5AC0062C0C2 /* NuShip+WeaponDisplay.h */,
+				7E86FDC614C4D5AC0062C0C2 /* NuShip+WeaponDisplay.m */,
 			);
 			path = PlanuPlanu;
 			sourceTree = "<group>";
@@ -454,6 +476,8 @@
 				7EF364EF14AE4F16009BBE86 /* ShipDatabaseWindowController.m */,
 				7E8644BF14A57F5B0002986F /* StarMapController.h */,
 				7E2908CE14ABC66A00B11972 /* StarMapController.m */,
+				7E20647C14C54D9100E7A484 /* TurnWarningWindowController.h */,
+				7E20647D14C54D9100E7A484 /* TurnWarningWindowController.m */,
 			);
 			name = "Window Controllers";
 			sourceTree = "<group>";
@@ -573,6 +597,9 @@
 				7ED904C414BD4F4900F189E5 /* ShipPopover.xib in Resources */,
 				7E698F7C14BF6032008B0F95 /* MessagesWindow.xib in Resources */,
 				7EE440F314C36973006745D7 /* FleetManifestWindow.xib in Resources */,
+				7E20648014C54DB100E7A484 /* TurnWarningWindow.xib in Resources */,
+				7E09C54814C8BA8D00CE7E9F /* minefields.png in Resources */,
+				7E09C54A14C8BB3B00CE7E9F /* cmd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +663,9 @@
 				7E698F7A14BF601A008B0F95 /* MessagesWindowController.m in Sources */,
 				7E698F8414BFDDDF008B0F95 /* MessageList.m in Sources */,
 				7EE440F014C3693A006745D7 /* FleetManifestWindowController.m in Sources */,
+				7E86FDC714C4D5AC0062C0C2 /* NuShip+WeaponDisplay.m in Sources */,
+				7E20647E14C54D9100E7A484 /* TurnWarningWindowController.m in Sources */,
+				7E09C54114C7B93400CE7E9F /* TurnWarning.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

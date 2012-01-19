@@ -11,6 +11,7 @@
 #import "NuColorScheme.h"
 #import "MessagesWindowController.h"
 #import "FleetManifestWindowController.h"
+#import "TurnWarningWindowController.h"
 
 @implementation StarMapController
 
@@ -313,7 +314,6 @@
 
 - (void)showFleetManifest:(id)sender
 {
-    // TODO: this
     NSMutableArray* fm = [NSMutableArray array];
     
     for (NuShip* ship in self.turn.ships)
@@ -330,6 +330,14 @@
     fmwc.fleetManifest = fm;
     
     [fmwc showWindow:self];
+}
+
+- (IBAction)showTurnWarnings:(id)sender
+{
+    TurnWarningWindowController* twwc = 
+    [[TurnWarningWindowController alloc] initWithWindowNibName:@"TurnWarningWindow"];
+    twwc.turn = self.turn;
+    [twwc showWindow:self];
 }
 
 @end
