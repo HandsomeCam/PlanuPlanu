@@ -40,11 +40,10 @@
         NuPlanet* planet = (NuPlanet*)item;
         result.imageView.image = [NSImage imageNamed:@"planet.png"];
         result.textField.stringValue = planet.name;
+         
+        NuPlayer* player = planet.owner;
         
-        NSInteger planetOwner = planet.ownerId;
-        NuPlayer* player = [turn playerForId:planetOwner];
-        NSInteger playerRace = player.raceId;
-        NuPlayerRace* race = [turn.races objectAtIndex:playerRace];
+        NuPlayerRace* race = player.race;
         
         result.entityClass.stringValue = [NSString stringWithFormat:@"Owned by: %@", race.name];
     }
@@ -53,8 +52,7 @@
         NuShip* ship = (NuShip*)item;
         result.imageView.image = [NSImage imageNamed:@"ship.png"];
         result.textField.stringValue =  ship.name;
-        NuHull* hull = [[[NuShipDatabase sharedDatabase] hulls] objectAtIndex:ship.hullId - 1];
-        result.entityClass.stringValue = hull.name;
+        result.entityClass.stringValue = ship.hull.name;
     }
     
     return result;

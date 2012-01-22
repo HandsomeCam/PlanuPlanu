@@ -24,18 +24,18 @@
 
 @interface StarMapView : NSView <MapMuxDelegate>
 {
-    NSArray *planets;
+//    NSArray *planets;
     CGPoint startOrigin;
     CGPoint startPt;
-    NuPlayer* player;
+//    NuPlayer* player;
     PlanetPopoverController *popover;
     MapMuxPopoverController *muxover;
     ShipPopoverController *shipover;
     
     NuTurn* turn;
     
-    NSArray *ionStorms;
-    NSArray *ships;
+//    NSArray *ionStorms;
+//    NSArray *ships;
     
     NSArray* planetLayers;
     NSArray* shipLayers;
@@ -52,10 +52,10 @@
     id<StarMapViewDelegate> delegate;
 }
 
-@property (nonatomic, retain) NSArray* planets;
-@property (nonatomic, retain) NuPlayer* player;
-@property (nonatomic, retain) NSArray* ionStorms;
-@property (nonatomic, retain) NSArray* ships;
+//@property (nonatomic, retain) NSArray* planets;
+//@property (nonatomic, retain) NuPlayer* player;
+//@property (nonatomic, retain) NSArray* ionStorms;
+//@property (nonatomic, retain) NSArray* ships;
 @property (nonatomic, retain) NuTurn* turn;
 
 @property (nonatomic, retain) NSArray* planetLayers;

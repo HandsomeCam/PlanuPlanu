@@ -69,11 +69,8 @@
     [self initColorScheme];
     
     starMap.colorScheme = self.activeScheme;
-    
-    starMap.planets = turn.planets;
-    starMap.player = turn.player;
-    starMap.ionStorms = turn.ionStorms;
-    starMap.ships = turn.ships;
+
+    starMap.turn = turn;
     
     [starMap setScanRangeHidden:YES];
     [starMap setConnectionsHidden:YES];
@@ -196,7 +193,8 @@
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    NuPlayer* player = [self.turn.players objectAtIndex:row];
+    NSArray* playerArr = [turn.players allObjects];
+    NuPlayer* player = [playerArr objectAtIndex:row];
     
     CGFloat tw = tableView.frame.size.width;
     

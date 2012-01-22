@@ -27,7 +27,7 @@ NSComparisonResult (^valcompare)(NSInteger,NSInteger) = ^(NSInteger lhs, NSInteg
 
 - (NSComparisonResult)nameComparison:(NuHull *)otherHull;
 {
-    return [name caseInsensitiveCompare:otherHull.name];
+    return [self.name caseInsensitiveCompare:otherHull.name];
 }
 
 - (NSComparisonResult)hullIdComparison:(NuHull *)otherHull;

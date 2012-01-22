@@ -130,13 +130,18 @@
             NSString* response = [NSString stringWithContentsOfFile:fileName encoding:NSASCIIStringEncoding error:nil];
             
             // Do something with the filename.
-            NuTurn* trn = [[NuTurn alloc] init];
+            NuTurn* trn = nil;
             
             id decodedJson = [response objectFromJSONString];
             
+            // TODO: load this from somewhere
+            NSManagedObjectContext* context = nil;
+            
             if ([decodedJson isKindOfClass:[NSDictionary class]] == YES)
             {
-                [trn loadFromDict:decodedJson];
+                trn = [NuTurn turnFromJson:decodedJson
+                               withContext:context];
+                  
                 [self turnRequestSucceededWith:trn];
             }
         }

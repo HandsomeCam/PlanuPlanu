@@ -98,7 +98,7 @@
      
     for (NuMappableEntity* entity in self.scanningEntities)
     {
-        NSInteger scanVisibility = self.turn.gameSettings.shipScanRange;
+        NSInteger scanVisibility = self.turn.settings.shipScanRange;
         
         CGRect scanRect = CGRectMake(entity.x-scanVisibility, 
                                      entity.y - scanVisibility,

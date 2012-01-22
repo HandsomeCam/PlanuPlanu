@@ -17,7 +17,8 @@
 
 @implementation StarMapView
 
-@synthesize planets, player, ionStorms, ships, turn;
+//@synthesize planets, player, ionStorms, ships,
+@synthesize turn;
 @synthesize planetLayers, shipLayers, stormLayers, connectionLayers, mineLayers;
 @synthesize scanRangeView, colorScheme, delegate;
  
@@ -68,11 +69,7 @@
 
 - (id)initWithTurn:(NuTurn*)trn
 {
-    self.turn = trn;
-    self.ionStorms = trn.ionStorms;
-    self.planets = trn.planets;
-    self.player = trn.player;
-    self.ships = trn.ships;
+    self.turn = trn; 
     
     NSRect smvFrame = CGRectMake(0, 0, 4000, 4000);
     
@@ -98,12 +95,7 @@
     self = [super initWithFrame:frame];
     
     [self addObservers];
-    
-//    [[NSUserDefaults standardUserDefaults] addObserver:self 
-//                                            forKeyPath:@"shipPathSingleTurn" 
-//                                               options:NSKeyValueObservingOptionNew 
-//                                               context:nil];
-     
+ 
     if (self) {
         // Initialization code here.
         
@@ -131,7 +123,7 @@
         
         viewsByLocation = [[NSMutableDictionary dictionary] retain];
         
-        if (self.ionStorms != nil)
+        if (self.turn.ionStorms != nil)
         {
             [self addIonStorms];
         }
@@ -141,7 +133,7 @@
             [self addMinefields];
         }
         
-        if (self.planets != nil)
+        if (self.turn.planets != nil)
         {
             // connections go first for the Z-order
             [self addPlanetaryConnections];
@@ -149,7 +141,7 @@
             [self addPlanets];
         }
         
-        if (self.ships != nil)
+        if (self.turn.ships != nil)
         {
             [self addShips];
         }
@@ -179,7 +171,7 @@
 {
     NSMutableArray* svs = [NSMutableArray array];
     
-    for (NuShip* ship in self.ships)
+    for (NuShip* ship in self.turn.ships)
     {
         BOOL newShip = YES;
          
@@ -200,7 +192,7 @@
         {
             if ([layer isKindOfClass:[NuShipLayer class]])
             {
-                NuShipView* nsv = (NuShipView*)layer;
+                NuShipLayer* nsv = (NuShipLayer*)layer;
                 [nsv addShip:ship];
                 newShip = NO;
             }
@@ -209,7 +201,7 @@
         if (newShip == YES)
         {
             NuShipLayer* sv = [[[NuShipLayer alloc] initWithShip:ship] autorelease];
-            sv.player = self.player; 
+            sv.player = self.turn.player; 
             
             NSMutableArray* arr = [viewsByLocation objectForKey:locVal];
             [arr addObject:sv];
@@ -228,10 +220,10 @@
 {
     NSMutableArray* pvs = [NSMutableArray array];
     
-    for (NuPlanet* planet in self.planets)
+    for (NuPlanet* planet in self.turn.planets)
     {
         NuPlanetLayer* pv = [[[NuPlanetLayer alloc] initWithPlanet:planet] autorelease];
-        pv.player = self.player; 
+        pv.player = self.turn.player; 
         
         NSPoint loc;
         loc.x = planet.x;
@@ -259,13 +251,18 @@
 {
     NSMutableArray* connections = [NSMutableArray array];
     
-    for (int i=0; i < [planets count]; i++)
+    NSSortDescriptor *sd = [NSSortDescriptor sortDescriptorWithKey:@"planetId" ascending:YES];
+    NSArray* sorts = [NSArray arrayWithObjects:sd, nil];
+    
+    NSArray* orderedPlanets = [[self.turn.planets allObjects] sortedArrayUsingDescriptors:sorts];
+    
+    for (int i=0; i < [orderedPlanets count]; i++)
     {
-        NuPlanet* a = [planets objectAtIndex:i];
+        NuPlanet* a = [orderedPlanets objectAtIndex:i];
         
-        for (int j=i+1; j < [planets count]; j++)
+        for (int j=i+1; j < [orderedPlanets count]; j++)
         {
-            NuPlanet* b = [planets objectAtIndex:j];
+            NuPlanet* b = [orderedPlanets objectAtIndex:j];
             
             NSInteger x = a.x - b.x;
             NSInteger y = a.y - b.y;
@@ -291,7 +288,7 @@
 {
     NSMutableArray* isvs = [NSMutableArray array];
     
-    for (NuIonStorm* storm in ionStorms)
+    for (NuIonStorm* storm in self.turn.ionStorms)
     {
         NuIonStormLayer* isv = [[[NuIonStormLayer alloc] initWithIonStorm:storm] autorelease];
        
@@ -310,7 +307,7 @@
     for (NuMinefield* mf in turn.minefields)
     {
         NuMinefieldLayer* mfl = [[[NuMinefieldLayer alloc] initWithMinefield:mf] autorelease];
-        mfl.player = self.player;
+        mfl.player = self.turn.player;
         
         [self.layer addSublayer:mfl];
         [mfl setNeedsDisplay];
@@ -324,9 +321,9 @@
 {
     NuPlanet* probableHomeworld = nil;
     
-    for (NuPlanet* planet in planets)
+    for (NuPlanet* planet in self.turn.planets)
     {
-        if (planet.ownerId == player.playerId)
+        if (planet.ownerId == self.turn.player.playerId)
         {
             if (probableHomeworld == nil)
             {
@@ -366,7 +363,7 @@
     planetPopover.contentViewController = [ppc autorelease];
     planetPopover.delegate = ppc;
     planetPopover.appearance = NSPopoverAppearanceHUD;
-    ppc.currentTurn = self.turn.gameSettings.turn;
+    ppc.currentTurn = self.turn.settings.turnNumber;
     ppc.planet = planet;
     planetPopover.behavior = NSPopoverBehaviorTransient;
     ppc.child = planetPopover;
@@ -464,7 +461,7 @@
                
                 if ([pv hitTest:refLayerPt])
                 {
-                     NSLog(@"HIT! %@: (%ld, %ld)", pl.name, pl.x, pl.y);
+                     NSLog(@"HIT! %@: (%hd, %hd)", pl.name, pl.x, pl.y);
                     [entities addObject:pl];
                 }
             }
@@ -476,7 +473,7 @@
                 {
                     for (NuShip* ship in sv.ships)
                     {
-                        NSLog(@"HIT! %@: (%ld, %ld)", ship.name, ship.x, ship.y);
+                        NSLog(@"HIT! %@: (%hd, %hd)", ship.name, ship.x, ship.y);
                         [entities addObject:ship];
                     }
                 }
@@ -514,7 +511,6 @@
     [self scrollPoint:scrollPoint];
 }
 
-
 - (void)setColorScheme:(NuColorScheme*)cs
 {
     if (colorScheme != nil)
@@ -538,20 +534,6 @@
         mfl.colors = cs;
     }
 }
-
-//- (void)shipSelected:(NuShipView *)sender atLocation:(CGPoint)point
-//{
-//    startOrigin = [self visibleRect].origin;
-//    startPt = point;
-//    
-//    
-//    
-//    NSLog(@"Tapped Ship: %@ (%ld)", 
-//          sender.ship.name, 
-//          sender.ship.shipId);
-//}
-
-
 
 - (void)entitySelected:(NuMappableEntity *)entity
 {
