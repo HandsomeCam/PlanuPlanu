@@ -33,7 +33,7 @@
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row 
 {
     MuxCellView *result = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
-    NuMappableEntity *item = [entities objectAtIndex:row];
+    id item = [entities objectAtIndex:row];
     
     if ([item isKindOfClass:[NuPlanet class]])
     {

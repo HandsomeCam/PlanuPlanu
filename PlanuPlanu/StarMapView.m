@@ -488,13 +488,13 @@
     
     if ([entities count] > 1)
     {
-        NuMappableEntity* e = [entities objectAtIndex:0];
-        NSRect r = NSMakeRect(e.x, e.y, 1, 1);
+        id e = [entities objectAtIndex:0];
+        NSRect r = NSMakeRect([e x], [e y], 1, 1);
         [self showMultiplexPopover:entities at:r];
     }
     else if ([entities count] == 1)
     {
-        NuMappableEntity* e = [entities objectAtIndex:0];
+        id e = [entities objectAtIndex:0];
         [self entitySelected:e];
     }
     
@@ -535,7 +535,7 @@
     }
 }
 
-- (void)entitySelected:(NuMappableEntity *)entity
+- (void)entitySelected:(id)entity
 {
     [muxover.child close];
     

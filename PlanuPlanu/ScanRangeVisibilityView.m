@@ -61,18 +61,19 @@
     self.scanningEntities = [scanners allObjects];
     
     NSMutableArray* sorted = [self.scanningEntities mutableCopy];
-    [sorted sortUsingComparator:(NSComparator)^(NuMappableEntity* lhs, NuMappableEntity* rhs)
+    [sorted sortUsingComparator:(NSComparator)^(id lhs, id rhs)
      {
+         // TODO make planet and ship version
          NSComparisonResult retVal;
-         if (lhs.ownerId == rhs.ownerId)
+         if ([lhs ownerId] == [rhs ownerId])
          {
              retVal = NSOrderedSame;
          }
-         else if (lhs.ownerId == self.turn.player.playerId)
+         else if ([lhs ownerId] == self.turn.player.playerId)
          {
              retVal = NSOrderedDescending;
          }
-         else if (rhs.ownerId == self.turn.player.playerId)
+         else if ([rhs ownerId] == self.turn.player.playerId)
          {
              retVal = NSOrderedAscending;
          }
@@ -96,16 +97,16 @@
     [NSGraphicsContext setCurrentContext:nsGraphicsContext];
 
      
-    for (NuMappableEntity* entity in self.scanningEntities)
+    for (id entity in self.scanningEntities)
     {
         NSInteger scanVisibility = self.turn.settings.shipScanRange;
         
-        CGRect scanRect = CGRectMake(entity.x-scanVisibility, 
-                                     entity.y - scanVisibility,
+        CGRect scanRect = CGRectMake([entity x]-scanVisibility, 
+                                     [entity y] - scanVisibility,
                                      scanVisibility*2, 
                                      scanVisibility*2);
         
-        if (entity.ownerId == self.turn.player.playerId)
+        if ([entity ownerId] == self.turn.player.playerId)
         {
             [[NSColor colorWithDeviceRed:.1 green:.1 blue:.35 alpha:1] setFill]; 
         }

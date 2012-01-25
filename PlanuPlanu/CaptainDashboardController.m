@@ -104,7 +104,10 @@
     [progress startAnimation:self];
     [progress setHidden:NO];
     
-    [tr requestTurnFor:game.gameId With:apiKey andDelegate:self];
+//    [tr requestTurnFor:game.gameId With:apiKey andDelegate:self];
+    [tr updateAllTurnsForGame:game
+                      withKey:apiKey
+                  andDelegate:self];
 }
 
 - (void)loadFile:(id)sender

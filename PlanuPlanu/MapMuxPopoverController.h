@@ -11,7 +11,7 @@
 
 @protocol MapMuxDelegate <NSObject>
 
-- (void)entitySelected:(NuMappableEntity*)entity;
+- (void)entitySelected:(id)entity;
 
 @end
 
