@@ -307,11 +307,11 @@
         {
             if (msg.ownerId != turn.player.playerId)
             {
-                return [NSString stringWithFormat:@"[T:%ld] Outgoing", msg.turn];
+                return [NSString stringWithFormat:@"[T:%ld] Outgoing", msg.turnNumber];
             }
             else
             {
-                return [NSString stringWithFormat:@"[T:%ld] Incoming", msg.turn];
+                return [NSString stringWithFormat:@"[T:%ld] Incoming", msg.turnNumber];
             }
         }
         else
