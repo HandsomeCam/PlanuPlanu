@@ -12,6 +12,7 @@
 #import "MessagesWindowController.h"
 #import "FleetManifestWindowController.h"
 #import "TurnWarningWindowController.h"
+#import "TurnScorePanelController.h"
 
 @implementation StarMapController
 
@@ -49,6 +50,7 @@
     
     [commandDrawer open];
 }
+
 
 - (void)initToolBar
 {
@@ -336,6 +338,16 @@
     [[TurnWarningWindowController alloc] initWithWindowNibName:@"TurnWarningWindow"];
     twwc.turn = self.turn;
     [twwc showWindow:self];
+}
+
+- (IBAction)scoreClicked:(id)sender
+{
+    TurnScorePanelController* tspc = [[TurnScorePanelController alloc]
+                                      initWithWindowNibName:@"TurnScorePanel"];
+    tspc.game = self.turn.game;
+    tspc.colors = self.activeScheme;
+    
+    [tspc showWindow:nil];
 }
 
 @end

@@ -42,6 +42,10 @@
 		7E97ED3214A3D84100FD46DD /* Preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E97ED3114A3D84100FD46DD /* Preferences.plist */; };
 		7E97ED3914A3DEE600FD46DD /* AGKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E97ED3814A3DEE600FD46DD /* AGKeychain.m */; };
 		7E97ED3C14A3ED4900FD46DD /* CaptainDashboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E97ED3B14A3ED4900FD46DD /* CaptainDashboardController.m */; };
+		7E9930E214DE2D8F00A463EE /* TurnScorePanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E9930E114DE2D8F00A463EE /* TurnScorePanel.xib */; };
+		7E9930E514DE2E4E00A463EE /* TurnScorePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9930E414DE2E4E00A463EE /* TurnScorePanelController.m */; };
+		7E9930F614DE30F600A463EE /* CorePlot.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7E9930F014DE301500A463EE /* CorePlot.framework */; };
+		7E9930F914DE3B1100A463EE /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E9930F814DE3B1100A463EE /* CorePlot.framework */; };
 		7EA504AD14A5490B000B1615 /* TurnRequestTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA504AC14A5490B000B1615 /* TurnRequestTest.m */; };
 		7EA504B714A573A3000B1615 /* StarMap.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EA504B614A573A3000B1615 /* StarMap.xib */; };
 		7EB9CC0C14AAEDC500A6ECB3 /* ShipDatabaseTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB9CC0B14AAEDC500A6ECB3 /* ShipDatabaseTest.m */; };
@@ -84,6 +88,27 @@
 			remoteGlobalIDString = 7EB9CC1814ABB4D700A6ECB3;
 			remoteInfo = PlanuKit;
 		};
+		7E9930EF14DE301500A463EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E9930E614DE301500A463EE /* CorePlot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = CorePlot;
+		};
+		7E9930F114DE301500A463EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E9930E614DE301500A463EE /* CorePlot.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0730F600109492D800E95162;
+			remoteInfo = UnitTests;
+		};
+		7E9930F314DE307B00A463EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E9930E614DE301500A463EE /* CorePlot.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = CorePlot;
+		};
 		7EB9CC4F14ABB4DA00A6ECB3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7EB9CC4A14ABB4D800A6ECB3 /* PlanuKit.xcodeproj */;
@@ -114,6 +139,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				7E9930F614DE30F600A463EE /* CorePlot.framework in CopyFiles */,
 				7E6995C414BD0B94007FDFD3 /* PlanuKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,6 +199,11 @@
 		7E97ED3A14A3ED4900FD46DD /* CaptainDashboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptainDashboardController.h; sourceTree = "<group>"; };
 		7E97ED3B14A3ED4900FD46DD /* CaptainDashboardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptainDashboardController.m; sourceTree = "<group>"; };
 		7E97ED3D14A3EDD700FD46DD /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
+		7E9930E114DE2D8F00A463EE /* TurnScorePanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TurnScorePanel.xib; sourceTree = "<group>"; };
+		7E9930E314DE2E4E00A463EE /* TurnScorePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurnScorePanelController.h; sourceTree = "<group>"; };
+		7E9930E414DE2E4E00A463EE /* TurnScorePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TurnScorePanelController.m; sourceTree = "<group>"; };
+		7E9930E614DE301500A463EE /* CorePlot.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CorePlot.xcodeproj; path = "core-plot/framework/CorePlot.xcodeproj"; sourceTree = "<group>"; };
+		7E9930F814DE3B1100A463EE /* CorePlot.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CorePlot.framework; path = "core-plot/build/Debug/CorePlot.framework"; sourceTree = "<group>"; };
 		7EA504AB14A5490B000B1615 /* TurnRequestTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurnRequestTest.h; sourceTree = "<group>"; };
 		7EA504AC14A5490B000B1615 /* TurnRequestTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TurnRequestTest.m; sourceTree = "<group>"; };
 		7EA504B614A573A3000B1615 /* StarMap.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StarMap.xib; sourceTree = "<group>"; };
@@ -240,6 +271,7 @@
 				7E15E64214B7BC8F00650246 /* QuartzCore.framework in Frameworks */,
 				7EC24C9614A2CC9E0081022A /* Cocoa.framework in Frameworks */,
 				7E6995C314BD0B3C007FDFD3 /* PlanuKit.framework in Frameworks */,
+				7E9930F914DE3B1100A463EE /* CorePlot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +341,15 @@
 			name = Layers;
 			sourceTree = "<group>";
 		};
+		7E9930E714DE301500A463EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E9930F014DE301500A463EE /* CorePlot.framework */,
+				7E9930F214DE301500A463EE /* UnitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7EA504B514A564A7000B1615 /* User Interfaces */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +367,7 @@
 				7E698F7B14BF6032008B0F95 /* MessagesWindow.xib */,
 				7EE440F214C36973006745D7 /* FleetManifestWindow.xib */,
 				7E20647F14C54DB100E7A484 /* TurnWarningWindow.xib */,
+				7E9930E114DE2D8F00A463EE /* TurnScorePanel.xib */,
 			);
 			name = "User Interfaces";
 			sourceTree = "<group>";
@@ -342,6 +384,7 @@
 		7EC24C8614A2CC9E0081022A = {
 			isa = PBXGroup;
 			children = (
+				7E9930E614DE301500A463EE /* CorePlot.xcodeproj */,
 				7EB9CC4A14ABB4D800A6ECB3 /* PlanuKit.xcodeproj */,
 				7EC24C9B14A2CC9E0081022A /* PlanuPlanu */,
 				7EC24CB814A2CC9F0081022A /* PlanuPlanuTests */,
@@ -362,6 +405,7 @@
 		7EC24C9414A2CC9E0081022A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E9930F814DE3B1100A463EE /* CorePlot.framework */,
 				7E698F8514C0E1A9008B0F95 /* WebKit.framework */,
 				7E15E64114B7BC8F00650246 /* QuartzCore.framework */,
 				7EC24C9514A2CC9E0081022A /* Cocoa.framework */,
@@ -478,6 +522,8 @@
 				7E2908CE14ABC66A00B11972 /* StarMapController.m */,
 				7E20647C14C54D9100E7A484 /* TurnWarningWindowController.h */,
 				7E20647D14C54D9100E7A484 /* TurnWarningWindowController.m */,
+				7E9930E314DE2E4E00A463EE /* TurnScorePanelController.h */,
+				7E9930E414DE2E4E00A463EE /* TurnScorePanelController.m */,
 			);
 			name = "Window Controllers";
 			sourceTree = "<group>";
@@ -497,6 +543,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7E9930F414DE307B00A463EE /* PBXTargetDependency */,
 				7E6995C614BD0BBF007FDFD3 /* PBXTargetDependency */,
 			);
 			name = PlanuPlanu;
@@ -544,6 +591,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 7E9930E714DE301500A463EE /* Products */;
+					ProjectRef = 7E9930E614DE301500A463EE /* CorePlot.xcodeproj */;
+				},
+				{
 					ProductGroup = 7EB9CC4B14ABB4D800A6ECB3 /* Products */;
 					ProjectRef = 7EB9CC4A14ABB4D800A6ECB3 /* PlanuKit.xcodeproj */;
 				},
@@ -557,6 +608,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		7E9930F014DE301500A463EE /* CorePlot.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CorePlot.framework;
+			remoteRef = 7E9930EF14DE301500A463EE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7E9930F214DE301500A463EE /* UnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UnitTests.octest;
+			remoteRef = 7E9930F114DE301500A463EE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		7EB9CC5014ABB4DA00A6ECB3 /* PlanuKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -600,6 +665,7 @@
 				7E20648014C54DB100E7A484 /* TurnWarningWindow.xib in Resources */,
 				7E09C54814C8BA8D00CE7E9F /* minefields.png in Resources */,
 				7E09C54A14C8BB3B00CE7E9F /* cmd.png in Resources */,
+				7E9930E214DE2D8F00A463EE /* TurnScorePanel.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +732,7 @@
 				7E86FDC714C4D5AC0062C0C2 /* NuShip+WeaponDisplay.m in Sources */,
 				7E20647E14C54D9100E7A484 /* TurnWarningWindowController.m in Sources */,
 				7E09C54114C7B93400CE7E9F /* TurnWarning.m in Sources */,
+				7E9930E514DE2E4E00A463EE /* TurnScorePanelController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,6 +755,11 @@
 			isa = PBXTargetDependency;
 			name = PlanuKit;
 			targetProxy = 7E6995C514BD0BBF007FDFD3 /* PBXContainerItemProxy */;
+		};
+		7E9930F414DE307B00A463EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CorePlot;
+			targetProxy = 7E9930F314DE307B00A463EE /* PBXContainerItemProxy */;
 		};
 		7EC24CB714A2CC9F0081022A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -780,13 +852,19 @@
 		7EC24CC514A2CC9F0081022A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/core-plot/framework/**",
 					"$(inherited)",
-					"\"$(SRCROOT)/PlanuKit/build/Debug\"",
+					"\"$(SRCROOT)/PlanuKit\"/**",
+					"\"$(SRCROOT)/core-plot/build/Debug\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PlanuPlanu/PlanuPlanu-Prefix.pch";
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/core-plot/framework/**",
+					"$(SRCROOT)/PlanuKit/**",
+				);
 				INFOPLIST_FILE = "PlanuPlanu/PlanuPlanu-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
@@ -798,13 +876,19 @@
 		7EC24CC614A2CC9F0081022A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/core-plot/framework/**",
 					"$(inherited)",
-					"\"$(SRCROOT)/PlanuKit/build/Debug\"",
+					"\"$(SRCROOT)/PlanuKit\"/**",
+					"\"$(SRCROOT)/core-plot/build/Debug\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PlanuPlanu/PlanuPlanu-Prefix.pch";
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/core-plot/framework/**",
+					"$(SRCROOT)/PlanuKit/**",
+				);
 				INFOPLIST_FILE = "PlanuPlanu/PlanuPlanu-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "";

@@ -73,7 +73,9 @@
 - (IBAction)minefieldToolBarClicked:(id)sender;
 - (IBAction)commandCenterClicked:(id)sender;
 
+// Command Center
 - (IBAction)communicationCenterClicked:(id)sender;
+- (IBAction)scoreClicked:(id)sender;
 
 - (IBAction)loadColorScheme:(id)sender;
 - (void)initColorScheme;
