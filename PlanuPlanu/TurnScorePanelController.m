@@ -14,13 +14,14 @@
 @interface TurnScorePanelController (private)
 
 - (void)graphPlayerShips;
+- (void)graphPlayerPlanets;
 - (CPTPlot*)graphShipsForPlayer:(NuPlayer*)player;
 
 @end
 
 @implementation TurnScorePanelController
 
-@synthesize graphPlaceholder, game, colors;
+@synthesize graphPlaceholder, game, colors, graphSelector;
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -42,6 +43,101 @@
     
 }
 
+- (void)graphPlayerPlanets
+{
+    
+    graph = [[CPTXYGraph alloc] initWithFrame: self.graphPlaceholder.bounds];
+    
+    CPTGraphHostingView *hostingView = self.graphPlaceholder;
+    hostingView.hostedGraph = graph;
+    graph.paddingLeft = 10.0;
+    graph.paddingTop = 10.0;
+    graph.paddingRight = 10.0;
+    graph.paddingBottom = 10.0;
+    
+    graph.backgroundColor = [[CPTColor blackColor] cgColor];
+    
+    NSInteger turnCount = [self.game.turns count];
+    NSLog(@"TurnCount: %ld", turnCount);
+    
+    NSInteger maxPlanets = 0;
+    
+    for (NuTurn* trn in self.game.turns)
+    {
+        for (NuScore* scr in trn.scores)
+        {
+            if (scr.planets > maxPlanets)
+            {
+                maxPlanets = scr.planets;
+            }
+        }
+    }
+    
+    
+    CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)graph.defaultPlotSpace;
+    plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(-2)
+                                                    length:CPTDecimalFromFloat(turnCount+2)];
+    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(-5) 
+                                                    length:CPTDecimalFromFloat(maxPlanets+5)];
+    
+    CPTXYAxisSet *axisSet = (CPTXYAxisSet *)graph.axisSet;
+    
+    CPTXYAxis *x = axisSet.xAxis;
+    
+    CPTMutableLineStyle *axisStyle = [CPTMutableLineStyle lineStyle];
+    axisStyle.lineColor = [CPTColor grayColor];
+    
+    
+    CPTMutableTextStyle* ts = [CPTMutableTextStyle textStyle];
+    ts.color = [CPTColor whiteColor];
+    
+    x.axisLineStyle = axisStyle;
+    x.labelTextStyle = ts;
+    x.majorIntervalLength = CPTDecimalFromFloat(1);
+    x.minorTicksPerInterval = 0;
+    x.borderWidth = 1;
+    x.labelExclusionRanges = [NSArray arrayWithObjects:
+                              [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(-10) 
+                                                           length:CPTDecimalFromFloat(10)], 
+                              nil];
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setMaximumFractionDigits:0];
+    
+    x.majorTickLength = 1.0;
+    x.labelFormatter = formatter;
+    
+    CPTXYAxis *y = axisSet.yAxis;
+    
+    NSInteger tickInterval = 1;
+    if (maxPlanets > 65)
+    {
+        tickInterval = 2;
+    }
+    if (maxPlanets > 100)
+    {
+        tickInterval = 5;
+    }
+    
+    y.majorIntervalLength = CPTDecimalFromFloat(tickInterval);
+    y.minorTicksPerInterval = 0; 
+    y.labelTextStyle = ts;
+    y.axisLineStyle = axisStyle;
+    y.labelFormatter = formatter;
+    y.labelExclusionRanges = [NSArray arrayWithObjects:
+                              [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(-10) 
+                                                           length:CPTDecimalFromFloat(10)], 
+                              nil];
+    
+    NuTurn* trn = [self.game.turns anyObject];
+    
+    for (NuPlayer* player in trn.players)
+    {
+        [graph addPlot:[self graphShipsForPlayer:player]];
+    }
+}
+
+
 - (void)graphPlayerShips
 {
     
@@ -59,11 +155,25 @@
     NSInteger turnCount = [self.game.turns count];
     NSLog(@"TurnCount: %ld", turnCount);
     
+    NSInteger maxShips = 0;
+    
+    for (NuTurn* trn in self.game.turns)
+    {
+        for (NuScore* scr in trn.scores)
+        {
+            if (scr.freighters + scr.capitalShips > maxShips)
+            {
+                maxShips = scr.freighters + scr.capitalShips;
+            }
+        }
+    }
+    
+    
     CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)graph.defaultPlotSpace;
     plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(-2)
                                                     length:CPTDecimalFromFloat(turnCount+2)];
-    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(-1) 
-                                                    length:CPTDecimalFromFloat(25)];
+    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(-5) 
+                                                    length:CPTDecimalFromFloat(maxShips+5)];
  
     CPTXYAxisSet *axisSet = (CPTXYAxisSet *)graph.axisSet;
     
@@ -94,7 +204,17 @@
     
     CPTXYAxis *y = axisSet.yAxis;
 
-    y.majorIntervalLength = CPTDecimalFromFloat(1);
+    NSInteger tickInterval = 1;
+    if (maxShips > 65)
+    {
+        tickInterval = 2;
+    }
+    if (maxShips > 100)
+    {
+        tickInterval = 5;
+    }
+    
+    y.majorIntervalLength = CPTDecimalFromFloat(tickInterval);
     y.minorTicksPerInterval = 0; 
     y.labelTextStyle = ts;
     y.axisLineStyle = axisStyle;
@@ -116,6 +236,8 @@
 {
     CPTScatterPlot *shipPlot = [[[CPTScatterPlot alloc]
                                      initWithFrame:graph.bounds] autorelease];
+    
+    
     shipPlot.identifier = [NSString stringWithFormat:@"%ld", player.playerId];
 
     CPTMutableLineStyle* ls = [[[CPTMutableLineStyle alloc] init] autorelease];
@@ -148,7 +270,7 @@
                recordIndex:(NSUInteger)index 
 {
    
-    NSLog(@"Field Enum: %ld", fieldEnum);
+    //NSLog(@"Field Enum: %ld", fieldEnum);
     if (CPTScatterPlotFieldY == fieldEnum)
     {
         NuTurn* thisTurn = [self.game getTurnNumber:index+1];
@@ -167,11 +289,52 @@
             }
         }
         
-        return [NSNumber numberWithInteger:thisPlayer.priorityPoints];
+        NSInteger plotValue = 0;
+        NuScore* thisScore;
+        
+        for (NuScore* score in thisTurn.scores)
+        {
+            if (score.ownerId == thisPlayer.playerId)
+            {
+                thisScore = score;
+            }
+        }
+        
+        if (graphSelector.selectedSegment == 0) // All ships
+        {
+            plotValue = thisScore.capitalShips + thisScore.freighters;
+        }
+        else if (graphSelector.selectedSegment == 1) // Planets
+        {
+            plotValue = thisScore.planets;
+        }
+        
+        return [NSNumber numberWithInteger:plotValue];
     }
 
     // X-Axis is turn number
     return [NSNumber numberWithInteger:index+1];
+}
+
+- (IBAction)graphSelectionChanged:(id)sender
+{
+    for (CPTPlot* plot in graph.allPlots)
+    {
+        [graph removePlot:plot];
+    }
+    
+    if (graphSelector.selectedSegment == 0) // Total Ships
+    {
+        [self graphPlayerShips];
+    }
+    else if (graphSelector.selectedSegment == 1) // Planets
+    {
+        [self graphPlayerPlanets];
+    }
+    else if (graphSelector.selectedSegment == 2) // Military
+    {
+        
+    }
 }
 
 @end

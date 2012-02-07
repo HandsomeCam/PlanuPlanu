@@ -15,6 +15,7 @@
 {
     CPTXYGraph *graph;
     CPTGraphHostingView* graphPlaceholder;
+    NSSegmentedControl* graphSelector;
     NuGame* game;
     NuColorScheme* colors;
 }
@@ -22,6 +23,9 @@
 @property (nonatomic, retain) NuGame* game;
 @property (nonatomic, retain) NuColorScheme* colors;
 
+@property (nonatomic, assign) IBOutlet NSSegmentedControl* graphSelector;
 @property (nonatomic, assign) IBOutlet CPTGraphHostingView* graphPlaceholder;
+
+- (IBAction)graphSelectionChanged:(id)sender;
 
 @end
