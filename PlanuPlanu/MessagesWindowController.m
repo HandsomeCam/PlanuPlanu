@@ -12,7 +12,7 @@
 @implementation MessagesWindowController
 
 @synthesize outline, turn, systemMessages, playerMessages;
-@synthesize headline, body;
+@synthesize headline, body, parentWindow;
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -87,6 +87,55 @@
     
 }
 
+- (void)webView:(WebView *)sender
+    decidePolicyForNavigationAction:(NSDictionary *)actionInformation
+      request:(NSURLRequest *)request 
+        frame:(WebFrame *)frame
+    decisionListener:(id<WebPolicyDecisionListener>)listener
+{
+    NSURL* url = [request URL];
+    NSString* scheme = [url scheme];
+    NSString* fragment = [url fragment];
+
+    NSScanner *scanner = [NSScanner scannerWithString:fragment];
+    int hostId = 0;
+    [scanner scanInt:&hostId];
+    
+    if ([scheme isEqualToString:@"planet"])
+    {
+        for (NuPlanet* planet in self.turn.planets)
+        {
+            if (planet.planetId == hostId)
+            {
+                [self.parentWindow scrollToPlanet:planet];
+            }
+        }
+    }
+    else if ([scheme isEqualToString:@"ship"])
+    {
+        for (NuShip* ship in self.turn.ships)
+        {
+            if (ship.shipId == hostId)
+            {
+                [self.parentWindow scrollToShip:ship];
+            }
+        }
+    }
+    else if ([scheme isEqualToString:@"sorp"])
+    {
+        // TODO: figure out how to best mux this
+        for (NuPlanet* planet in self.turn.planets)
+        {
+            if (planet.planetId == hostId)
+            {
+                [self.parentWindow scrollToPlanet:planet];
+            }
+        }
+    }
+    
+    [listener use];
+}
+
 - (void)windowDidLoad
 {
     [super windowDidLoad];
@@ -96,6 +145,50 @@
     [outline expandItem:nil expandChildren:YES];
     headline.stringValue = @"";
     [[body mainFrame] loadHTMLString:@"" baseURL:nil];
+    
+    body.policyDelegate = self;
+}
+
+- (NSString*)addSmartLinksToBody:(NSString*)messageBody
+{
+    NSString* retVal = messageBody;
+    
+    NSString* planetOrShipPattern = @"((ID| )#\\d{1,3})";
+    NSString* planetPattern = @"(P#\\d{1,3})";
+    NSString* shipPattern = @"(S#\\d{1,3})";
+    
+    NSRegularExpression* regex = [[NSRegularExpression alloc]
+                                  initWithPattern:planetOrShipPattern 
+                                  options:NSRegularExpressionCaseInsensitive error:nil];
+                                                                                       
+    retVal = 
+        [regex stringByReplacingMatchesInString:retVal
+                                        options:0
+                                          range:NSMakeRange(0, [retVal length])
+                                   withTemplate:@"<a href=\"sorp://$1\">$1</a>"];
+    
+    regex = [[NSRegularExpression alloc]
+             initWithPattern:planetPattern 
+             options:NSRegularExpressionCaseInsensitive error:nil];
+    
+    retVal = 
+        [regex stringByReplacingMatchesInString:retVal
+                                    options:0
+                                      range:NSMakeRange(0, [retVal length])
+                               withTemplate:@"<a href=\"planet://$1\">$1</a>"];
+    
+    regex = [[NSRegularExpression alloc]
+             initWithPattern:shipPattern 
+             options:NSRegularExpressionCaseInsensitive error:nil];
+    
+    retVal = 
+        [regex stringByReplacingMatchesInString:retVal
+                                    options:0
+                                      range:NSMakeRange(0, [retVal length])
+                               withTemplate:@"<a href=\"ship://$1\">$1</a>"];
+    [regex release];
+    
+    return retVal;
 }
 
 - (void)outlineViewSelectionDidChange:(NSNotification *)notification 
@@ -114,7 +207,8 @@
             headline.stringValue = msg.headline;
             
             NSString *html = [NSString stringWithFormat:
-                              @"<html><style type=\"text/css\">body { font-family: \"Lucida Grande\"; }</style><body>%@</body></html>", msg.body];
+                              @"<html><style type=\"text/css\">body { font-family: \"Lucida Grande\"; }</style><body>%@</body></html>", 
+                              [self addSmartLinksToBody:msg.body]];
  
             [[body mainFrame] loadHTMLString:html baseURL:nil];
 

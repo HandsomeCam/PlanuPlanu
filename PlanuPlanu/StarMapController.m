@@ -171,6 +171,7 @@
 {
     MessagesWindowController* mwc = [[MessagesWindowController alloc] initWithWindowNibName:@"MessagesWindow"];
     mwc.turn = self.turn;
+    mwc.parentWindow = self;
     [mwc showWindow:self];
 //    [mwc release];
 }
@@ -348,6 +349,16 @@
     tspc.colors = self.activeScheme;
     
     [tspc showWindow:nil];
+}
+
+- (void)scrollToPlanet:(NuPlanet*)planet
+{
+    [starMap scrollToPlanet:planet];
+}
+
+- (void)scrollToShip:(NuShip*)ship
+{
+    [starMap scrollToShip:ship];
 }
 
 @end

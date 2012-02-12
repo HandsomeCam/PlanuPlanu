@@ -84,4 +84,8 @@
 - (IBAction)ppvr:(id)sender;
 
 - (IBAction)showTurnWarnings:(id)sender;
+
+- (void)scrollToPlanet:(NuPlanet*)planet;
+- (void)scrollToShip:(NuShip*)ship;
+
 @end
