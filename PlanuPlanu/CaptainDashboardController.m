@@ -69,7 +69,9 @@
 
 - (void)requestFailedWith:(NSString*) Reason
 {
-    // TODO: notify user
+    loginMessage.stringValue = [NSString stringWithFormat:@"%@", Reason];
+    self.games = [NuGame allGames];
+    [gameList reloadData];
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
@@ -181,9 +183,39 @@
     [progress setHidden:YES];
     
     NSAlert* alert = [[NSAlert alloc] init];
-    alert.messageText = Reason;
+    alert.messageText = [NSString stringWithFormat:@"%@\nUsing cached data", Reason];
     [alert runModal];
     [alert release];
+    
+    StarMapController* smc = [[StarMapController alloc] initWithWindowNibName:@"StarMap"];
+    NSInteger sRow = gameList.selectedRow;
+    
+    if (sRow < 0)
+    {
+        return;
+    }
+    
+    NuGame* game = [games objectAtIndex:sRow];
+    
+    NuTurn* turn = nil;
+    for (NuTurn* t in game.turns)
+    {
+        if (turn == nil)
+        {
+            turn = t;
+        }
+        else
+        {
+            if (turn.settings.turnNumber < t.settings.turnNumber)
+            {
+                turn = t;
+            }
+        }
+    }
+    
+    smc.turn = turn;
+    [smc showWindow:self];
+
 }
 
 @end
