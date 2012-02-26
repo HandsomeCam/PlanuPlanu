@@ -72,6 +72,7 @@
 		7ED904C814BD504100F189E5 /* ShipPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED904C614BD504100F189E5 /* ShipPopoverController.m */; };
 		7EE440F014C3693A006745D7 /* FleetManifestWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE440EF14C3693A006745D7 /* FleetManifestWindowController.m */; };
 		7EE440F314C36973006745D7 /* FleetManifestWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EE440F214C36973006745D7 /* FleetManifestWindow.xib */; };
+		7EE6F74214FA8F39004F4249 /* NOTICE in Resources */ = {isa = PBXBuildFile; fileRef = 7EE6F74114FA8F39004F4249 /* NOTICE */; };
 		7EF364ED14AE3163009BBE86 /* ShipDatabaseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EF364EC14AE3163009BBE86 /* ShipDatabaseWindow.xib */; };
 		7EF364F014AE4F16009BBE86 /* ShipDatabaseWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF364EF14AE4F16009BBE86 /* ShipDatabaseWindowController.m */; };
 		7EF364F314AE9CBF009BBE86 /* NuHull+Sorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF364F214AE9CBF009BBE86 /* NuHull+Sorting.m */; };
@@ -249,6 +250,7 @@
 		7EE440EE14C3693A006745D7 /* FleetManifestWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FleetManifestWindowController.h; sourceTree = "<group>"; };
 		7EE440EF14C3693A006745D7 /* FleetManifestWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FleetManifestWindowController.m; sourceTree = "<group>"; };
 		7EE440F214C36973006745D7 /* FleetManifestWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FleetManifestWindow.xib; sourceTree = "<group>"; };
+		7EE6F74114FA8F39004F4249 /* NOTICE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NOTICE; sourceTree = "<group>"; };
 		7EF364EC14AE3163009BBE86 /* ShipDatabaseWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShipDatabaseWindow.xib; sourceTree = "<group>"; };
 		7EF364EE14AE4F16009BBE86 /* ShipDatabaseWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShipDatabaseWindowController.h; sourceTree = "<group>"; };
 		7EF364EF14AE4F16009BBE86 /* ShipDatabaseWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShipDatabaseWindowController.m; sourceTree = "<group>"; };
@@ -474,6 +476,7 @@
 				7EC24CA114A2CC9E0081022A /* main.m */,
 				7EC24CA314A2CC9E0081022A /* PlanuPlanu-Prefix.pch */,
 				7EC24CA414A2CC9E0081022A /* Credits.rtf */,
+				7EE6F74114FA8F39004F4249 /* NOTICE */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 				7E09C54814C8BA8D00CE7E9F /* minefields.png in Resources */,
 				7E09C54A14C8BB3B00CE7E9F /* cmd.png in Resources */,
 				7E9930E214DE2D8F00A463EE /* TurnScorePanel.xib in Resources */,
+				7EE6F74214FA8F39004F4249 /* NOTICE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
