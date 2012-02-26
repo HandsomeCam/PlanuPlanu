@@ -20,6 +20,7 @@
 
 #import "NuColorScheme.h"
 #import "NSColor+Serialize.h"
+#import "PlanuPlanuAppDelegate.h"
 
 @implementation NuColorScheme
 
@@ -169,17 +170,15 @@
 {
     NSMutableArray* pa = [NSMutableArray arrayWithCapacity:[self.turn.players count]];
     
-    for (int p=0; p < [pa count]; p++)
+    for (int p=0; p < [self.turn.players count]; p++)
     {
         if ([scheme count] > p)
         {
-            [pa replaceObjectAtIndex:p 
-                      withObject:[scheme objectAtIndex:p]];
+            [pa addObject:[scheme objectAtIndex:p]];
         }
         else
         {
-            [pa replaceObjectAtIndex:p 
-                          withObject:[NSColor grayColor]];
+            [pa addObject:[NSColor grayColor]];
         }
     }
     
@@ -212,6 +211,22 @@
     
     [colors replaceObjectAtIndex:playerId-1
                       withObject:color];
+}
+
+- (void)serializeToPlist:(NSString *)filename
+{
+    NSMutableArray* export = [NSMutableArray array];
+    [export addObject:@"PLYR"];
+    
+    for (NSColor* color in colors)
+    {
+        [export addObject:[color serialize]];
+    }
+    
+    NSString* exportPath = [PlanuPlanuAppDelegate sharedDocumentsPath];
+    exportPath = [exportPath stringByAppendingPathComponent:filename];
+    
+    [export writeToFile:exportPath atomically:YES];
 }
 
 @end

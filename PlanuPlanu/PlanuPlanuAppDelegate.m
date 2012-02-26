@@ -39,4 +39,34 @@
 
 }
 
++ (NSString*)sharedDocumentsPath 
+{
+    static NSString *SharedDocumentsPath = nil;
+    if (SharedDocumentsPath)
+        return SharedDocumentsPath;
+    
+    // Compose a path to the <Library>/Database directory
+    NSString *libraryPath = [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0] retain];
+    SharedDocumentsPath = [[libraryPath stringByAppendingPathComponent:@"PlanuPlanu"] retain];
+    
+    // Ensure the database directory exists
+    NSFileManager *manager = [NSFileManager defaultManager];
+    BOOL isDirectory;
+    if (![manager fileExistsAtPath:SharedDocumentsPath isDirectory:&isDirectory] || !isDirectory) 
+    {
+        NSError *error = nil;
+        NSDictionary *attr = [NSDictionary dictionary];
+        [manager createDirectoryAtPath:SharedDocumentsPath
+           withIntermediateDirectories:YES
+                            attributes:attr
+                                 error:&error];
+        if (error)
+        {
+            NSLog(@"Error creating directory path: %@", [error localizedDescription]);
+        }
+    }
+    
+    return SharedDocumentsPath;
+}
+
 @end

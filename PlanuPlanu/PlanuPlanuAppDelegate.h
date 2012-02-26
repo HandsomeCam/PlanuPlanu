@@ -26,4 +26,6 @@
 
 @property (assign) IBOutlet NSWindow *window;
 
++ (NSString*)sharedDocumentsPath;
+
 @end

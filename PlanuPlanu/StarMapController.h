@@ -42,7 +42,7 @@
     NSWindow* colorSchemeWindow;
     NSTableView* colorSchemeTableView;
     NSPopUpButton* loadScheme;
-    NSArray* colorSchemes;
+    NSMutableArray* colorSchemes;
     NuColorScheme* activeScheme;
     
     NSPopover* muxPopover;
@@ -84,6 +84,8 @@
 - (IBAction)visibilityToolBarClicked:(id)sender;
 - (IBAction)minefieldToolBarClicked:(id)sender;
 - (IBAction)commandCenterClicked:(id)sender;
+
+- (IBAction)saveColorScheme:(id)sender;
 
 // Command Center
 - (IBAction)communicationCenterClicked:(id)sender;

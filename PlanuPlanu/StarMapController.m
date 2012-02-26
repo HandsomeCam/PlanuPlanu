@@ -25,6 +25,13 @@
 #import "FleetManifestWindowController.h"
 #import "TurnWarningWindowController.h"
 #import "TurnScorePanelController.h"
+#import "PlanuPlanuAppDelegate.h"
+
+@interface StarMapController (private)
+
+- (void)loadUserColorScheme;
+
+@end
 
 @implementation StarMapController
 
@@ -85,6 +92,7 @@
     starMap.colorScheme = self.activeScheme;
 
     starMap.turn = turn;
+    self.window.title = [NSString stringWithFormat:@"Star Map - Turn %d", self.turn.settings.turnNumber];
     
     [starMap setScanRangeHidden:YES];
     [starMap setConnectionsHidden:YES];
@@ -102,6 +110,8 @@
     
     NSDictionary *schemes = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
     
+    
+    
     NSMutableArray* colors = [NSMutableArray array];
     
     for (NSString *key in [schemes allKeys])
@@ -118,7 +128,30 @@
     self.colorSchemes = colors;
     self.activeScheme = [colorSchemes objectAtIndex:0];
     
+    [self loadUserColorScheme];
+    
     [schemes release];
+}
+
+// TODO: this may make more sense in the NuColorScheme object
+- (void)loadUserColorScheme
+{
+    NSString* sdPath = [PlanuPlanuAppDelegate sharedDocumentsPath];
+    
+    NSString* usercolorFile = [sdPath stringByAppendingPathComponent:@"UserColor.plist"];
+    
+    // Check if the file exists
+    NSFileManager *manager = [NSFileManager defaultManager];
+    BOOL isDirectory;
+    if ([manager fileExistsAtPath:sdPath isDirectory:&isDirectory] == YES) 
+    {
+        NSArray* colorDef = [NSArray arrayWithContentsOfFile:usercolorFile];
+        NuColorScheme *userScheme = [[[NuColorScheme alloc] initWithArray:colorDef forTurn:self.turn] autorelease];
+        userScheme.name = @"User Colors";
+        [colorSchemes addObject:userScheme];
+        self.activeScheme = userScheme;
+    }
+    
 }
 
 - (IBAction)colorToolBarClicked:(id)sender
@@ -128,6 +161,7 @@
     for (NuColorScheme* cs in self.colorSchemes)
     { 
         [self.loadScheme addItemWithTitle:cs.name];
+        [self.loadScheme selectItemAtIndex:[[self.loadScheme itemArray] count]-1];
     }
       
     
@@ -290,33 +324,7 @@
 
 - (void)showMultiplexPopover:(NSArray *)entities at:(NSRect)popFrame
 {
-    
-//    NSPopover* muxPopover = [[NSPopover alloc] init];
-//    //[muxPopover setContentSize:NSMakeSize(50, 50)];
-//    //    CGRect planetRect = CGRectMake(planet.x - 5, planet.y - 5, 10, 10);
-//   
-//    NSView *anchor = [[NSView alloc] initWithFrame:popFrame];
-//    [self addSubview:anchor];
-//    
-//    MapMuxPopoverController* mmpc = [[MapMuxPopoverController alloc] initWithNibName:@"MapMuxPopover" bundle:nil];
-//    
-//    [muxPopover setAnimates:YES];
-//    muxPopover.contentViewController = [mmpc autorelease];
-//    muxPopover.delegate = mmpc;
-//    
-//    // TODO: add shit
-//    
-//    muxPopover.behavior = NSPopoverBehaviorTransient;
-//    // mmpc.child = planetPopover;
-//    
-//    NSLog(@"Show it!");
-//    [muxPopover showRelativeToRect:anchor.frame
-//                            ofView:anchor 
-//                     preferredEdge:NSMinYEdge];
-//    muxover = [mmpc retain];
-//    
-    
-//    [self.muxPopover showRelativeToRect:starMap.bounds ofView:starMap preferredEdge:NSMinXEdge];
+    // Required by protocol, probably unnecessary
 }
  
 - (BOOL)drawerShouldOpen:(NSDrawer *)sender
@@ -360,6 +368,11 @@
     tspc.colors = self.activeScheme;
     
     [tspc showWindow:nil];
+}
+
+- (IBAction)saveColorScheme:(id)sender
+{
+    [activeScheme serializeToPlist:@"UserColor.plist"];
 }
 
 @end

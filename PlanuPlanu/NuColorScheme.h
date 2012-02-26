@@ -42,5 +42,6 @@
 - (void)initRacialColorScheme:(NSArray*)scheme;
 - (void)initXenophobicColorScheme:(NSArray*)scheme;
 - (void)initPlayerOrderColorScheme:(NSArray*)scheme;
+- (void)serializeToPlist:(NSString *)filename;
 
 @end

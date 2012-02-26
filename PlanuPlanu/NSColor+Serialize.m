@@ -49,11 +49,13 @@
 
 - (NSString*)serialize
 {
+    NSColor* export = [self colorUsingColorSpace:[NSColorSpace deviceRGBColorSpace]];
+    
     return [NSString stringWithFormat:@"%lf:%lf:%lf:%lf",
-            self.redComponent,
-            self.greenComponent,
-            self.blueComponent,
-            self.alphaComponent];
+            export.redComponent,
+            export.greenComponent,
+            export.blueComponent,
+            export.alphaComponent];
     
 }
 
