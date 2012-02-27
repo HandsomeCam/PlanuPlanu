@@ -355,14 +355,7 @@
         }
     }
     
-    CGPoint hwPoint = CGPointMake(probableHomeworld.x, probableHomeworld.y);
-    
-    CGRect visible = [self visibleRect];
-    
-    CGPoint scrollPoint = CGPointMake(hwPoint.x - (visible.size.width / 2),
-                                      hwPoint.y - (visible.size.height / 2));
-    
-    [self scrollPoint:scrollPoint];
+    [self scrollToPlanet:probableHomeworld];
 }
 
 - (void)showPlanetPopover:(NuPlanet*)planet
@@ -559,6 +552,30 @@
     {
         [self showShipPopover:(NuShip*)entity];
     }
+}
+
+- (void)scrollToPlanet:(NuPlanet*)planet
+{
+    CGPoint planetPoint = CGPointMake(planet.x, planet.y);
+    
+    CGRect visible = [self visibleRect];
+    
+    CGPoint scrollPoint = CGPointMake(planetPoint.x - (visible.size.width / 2),
+                                      planetPoint.y - (visible.size.height / 2));
+    
+    [self scrollPoint:scrollPoint];
+}
+
+- (void)scrollToShip:(NuShip*)ship
+{
+    CGPoint shipPoint = CGPointMake(ship.x, ship.y);
+    
+    CGRect visible = [self visibleRect];
+    
+    CGPoint scrollPoint = CGPointMake(shipPoint.x - (visible.size.width / 2),
+                                      shipPoint.y - (visible.size.height / 2));
+    
+    [self scrollPoint:scrollPoint];
 }
 
 @end

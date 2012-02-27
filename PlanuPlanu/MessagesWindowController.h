@@ -21,6 +21,7 @@
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
 #import <PlanuKit/PlanuKit.h>
+#import "StarMapController.h"
 
 @interface MessagesWindowController : NSWindowController <NSOutlineViewDelegate, NSOutlineViewDataSource, NSTableViewDelegate>
 {
@@ -31,6 +32,7 @@
     
     NSTextField* headline;
     WebView* body;
+    StarMapController *parentWindow;
 }
 
 @property (nonatomic, assign) IBOutlet NSOutlineView* outline;
@@ -40,7 +42,9 @@
 
 @property (nonatomic, assign) IBOutlet NSTextField* headline;
 @property (nonatomic, assign) IBOutlet WebView* body;
+@property (nonatomic, retain) StarMapController* parentWindow;
 
 - (void)sortMessages;
+- (NSString*)addSmartLinksToBody:(NSString*)messageBody;
 
 @end

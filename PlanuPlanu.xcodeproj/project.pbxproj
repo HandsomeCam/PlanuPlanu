@@ -886,6 +886,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/PlanuKit\"/**",
 					"\"$(SRCROOT)/core-plot/build/Debug\"",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/PlanuPlanu-doxfssifhcuvbjgxtaopjakwsvbs/Build/Products/Debug\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PlanuPlanu/PlanuPlanu-Prefix.pch";

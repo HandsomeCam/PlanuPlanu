@@ -27,6 +27,7 @@
 
 - (void)graphPlayerShips;
 - (void)graphPlayerPlanets;
+- (void)graphPlayerMilitary;
 - (CPTPlot*)graphShipsForPlayer:(NuPlayer*)player;
 
 @end
@@ -149,6 +150,91 @@
     }
 }
 
+- (void)graphPlayerMilitary
+{
+    
+    graph = [[CPTXYGraph alloc] initWithFrame: self.graphPlaceholder.bounds];
+    
+    CPTGraphHostingView *hostingView = self.graphPlaceholder;
+    hostingView.hostedGraph = graph;
+    graph.paddingLeft = 10.0;
+    graph.paddingTop = 10.0;
+    graph.paddingRight = 10.0;
+    graph.paddingBottom = 10.0;
+    
+    graph.backgroundColor = [[CPTColor blackColor] cgColor];
+    
+    NSInteger turnCount = [self.game.turns count];
+    NSLog(@"TurnCount: %ld", turnCount);
+    
+    NSInteger maxMilitary = 0;
+    
+    for (NuTurn* trn in self.game.turns)
+    {
+        for (NuScore* scr in trn.scores)
+        {
+            if (scr.militaryScore > maxMilitary)
+            {
+                maxMilitary = scr.militaryScore;
+            }
+        }
+    }
+    
+    
+    CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)graph.defaultPlotSpace;
+    plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(-2)
+                                                    length:CPTDecimalFromFloat(turnCount+2)];
+    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(-5) 
+                                                    length:CPTDecimalFromFloat(floor(maxMilitary*1.1))];
+    
+    CPTXYAxisSet *axisSet = (CPTXYAxisSet *)graph.axisSet;
+    
+    CPTXYAxis *x = axisSet.xAxis;
+    
+    CPTMutableLineStyle *axisStyle = [CPTMutableLineStyle lineStyle];
+    axisStyle.lineColor = [CPTColor grayColor];
+    
+    
+    CPTMutableTextStyle* ts = [CPTMutableTextStyle textStyle];
+    ts.color = [CPTColor whiteColor];
+    
+    x.axisLineStyle = axisStyle;
+    x.labelTextStyle = ts;
+    x.majorIntervalLength = CPTDecimalFromFloat(1);
+    x.minorTicksPerInterval = 0;
+    x.borderWidth = 1;
+    x.labelExclusionRanges = [NSArray arrayWithObjects:
+                              [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(-10) 
+                                                           length:CPTDecimalFromFloat(10)], 
+                              nil];
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setMaximumFractionDigits:0];
+    
+    x.majorTickLength = 1.0;
+    x.labelFormatter = formatter;
+    
+    CPTXYAxis *y = axisSet.yAxis;
+    
+    NSInteger tickInterval = floor(maxMilitary * 1.1 / 25);
+    
+    y.majorIntervalLength = CPTDecimalFromFloat(tickInterval);
+    y.minorTicksPerInterval = 0; 
+    y.labelTextStyle = ts;
+    y.axisLineStyle = axisStyle;
+    y.labelFormatter = formatter;
+    y.labelExclusionRanges = [NSArray arrayWithObjects:
+                              [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(-10) 
+                                                           length:CPTDecimalFromFloat(10)], 
+                              nil];
+    
+    NuTurn* trn = [self.game.turns anyObject];
+    
+    for (NuPlayer* player in trn.players)
+    {
+        [graph addPlot:[self graphShipsForPlayer:player]];
+    }
+}
 
 - (void)graphPlayerShips
 {
@@ -320,6 +406,10 @@
         {
             plotValue = thisScore.planets;
         }
+        else if (graphSelector.selectedSegment == 2) // Military
+        {
+            plotValue = thisScore.militaryScore;
+        }
         
         return [NSNumber numberWithInteger:plotValue];
     }
@@ -345,7 +435,7 @@
     }
     else if (graphSelector.selectedSegment == 2) // Military
     {
-        
+        [self graphPlayerMilitary];
     }
 }
 

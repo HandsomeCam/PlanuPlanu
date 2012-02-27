@@ -63,11 +63,7 @@
     
     id<StarMapViewDelegate> delegate;
 }
-
-//@property (nonatomic, retain) NSArray* planets;
-//@property (nonatomic, retain) NuPlayer* player;
-//@property (nonatomic, retain) NSArray* ionStorms;
-//@property (nonatomic, retain) NSArray* ships;
+ 
 @property (nonatomic, retain) NuTurn* turn;
 
 @property (nonatomic, retain) NSArray* planetLayers;
@@ -88,6 +84,8 @@
 - (void)showMultiplexPopover:(NSArray*)entities at:(NSRect)popFrame;
 
 - (void)scrollToHomeWorld;
+- (void)scrollToPlanet:(NuPlanet*)planet;
+- (void)scrollToShip:(NuShip*)ship;
 
 - (void)addIonStorms;
 - (void)addPlanets;

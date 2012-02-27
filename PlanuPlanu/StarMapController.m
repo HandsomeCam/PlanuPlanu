@@ -110,8 +110,6 @@
     
     NSDictionary *schemes = [[NSMutableDictionary alloc] initWithContentsOfFile:path];
     
-    
-    
     NSMutableArray* colors = [NSMutableArray array];
     
     for (NSString *key in [schemes allKeys])
@@ -217,6 +215,7 @@
 {
     MessagesWindowController* mwc = [[MessagesWindowController alloc] initWithWindowNibName:@"MessagesWindow"];
     mwc.turn = self.turn;
+    mwc.parentWindow = self;
     [mwc showWindow:self];
 //    [mwc release];
 }
@@ -363,6 +362,16 @@
 - (IBAction)saveColorScheme:(id)sender
 {
     [activeScheme serializeToPlist:@"UserColor.plist"];
+}
+
+- (void)scrollToPlanet:(NuPlanet*)planet
+{
+    [starMap scrollToPlanet:planet];
+}
+
+- (void)scrollToShip:(NuShip*)ship
+{
+    [starMap scrollToShip:ship];
 }
 
 @end
