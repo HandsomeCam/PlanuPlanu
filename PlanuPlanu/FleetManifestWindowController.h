@@ -20,14 +20,21 @@
 
 #import <Cocoa/Cocoa.h>
 #import "NuShip+WeaponDisplay.h"
+#import "PlanuKit.h"
 
 @interface FleetManifestWindowController : NSWindowController
 {
     NSArray* fleetManifest;
     NSArrayController* fleetManifestController;
+    NSTableView* fleetTable;
+    NuGame* game;
 }
 
 @property (nonatomic, retain) NSArray* fleetManifest;
-@property (nonatomic, assign) NSArrayController* fleetManifestController;           
+@property (nonatomic, assign) NSArrayController* fleetManifestController;   
+@property (nonatomic, assign) IBOutlet NSTableView* fleetTable;
+@property (nonatomic, retain) NuGame* game;
+
+- (IBAction)enemyFleetDisplayClicked:(id)sender;
 
 @end

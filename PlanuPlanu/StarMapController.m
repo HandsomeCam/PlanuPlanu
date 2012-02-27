@@ -334,20 +334,10 @@
 
 - (void)showFleetManifest:(id)sender
 {
-    NSMutableArray* fm = [NSMutableArray array];
-    
-    for (NuShip* ship in self.turn.ships)
-    {
-        if (ship.ownerId == self.turn.player.playerId)
-        {
-            [fm addObject:ship];
-        }
-    }
-    
     FleetManifestWindowController* fmwc = 
         [[FleetManifestWindowController alloc]
          initWithWindowNibName:@"FleetManifestWindow" ];
-    fmwc.fleetManifest = fm;
+    fmwc.game = self.turn.game;
     
     [fmwc showWindow:self];
 }
