@@ -81,11 +81,41 @@
         
     for (int i = 0; i < 500; i++)
     {
-        NuShip* blankShip = [[NuShip alloc] init];
+        NuShip* blankShip = [NuShip blankShip];
         blankShip.name = @"Unknown";
         blankShip.shipId = i+1;
         blankShip.hullId = 0;
         [allShips addObject:blankShip];
+    }
+    
+    NuTurn* latestTurn = nil;
+    {
+        for (NuTurn* t in self.game.turns)
+        {
+            if (latestTurn == nil || latestTurn.settings.turnNumber < t.settings.turnNumber)
+            {
+                latestTurn = t;
+            }
+        }
+    }
+    
+    NSSortDescriptor * sortByTurn =
+    [[[NSSortDescriptor alloc] initWithKey:@"settings.turnNumber" ascending:NO] autorelease];
+    
+    NSArray* descriptors = [NSArray arrayWithObject:sortByTurn];
+    NSArray* turns = [self.game.turns sortedArrayUsingDescriptors:descriptors];
+    
+    for (NuTurn* turn in turns)
+    {
+        for (NuShip* turnShip in turn.ships)
+        {
+            NSInteger shipIdx = turnShip.shipId - 1;
+            
+            if (((NuShip*)[allShips objectAtIndex:shipIdx]).hullId == 0)
+            {
+                [allShips replaceObjectAtIndex:turnShip.shipId - 1 withObject:turnShip];
+            }
+        }
     }
     
     self.fleetManifest = allShips;
@@ -106,7 +136,29 @@
 //        }
 //    }
 //    self.fleetManifest = newFleet;
-    [self loadAllSeenShips];
+    NSButton* checkbox = (NSButton*)sender;
+    
+    NSInteger colIdx;
+    NSTableColumn* col;
+    
+    BOOL showEnemy = (checkbox.state == NSOnState);
+    
+    colIdx = [fleetTable columnWithIdentifier:@"lastseen"];
+    col = [fleetTable.tableColumns objectAtIndex:colIdx];
+    [col setHidden:(showEnemy == NO)];
+    colIdx = [fleetTable columnWithIdentifier:@"player"];
+    col = [fleetTable.tableColumns objectAtIndex:colIdx];
+    [col setHidden:(showEnemy == NO)];
+    
+    if (showEnemy == YES)
+    {
+        [self loadAllSeenShips]; 
+    }
+    else
+    {
+        [self loadActivePlayerFleet];        
+    }
+    
 }
 
 @end
