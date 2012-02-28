@@ -141,7 +141,7 @@
     // Check if the file exists
     NSFileManager *manager = [NSFileManager defaultManager];
     BOOL isDirectory;
-    if ([manager fileExistsAtPath:sdPath isDirectory:&isDirectory] == YES) 
+    if ([manager fileExistsAtPath:usercolorFile isDirectory:&isDirectory] == YES) 
     {
         NSArray* colorDef = [NSArray arrayWithContentsOfFile:usercolorFile];
         NuColorScheme *userScheme = [[[NuColorScheme alloc] initWithArray:colorDef forTurn:self.turn] autorelease];
