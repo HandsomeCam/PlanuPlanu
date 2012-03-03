@@ -21,13 +21,21 @@
 #import <Foundation/Foundation.h>
 #import <PlanuKit/PlanuKit.h>
 
+typedef enum
+{
+    kTurnWarningLokiDecloakStarting     = 1,
+    kTurnWarningLokiDecloakEnding       = 2
+} TurnWarningType;
+
 @interface TurnWarning : NSObject
 {
     NSString* warning;
     NuShip* ship;
+    TurnWarningType warningType;
 }
 
 @property (nonatomic, retain) NSString* warning;
 @property (nonatomic, retain) NuShip* ship;
+@property (nonatomic, assign) TurnWarningType warningType;
 
 @end

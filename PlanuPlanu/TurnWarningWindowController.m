@@ -30,7 +30,7 @@
     self = [super initWithWindow:window];
     if (self) {
         // Initialization code here.
-        warnings = [NSMutableArray array];
+        warnings = [[NSMutableArray array] retain];
     }
     
     return self;
@@ -49,6 +49,9 @@
     [super windowDidLoad];
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    [self generateFleet];
+    [self detectLokis];
+    [self.tableview reloadData];
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
@@ -59,6 +62,9 @@
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
     NSTextField* tf = [[NSTextField alloc] init];
+    [tf setEditable:NO];
+    [tf setBordered:NO];
+    tf.backgroundColor = [NSColor clearColor];
     
     TurnWarning* warning = [warnings objectAtIndex:row];
     
@@ -118,15 +124,52 @@
                 NSPoint lokiEnd = [loki nextTurnDestination];
                 
                 CGFloat endDist = sqrt(pow(cloakerEnd.x - lokiEnd.x, 2) 
-                                        + pow(cloakerEnd.y - cloakerEnd.y, 2));
+                                        + pow(cloakerEnd.y - lokiEnd.y, 2));
+                
+                BOOL dupeFound = NO;
                 
                 if (startDist <= 10)
                 {
-                    // TODO: add warning
+                    TurnWarning* sw = [[[TurnWarning alloc] init] autorelease];
+                    sw.ship = cloaker;
+                    sw.warning = [NSString stringWithFormat:@"%@ begins turn near a Loki, will be decloaked for the remainder of this turn.", cloaker.name];
+                    sw.warningType = kTurnWarningLokiDecloakStarting;
+                    
+                    for (TurnWarning* tw in warnings)
+                    {
+                        if (tw.warningType == sw.warningType
+                            && tw.ship == sw.ship)
+                        {
+                            dupeFound = YES;
+                        }
+                    }
+                    
+                    if (dupeFound == NO)
+                    {
+                        [warnings addObject:sw];
+                    }
                 }
                 if (endDist <= 10)
-                {
-                    // TODO: add warning
+                { 
+                    TurnWarning* ew = [[[TurnWarning alloc] init] autorelease];
+                    ew.ship = cloaker;
+                    ew.warning = [NSString stringWithFormat:@"%@ ends turn near a Loki, it may potentially be decloaked next turn.", cloaker.name];
+                    ew.warningType = kTurnWarningLokiDecloakEnding;
+                    
+                    for (TurnWarning* tw in warnings)
+                    {
+                        if (tw.warningType == ew.warningType
+                            && tw.ship == ew.ship)
+                        {
+                            dupeFound = YES;
+                        }
+                    }
+                    
+                    if (dupeFound == NO)
+                    {
+                        [warnings addObject:ew];
+                    }
+;
                 }
             }
         }

@@ -22,6 +22,6 @@
 
 @implementation TurnWarning
 
-@synthesize warning, ship;
+@synthesize warning, ship, warningType;
 
 @end
