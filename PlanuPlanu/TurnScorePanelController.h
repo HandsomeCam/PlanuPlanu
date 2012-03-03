@@ -30,6 +30,8 @@
     NSSegmentedControl* graphSelector;
     NuGame* game;
     NuColorScheme* colors;
+    NSTableView* scoreTable;
+    NSArrayController* scoreListController;
 }
 
 @property (nonatomic, retain) NuGame* game;
@@ -37,6 +39,8 @@
 
 @property (nonatomic, assign) IBOutlet NSSegmentedControl* graphSelector;
 @property (nonatomic, assign) IBOutlet CPTGraphHostingView* graphPlaceholder;
+@property (nonatomic, assign) IBOutlet NSTableView* scoreTable;
+@property (nonatomic, assign) IBOutlet NSArrayController* scoreListController;   
 
 - (IBAction)graphSelectionChanged:(id)sender;
 

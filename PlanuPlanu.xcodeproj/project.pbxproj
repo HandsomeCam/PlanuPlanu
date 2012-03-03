@@ -19,6 +19,7 @@
 		7E2908D414ACFF9E00B11972 /* NuIonStormLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2908D314ACFF9D00B11972 /* NuIonStormLayer.m */; };
 		7E2908D714AD299E00B11972 /* NuPlanetLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2908D614AD299E00B11972 /* NuPlanetLayer.m */; };
 		7E2908DC14AD605000B11972 /* NuShipLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2908DB14AD604F00B11972 /* NuShipLayer.m */; };
+		7E2C05EA14FEE9ED00A51D5F /* NuScore+DeltaDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2C05E914FEE9ED00A51D5F /* NuScore+DeltaDisplay.m */; };
 		7E38629514BBF5A800747D17 /* MapMuxPopover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E38629414BBF5A800747D17 /* MapMuxPopover.xib */; };
 		7E38629814BBF5CC00747D17 /* MapMuxPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E38629714BBF5CC00747D17 /* MapMuxPopoverController.m */; };
 		7E38629C14BCF16200747D17 /* planet.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E38629A14BCF16200747D17 /* planet.png */; };
@@ -166,6 +167,8 @@
 		7E2908D614AD299E00B11972 /* NuPlanetLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuPlanetLayer.m; sourceTree = "<group>"; };
 		7E2908DA14AD604F00B11972 /* NuShipLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NuShipLayer.h; sourceTree = "<group>"; };
 		7E2908DB14AD604F00B11972 /* NuShipLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NuShipLayer.m; sourceTree = "<group>"; };
+		7E2C05E814FEE9ED00A51D5F /* NuScore+DeltaDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NuScore+DeltaDisplay.h"; sourceTree = "<group>"; };
+		7E2C05E914FEE9ED00A51D5F /* NuScore+DeltaDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NuScore+DeltaDisplay.m"; sourceTree = "<group>"; };
 		7E38629414BBF5A800747D17 /* MapMuxPopover.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapMuxPopover.xib; sourceTree = "<group>"; };
 		7E38629614BBF5CC00747D17 /* MapMuxPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapMuxPopoverController.h; sourceTree = "<group>"; };
 		7E38629714BBF5CC00747D17 /* MapMuxPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapMuxPopoverController.m; sourceTree = "<group>"; };
@@ -464,6 +467,8 @@
 				7E698F8314BFDDDF008B0F95 /* MessageList.m */,
 				7E86FDC514C4D5AC0062C0C2 /* NuShip+WeaponDisplay.h */,
 				7E86FDC614C4D5AC0062C0C2 /* NuShip+WeaponDisplay.m */,
+				7E2C05E814FEE9ED00A51D5F /* NuScore+DeltaDisplay.h */,
+				7E2C05E914FEE9ED00A51D5F /* NuScore+DeltaDisplay.m */,
 			);
 			path = PlanuPlanu;
 			sourceTree = "<group>";
@@ -737,6 +742,7 @@
 				7E20647E14C54D9100E7A484 /* TurnWarningWindowController.m in Sources */,
 				7E09C54114C7B93400CE7E9F /* TurnWarning.m in Sources */,
 				7E9930E514DE2E4E00A463EE /* TurnScorePanelController.m in Sources */,
+				7E2C05EA14FEE9ED00A51D5F /* NuScore+DeltaDisplay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

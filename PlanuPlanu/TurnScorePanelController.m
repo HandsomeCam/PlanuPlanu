@@ -22,6 +22,7 @@
 #import <CorePlot/CorePlot.h>
 
 #import <PlanuKit/PlanuKit.h>
+#import "NuScore+DeltaDisplay.h"
 
 @interface TurnScorePanelController (private)
 
@@ -29,12 +30,13 @@
 - (void)graphPlayerPlanets;
 - (void)graphPlayerMilitary;
 - (CPTPlot*)graphShipsForPlayer:(NuPlayer*)player;
+- (void)initScoreValues;
 
 @end
 
 @implementation TurnScorePanelController
 
-@synthesize graphPlaceholder, game, colors, graphSelector;
+@synthesize graphPlaceholder, game, colors, graphSelector, scoreTable, scoreListController;
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -52,8 +54,22 @@
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
 
+    [self initScoreValues];
     [self graphPlayerShips];
     
+}
+
+- (void)initScoreValues
+{
+    NuTurn* t = [self.game latestTurn];
+    
+    NSSortDescriptor * sortByPlayerRace =
+    [[[NSSortDescriptor alloc] initWithKey:@"owner.race.raceId" ascending:YES] autorelease];
+    
+    NSArray* descriptors = [NSArray arrayWithObject:sortByPlayerRace];
+    
+    NSArray* scores = [t.scores sortedArrayUsingDescriptors:descriptors];
+    scoreListController.content = scores;
 }
 
 - (void)graphPlayerPlanets
@@ -420,10 +436,13 @@
 
 - (IBAction)graphSelectionChanged:(id)sender
 {
+    [graph setHidden:NO];
     for (CPTPlot* plot in graph.allPlots)
     {
         [graph removePlot:plot];
     }
+    
+    [scoreTable setHidden:YES];
     
     if (graphSelector.selectedSegment == 0) // Total Ships
     {
@@ -436,6 +455,11 @@
     else if (graphSelector.selectedSegment == 2) // Military
     {
         [self graphPlayerMilitary];
+    }
+    else if (graphSelector.selectedSegment == 3) // Values
+    {
+        [scoreTable setHidden:NO];
+        [graph setHidden:YES];
     }
 }
 
