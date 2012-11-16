@@ -1,0 +1,6 @@
+[submodule "PlanuKit"]
+	path = PlanuKit
+	url = git@github.com:HandsomeCam/PlanuKit.git
+[submodule "core-plot"]
+	path = core-plot
+	url = https://code.google.com/p/core-plot/
